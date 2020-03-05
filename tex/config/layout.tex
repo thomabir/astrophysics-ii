@@ -1,0 +1,102 @@
+% -------------------------
+% GEOMETRY
+% -------------------------
+
+
+
+% CROWN QUARTO, guessed bleed
+\usepackage[paperwidth=18.90cm,
+            paperheight=24.58cm]{geometry}
+
+\newgeometry{includemp,
+            top=2.170cm,
+            bottom=3.510cm,
+            inner=2.1835cm,
+            outer=2.1835cm,
+            marginparwidth=4cm, % Fixed for now
+            marginparsep=0.4cm}
+\savegeometry{with-margin}
+
+\newgeometry{ignoremp,
+            top=2.170cm,
+            bottom=3.510cm,
+            inner=2.1835cm,
+            outer=2.1835cm}
+\savegeometry{no-margin}
+
+% CROWN QUARTO, full bleed
+% \usepackage[includemp,
+%             paperwidth=19.54cm,
+%             paperheight=25.22cm,
+%             % showframe,
+%             layoutwidth=18.90cm,
+%             layoutheight=24.58cm,
+%             layouthoffset=0.32cm,
+%             layoutvoffset=0.32cm,
+%             top=2.170cm,
+%             bottom=3.510cm,
+%             inner=2.1835cm,
+%             outer=2.1835cm,
+%             marginparwidth=4cm, % Fixed for now
+%             marginparsep=0.4cm]{geometry}
+
+% For printing on A4
+% \usepackage[includemp,
+%             a4paper,
+%             layoutwidth=18.90cm,
+%             layoutheight=24.58cm,
+%             layouthoffset=1.05cm,
+%             layoutvoffset=2.56cm,
+%             top=2.170cm,
+%             bottom=3.510cm,
+%             inner=1.668cm,
+%             outer=2.699cm,
+%             marginparwidth=4cm, % Fixed for now
+%             marginparsep=0.4cm]{geometry}
+
+
+
+\usepackage{floatrow}           % Set up captions of floats
+\usepackage{marginfix}          % Make marginpars float freely
+\usepackage{sidenotes}   % Footnotes as sidenotes
+% \extrafloats{100}               % extra floats
+
+% WHY IS CHANGING THE FONT SIZE OF SIDENOTES SO COMPLICATED?
+\makeatletter
+\RenewDocumentCommand\sidenotetext{oo+m}{%
+  \IfValueTF{#1}{%
+    \@sidenotes@placemarginal{#2}{\footnotesize\textsuperscript{#1}\footnotesize~#3}
+  }{%
+    \@sidenotes@placemarginal{#2}{\footnotesize\textsuperscript{\thesidenote}{}\footnotesize~#3}%
+    \refstepcounter{sidenote}%
+  }%
+}
+\makeatother
+
+
+
+% Figures and tables
+\floatsetup[figure]{margins=hangoutside,
+                    facing=yes,
+                    capposition=beside,
+                    capbesideposition={center,outside},
+                    floatwidth=\textwidth}
+\floatsetup[widefigure]{margins=hangoutside,
+                        facing=yes,
+                        capposition=bottom}
+\floatsetup[table]{margins=hangoutside,
+                   facing=yes,
+                   capposition=beside,
+                   capbesideposition={center,outside},
+                   floatwidth=\textwidth}
+\floatsetup[widetable]{margins=hangoutside,
+                       facing=yes,
+                       capposition=bottom}
+
+
+
+% Figure captions with no indentation
+% \setcapindent{0pt}
+
+
+

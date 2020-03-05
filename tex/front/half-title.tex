@@ -1,0 +1,44 @@
+% \cleardoublepage%
+% {%
+% 	\sffamily%
+% 		\fontsize{18}{20}\selectfont\par\noindent\textcolor{darkgray}{
+% 		ETH ZÜRICH}%
+% 		\vspace{11.5pc}%
+% 		\fontsize{36}{42}{\addfontfeature{LetterSpace=10.0}
+% 			\textcolor{primary_color}{
+% 				GENERAL RELATIVITY%
+% 			}%
+% 		}%
+% 		\vfill%
+% 		\fontsize{14}{16}\selectfont\noindent
+% 		LECTURE NOTES%
+% }
+% \thispagestyle{empty}%
+% \clearpage%
+
+\newcommand{\allcaps}[1]{
+	{\addfontfeature{LetterSpace=10.0}%
+		{#1}%
+	}%
+}
+
+\cleardoublepage%
+{%
+	\fontsize{18}{20}
+	\textcolor{darkgray}{
+		\allcaps{Thomas Birbacher}}
+	
+	\vspace{11.5pc}%
+	
+	\fontsize{36}{48}
+	\textcolor{primary_color}{
+		\allcaps{ASTROPHYSICS II}}
+	
+	\vfill
+	
+	\fontsize{14}{16}
+	\textcolor{darkgray}{
+		\allcaps{LECTURE NOTES}}
+}%
+\thispagestyle{empty}%
+\clearpage%

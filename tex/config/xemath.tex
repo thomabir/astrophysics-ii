@@ -1,0 +1,272 @@
+% Packages
+\RequirePackage{tensor}
+\RequirePackage{physics}
+\RequirePackage[
+      per-mode = reciprocal,
+      exponent-product = \cdot,  
+]{siunitx}
+
+% trigonometry
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
+\DeclareMathOperator{\arcoth}{arcoth}
+
+% topology
+\providecommand{\closure}[1]{ \overline{#1} }
+\providecommand{\boundary}[1]{ \partial #1 }
+\providecommand{\interior}[1]{ {#1}^\circ }
+
+% vector
+\renewcommand{\vec}[1]{\symbf{#1}}
+
+% vector calculus
+\newcommand{\Lap}{ \vec{\Delta} }
+\newcommand{\Rot}{ \vec{\nabla} \times }
+\newcommand{\Div}{ \vec{\nabla} \cdot }
+\newcommand{\Grad}{ \vec{\nabla} }
+\newcommand{\Dal}{ \square }
+
+% number sets
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\Z}{\mathbb{Z}}
+\providecommand{\Nz}{\mathbb{N}_0}
+\providecommand{\Cz}{ \mathbb{C}^* }
+% \renewcommand{\C}{\mathbb{C}}
+\providecommand{\CC}{\mathbb{C}}
+
+% automatic paired delimiters from mathtools
+\let\norm\relax %relax norm from the physics package
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+\let\abs\relax %relax abs from the physics package
+\DeclarePairedDelimiter{\abs}{\vert}{\vert}
+
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+% lie groups and algebras
+\providecommand{\lie}[1]{\mathfrak{#1}}
+\DeclareMathOperator{\Lie}{Lie}
+\newcommand{\com}[2]{\left[ #1, #2 \right]}
+
+% lie groups
+\newcommand{\gl}{\lie{gl}}
+\renewcommand{\sl}{\lie{sl}}
+\renewcommand{\o}{\lie{o}}
+\newcommand{\so}{\lie{so}}
+\renewcommand{\u}{\lie{u}}
+\newcommand{\su}{\lie{su}}
+
+% inner product
+\providecommand{\iprod}[2]{\left\langle #1 , #2 \right\rangle}
+
+
+% integrals
+\providecommand{\dint}[4]{
+	\int_{#1}^{#2} #3 \, \dd{#4}
+}
+
+\providecommand{\Int}[3]{
+	\int_{#1}^{#2} #3
+}
+
+
+% adjoint
+\DeclareMathOperator{\adj}{adj}
+
+% function restriction
+\providecommand{\restrict}[2]{
+	\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+	#1 % the function
+	\vphantom{|} % pretend it's a little taller at normal size
+	\right|_{#2} % this is the delimiter
+}
+
+% limit
+\providecommand{\limit}[2]{
+	\lim_{#1 \to #2}
+}
+
+
+% case for cases envrionment
+\providecommand{\caseif}[2]{ {#1} &\text{if } {#2} }
+\providecommand{\caseelse}[1]{ {#1} &\text{else}}
+
+
+
+% complex conjugate
+\newcommand{\cc}[1]{\widebar{#1}}
+\newcommand{\ccs}[1]{\bar{#1}}  % nice for single letter
+\newcommand{\ccm}[1]{\widebar{#1}}  % nice for multiple letters
+
+
+% maps
+\DeclareMathOperator{\id}{\mathbbm{1}} % identity
+\DeclareMathOperator{\im}{im} % image
+\DeclareMathOperator{\nullity}{null} 
+\providecommand{\class}[1]{\left[ {#1} \right]}	 % equivalence class
+\DeclareMathOperator{\supp}{supp} % support
+\DeclareMathOperator{\diag}{diag}
+
+%quotient space
+\providecommand{\qs}[2]{
+   	\mathchoice
+   	{% \displaystyle
+   		\text{\raise1ex\hbox{$#1$}\Big/\lower1ex\hbox{$#2$}}%
+   	}
+   	{% \textstyle
+   		#1\,/\,#2
+   	}
+   	{% \scriptstyle
+   		#1\,/\,#2
+   	}
+   	{% \scriptscriptstyle  
+   		#1\,/\,#2
+   	}
+}
+
+
+% special sets
+\DeclareMathOperator{\Gl}{Gl}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Iso}{Iso}
+\let\O\relax
+\let\U\relax
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\O}{O}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\SL}{SL}
+
+
+% set algebra
+\providecommand{\set}[1]{ \left\{ {#1} \right\} }
+\providecommand{\Set}[2]{
+	\left\{
+	\, {#1} \, \middle| \, {#2} \,
+	\right\}
+}
+\providecommand{\iso}{\cong}
+\providecommand{\union}{\cup}
+\providecommand{\inters}{\cap}
+% disjoint
+\providecommand{\dunion}{\sqcup}
+\providecommand{\dinters}{\sqcap}
+% big
+\providecommand{\biginters}{\bigcap}
+\providecommand{\bigunion}{\bigcup}
+% big & disjoint
+\providecommand{\bigdinters}{\bigsqcap}
+\providecommand{\bigdunion}{\bigsqcup}
+
+
+
+% tensor product
+\newcommand{\tprod}{\otimes} % tensor product
+\newcommand{\dsum}{\oplus} % direct sum
+
+
+%Definition
+\providecommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+	=}
+\providecommand*{\eqdef}{= \mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+	}
+
+
+%
+%
+% define widebar, which might be better than overline
+%
+%
+
+\makeatletter
+\let\save@mathaccent\mathaccent
+\newcommand*\if@single[3]{%
+  \setbox0\hbox{${\mathaccent"0362{#1}}^H$}%
+  \setbox2\hbox{${\mathaccent"0362{\kern0pt#1}}^H$}%
+  \ifdim\ht0=\ht2 #3\else #2\fi
+  }
+%The bar will be moved to the right by a half of \macc@kerna, which is computed by amsmath:
+\newcommand*\rel@kern[1]{\kern#1\dimexpr\macc@kerna}
+%If there's a superscript following the bar, then no negative kern may follow the bar;
+%an additional {} makes sure that the superscript is high enough in this case:
+\newcommand*\widebar[1]{\@ifnextchar^{{\wide@bar{#1}{0}}}{\wide@bar{#1}{1}}}
+%Use a separate algorithm for single symbols:
+\newcommand*\wide@bar[2]{\if@single{#1}{\wide@bar@{#1}{#2}{1}}{\wide@bar@{#1}{#2}{2}}}
+\newcommand*\wide@bar@[3]{%
+  \begingroup
+  \def\mathaccent##1##2{%
+%Enable nesting of accents:
+    \let\mathaccent\save@mathaccent
+%If there's more than a single symbol, use the first character instead (see below):
+    \if#32 \let\macc@nucleus\first@char \fi
+%Determine the italic correction:
+    \setbox\z@\hbox{$\macc@style{\macc@nucleus}_{}$}%
+    \setbox\tw@\hbox{$\macc@style{\macc@nucleus}{}_{}$}%
+    \dimen@\wd\tw@
+    \advance\dimen@-\wd\z@
+%Now \dimen@ is the italic correction of the symbol.
+    \divide\dimen@ 3
+    \@tempdima\wd\tw@
+    \advance\@tempdima-\scriptspace
+%Now \@tempdima is the width of the symbol.
+    \divide\@tempdima 10
+    \advance\dimen@-\@tempdima
+%Now \dimen@ = (italic correction / 3) - (Breite / 10)
+    \ifdim\dimen@>\z@ \dimen@0pt\fi
+%The bar will be shortened in the case \dimen@<0 !
+    \rel@kern{0.6}\kern-\dimen@
+    \if#31
+      \overline{\rel@kern{-0.6}\kern\dimen@\macc@nucleus\rel@kern{0.4}\kern\dimen@}%
+      \advance\dimen@0.4\dimexpr\macc@kerna
+%Place the combined final kern (-\dimen@) if it is >0 or if a superscript follows:
+      \let\final@kern#2%
+      \ifdim\dimen@<\z@ \let\final@kern1\fi
+      \if\final@kern1 \kern-\dimen@\fi
+    \else
+      \overline{\rel@kern{-0.6}\kern\dimen@#1}%
+    \fi
+  }%
+  \macc@depth\@ne
+  \let\math@bgroup\@empty \let\math@egroup\macc@set@skewchar
+  \mathsurround\z@ \frozen@everymath{\mathgroup\macc@group\relax}%
+  \macc@set@skewchar\relax
+  \let\mathaccentV\macc@nested@a
+%The following initialises \macc@kerna and calls \mathaccent:
+  \if#31
+    \macc@nested@a\relax111{#1}%
+  \else
+%If the argument consists of more than one symbol, and if the first token is
+%a letter, use that letter for the computations:
+    \def\gobble@till@marker##1\endmarker{}%
+    \futurelet\first@char\gobble@till@marker#1\endmarker
+    \ifcat\noexpand\first@char A\else
+      \def\first@char{}%
+    \fi
+    \macc@nested@a\relax111{\first@char}%
+  \fi
+  \endgroup
+}
+\makeatother
+
+
+
+
+
+
+
+
+
+
+
+\endinput

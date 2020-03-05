@@ -1,0 +1,33 @@
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\usepackage[fleqn]{mathtools} % also loads amsmath
+% \usepackage{amssymb} % also loads amsfonts, not recommended for XeTeX
+\usepackage{amstext}
+\usepackage{unicode-math}
+
+\setmainfont{Libertinus Serif}
+\setmonofont{Libertinus Mono}
+\setmathfont{Libertinus Math}
+
+\usepackage{ccicons}                % Creative Commons icons
+\usepackage{metalogo}               % XeTeX logo
+
+
+\input{tex/config/xemath}
+\input{tex/config/commands}
+
+
+
+
+
+\newfontfamily\fanciestfont{Libertinus Serif Display}
+\newfontfamily\fancyfont{Libertinus Serif Display}
+\newfontfamily\chapternumberfont{Libertinus Serif Display}
+
+\addtokomafont{disposition}{\fancyfont}
+\addtokomafont{title}{\fanciestfont}
+\addtokomafont{chapter}{\fanciestfont}
+\addtokomafont{chapterentry}{\normalfont\scshape}
+\addtokomafont{descriptionlabel}{\normalfont\bfseries}
+\addtokomafont{caption}{\footnotesize}
