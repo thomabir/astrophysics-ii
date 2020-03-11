@@ -28,27 +28,6 @@
 }
 
 
-% Page style for preface
-\newpagestyle{preface}{
-  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad{}Preface}}%
-  {\makebox[\overflowingheadlen][r]{\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}}%
-  {}
-}{
-  {}%
-  {}%
-  {}
-}
-\newpagestyle{plain.preface}{
-  {}%
-  {}%
-  {}
-}{
-  {\thepage}%
-  {\makebox[\overflowingheadlen][r]{\thepage}}%
-  {}
-}
-
-
 % Page style for chapters
 \newpagestyle{chapter}{
   % left page head
@@ -93,43 +72,3 @@
 }
 
 
-% page style for appendix
-\newpagestyle{appendix}{
-  {\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad\leftmark}%
-  {\hfill\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}%
-  {}
-}{
-  {}%
-  {}%
-  {}
-}
-\newpagestyle{plain.appendix}{
-  {}%
-  {}%
-  {}
-}{
-  {\thepage}%
-  {\hfill\thepage}%
-  {}
-}
-
-
-% Page style for back matter
-\newpagestyle{backmatter}{
-  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad\leftmark}}%
-  {\makebox[\overflowingheadlen][r]{\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}}%
-  {}
-}{
-  {}%
-  {}%
-  {}
-}
-\newpagestyle{plain.backmatter}{
-  {}%
-  {}%
-  {}
-}{
-  {\thepage}%
-  {\makebox[\overflowingheadlen][r]{\thepage}}%
-  {}
-}
