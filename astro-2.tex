@@ -1,11 +1,8 @@
-
 \documentclass[parskip=half,
                fontsize=10pt]{scrbook}
 
 \author{Thomas Birbacher}
 \title{Astrophysics II}
-\subtitle{Lecture Notes}
-\date{}
 
 \input{tex/config/preamble}
 
@@ -20,36 +17,21 @@
 \loadgeometry{no-margin}
 \pagestyle{toc}
 
-% \input{tex/front/front-cover}
-% \input{tex/front/half-title}
-% \input{tex/front/copyright}
-% \input{tex/front/contents}
+\input{tex/front/contents}
 
 
 
 \mainmatter
 
 \loadgeometry{with-margin}
-\pagestyle{preface}
-% \input{preface}
-
 \pagestyle{chapter}
-% \input{tex/main/01-intro}
 
-% \part{Differential Geometry}
-
+\input{tex/main/01-introduction}
 \input{tex/main/02-background}
-
-
-
-% \appendix
-% \pagestyle{appendix}
-% \loadgeometry{no-margin}
-
-
-% \backmatter
-% \pagestyle{backmatter}
-% \loadgeometry{with-margin}
+\input{tex/main/03-linear-perturbations}
+\input{tex/main/04-nonlinear-perturbations}
+\input{tex/main/05-baryonic-structures}
+\input{tex/main/06-conclusions}
 
 
 \end{document}
