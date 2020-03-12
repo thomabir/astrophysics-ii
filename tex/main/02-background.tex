@@ -607,11 +607,199 @@ The ΛCDM model is a refinement of the Big Bang model, and it is the standard mo
 	\item the cosmic microwave background.
 \end{itemize}
 
-According to ΛCDM, the energy content of the universe today is as follows:
+According to ΛCDM, the energy content of the universe today is made up of radiation, matter, dark matter, and dark energy. Their contributions today are:
 \begin{itemize}
-	\item Radiation are those particles that are still relativistic today:
-	\begin{itemize}
-		\item photons: $T\approx \SI{2.73}{\kelvin}$, $\Omega_{\gamma,0} = \num{2.5e-5}$
-		\item massless\sidenote{Because of neutrino oscillations, we strongly suspect that neutrinos actually have mass, but it is very low.} neutrinos: $\Omega_{\nu,0} = 0.68 \Omega_{\gamma,0}$
-	\end{itemize}
+	\item Photons and neutrinos: $\Omega_{\gamma,0} \approx \Omega_{\nu,0}/0.68 \approx \num{2.5e-5} h^{-2}$
+	\item Baryons:  $\Omega_{b,0} \approx 0.05$
+	\item Dark Matter: $\Omega_{dm,0} \approx 0.25$
+	\item Dark Energy: $\Omega_\Lambda \approx 0.7$
 \end{itemize}
+We now look at the constituents in more detail.
+
+\subsection*{Radiation}
+
+As radiation, we classify those particles that are still relativistic today. Accordingly, they need to have very low mass.
+\begin{itemize}
+	\item Most photons are part of the CMB and haven a temperature $T\approx \SI{2.73}{\kelvin}$. They contribute only very little to the energy density: $\Omega_{\gamma,0} = \num{2.5e-5}$.
+	\item Massless\sidenote{Because of neutrino oscillations, we strongly suspect that neutrinos actually have mass, but it is very low.} neutrinos contribute about the same as photons: $\Omega_{\nu,0} = 0.68 \Omega_{\gamma,0} \approx \num{1.7e-5}$.
+\end{itemize}
+
+\subsection*{Baryons}
+Baryons from the Big Bang nucleosynthesis contribute $\Omega_b \approx 0.05$. They mostly occur in two forms:
+\begin{itemize}
+	\item Even though only ten percent of baryons are found in stars, they are the largest fraction of visible matter.
+	\item The rest of the baryons is in the form of various phases, such as cold gas, warm gas, and hot gas, both in the intergalactic and the interstellar medium.
+\end{itemize}
+
+\subsection*{Dark Matter}
+Dark Matter contributes $\Omega_\text{dm} \approx 0.25$. We know of its existence through its gravitational effects. There is evidence for dark matter in galaxies, galaxy clusters, large scale structure, and many others.
+
+Dark matter is mostly non-baryonic, because baryons are constrained to $\Omega_b \approx 0.05$ by Big Bang nucleosynthesis. Also, the structure formation constraints below rule out baryons as dark matter candidates.
+\begin{itemize}
+	\item Dark matter is cold (non-relativistic). It is thus called Cold Dark Matter (CDM)
+	\item It interacts very weakly, so we can approximate it as non-collisional.
+\end{itemize}
+
+A good candidate for dark matter are particles beyond the standard model, such as WIMPs.
+
+Massive Compact Halo Objects (MACHOs), such as black holes, are not good candidates, since objects with masses from $\num{e-6}$ to $15\, M_\sol$ are ruled out.
+
+\subsection*{Dark Energy}
+Dark Energy contributes $\Omega_\text{de} \approx 0.7$. It is needed to get a flat geometry for the universe, and to explain the recent acceleration of the expansion of the universe.
+
+From the first Friedmann equation, we know that a constant energy density results in a scale factor $a \propto e^{Ht}$ that is exponentially growing. Consider an effective fluid with equation of state $p_\text{DE} = w \rho_\text{DE} c^2$. We demand $\ddot{a} > 0$, and the second Friedmann equation then yields $w < -1/3$.
+
+There are a few possible candidates:
+\begin{itemize}
+	\item The cosmological constant $\Lambda$ corresponds to $w=-1$, independent of time.
+	\item A model called \emph{quintessence}, which is a dynamical scalar field, would give rise to another form of energy. Since it is dynamical, you can map it to an effective fluid, with a $w$ that varies in time.
+	\item There could be a theory of gravity that can improve upon or replace general relativity.
+\end{itemize}
+Current constraints demand $w = -1$ with an uncertainty of about \SI{5}{\percent}. The cosmological constant is thus a model that is consistent with observations, and it is part of the ΛCDM model.
+
+\subsection*{Summary}
+In total, $\Omega_0 \approx 1$, so the universe has a flat geometry. The exact nature of dark energy and dark matter are some of the most pressing questions in fundamental physics.
+
+There are other ingredients to ΛCDM, such as the model of gravity and the choice of initial conditions. A process called inflation is also added, as we will see later.
+
+The ΛCMD model is very successful to fit current observations, but there are some tensions that are starting to emerge with more detailed measurements from cosmological probes.
+
+
+
+\section{Problems with ΛCDM}
+
+The ΛCDM model without inflation has a few intrinsic fundamental problems.
+
+\subsection{The horizon problem}
+We had defined the particle horizon
+\begin{align*}
+	\chi_h(t) = \int_0^t \frac{c \dd{t'}}{a(t')},
+\end{align*}
+which is the maximal comoving distance that a photon could have travelled from the big bang ($t=0$) until time $t$. Let's look at the size of the horizon at decoupling time, where photons scattered for the last time. This corresponds to a redshift $z_\text{dec} \approx 1100$. The integral evaluates to
+\begin{align*}
+	\chi_h (t_\text{dec}) \approx 180 h^{-1} \, \si{\mega\parsec}
+\end{align*}
+The corresponding CMB angular scale is
+\begin{align*}
+	\theta_h
+	&= \frac{\chi_h(t_\text{dec})}{r(\chi_\text{dec})} 
+	\approx \SI{1.8}{\deg},
+\end{align*}
+where $r$ is the comoving angular diameter distance.
+This is unexpected, because the CMB is extremely homogeneous across the whole sky, even though the photons from different areas of the sky could not have been in causal contact when they scattered! Something must be wrong here.
+
+\subsection{Flatness problem}
+We have observationally determined $\Omega_0 \approx 1$, so we have a flat geometry. Let's look at how $\Omega$ varies with time. For this, we can use the Friemann equation:
+\begin{align*}
+	H(a)^2 = \frac{8\pi G}{3} \rho(a) - \frac{Kc^2}{a^2}
+\end{align*}
+We look at the deviation of $\Omega$ form $1$:
+\begin{align*}
+	\frac{1 - \Omega(a)}{\Omega(a)}
+	&= \Omega(a)^{-1} - 1\\
+	&= -\frac{3Kc^2}{8\pi G \rho(a)a^2}\\
+	&\propto
+	\begin{cases}
+		a^2 &\text{in the radiation era } \rho \propto a^{-4}\\
+		a & \text{in the matter era } \rho \propto a^{-3}
+	\end{cases}
+\end{align*}
+Consider time $t_i$ in the radiation era. Then
+\begin{align*}
+	\frac{\Omega_i^{-1} - 1}{\Omega_0^{-1} - 1}
+	&= \frac{\Omega_\text{init}^{-1} - 1}{\Omega_\text{eq}^{-1} -1}
+	\frac{\Omega_\text{eq}^{-1}-1}{\Omega_0^{-1}-1}\\
+	&= 
+	\left( \frac{a_\text{init}}{a_\text{eq}} \right)^2 
+	\left( \frac{a_\text{eq}}{a_0} \right)\\
+	&=	\left( \frac{T_\text{init}}{T_\text{eq}} \right)^2 
+	\left( \frac{T_\text{eq}}{T_0} \right) \text{  TODO probably wrong }
+\end{align*}
+We choose the Planck time as our starting point:
+\begin{align*}
+	t_\text{init} &= t_\text{Planck}
+	\defeq 
+	\left( \frac{\hbar G}{c^5} \right)^{1/2}\\
+	T_\text{Planck} &= \SI{e32}{\kelvin}\\
+	T_0 &= \SI{3}{\kelvin}\\
+	T_\text{eq} &= \SI{e4}{\kelvin} 
+\end{align*}
+Then
+\begin{align*}
+	\frac{\Omega_\text{Planck}^{-1} - 1}{\Omega_0^{-1}-1} \approx \num{e-60}
+\end{align*}
+This means that any deviation of $\Omega$ from $1$ at the Planck time has been amplified by $60$ orders of magnitude until today. This is also called the fine tuning problem, which requires $\Omega=1$ with extreme accuracy at early times. What is the physical explanation of this?
+
+
+\subsection{Monopole problem}
+Consider $T \approx \SI{e14}{\GeV}$, which was the case during the grand unification (GUT) epoch, where the fundamental forces were unified. At these temperatures, there is a phase transition. Before the transition, the forces are unified, and during the transition, there is a spontaneous symmetry breaking. A prediction for topological defects that happen during this transition requires that there should be magnetic monopoles with an enormous density $\Omega_{\text{monopole},0} \approx \num{e11}$. If you still exist, this scenario is obviously ruled out by observations.
+
+\subsection{Structure formation problem}
+Today, even though the cosmological principle holds for large distance scales (a few \SI{100}{\mega\parsec}), we still see many structures on various smaller scales in the universe. What were the \enquote{seeds}, the initial perturbations that are responsible for the creation of these structures?
+
+\subsection{Initial condition problem}
+All of these problems can be resolved by postulating very special and finely tuned initial conditions. These could arise from physics in the quantum gravity era. The benefit of the inflation model is that all these problems could be resolved without having to resort to quantum gravity.
+
+
+
+
+\section{Inflation}
+
+Inflation is a possible solution for the disparities that we have seen in the previous section. We will tackle them one by one from here.
+
+\subsection{Horizon problem}
+We define two things two reformulate the horizon problem:
+\begin{itemize}
+	\item The size of the forward light cone:
+	\begin{align*}
+		\chi_f = \int_0 ^{t_\text{ls}} \frac{c \dd{t'}}{a(t')}
+	\end{align*}
+	\item The size of the past light cone:
+	\begin{align*}
+		\chi_p = \int_{t_\text{ls}}^{t_0} \frac{c \dd{t'}}{a(t')}
+	\end{align*}
+	This is the maximum comoving distance that photons could have travelled since last scattering.
+\end{itemize}
+
+TODO diagram
+
+The solid line is the past light cone $\chi_p$, and the dashed lines are the forward light cone with ($\chi_f$) and without ($\chi_f'$) inflation.
+
+The horizon problem can be stated mathematically as $\chi_f' < \chi_p$: Regions which are observable today to have similar temperatures were apparently not in causal contact at last scattering. A solution is to increase $\chi_f'$ through a period of accelerated expansion called inflation.
+
+Let $t_i$ and $t_e$ be the start and end time of inflation, with $\Delta t = t_e - t_i$. We know
+\begin{align*}
+	\chi_f = \chi_h(t_\text{ls})
+	= \int_0^{t_\text{ls}} \frac{c \dd{t'}}{a(t')}
+\end{align*}
+For vacuum energy, we know that $\rho_\text{vac}(a)$ is constant. We assume that, at early times, there was some kind of vacuum energy which gives us
+\begin{align*}
+	a \propto e^{Ht} \text{ with } 
+	H = \sqrt{8 \pi G \rho_\text{vac}/3} = \text{constant},
+\end{align*}
+exactly like our derivations for the cosmological constant.
+The contribution to $\chi_f$ during inflation is then
+\begin{align*}
+	\chi_f(t_i,t_e)
+	&= \int_{t_i}^{t_e} \frac{c \dd{t'}}{a(t')}\\
+	&\propto \frac{1}{H a(t_e)} (e^{H \Delta t} - 1)
+\end{align*}
+We see that $\chi_f$ grows exponentially during inflation. For how long does inflation have to last to solve our problems? We need $\Delta t > 60 H^{-1}$, or $e^{H \Delta t} < \num{e25}$, if we assume $t_e \approx t_\text{GUT}$. We thus require $a_e/a_i > e^{60}$, or in other words, we need $60$ \enquote{$e$-foldings}.
+
+
+\subsection{Flatness problem}
+One can show that
+\begin{align*}
+	\frac{\Omega^{-1}(t_e)-1}{\Omega^{-1}(t_i)-1}
+	= \frac{a(t_i)}{a(t_e)}
+	< \num{e-52}
+\end{align*}
+assuming $60$ $e$-foldings. As a result, any curvature that was originally there gets flattened by inflation.
+
+
+
+
+
+
+
+
