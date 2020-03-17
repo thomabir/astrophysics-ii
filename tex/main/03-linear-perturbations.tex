@@ -1,1 +1,37 @@
 \chapter{Linear Perturbations}
+
+We now drop the assumption that the universe is homogeneous and isotropic. In this chapter, we analyse small perturbations about the background, which can be handled with linear perturbation theory. These perturbations will lead to the structures that we observe today.
+
+We are going to make a few approximations:
+\begin{itemize}
+	\item The perturbations are sufficiently small to be treated by linear perturbation theory.
+	\item We ignore relativistic effects and use a Newtonian approximation.
+\end{itemize}
+
+There are several ways to model this structure.
+
+\section{Ideal Fluid}
+First, we model the content of the universe as an expanding, self-gravitating, ideal fluid in the Newtonian approximation. We consider the following parameters:
+\begin{itemize}
+	\item density $\rho(\vec{x},t)$
+	\item pressure $p(\vec{x},t)$
+	\item velocity $\vec{u}(\vec{x},t)$
+	\item gravitational potential $\phi(\vec{x},t)$
+\end{itemize}
+
+TODO Diagram
+
+We need a set of equations which describe the time evolution of these parameters. These equations are the fluid equations:
+\begin{align*}
+	\Dv{\rho}{t} &= - \rho \Grad_r \cdot \vec{u}
+	&& \text{continuity equation, conservation of mass}\\
+	\Dv{^2\vec{u}}{t^2} &= - \frac{\Grad_r p}{\rho} - \Grad_r \phi
+	&&\text{acceleration} = \text{pressure force} + \text{gravitational force}\\
+	\Lap_r \phi &= 4 \pi G \rho
+	&&\text{Poisson equation}
+\end{align*}
+With the \emph{convective derivative}
+\begin{align*}
+	\Dv{}{t} = \pdv{}{t} + \vec{u} \cdot \Grad_r,
+\end{align*}
+which is the time derivative as one moves along fluid elements.
