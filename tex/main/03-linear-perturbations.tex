@@ -15,11 +15,10 @@ First, we model the content of the universe as an expanding, self-gravitating, i
 \begin{itemize}
 	\item density $\rho(\vec{x},t)$
 	\item pressure $p(\vec{x},t)$
-	\item velocity $\vec{u}(\vec{x},t)$
+	\item velocity $\vec{u}(\vec{x},t) = \dot{\vec{r}}$
 	\item gravitational potential $\phi(\vec{x},t)$
 \end{itemize}
-
-We need a set of equations which describe the time evolution of these parameters. These equations are the fluid equations:
+The time evolution of these parameters is described by the \emph{fluid equations}:
 \begin{align*}
 	\Dv{\rho}{t} &= - \rho \Grad_r \cdot \vec{u}
 	&& \text{continuity equation, conservation of mass}\\
@@ -28,8 +27,216 @@ We need a set of equations which describe the time evolution of these parameters
 	\Lap_r \phi &= 4 \pi G \rho
 	&&\text{Poisson equation}
 \end{align*}
-With the \emph{convective derivative}
+We define the \emph{convective derivative}
 \begin{align*}
 	\Dv{}{t} = \pdv{}{t} + \vec{u} \cdot \Grad_r,
 \end{align*}
 which is the time derivative as one moves along fluid elements.
+
+Let's consider the case where the fluid is expanding. In order to describe this, we can write the position vector as $\vec{r} = a(t) \vec{x}$, where $\vec{x}$ is a comoving coordinate. In the Newtonian treatment, we assume that the scale factor is a known input for the calculation. Then the (total) velocity is
+\begin{align*}
+	\vec{u} = \dot{a}(t) \vec{x} + \vec{v},
+\end{align*}
+where the first term is the Hubble expansion, and $\vec{v} = a \dot{\vec{x}}$ is the peculiar velocity.
+
+We write the density as
+\begin{align*}
+	\rho(\vec{x},t) = \bar{\rho}(t) [1 + \delta(\vec{x}, t)],
+\end{align*}
+where $\bar{\rho}(t) \propto a^{-3}$ is the mean background density, and $\delta(\vec{x}, t)$ is a small density perturbation.
+
+We can plug these assumptions and definitions into the fluid equations to get
+\begin{align*}
+	\pdv{\delta}{t} + \frac{1}{a} \Div[(1+\delta)\vec{v}]
+	&= 0\\
+	\pdv{\vec{v}}{t} + \frac{\dot{a}}{a} \vec{v} + \frac{1}{a} [\vec{v} \cdot \Grad] \vec{v}
+	&= - \frac{\Grad \Phi}{a} - \frac{\Grad p}{a \bar{\rho}(1+\delta)}\\
+	\Lap \Phi
+	&= 4 \pi G \bar{\rho} a^2 \delta
+\end{align*}
+where
+\begin{align*}
+	\Phi = \phi + \frac{1}{2} a \ddot{a} x^2 
+\end{align*}
+and $\Grad = \Grad_{\vec{x}}$.
+
+We have three equations in four unknowns, so we still need the equation of state, which relates pressure to other variables:
+\begin{align*}
+	p = p(\rho, S)
+\end{align*}
+The first law of thermodynamics states that internal energy can either be added by the means of heat or work:
+\begin{align*}
+	\dd{U} = \dd{Q} + \dd{W}
+\end{align*}
+We can use $\dd{W} = - p \dd{V}$ and $\dd{Q} = T \dd{S}$. From now on, we assume we are dealing with an ideal gas. The equation of state for an ideal gas is
+\begin{align*}
+	p
+	&= n k_B T\\
+	&= \frac{\rho}{\mu m_p} k_B T
+\end{align*}
+where $\mu$ is the mean molecular weight and $n = N/V$ is the number density. The internal energy is
+\begin{align*}
+	U
+	&= \frac{3}{2} N k_B T\\
+	&= \frac{3}{2} \frac{\rho}{\mu m_p} V k_B T
+\end{align*}
+Then
+\begin{align*}
+	\frac{\Grad p}{\bar{\rho}}
+	&= \frac{1}{\bar{\rho}}
+	\left[ 
+		\left( \pdv{P}{\rho} \right)_S \Grad \rho
+		+ 
+		\left( \pdv{p}{S} \right)_\rho \Grad S
+	\right]
+\end{align*}
+Let $c_s^2 = (\pdv*{p}{\rho})_S$ be the adiabatic sound speed squared. Then we get
+\begin{align*}
+	\left( \pdv{p}{S} \right)_\rho = \frac{2}{3} \rho T
+\end{align*}
+and thus
+\begin{align*}
+	\frac{\Grad p}{\bar{\rho}}
+	&= c_s^2 \Grad \delta + \frac{2}{3} (1+\delta) T \Grad S
+\end{align*}
+The Euler equation can then be rewritten as
+\begin{align*}
+	\pdv{\vec{v}}{t} + \frac{\dot{a}}{a} \vec{v} + \frac{1}{a} (\vec{v} \cdot \Grad) \vec{v}
+	&= - \frac{\Grad \Phi}{a} - \frac{c_s^2}{a} \frac{\Grad \delta}{1 + \delta} - \frac{2T}{3a} \Grad S
+\end{align*}
+For small density perturbations $\delta$ and small peculiar velocities $\vec{v}$, we can drop terms that are quadratic in these variables, such as $(\vec{v} \cdot \Grad) \vec{v}$. We get the linearized fluid equations:
+\begin{align*}
+	\pdv{\delta}{t} + \frac{1}{a} \Div \vec{v} &= 0\\
+	\pdv{\vec{v}}{t} + \frac{\dot{a}}{a} \vec{v} &= - \frac{\Grad \Phi}{a} - \frac{c_s^2}{a} \Grad \delta - \frac{2 \bar{T}}{3a} \Grad S
+\end{align*}
+We can combine them to get a single equation. First, take the derivative of the continuity equation. Then, use the Euler equation and the Poisson equation to get the following:
+\begin{align*}
+	\pdv[2]{\delta}{t} + 2 \frac{\dot{a}}{a} \pdv{\delta}{t} &= 4 \pi G \bar{\rho} \delta + \frac{c_s^2}{a^2} \Lap \delta + \frac{2}{3} \frac{\bar{T}}{a^2} \Lap S
+\end{align*}
+This is a second order differential equation. We take the Fourier transform:
+\begin{align*}
+	\delta(\vec{x},t) &= \sum_{\vec{k}} \delta_{\vec{k}} \exp(i \vec{k} \cdot \vec{x})\\
+	\delta_{\vec{k}}(t) &= \frac{1}{V} \int \delta(\vec{x},t) \exp(-i \vec{k} \cdot \vec{x}) \dd{^3x},
+\end{align*}
+where $V$ is the volume of a sufficiently large box. The fluid equation then becomes\sidenote{$\Grad \to i\vec{k}$ and $\Lap \to -k^2$}
+\begin{align*}
+	\dv[2]{\delta_{\vec{k}}}{t} + 2 \frac{\dot{a}}{a} \dv{\delta_{\vec{k}}}{t}
+	&= \left[4 \pi G \bar{\rho} - \frac{k^2 c_s^2}{a^2}\right] \delta_{\vec{k}} - \frac{2}{3} k^2 \frac{\bar{T}}{a^2} S_{\vec{k}}
+\end{align*}
+The Poisson equation in Fourier space is
+\begin{align*}
+	- k^2 \Phi_{\vec{k}} &= 4 \pi G \bar{\rho} a^2 \delta_{\vec{k}}
+\end{align*}
+The fluid equation can now be solved for every $\vec{k}$-mode independently.
+
+
+We need initial conditions to solve the fluid equation. There are two pressure terms, $\delta_{\vec{k}}$ and $S_{\vec{k}}$. We distinguish two types of initial conditions:
+\begin{itemize}
+	\item $\delta \neq 0$, $\delta S = 0$: isentropic or adiabatic or curvature perturbations
+	\item $\delta = 0$, $\delta S \neq 0$: isocurvature perturbations
+\end{itemize}
+Adiabatic perturbations are naturally generated by inflation, so we only consider those and set $\delta S = 0$.
+
+The fluid equation can now be simplified further:
+\begin{align*}
+	\dv[2]{\delta_{\vec{k}}}{t} + 2 \frac{\dot{a}}{a} \dv{\delta_{\vec{k}}}{t}
+	&= \left[4 \pi G \bar{\rho} - \frac{k^2 c_s^2}{a^2}\right] \delta_{\vec{k}}
+\end{align*}
+Consider the case where the expansion of the fluid can be ignored, so $a$ is a constant. Then $\dot{a} = 0$, so a further term drops out:
+\begin{align*}
+	\dv[2]{\delta_{\vec{k}}}{t}
+	&= \left[4 \pi G \bar{\rho} - \frac{k^2 c_s^2}{a^2}\right] \delta_{\vec{k}}\\
+	&= - \omega^2 \delta_{\vec{k}}
+\end{align*}
+This is simply the equation of motion of a harmonic oscillator. We can rewrite
+\begin{align*}
+	\omega^2
+	&= \left( \frac{c_s}{a} \right)^2 [k^2 - k_J^2]
+\end{align*}
+where $k_J$ is the \textsc{Jeans} wavenumber
+\begin{align*}
+	k_J = \frac{a}{c_s} \sqrt{4 \pi G \bar{\rho}}.
+\end{align*}
+One can also define the Jeans wavelength
+\begin{align*}
+	\lambda_J = \frac{2 \pi a}{k_J},
+\end{align*}
+and the Jeans mass
+\begin{align*}
+	M_J = \frac{\pi}{6} \bar{\rho} \lambda_J^3,
+\end{align*}
+which is the mass of a sphere with a radius of $\lambda_J/2$ and density $\bar{\rho}$.
+
+We first consider the case where $k > k_J$, or equivalently $\lambda < \lambda_J$, or $M < M_J$. Then $\omega^2 > 0$, and the equation of motion gives us an oscillatory solution:
+\begin{align*}
+	\delta_{\vec{k}} \propto \exp(\pm i \omega t)
+	\qquad \omega \in \R
+\end{align*}
+This means that density perturbations don't grow, but just oscillate.
+
+When $k < k_J$, the solution is
+\begin{align*}
+	\delta_{\vec{k}} \propto \exp(\pm \alpha t) \qquad \alpha \in \R,
+\end{align*}
+which indicates exponentially decaying or growing modes. The growing modes lead to the growth of structure, which is called gravitational or Jeans instability. Once the perturbations become large, our assumptions are not valid any more, and we have to switch to non-linear perturbation theory.
+
+%In other words, either attractive gravity or repulsive pressure win in the above scenarios.
+
+\subsection*{Jeans mass}
+The Jeans mass is
+\begin{align*}
+	M_J
+	&= \frac{\pi}{6} \bar{\rho} \lambda_J^3\\
+	&= \frac{\pi^{5/2}}{6} \frac{c_s^3}{G^{3/2} \bar{\rho}^{1/2}}
+\end{align*}
+Before recombination, photons and baryons are tightly coupled, and they act as a single fluid. We get $M_J \approx \num{e16} (\Omega_{b,0}h^2)^{-2} M_\sol$, which means that no baryonic perturbations smaller than a supercluster can grow before recombination.
+
+After recombination, the baryons and the photons are decoupled. They have much smaller pressure, and $M_J \approx \num{e5} (\Omega_{b,0}h^2)^{-1/2} M_\sol$. Perturbations with masses larger than a globular cluster can grow.
+
+We also have to take into account the expansion of the universe, which we neglected up to now. Furthermore, these results do not consider dark matter, but only baryons.
+
+
+\section{Collisionless gas}
+We now consider a colisionless gas, such as dark matter. In this case, there is no reason to impose thermodynamic equilibrium, not even locally. As a result, we cannot describe the gas with the thermodynamic variables we used before, since they are only defined in (at least local) thermodynamic equilibrium. We thus need to take one step back and consider distribution functions $f(\vec{x}, \vec{p}, t)$, whose dynamics are given by the collisionless Boltzmann equation,
+\begin{align*}
+	\dv{f}{t}
+	&= \pdv{f}{t} + \pdv{f}{p^i} \pdv{p^i}{t} + \pdv{f}{x^i} \pdv{x^i}{t}\\
+	&= 0.
+\end{align*}
+As before, we can take the moments of the distribution functions:
+\begin{align*}
+	\langle Q \rangle = \frac{1}{n} \int \dd{^3p} Q f(\vec{x}, \vec{p}, t)
+\end{align*}
+with the comoving number density $n(\vec{x}, t) = \int \dd{^3p} f(\vec{x}, \vec{p}, t)$. Some moments are:
+\begin{itemize}
+	\item The density $\rho(\vec{x}, t)$ can be obtained with $Q = m$.
+	\item The bulk velocity $\langle v_i \rangle$ can be obtained with $Q = v_i = p_i/(m n)$
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
