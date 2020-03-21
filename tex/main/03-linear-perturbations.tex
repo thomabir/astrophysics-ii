@@ -33,6 +33,8 @@ We define the \emph{convective derivative}
 \end{align*}
 which is the time derivative as one moves along fluid elements.
 
+\subsection*{Assumptions}
+
 Let's consider the case where the fluid is expanding. In order to describe this, we can write the position vector as $\vec{r} = a(t) \vec{x}$, where $\vec{x}$ is a comoving coordinate. In the Newtonian treatment, we assume that the scale factor is a known input for the calculation. Then the (total) velocity is
 \begin{align*}
 	\vec{u} = \dot{a}(t) \vec{x} + \vec{v},
@@ -60,10 +62,10 @@ where
 \end{align*}
 and $\Grad = \Grad_{\vec{x}}$.
 
-We have three equations in four unknowns, so we still need the equation of state, which relates pressure to other variables:
-\begin{align*}
-	p = p(\rho, S)
-\end{align*}
+\subsection*{Thermodynamics}
+
+We have three equations in four unknowns, so we still need the equation of state, which relates pressure to other variables, such as density and entropy. 
+
 The first law of thermodynamics states that internal energy can either be added by the means of heat or work:
 \begin{align*}
 	\dd{U} = \dd{Q} + \dd{W}
@@ -85,7 +87,7 @@ Then
 	\frac{\Grad p}{\bar{\rho}}
 	&= \frac{1}{\bar{\rho}}
 	\left[ 
-		\left( \pdv{P}{\rho} \right)_S \Grad \rho
+		\left( \pdv{p}{\rho} \right)_S \Grad \rho
 		+ 
 		\left( \pdv{p}{S} \right)_\rho \Grad S
 	\right]
@@ -104,6 +106,9 @@ The Euler equation can then be rewritten as
 	\pdv{\vec{v}}{t} + \frac{\dot{a}}{a} \vec{v} + \frac{1}{a} (\vec{v} \cdot \Grad) \vec{v}
 	&= - \frac{\Grad \Phi}{a} - \frac{c_s^2}{a} \frac{\Grad \delta}{1 + \delta} - \frac{2T}{3a} \Grad S
 \end{align*}
+
+\subsection*{Solving the fluid equation}
+
 For small density perturbations $\delta$ and small peculiar velocities $\vec{v}$, we can drop terms that are quadratic in these variables, such as $(\vec{v} \cdot \Grad) \vec{v}$. We get the linearized fluid equations:
 \begin{align*}
 	\pdv{\delta}{t} + \frac{1}{a} \Div \vec{v} &= 0\\
@@ -166,6 +171,8 @@ and the Jeans mass
 	M_J = \frac{\pi}{6} \bar{\rho} \lambda_J^3,
 \end{align*}
 which is the mass of a sphere with a radius of $\lambda_J/2$ and density $\bar{\rho}$.
+
+\subsection*{Solutions}
 
 We first consider the case where $k > k_J$, or equivalently $\lambda < \lambda_J$, or $M < M_J$. Then $\omega^2 > 0$, and the equation of motion gives us an oscillatory solution:
 \begin{align*}
