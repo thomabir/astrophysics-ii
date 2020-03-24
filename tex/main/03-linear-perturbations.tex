@@ -204,7 +204,7 @@ We also have to take into account the expansion of the universe, which we neglec
 
 
 \section{Collisionless gas}
-We now consider a colisionless gas, such as dark matter. In this case, there is no reason to impose thermodynamic equilibrium, not even locally. As a result, we cannot describe the gas with the thermodynamic variables we used before, since they are only defined in (at least local) thermodynamic equilibrium. We thus need to take one step back and consider distribution functions $f(\vec{x}, \vec{p}, t)$, whose dynamics are given by the collisionless Boltzmann equation,
+We now consider a collisionless gas, such as dark matter. In this case, there is no reason to impose thermodynamic equilibrium, not even locally. As a result, we cannot describe the gas with the thermodynamic variables we used before, since they are only defined in (at least local) thermodynamic equilibrium. We thus need to take one step back and consider distribution functions $f(\vec{x}, \vec{p}, t)$, whose dynamics are given by the collisionless Boltzmann equation,
 \begin{align*}
 	\dv{f}{t}
 	&= \pdv{f}{t} + \pdv{f}{p^i} \pdv{p^i}{t} + \pdv{f}{x^i} \pdv{x^i}{t}\\
@@ -216,9 +216,93 @@ As before, we can take the moments of the distribution functions:
 \end{align*}
 with the comoving number density $n(\vec{x}, t) = \int \dd{^3p} f(\vec{x}, \vec{p}, t)$. Some moments are:
 \begin{itemize}
-	\item The density $\rho(\vec{x}, t)$ can be obtained with $Q = m$.
+	\item The density $\rho(\vec{x}, t)$ can be obtained with $Q = m$, where $m$ is the mass of a particle.
 	\item The bulk velocity $\langle v_i \rangle$ can be obtained with $Q = v_i = p_i/(m n)$
 \end{itemize}
+
+We take moments of the Boltzmann equation. One can show that one gets the same equations as the fluid equations: the continuity equation and the Euler equation, with the pressure gradient term replaced as follows:
+\begin{align*}
+	\frac{\Grad_i p}{\rho}
+	\to \sum_{j=1}^3 \pdv{}{x_j}
+	\left[ (1+\delta) \sigma_{ij}^2 \right]
+\end{align*}
+where
+\begin{align*}
+	\sigma_{ij} = \avg{v_i v_j} - \avg{v_i} \avg{v_j}
+\end{align*}
+The stress tensor is defined as $\rho \sigma_{ij}^2$.
+
+If the stress tensor is small, we get the fluid equations with $\Grad p = 0$ and $c_s^2=0$, so a pressureless fluid.
+
+On small scales, the stress tensor can be important. The large random velocities of the particles can make these particles diffuse and dampen the perturbations. This phenomenon is called \emph{free streaming}. This is not important for cold dark matter, but it is important for hot dark matter.
+
+
+
+
+\section{Solutions}
+
+\subsection{Collisionless gas}
+We assume adiabatic perturbations, neglect free streaming, and only consider cold dark matter. In the ideal fluid equations, we can set $p=0$ and $c_s^2 = 0$. We get
+\begin{align*}
+	\dv[2]{\delta_{\vec{k}}}{t}
+	+ 2 \frac{\dot{a}}{a} \dv{\delta_{\vec{k}}}{t}
+	&= 4 \pi \bar{\rho}_m \delta_{\vec{k}}
+\end{align*}
+We consider solutions for an expanding universe and find the following solutions (homework):
+\begin{itemize}
+	\item The solution $\delta_- \propto H(t)$ is decaying, since $H$ becomes smaller over time.
+	\item The growing solution is
+	\begin{align*}
+		\delta_+ \propto H(t) \int_0^t \frac{\dd{t'}}{a(t)^2 H(t')},
+	\end{align*}
+	which is a result of gravitational instability. This is similar to what we found before, but this time we did not neglect expansion. We define $D(z) \propto \delta_+$ the linear growth factor.
+\end{itemize}
+
+Examples
+\begin{itemize}
+	\item Matter dominated case ($\Omega_0 = \Omega_{m,0} = 1$): $a \propto t^{2/3}$ and $H \propto t^{-1}$. This yields
+	\begin{align*}
+		D \propto t^{2/3} \propto a
+	\end{align*}
+	\item OCDM ($\Omega_{m,0} < 1$, $\Omega_{\Lambda,0} = 0$) and ΛCDM ($\Omega_{m,0} + \Omega_{\Lambda,0} = 1$): We get an analytical solution where $D$ grows slower than $a$. The faster expansion from ΛCDM slows down the growth of structure.
+
+	TODO Diagram
+
+	On the left is the OCDM case, on the right the ΛCDM case.
+	\item In the general case, there is no analytical solution. The growth factor usually grows slower than the exponential growth we found in the non-expanding gravitational instability case. In other words, the universe expansion slows down with the growth of structure.
+\end{itemize}
+
+Let's look at how the gravitational potential grows, because we will need that result later. The Poisson equation in Fourier space is
+\begin{align*}
+	- k^2 \Phi_{\vec{k}} = 4 \pi G \bar{\rho} \delta_{\vec{k}},
+\end{align*}
+which can be rearranged to
+\begin{align*}
+	\Phi_{\vec{k}}
+	&\propto a^2 \bar{\rho}_m \delta_{\vec{k}}\\
+	&\propto a^2 a^{-3} D(a) \\
+	&\propto \frac{D(a)}{a}
+\end{align*}
+This means that $\Phi_{\vec{k}}$ is constant in the matter dominated case, and $\Phi_{\vec{k}}$ decays in the OCDM and ΛCDM cases at late times.
+
+
+\subsection{Two non-relativistic components}
+We consider collisionless dark matter and collisionfull baryons. We assume that the pressureless dark matter dominates the matter density, so $\rho_\text{tot} \approx \rho_\text{dm}$.
+
+There are now two differential equations:
+\begin{align*}
+	\dv[2]{\delta_{\text{dm}, \vec{k}}}{t}
+	+ 2 \frac{\dot{a}}{a} \dv{\delta_{\text{dm}, \vec{k}}}{t}
+	&= 4 \pi G \bar{\rho}_m \delta_{\text{dm}, \vec{k}}\\
+	\dv[2]{\delta_{\text{b}, \vec{k}}}{t}
+	+ 2 \frac{\dot{a}}{a} \dv{\delta_{\text{b}, \vec{k}}}{t}
+	+ \frac{k^2 c_s^2}{a^2} \delta_{\text{b},\vec{k}}
+	&= 4 \pi G \bar{\rho}_m \delta_{\text{dm}, \vec{k}}
+\end{align*}
+The first equation is the same as in the previous section, because the low-density baryons don't influence the dark matter much. To get analytical solutions, we assume that we are in the matter dominated case, and that $c_s^2 a$ is constant. The latter is equivalent to the condition that the baryons are a specific kind of polytropic fluid, which obeys $p \propto \rho^{4/3}$.
+
+
+
 
 
 
