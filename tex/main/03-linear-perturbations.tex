@@ -299,21 +299,123 @@ There are now two differential equations:
 	+ \frac{k^2 c_s^2}{a^2} \delta_{\text{b},\vec{k}}
 	&= 4 \pi G \bar{\rho}_m \delta_{\text{dm}, \vec{k}}
 \end{align*}
-The first equation is the same as in the previous section, because the low-density baryons don't influence the dark matter much. To get analytical solutions, we assume that we are in the matter dominated case, and that $c_s^2 a$ is constant. The latter is equivalent to the condition that the baryons are a specific kind of polytropic fluid, which obeys $p \propto \rho^{4/3}$.
+The first equation is the same as in the previous section, because the low-density baryons don't influence the dark matter much. To get analytical solutions, we assume that we are in the matter dominated case, and that $c_s^2 a$ is constant.\sidenote{The latter is equivalent to the condition that the baryons are a specific kind of polytropic fluid, which obeys $p \propto \rho^{4/3}$. For different polytropic indices $\gamma \neq 4/3$, the behaviour is similar, but the equations have to be solved numerically.}
+
+Since the dark matter equation is the same, it has the same solution, with a growing mode $D(t) \propto a$ in a matter dominated universe.
+
+For the baryons
+\begin{align*}
+	\delta_{\text{b},\vec{k}}(t)
+	&= \frac{\delta_{\text{dm},\vec{k}}(t)}{1 + (k/k_J)^2},
+\end{align*}
+where $k_J = a/c_s \sqrt{4 \pi G \bar{\rho}}$ is the Jeans wavenumber. From this equation, we see that the baryon perturbations are equal to the dark matter perturbations for small $k$. For large $k$, pressure becomes more important, and the baryon perturbations will be smaller.\sidenote{Keep in mind that large $k$ means small length scales, and vice versa. When particles are close together, pressure becomes important.}
+
+\paragraph*{Acoustic oscillations}
+We have just seen that baryon behaviour becomes a lot more interesting at smaller length scales, where pressure is higher. This leads to oscillations and damping of the amplitude of the perturbations. One can show that the baryon density of a given mode $\vec{k}$ oscillates like
+\begin{align*}
+	\delta_{\text{b},\vec{k}} \propto \exp(\frac{i k c_s t}{a}) + \text{constant},
+\end{align*}
+which corresponds to sound waves, which is why they are called \emph{acoustic oscillations}.
+
+
+\paragraph*{Collisional damping}
+Before recombination on small scales, the perturbations are damped by imperfect coupling between baryons and photons. This leads to diffusion of the photons, which suppresses perturbations on small scales. The effect is called \emph{collisional damping} or \emph{Silk}\sidenote{After Joseph Silk, who first discussed photon diffusion in a paper in 1968.} \emph{damping}.
 
 
 
+\section{Relativistic perturbations}
+For a full treatment of cosmological perturbations, we need a relativistic treatment. We will only give a sketch of the formalism here.
+
+The Einstein equations give the time evolution of space-time. The perturbed version of these equations is
+\begin{align*}
+	\bar{G}_{\mu\nu} + \delta G_{\mu\nu} = 8 \pi G (\bar{T}_{\mu\nu} + \delta T_{\mu\nu}),
+\end{align*}
+where the variables with a bar are the background solutions from the FRW metric, and the $\delta$-terms are sufficiently small perturbations, so that we can treat them with linear perturbation theory.
+
+In order to calculate $G$, we need a metric, which we assume to be of the form
+\begin{align*}
+	g_{\mu \nu} = \bar{g}_{\mu\nu} + h_{\mu\nu},
+\end{align*}
+where $\bar{g}$ is the FRW metric, and $h$ is a again a small perturbation.
+The perturbation $h$ can again be decomposed, according to the behaviour of their components under coordinate changes.
+\begin{itemize}
+	\item Tensor perturbations correspond to gravitational waves, which are important for the polarization of the CMB. However, they are too small to have been detected directly from the CMB.
+	\item Vector perturbations are vorticity modes, which decay. They are thus not very important in cosmology.
+	\item Scalar perturbations can be thought of perturbations in the gravitational potential. They play a central role in structure formation, so we will focus solely on them.
+\end{itemize}
+
+The stress energy tensor can be related to the distribution function of different components $i$ of the universe,
+\begin{align*}
+	T_{\mu\nu} &= \sum_{i} T^{i}_{\mu\nu}\\
+	T^{i}_{\mu\nu} &= \int \frac{\dd{^3p}}{(2\pi)^3 E} p_\mu p_\nu f^i(\vec{x},\vec{p},t),
+\end{align*}
+where $f$ can be found from the Boltzmann equation. The distribution function can also be spilt into a background and a small perturbation:
+\begin{align*}
+	f^i = \bar{f}^i + \delta f^i.
+\end{align*}
+These species $i$ are dark matter, baryons, photons, neutrinos, and potentials of the metric perturbations. We only consider scalar perturbations. All these species interact with each other:
+\begin{itemize}
+	\item All species interact with the metric.
+	\item Photons and electrons interact through Compton scattering.
+	\item Electrons and protons interact through Coulomb scattering.
+\end{itemize}
+Other forces, such as the weak interaction, are neglected, since they are too rare or weak.
+
+The resulting set of linear differential equations are called the \emph{linearised Einstein-Boltzmann equations}. They have no analytical solution in general, but there are analytical solutions in asymptotic limits.
+
+\subsection*{Solutions in asymptotic limits}
+For each $\vec{k}$ mode, the equations can be solved separately. There are several important scales:
+\begin{itemize}
+	\item $k^{-1}$ is the comoving wavelength scale of the $\vec{k}$-mode
+	\item $\chi_h$ is the comoving horizon
+	\item $a_\text{eq}$ is the scale factor at matter-radiation equality, or $a_{\text{eq2}}$ at matter-dark energy equality
+	\item $\chi_h(a_\text{eq})$ is the size of the horizon at matter-radiation equality
+\end{itemize}
+
+TODO Diagram
+
+Time is represented by $a$ on the horizontal axis, with early times on the left and today on the right. The cosmological eras are separated by green lines. The comoving wavelength $k^{-1}$ is shown on the vertical axis. The horizon scale $\chi$ (blue) determines whether the scale of a mode is inside (sub-horizon) or outside the horizon (superhorizon). As time increases, larger modes enter the horizon. At late time, small modes become non-linear.
+
+The solution of the Einstein-Boltzmann equations is the potential $\Phi$. We consider the evolution of a very large and a very small mode:
+\begin{itemize}
+	\item Large modes ($k \ll k_\text{eq}$) are constant in the radiation era. When entering the matter era, they lose about \SI{10}{\percent} of their amplitude, but then remain constant.
+	\item Small modes ($k\gg k_\text{eq}$) decay in the radiation era, but remain constant in the matter era. In the dark energy era, they evolve as $D(a)/a$, which we have already seen in the Newtonian treatment.
+\end{itemize}
+In summary, small modes are suppressed, while large modes stay mostly constant.
 
 
 
+\section{Transfer function}
+We can describe the transition from early times to the matter dominated era by a \emph{transfer function}. We write the potential at late times ($a \gg a_\text{eq}$) as
+\begin{align*}
+	\Phi_k(t) = \frac{9}{10} \Phi_{p, k} T(k) \frac{D(a)}{a}
+\end{align*}
+\begin{itemize}
+	\item $\Phi_{p, k}$ is the primordial potential, which is the potential at initial conditions.
+	\item $T(k)$ is the transfer functions, which obeys $T \to 1$ as $k \to 0$
+	\item $D(a)$ is the growth factor, normalized such that $D(a) = a$ in the matter era.\sidenote{We have derived $D(a) \propto a$ before, so we can do this.}
+	\item The $9/10$ factor is the large scale suppression which we have seen in the previous diagram.
+\end{itemize}
+The solution for different cases is shown in TODO diagram
+
+At small $k$, $T = 1$ as required.
+\begin{itemize}
+	\item In the CDM model, $T(k)$ is suppressed at $k \gg k_\text{eq}$, as we have seen before. We find $T(k) \propto (k/k_\text{eq})^2 \ln(k/k_\text{eq})$.
+	\item In the HDM model\sidenote{For example, dark matter which is made up of neutrinos}, the perturbations are damped strongly due to free streaming when $k > k_\nu$.
+	\item In the baryon model, dark matter is made up of baryons, which is ruled out for different reasons, but we can still look at the solution. Here, two processes act in addition to $k_\text{eq}^{-1}$ suppression:
+	\begin{itemize}
+		\item Jeans instability for $k > k_J$ inhabits growth, and instead leads to oscillations. We have seen these as oscillations in time at constant $k$ before, while here they are shown as oscillations in $k$ at constant time.
+		\item Silk damping.
+	\end{itemize}
+	As a result, $T(k)$ is suppressed and oscillates on small scales.
+	\item In a mixed model\sidenote{\SI{70}{\percent} CDM and \SI{30}{\percent} HDM}, nothing very interesting happens.
+	\item In CDM + baryons (blue line), small oscillations occur around the CDM curve.
+\end{itemize}
 
 
 
-
-
-
-
-
+\section{Primordial perturbations}
+Inflation also gives a mechanism to generate primordial perturbations.
 
 
 
