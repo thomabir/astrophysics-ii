@@ -258,19 +258,24 @@ We consider solutions for an expanding universe and find the following solutions
 	which is a result of gravitational instability. This is similar to what we found before, but this time we did not neglect expansion. We define $D(z) \propto \delta_+$ the linear growth factor.
 \end{itemize}
 
-Examples
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/collisionless-gas.png}
+	\caption{Collisionless gas}
+	\label{fig:collisionless-gas}
+\end{figure}
+
+Examples are shown in \cref{fig:collisionless-gas}.
 \begin{itemize}
 	\item Matter dominated case ($\Omega_0 = \Omega_{m,0} = 1$): $a \propto t^{2/3}$ and $H \propto t^{-1}$. This yields
 	\begin{align*}
 		D \propto t^{2/3} \propto a
 	\end{align*}
 	\item OCDM ($\Omega_{m,0} < 1$, $\Omega_{\Lambda,0} = 0$) and ΛCDM ($\Omega_{m,0} + \Omega_{\Lambda,0} = 1$): We get an analytical solution where $D$ grows slower than $a$. The faster expansion from ΛCDM slows down the growth of structure.
-
-	TODO Diagram
-
-	On the left is the OCDM case, on the right the ΛCDM case.
 	\item In the general case, there is no analytical solution. The growth factor usually grows slower than the exponential growth we found in the non-expanding gravitational instability case. In other words, the universe expansion slows down with the growth of structure.
 \end{itemize}
+
+
 
 Let's look at how the gravitational potential grows, because we will need that result later. The Poisson equation in Fourier space is
 \begin{align*}
@@ -372,11 +377,14 @@ For each $\vec{k}$ mode, the equations can be solved separately. There are sever
 	\item $\chi_h(a_\text{eq})$ is the size of the horizon at matter-radiation equality
 \end{itemize}
 
-TODO Diagram
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/asymptotic-behaviour.png}
+	\caption{Solutions in asymptotic limits. Time is represented by $a$ on the horizontal axis, with early times on the left and today on the right. The cosmological eras are separated by green lines. The comoving wavelength $k^{-1}$ is shown on the vertical axis. The horizon scale $\chi$ (blue) determines whether the scale of a mode is inside (sub-horizon) or outside the horizon (superhorizon). As time increases, larger modes enter the horizon. At late time, small modes become non-linear.}
+	\label{fig:asymptotic-behaviour}
+\end{figure}
 
-Time is represented by $a$ on the horizontal axis, with early times on the left and today on the right. The cosmological eras are separated by green lines. The comoving wavelength $k^{-1}$ is shown on the vertical axis. The horizon scale $\chi$ (blue) determines whether the scale of a mode is inside (sub-horizon) or outside the horizon (superhorizon). As time increases, larger modes enter the horizon. At late time, small modes become non-linear.
-
-The solution of the Einstein-Boltzmann equations is the potential $\Phi$. We consider the evolution of a very large and a very small mode:
+The solution of the Einstein-Boltzmann equations is the potential $\Phi$, shown in \cref{fig:asymptotic-behaviour}. We consider the evolution of a very large and a very small mode:
 \begin{itemize}
 	\item Large modes ($k \ll k_\text{eq}$) are constant in the radiation era. When entering the matter era, they lose about \SI{10}{\percent} of their amplitude, but then remain constant.
 	\item Small modes ($k\gg k_\text{eq}$) decay in the radiation era, but remain constant in the matter era. In the dark energy era, they evolve as $D(a)/a$, which we have already seen in the Newtonian treatment.
@@ -396,7 +404,13 @@ We can describe the transition from early times to the matter dominated era by a
 	\item $D(a)$ is the growth factor, normalized such that $D(a) = a$ in the matter era.\sidenote{We have derived $D(a) \propto a$ before, so we can do this.}
 	\item The $9/10$ factor is the large scale suppression which we have seen in the previous diagram.
 \end{itemize}
-The solution for different cases is shown in TODO diagram
+The solution for different cases is shown in \cref{fig:transfer-function}.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/transfer-function.png}
+	\caption{The transfer function for adiabatic perturbations. Results are shown for a purely baryonic model, for a cold dark matter model, a hot dark matter model, and a mixed dark matter model. The dotted parts indicate negative values.}
+	\label{fig:transfer-function}
+\end{figure}
 
 At small $k$, $T = 1$ as required.
 \begin{itemize}
