@@ -429,11 +429,117 @@ At small $k$, $T = 1$ as required.
 
 
 \section{Primordial perturbations}
-Inflation also gives a mechanism to generate primordial perturbations.
+Inflation also gives a mechanism to generate primordial perturbations. Remember that we proposed an inflaton field $\phi$, which is in a false vacuum configuration at the beginning, leading to vacuum energy. This drives an accelerated expansion. We required that the scale factor grew by $a_e/a_i > e^{60}$ during inflation, so small features are blown up to macroscopic features.
+
+Quantum mechanical fluctuations in the perturbation fields are converted to classical large scale perturbations by inflation. These act as the initial perturbations for formations of structure.
+
+The quantum harmonic oscillator is described by the Hamiltonian
+\begin{align*}
+	H = \frac{p^2}{2m} + \frac{1}{2} m \omega^2 x^2,
+\end{align*}
+which gives rise to equally spaced energy levels
+\begin{align*}
+	E_n = \frac{\hbar}{m \omega}
+	\left( m + \frac{1}{2} \right),
+\end{align*}
+for $n \in \set{0, 1, 2, \dots}$. We consider a state $\ket{n}$ with expected position
+\begin{align*}
+	\expval{x^2} = \expval{x^2}{n}
+	= \frac{\hbar}{m\omega}
+	\left( n + \frac{1}{2} \right),
+\end{align*}
+so fluctuations even exist in the ground state $n=0$. For inflation, each $\vec{k}$-mode $\Phi_{\text{p},\vec{k}}$ acts like a quantum harmonic oscillator. This yields predictions for quantum fluctuations, which we will calculate now.
+
+Let $P(k) \propto \expval{\abs{\Phi_k}^2}$ be the power spectrum of the primordial potential. One can show that
+\begin{align*}
+	P(k) \propto k^{n-4},
+\end{align*}
+where $n$ is arbitrarily close to $1$, and depends on the slow roll parameters $\dv*{V}{\phi}$ and $\dv*[2]{V}{\phi}$. The case $n=1$ is called \emph{scale invariant} or \emph{Harison-Zel'dovich}.
+
+Inflation generically predicts the following:
+\begin{itemize}
+	\item The perturbations are adiabatic, also called curvature or density perturbations.
+	\item The perturbations are Gaussian, which will be discussed in the next section
+\end{itemize}
 
 
 
 
+\section{Cosmological field statistics}
+We consider a perturbation field, such as the density contrast $\delta(\vec{x},t)$. There are some statistical quantities.
+
+The Fourier transform is
+\begin{align*}
+	\delta(\vec{x},t)
+	&= \sum_{\vec{k}} \delta_{\vec{k}} \exp(i \vec{k} \cdot \vec{x})\\
+	\delta_{\vec{k}}(t) &= \frac{1}{V} \int \delta(\vec{x},t) \exp(- i \vec{k} \cdot \vec{x})
+\end{align*}
+
+The power spectrum is defined as
+\begin{align*}
+	p(k) = V_n \avg{\abs{\delta_{\vec{k}}(t)}^2}
+\end{align*}
+
+The variance is
+\begin{align*}
+	\avg{\delta^2}
+	&= \sigma_\delta^2\\
+	&= \frac{1}{(2\pi)^3} \int P(k) \dd{^3 k}\\
+	&= \frac{1}{(2\pi)^2} \int P(k) k^2 \dd{k}\\
+	&= \frac{1}{(2\pi)^2} \int P(k) k^3 \dd{\ln(k)}.
+\end{align*}
+We define $\Delta^2(k) = \frac{1}{(2\pi)^2} k^3 P(k)$, which is the contribution to the variance per $\ln k$ interval.
+
+The field can be smoothed by a kernel $W(r)$, such as a top hat sphere:
+\begin{align*}
+	W_R(r) = 
+	\begin{cases}
+	\frac{3}{4\pi R^3} & \text{if} r \leq R\\
+	0 & \text{otherwise}
+	\end{cases}
+\end{align*}
+The smoothed field is then
+\begin{align*}
+	\delta_s(\vec{x},t)
+	&= \int \dd{^3 x'} \delta(\vec{x}',t) W(\abs{\vec{x}-\vec{x}'}).
+\end{align*}
+The variance of the smoothed field is
+\begin{align*}
+	\avg{\delta_s^2} = \sigma_{\delta_s}^2
+	&= \frac{1}{(2\pi)^2} \int P(k) \tilde{W}(k) k^2 \dd{k},
+\end{align*}
+where $\tilde{W}(k)$ is the Fourier transform of $W(r)$. For the top hat kernel,
+\begin{align*}
+	\tilde{W}_R(k)
+	&= \frac{3}{k R^2} [\sin(kR) - kR \cos(kR)],
+\end{align*}
+so $\sigma_R^2 = \sigma_{\delta_s}^2$ is the variance of $\delta$, averaged over spheres of radius $R$.
+
+A related quantity is the two-point correlation function
+\begin{align*}
+	\xi(x)
+	&= \avg{\delta(\vec{x}_1) \delta(\vec{x}_2)},
+\end{align*}
+where $x = \abs{\vec{x}_1 - \vec{x}_2}$. We see that $\xi(0) = \avg{\delta^2}$. One can show that
+\begin{align*}
+	\xi(x) &= \frac{1}{(2\pi)^3} \int P(k) \exp(i \vec{k} \cdot \vec{x}) \dd{^3 k}\\
+	P(k) &= \int \xi(\abs{x}) \exp(- i \vec{k} \cdot \vec{x}) \dd{x}.
+\end{align*}
+TODO missing.
+
+In general, one can characterize the statistics of the field using a series of $n$-point correlation functions
+\begin{align*}
+	\avg{\delta(\vec{x}_1) \cdots \delta(\vec{x}_n)},
+\end{align*}
+as long as the field is statistically homogeneous and isotropic.
+
+Gaussian fields have the property that
+\begin{align*}
+	\Prob(\delta(\vec{x}_1) \cdots \delta(\vec{x}_n))
+\end{align*}
+is proportional to a multivariate Gaussian function. Then, one can show that the full statistical properties of a Gaussian field is given by the two-point correlation functions. Higher order correlation functions can be expressed in terms of the two-point functions.
+
+In the standard model of cosmology, we assume that the perturbation fields are initially Gaussian. Later, the perturbations on small scales become non-linear and non-Gaussian. Thus, the power spectrum of the perturbation field is all we need to know initially.
 
 
 
