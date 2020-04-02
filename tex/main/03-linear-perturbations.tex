@@ -396,7 +396,7 @@ In summary, small modes are suppressed, while large modes stay mostly constant.
 \section{Transfer function}
 We can describe the transition from early times to the matter dominated era by a \emph{transfer function}. We write the potential at late times ($a \gg a_\text{eq}$) as
 \begin{align*}
-	\Phi_k(t) = \frac{9}{10} \Phi_{p, k} T(k) \frac{D(a)}{a}
+	\Phi_k(a) = \frac{9}{10} \Phi_{p, k} T(k) \frac{D(a)}{a}
 \end{align*}
 \begin{itemize}
 	\item $\Phi_{p, k}$ is the primordial potential, which is the potential at initial conditions.
@@ -404,6 +404,7 @@ We can describe the transition from early times to the matter dominated era by a
 	\item $D(a)$ is the growth factor, normalized such that $D(a) = a$ in the matter era.\sidenote{We have derived $D(a) \propto a$ before, so we can do this.}
 	\item The $9/10$ factor is the large scale suppression which we have seen in the previous diagram.
 \end{itemize}
+The transfer function describes how much of the primordial potential is still left at a time corresponding to scale factor $a$.
 The solution for different cases is shown in \cref{fig:transfer-function}.
 \begin{figure}
 	\centering
@@ -559,6 +560,94 @@ where $\widetilde{W}_R$ is the Fourier transform of $W_R$, which is
 The probability distribution can be fully recovered if all of its statistical moments are known, as long as the distribution is homogeneous and isotropic. \emph{Gaussian fields}, where $\Prob(\delta(\vec{x}_1) \cdots \delta(\vec{x}_n))$ is proportional to a multivariate Gaussian function, can still be fully recovered if only the two-point correlation function is known. Consequently, higher order moments can be expressed in terms of the two-point correlation function.
 
 In the standard model of cosmology, we assume that the perturbation fields are initially Gaussian, but they can evolve to non-Gaussian fields later. Then, the initial power spectrum of the perturbation field is all we need to know to fully characterize the field.
+
+
+
+
+\section{Matter power spectrum}
+We can now combine the results of the previous three sections.
+The Poisson equation is
+\begin{align*}
+	- k^2 \Phi_{\vec{k}}(a)
+	&= 4 \pi G \bar{\rho}_\text{m} a^2 \delta_{\vec{k}}(a),
+\end{align*}
+which can be rearranged and combined with the definition of the transfer function to
+\begin{align*}
+	\delta_{\vec{k}}(a)
+	&= \frac{2}{5} \frac{k^2}{\Omega_m H_0^2} \Phi_{p, \vec{k}} T(k) D(a),
+\end{align*}
+where $a \gg a_\text{eq}$, as we required when we introduced the transfer function.
+The primordial power spectrum obeys $P(k) \propto k^{n-4}$, and it is commonly written as
+\begin{align*}
+	P_{\Phi_p}(k) = \frac{50 \pi^2}{9 k^3} 
+	\left( \frac{k}{H_0} \right)^{n-1}
+	\delta_{H}^2 
+	\left( \frac{\Omega_m}{D(a=1)} \right)^2,
+\end{align*}
+where $\delta_H$ is a normalization parameter.\sidenote{The normalization can be done in two ways:
+\begin{itemize}
+	\item With $\delta_H$, convenient to relate to the CMB anisotropy power spectrum
+	\item With $\sigma_8$, equal to $\sigma_R$ with $R = 8 h^{-1} \si{\mega\parsec}$ at $z=0$. This is convenient for large scale structure measurements at low redshifts.
+\end{itemize}}
+Combining all these, we get
+\begin{align*}
+	P(k,a)
+	&= V \moment{\abs{\delta(k,a)}^2}\\
+	&= 2 \pi^2 \delta_H^2 
+	\frac{k^n}{H_0^{n+3}}
+	T(k)^2
+	\left( \frac{D(a)}{D(a=1)} \right)^2.
+\end{align*}
+
+The matter power spectrum is plotted as a function of $k$ for different cosmological models in \cref{fig:matter-power}.
+\begin{itemize}
+	\item In the ΛCDM model, the turnover is at $k_\text{eq} \propto \Omega_m h^2$.
+	\item In the SCDM model (no cosmological constant, compensated with larger $\Omega_m$), the turnover is at a higher $k$.
+	\item In the HDM model, free streaming suppresses perturbations on small scales, so the power at large $k$ falls off quickly.
+\end{itemize}
+As we can see, by measuring the power spectrum on small scales, we can distinguish the models fairly well.
+
+% TODO
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\textwidth]{img/ch-03/matter-power.png}
+% 	\caption{Matter power spectrum}
+% 	\label{fig:matter-power}
+% \end{figure}
+
+We look at the matter power spectrum for ΛCDM in more detail in \cref{fig:power-lcdm}. 
+
+% TODO
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\textwidth]{img/ch-03/power-lcdm.png}
+% 	\caption{Matter power spectrum for ΛCDM. Redshift $z$ is a proy for time, with $z=0$ on top and $z=2$ on the bottom.}
+% 	\label{fig:power-lcdm}
+% \end{figure}
+
+\begin{itemize}
+	\item At large scales, $P(k) \propto k^n$, which is essentially the same as the primordial power spectrum.
+	\item The peak is at $k_\text{eq} \approx \SI{0.0073}{\per\mega\parsec} \Omega_m h^2$.
+	\item At intermediate scales, there are baryon acoustic oscillations (BAO). These are at a scale of \SI{0.04}{\per\mega\parsec}, corresponding to a size of the horizon of \SI{150}{\mega\parsec}, which is called the sound horizon.
+	\item At small scales,
+	\begin{align*}
+		P(k)
+		&\propto k^n T(k)^2\\
+		&\propto k^{n-4} \ln
+		\left( \frac{k}{k_\text{eq}} \right)^2
+	\end{align*}
+\end{itemize}
+At small scales, the amplitude of the perturbations become large, and the linear model no longer holds. As a result, $P(k)$ needs non-linear corrections. We define $k_\text{NL}$ such that $\Delta(k_\text{NL})^2 = 1$. We find that $k_\text{NL}$ decreases as $t$ increases, so small scales become non-linear first, and large scales later. Small objects form earlier, and large objects form later by merging of smaller ones. This is called a \emph{hierarchical model} for structure formation.
+ 
+First, galaxies, and then groups were starting to form.
+Today, galaxy clusters, with a mass of $\num{e14} M_\sol$, are starting to form.
+Superclusters are not collapsing yet, but should do so later.
+
+
+
+
+
+
 
 
 
