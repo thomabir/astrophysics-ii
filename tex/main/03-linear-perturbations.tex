@@ -648,6 +648,103 @@ Superclusters are not collapsing yet, but should do so later.
 
 
 
+\section{Cosmic Microwave Background anisotropies}
+Remember that the CMB gives us a picture of the universe at last scattering, which happened at $z_* \approx \num{1100}$. The spectrum is very close to a blackbody spectrum, with a temperature of $T = \SI{2.728(2)}{\kelvin}$ today.
+
+There are small anisotropies in the CMB temperature with an amplitude of $\Delta T / T \approx \num{e-4}$, as shown in \cref{fig:cmb.png}. We would like to find a model to predict those.
+
+% TODO
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\textwidth]{img/ch-03/cmb.png}
+% 	\caption{Anisotropies of the CMB.}
+% 	\label{fig:cmb}
+% \end{figure}
+
+During recombination, protons and electrons combine to hydrogen. We have defined the fraction of free electrons $X_e$, which decreases during recombination, see \cref{fig:recombination}.
+
+We characterize the interaction strength between photons and electrons by defining the optical depth
+\begin{align*}
+	\tau_T(t) = \int_0^t n_e \sigma_T \dd{t},
+\end{align*}
+where $\sigma_T$ is the Thomson scattering cross-section. The optical depth is a measure of opacity for the photons. We define the conformal time $\tau$ such that
+\begin{align*}
+	c \dd{t} &= a \dd{\tau}\\
+	\implies \tau(t) &= \int_0^t \frac{c \dd{t'}}{a(t')}.
+\end{align*}
+
+We now write the temperature as
+\begin{align*}
+	T(\vec{x}, \uvec{q}, \tau) = \bar{T}(\tau) [1 + \Theta(\vec{x}, \uvec{q}, \tau)],
+\end{align*}
+where $\vec{x}$ is our position in space, $\uvec{q}$ is the direction in which the photons are travelling, and $\tau$ is the conformal time. $\Theta$ characterizes the deviation of $T$ from its mean, $\bar{T}$.
+
+First, we decompose the temperature into spherical harmonics,
+\begin{align*}
+	\Theta(\vec{x}, \uvec{q}, \tau)
+	&= \sum_{\ell=0}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell,m}(\vec{x}, \tau) Y_{\ell m}(\uvec{q}),
+\end{align*}
+where 
+\begin{align*}
+	a_{\ell m}(\vec{x}, \tau)
+	&= \int \dd{\Omega} \Theta(\vec{x}, \uvec{q}, \tau) Y^*_{\ell m}(\uvec{q}) 	
+\end{align*}
+are the basis coefficients, and $Y_{\ell m}$ spherical harmonics. We assume from now $\tau = \tau_0$, so we can drop this term from the equation.
+
+We define the angular power spectrum
+\begin{align*}
+	c_\ell = \moment{\abs{a_{\ell m}}^2}.
+\end{align*}
+With a Fourier transform, we get
+\begin{align*}
+	\Theta(\vec{x}, \uvec{q}, \tau)
+	&\to \Theta(\vec{k}, \uvec{q}, \tau)
+\end{align*}
+Define $\mu = \uvec{q} \cdot \vec{k}$ and
+\begin{align*}
+	\Theta_\ell(k, z)
+	&= \frac{1}{(-i)^\ell}
+	\int_{-1}^1 \frac{\dd{\mu}}{\tau} \Leg_\ell(\mu) \Theta(\vec{k}, \uvec{q}, \tau),
+\end{align*}
+where $\Leg$ are Legendre polynomials. Then
+\begin{align*}
+	c_\ell
+	&= \frac{2 V}{\pi} \int \dd{k} k^2 \avg{\abs{\Theta_\ell(\vec{k}, \tau_0)}^2}.
+\end{align*}
+We would like to relate this quantity, which is at $z_0$, to earlier times. Using the solution to the Einstein-Boltzmann equation, and assuming instantaneous decoupling, we get
+\begin{align*}
+	\Theta_\ell(k, \tau_0)
+	&= [\Theta_0(k, \tau_*) + \Psi(k, \tau_*)]
+	\Bess_\ell [k(\tau_0 - \tau_*)]\\
+	&+ 3 \Theta_1(k, \tau_*) 
+	\left[ \Bess_{\ell-1} [k(\tau_0-\tau_*)]
+	- \frac{(\ell+1) \Bess_\ell[k(\tau_0-\tau_*)]}{k (\tau_0-\tau_*)}
+	\right]\\
+	&+ \int_0^{\tau_0} \dd{\tau} e^{-\tau_T}
+	[\dot{\Psi}(k,\tau) - \dot{\Phi}(k, \tau)]
+	\Bess_\ell [k(\tau_0-\tau_*)]
+	,
+\end{align*}
+where $\Bess$ are Bessel functions. We now analyse the terms.
+
+The first term is the \emph{Sachs-Wolfe term}, $\Theta_0 + \Psi$. $\Theta_0$ is the monopole, which is the mean temperature at decoupling. $\Psi$ is the gravitational potential at decoupling. This term describes that photons have to climb out of the gravitational potential, which redshifts them. Fluctuations in the potential thus influence the temperature of the photons we see today.
+
+The second term is a function of the dipole $\Theta_1$, which is related to the bulk velocity of photons at last scattering. This is called the \emph{Doppler term} along the line of sight.
+
+The third term involves $\dot{\Phi}$ and $\dot{\Psi}$, which are time derivatives of gravitational potentials. We saw that, in the matter era, both derivatives are zero. However, they can be non-zero if dark matter and curvature are present. This term is called the \emph{integrated Sachs-Wolf term} (ISW).
+
+$c_\ell$ has to be computed numerically, which is shown in \cref{fig:c_l}.
+
+% TODO
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\textwidth]{img/ch-03/cl.png}
+% 	\caption{The amplitude of the angular power spectrum.}
+% 	\label{fig:cl}
+% \end{figure}
+
+
+
 
 
 
