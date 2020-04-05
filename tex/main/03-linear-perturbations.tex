@@ -649,17 +649,17 @@ Superclusters are not collapsing yet, but should do so later.
 
 
 \section{Cosmic Microwave Background anisotropies}
-Remember that the CMB gives us a picture of the universe at last scattering, which happened at $z_* \approx \num{1100}$. The spectrum is very close to a blackbody spectrum, with a temperature of $T = \SI{2.728(2)}{\kelvin}$ today.
+Remember that the CMB gives us a picture of the universe at last scattering, which happened at $z_* \approx \num{1100}$. The spectrum is very close to a blackbody spectrum, with a temperature of $T = \SI{2.728 \pm 0.002}{\kelvin}$ today.
 
-There are small anisotropies in the CMB temperature with an amplitude of $\Delta T / T \approx \num{e-4}$, as shown in \cref{fig:cmb.png}. We would like to find a model to predict those.
+There are small anisotropies in the CMB temperature with an amplitude of $\Delta T / T \approx \num{e-4}$, as shown in \cref{fig:cmb-anisotropy}. We would like to find a model to predict those.
 
-% TODO
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=\textwidth]{img/ch-03/cmb.png}
-% 	\caption{Anisotropies of the CMB.}
-% 	\label{fig:cmb}
-% \end{figure}
+
+\begin{marginfigure}
+	\centering
+	\includegraphics[width=\textwidth]{img/ch-03/cmb-anisotropy.png}
+	\caption{The deviation of the CMB from a blackbody, in galactic coordinates.}
+	\label{fig:cmb-anisotropy}
+\end{marginfigure}
 
 During recombination, protons and electrons combine to hydrogen. We have defined the fraction of free electrons $X_e$, which decreases during recombination, see \cref{fig:recombination}.
 
@@ -733,15 +733,14 @@ The second term is a function of the dipole $\Theta_1$, which is related to the 
 
 The third term involves $\dot{\Phi}$ and $\dot{\Psi}$, which are time derivatives of gravitational potentials. We saw that, in the matter era, both derivatives are zero. However, they can be non-zero if dark matter and curvature are present. This term is called the \emph{integrated Sachs-Wolf term} (ISW).
 
-$c_\ell$ has to be computed numerically, which is shown in \cref{fig:c_l}.
+The theoretical model of the angular power spectrum and several measurements are shown in \cref{fig:power-spectrum}.
 
-% TODO
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=\textwidth]{img/ch-03/cl.png}
-% 	\caption{The amplitude of the angular power spectrum.}
-% 	\label{fig:cl}
-% \end{figure}
+\begin{marginfigure}
+	\centering
+	\includegraphics[width=\textwidth]{img/ch-03/power-spectrum.pdf}
+	\caption{The power spectrum of the cosmic microwave background radiation temperature anisotropy in terms of the angular scale (or multipole moment). The measurements and the theoretical model are shown.}
+	\label{fig:power-spectrum}
+\end{marginfigure}
 
 
 
