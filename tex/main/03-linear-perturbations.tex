@@ -654,7 +654,7 @@ The CMB gives us a picture of the universe at last scattering, which happened at
 \begin{marginfigure}
 	\centering
 	\includegraphics[width=\textwidth]{img/ch-03/cmb-anisotropy.jpeg}
-	\caption{The anisotropy of the CMB in galactic coordinates, as measured by the Planck mission.}
+	\caption{The anisotropy of the CMB in galactic coordinates, as measured by the Planck mission. The galactic foreground, which are microwave emission of the Milky Way, have been removed.}
 	\label{fig:cmb-anisotropy}
 \end{marginfigure}
 
@@ -729,20 +729,72 @@ The theoretical model of the angular power spectrum and several measurements are
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/ch-03/power-spectrum.pdf}
-	\caption{The power spectrum of the cosmic microwave background radiation temperature anisotropy in terms of the angular scale (or multipole moment). The measurements and the theoretical model are shown.}
+	\caption{The power spectrum of the cosmic microwave background radiation temperature anisotropy in terms of the angular scale (or multipole moment). The measurements and the theoretical model are shown. The features, from left to right, TODO are the ISW Rise, the Sachs-Wolfe Plateau, the Acoustic Peak, and the Damping Tail.}
 	\label{fig:power-spectrum}
 \end{figure}
 
+\subsubsection{Asymptotic limits}
+We now analyse the different areas in the angular power spectrum.
+
+At large scales, where $k \ll \chi_h^{-1}(z_*)$, we get for the Sachs-Wolfe term
+\begin{align*}
+	C_\ell^\text{SW} \propto \delta_H^2 \frac{
+	\Gamma\left(\ell+\frac{n-1}{2}\right)
+	\Gamma\left(\frac{9-n}{2}\right) 
+	}{
+	\Gamma\left(\ell+\frac{5-n}{2}\right)
+	\Gamma\left(\frac{3+n}{2}\right)
+	},
+\end{align*}
+where $\delta_H$ is a normalization factor, and $n$ is the spectral index in the power law. For $n=1$, we get
+\begin{align*}
+	C_\ell^{\text{SW}} \propto \delta_H^2 \frac{1}{\ell(\ell+1)},
+\end{align*}
+so $\ell(\ell+1) C_\ell$ is constant, which is why the vertical axis in the plot was chosen in such a way.\sidenote{It is not exactly flat for $n=1$, because the Doppler term and the ISW term have been neglected here. TODO Diagram}
+
+At intermediate scales, we see acoustic oscillations. We have already seen this in the ideal fluid equations, where we found baryon-photon oscillations proportional to
+\begin{align*}
+	\exp(\frac{i k c_s t}{a})
+	= \exp(i k c_s \tau)
+\end{align*}
+at decoupling $z_*$. The peaks are found at
+\begin{align*}
+	k_m = \frac{m \pi}{L_s(\tau_\star)},
+\end{align*}
+where $L_s(\tau_\star) \approx c_s(\tau_\star) \tau_\star$ is the sound horizon at decoupling, and $m \in \set{1, 2, \dots}$.
+Remember that $\Theta = L_\text{comoving} / r(\chi)$, where $r$ is the comoving angular diameter distance. The comoving distance which is relevant here is $L_\text{comoving} \approx k_m^{-1}$, and $\ell \approx 1/\theta$. We thus find
+\begin{align*}
+	\ell_m 
+	&\approx k_m r(\chi_*)\\
+	&= m \pi \frac{r(\chi_*)}{L_s(\chi_*)}.
+\end{align*}
+We find the first peak at $\ell \approx 200$ for the ΛCDM model.
+
+On small scales, we see Silk damping, where oscillations are damped because of imperfect coupling between photons and baryons. This occurs at $\ell > 2000$.
+
+In summary, we see that measurements of the CMB power spectrum can be used to put constraints on cosmological models. The results are shown in \cref{tab:constraints}. Similarly, we can also measure the statistics of the polarization of the CMB.
+
+% TODO table constraints
+
+As an example, we look at the measurement of curvature. The first peak is at a position $\ell_{m=1} \approx k_p r(\chi_*)$. We assume that $L_s(z_*)$ is constant, then we have $\ell_{m=1} \propto r(\chi_*)$. This depends on $\Omega$.
+
+% background.uchigaco.edu
 
 
 
 
 
+\section{Galaxy CLustering}
 
-
-
-
-
+We can find density perturbations at low redshift by measuring the clustering of galaxies. Unfortunately, we can only see visible matter, such as galaxies, whereas models predict the total mass distribution, which includes dark matter. To correct for this galaxy bias, we introduce the simple relation
+\begin{align*}
+	\delta_g = b \delta,
+\end{align*}
+where
+$\delta$ is the dark matter overdensity,
+$\delta_g$ is the galaxy overdensity,
+and $b$ is the bias.
+The bias depends on the galaxy sample, the scale, and redshift. Fortunately, on large scale, the bias is mostly scale independent.
 
 
 
