@@ -599,7 +599,7 @@ Combining all these, we get
 	\left( \frac{D(a)}{D(a=1)} \right)^2.
 \end{align*}
 
-The matter power spectrum is plotted as a function of $k$ for different cosmological models in \cref{fig:matter-power}.
+The matter power spectrum is plotted as a function of $k$ for different cosmological models in \cref{fig:k-power}.
 \begin{itemize}
 	\item In the ΛCDM model, the turnover is at $k_\text{eq} \propto \Omega_m h^2$.
 	\item In the SCDM model (no cosmological constant, compensated with larger $\Omega_m$), the turnover is at a higher $k$.
@@ -607,24 +607,21 @@ The matter power spectrum is plotted as a function of $k$ for different cosmolog
 \end{itemize}
 As we can see, by measuring the power spectrum on small scales, we can distinguish the models fairly well.
 
-% TODO
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=\textwidth]{img/ch-03/matter-power.png}
-% 	\caption{Matter power spectrum}
-% 	\label{fig:matter-power}
-% \end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/ch-03/k-power-spectrum.pdf}
+	\caption{Matter power spectrum}
+	\label{fig:k-power}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/ch-03/lcdm-spectrum.pdf}
+	\caption{Matter power spectrum for ΛCDM. Redshift $z$ is a proy for time.}
+	\label{fig:power-lcdm}
+\end{figure}
 
 We look at the matter power spectrum for ΛCDM in more detail in \cref{fig:power-lcdm}. 
-
-% TODO
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=\textwidth]{img/ch-03/power-lcdm.png}
-% 	\caption{Matter power spectrum for ΛCDM. Redshift $z$ is a proy for time, with $z=0$ on top and $z=2$ on the bottom.}
-% 	\label{fig:power-lcdm}
-% \end{figure}
-
 \begin{itemize}
 	\item At large scales, $P(k) \propto k^n$, which is essentially the same as the primordial power spectrum.
 	\item The peak is at $k_\text{eq} \approx \SI{0.0073}{\per\mega\parsec} \Omega_m h^2$.
@@ -729,7 +726,7 @@ The theoretical model of the angular power spectrum and several measurements are
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/ch-03/power-spectrum.pdf}
-	\caption{The power spectrum of the cosmic microwave background radiation temperature anisotropy in terms of the angular scale (or multipole moment). The measurements and the theoretical model are shown. The features, from left to right, TODO are the ISW Rise, the Sachs-Wolfe Plateau, the Acoustic Peak, and the Damping Tail.}
+	\caption{The power spectrum of the cosmic microwave background radiation temperature anisotropy in terms of the angular scale (or multipole moment). The measurements and the theoretical model are shown.}
 	\label{fig:power-spectrum}
 \end{figure}
 
@@ -750,7 +747,7 @@ where $\delta_H$ is a normalization factor, and $n$ is the spectral index in the
 \begin{align*}
 	C_\ell^{\text{SW}} \propto \delta_H^2 \frac{1}{\ell(\ell+1)},
 \end{align*}
-so $\ell(\ell+1) C_\ell$ is constant, which is why the vertical axis in the plot was chosen in such a way.\sidenote{It is not exactly flat for $n=1$, because the Doppler term and the ISW term have been neglected here. TODO Diagram}
+so $\ell(\ell+1) C_\ell$ is constant, which is why the vertical axis in the plot was chosen in such a way.\sidenote{It is not exactly flat for $n=1$, because the Doppler term and the ISW term have been neglected here.}
 
 At intermediate scales, we see acoustic oscillations. We have already seen this in the ideal fluid equations, where we found baryon-photon oscillations proportional to
 \begin{align*}
