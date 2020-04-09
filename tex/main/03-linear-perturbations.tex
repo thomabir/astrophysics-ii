@@ -781,19 +781,56 @@ As an example, we look at the measurement of curvature. The first peak is at a p
 
 
 
-\section{Galaxy CLustering}
+\section{Galaxy Clustering}
 
 We can find density perturbations at low redshift by measuring the clustering of galaxies. Unfortunately, we can only see visible matter, such as galaxies, whereas models predict the total mass distribution, which includes dark matter. To correct for this galaxy bias, we introduce the simple relation
 \begin{align*}
-	\delta_g = b \delta,
+	\delta_g = b(k, z, \text{galaxy type}) \delta,
 \end{align*}
 where
-$\delta$ is the dark matter overdensity,
-$\delta_g$ is the galaxy overdensity,
+$\delta_g = (n_g - \bar{n}_g)/\bar{n}_g$ is the galaxy overdensity,
+$\delta = (\rho-\bar{\rho})/\bar{\rho}$ is the dark matter overdensity,
 and $b$ is the bias.
-The bias depends on the galaxy sample, the scale, and redshift. Fortunately, on large scale, the bias is mostly scale independent.
+The bias depends on the galaxy sample, the scale $k$, and redshif $z$. Fortunately, on large scales, the bias is mostly scale independent.
 
+There are two kinds of galaxy surveys:
+\begin{itemize}
+	\item Imaging surveys, such as POSS/APM, DES, and SDSS, measure the position and shape of galaxies.
+	\item Spectroscopy surveys, such as SDSS, 2DF, and Wiggle-z, measure the position and the redshift of galaxies.
+\end{itemize}
 
+% TODO SDSS image
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=0.7\textwidth]{img/ch-03/spectroscopic-survey.png}
+% 	\caption{2dF survey.}
+% 	\label{fig:spectroscopic-survey}
+% \end{figure}
 
+Some galaxy clusters seem to be stretched in the radial direction, which is caused by their peculiar velocities. This phenomenon is known as redshift space distortions.
 
+% TODO power spectrum galaxies SDSS
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=0.7\textwidth]{img/ch-03/sdss-power-spectrum.pdf}
+% 	\caption{SDSS survey. The redder regions have more galaxies than the green regions.}
+% 	\label{fig:sdss-power-spectrum}
+% \end{figure}
+
+In \cref{fig:sdss-power-spectrum}, the power spectrum found by the SDSS is shown.
+From the residual plot, we see that even the baryon acoustic oscillations are well resolved.
+These are fixed in comoving coordinates, so they can function as a standard ruler.
+
+We can measure the two-dimensional clustering with an imaging survey such as APM, as shown in \cref{fig:apm}.
+This can be used to rule out HDM or Bayron only models.
+The current measurements confirm the ΛCDM model, even though there are still small deviations, which come from the scale dependence of the bias factor.
+% TODO APM measurement (Dodelson)
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=0.7\textwidth]{img/ch-03/apm.pdf}
+% 	\caption{Results of the APM survey.}
+% 	\label{fig:apm}
+% \end{figure}
+
+For the further interpretation of galaxy clustering measurements, we need to study the physics of galaxy formation and non-linear structure formation.
 
