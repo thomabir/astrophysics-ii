@@ -30,7 +30,7 @@ We make a few simplifying assumptions:
 We now look at a thin shell with radius $r$ inside the top-hat sphere, and write down its equation of motion. Newton's second law states
 \begin{align*}
 	\dv[2]{r}{t}
-	&= - \frac{G M}{r},
+	&= - \frac{G M}{r^2},
 \end{align*}
 where $M$ is the mass inside the radius $r$,
 \begin{align*}
@@ -99,7 +99,7 @@ The density inside the top hat sphere is then
 \begin{align*}
 	\rho
 	&= \frac{M}{\frac{4\pi}{3}r^3}
-	= \frac{3M}{4\pi A^3} (1-\cos\theta)-3
+	= \frac{3M}{4\pi A^3} (1-\cos\theta)^{-3}
 	&&\text{because } r = A(1-\cos\theta),
 \end{align*}
 while outside it is
@@ -167,6 +167,85 @@ Depending on the cosmological models, the overdensity $\delta_c$ required for co
 	1.686 [\Omega_m(t_\text{coll})]^{0.0055} & \text{for ΛCDM}
 	\end{cases}
 \end{align*}
+
+
+
+
+\section{Collisionless dynamics}
+
+% aka stellar dynamics
+
+In the previous chapter, we assumed a collisionless medium. To find out when this approximation is valid, we look at the collision time-scales in thermodynamic equilibrium.
+
+We consider a system with $N$ self-gravitating particles and diameter $r$.
+Each particle $i$ has a velocity $\vec{v}_i$ and a mass $m$. The average velocity is $v = \avg{v_i}$.
+There are several relevant time scales.
+\begin{itemize}
+	\item The \emph{crossing time scale} $t_\text{cross}$ is the time required for a typical particle to cross the system:
+	\begin{align*}
+		t_\text{cross} = \frac{r}{v}
+	\end{align*}
+
+	\item The \emph{time scale for close encounters} $t_\text{close}$ is the average time between close encounters.
+	To calculate it, we look at a gravitational two-body interaction of two close particles.
+	We define an encounter as a close encounter if the change of the speed of the particle due to the interaction is similar to the initial speed,
+	\begin{align*}
+		\delta_v
+		\defeq \abs*{\vec{v}_\text{before} - \vec{v}_\text{after}}
+		\approx \vec{v}_\text{before}.
+	\end{align*}
+	Then we define $t_\text{close}$ as the average time between close encounters,\sidenote[]{It seems counter-intuitive that the time between encounters increases with particle size. This has to do with our assumption that the system is in thermodynamic equilibrium. The same would not hold for a constrained system, such as a gas in a box.}
+	\begin{align*}
+		t_\text{close}
+		= N t_\text{cross}.
+	\end{align*}
+
+	\item The \emph{relaxation time scale} $t_\text{relax}$ is the time required for the particle velocity distribution to relax to a new distribution.
+	Consider a cumulative change in velocity $\Delta v^2$ over the motion of a particle.
+	We define $t_\text{relax}$ as the time scale for which $\Delta v^2$ is comparable to $v^2$. One can show that
+	\begin{align*}
+		t_\text{relax}
+		\defeq \frac{N}{10 \ln N} t_\text{cross}.
+	\end{align*}
+\end{itemize}
+
+In typical astrophysical systems with $N \gg 100$, such as galaxies and galaxy clusters, we usually find
+\begin{align*}
+	t_\text{close} \gg t_\text{relax} \gg t_H \gg t_\text{cross},
+\end{align*}
+where $t_H = H^{-1} \approx \SI{e10}{\year}$ is the Hubble time.
+Collisions are thus so rare that we can treat many systems as effectively collisionless.
+
+For example, in a galaxy we have $r \approx \SI{10}{\kilo\parsec}$, $v \approx \SI{200}{\kilo\meter\per\second}$, and $N \approx 10^{10}$, which yields
+\begin{align*}
+	t_\text{close} &= \SI{5e17}{\year},\\
+	t_\text{relax} &= \SI{2e15}{\year},\\
+	t_H &= \SI{e10}{\year},\\
+	t_\text{cross} &= \SI{5e7}{\year}.
+\end{align*}
+Gravitational collisions are apparently very inefficient and can be neglected for these systems, so we can use the collisionless Boltzmann equation. Instead of analysing two-body forces, we can use a smooth mean gravitational potential.
+
+
+We now look at the collisionless Boltzmann equation (CBE), with a phase-space distribution function $f(\vec{x}, \vec{v}, t)$.
+As we've seen before, the moments of $f$ are
+\begin{itemize}
+	\item $n(\vec{x}, t) = \int f(\vec{x}, \vec{v}, t) \dd{^3v} = p(\vec{x}, t)/m$
+	\item $\avg{Q}(\vec{x}, t) = \frac{1}{n} \int \dd{^3v} Q f(\vec{x}, \vec{v}, t)$
+\end{itemize}
+The evolution of the distribution function is given by the CBE,
+\begin{align*}
+	\dv{f}{t}
+	= \pdv{f}{t} + \sum_i \pdv{f}{x_i} \pdv{x_i}{t} + \sum_i \pdv{f}{v_i} \pdv{v_i}{t}
+	= 0,
+\end{align*}
+which can be rewritten with $v_i = \pdv*{x_i}{t}$ and $\pdv*{v_i}{t} = - \pdv*{\Phi}{x_i}$ as
+\begin{align*}
+	\pdv{f}{t} + \sum_i v_i \pdv{f}{x_i} - \sum_i \pdv{\Phi}{x_i} \pdv{f}{v_i} = 0,
+\end{align*}
+where the gravitational potential can be calculated from the Poisson equation, $\Lap \Phi = 4 \pi G \rho$.
+
+
+
 
 
 
