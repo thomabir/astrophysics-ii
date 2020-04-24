@@ -194,7 +194,7 @@ There are several relevant time scales.
 		\defeq \abs*{\vec{v}_\text{before} - \vec{v}_\text{after}}
 		\approx \vec{v}_\text{before}.
 	\end{align*}
-	Then we define $t_\text{close}$ as the average time between close encounters,\sidenote[]{It seems counter-intuitive that the time between encounters increases with particle size. This has to do with our assumption that the system is in thermodynamic equilibrium. The same would not hold for a constrained system, such as a gas in a box.}
+	Then we define $t_\text{close}$ as the average time between close encounters,\sidenote{It seems counter-intuitive that the time between encounters increases with particle size. This has to do with our assumption that the system is in thermodynamic equilibrium, where the velocity goes down for constant $m$ and $r$.}
 	\begin{align*}
 		t_\text{close}
 		= N t_\text{cross}.
@@ -225,7 +225,6 @@ For example, in a galaxy we have $r \approx \SI{10}{\kilo\parsec}$, $v \approx \
 \end{align*}
 Gravitational collisions are apparently very inefficient and can be neglected for these systems, so we can use the collisionless Boltzmann equation. Instead of analysing two-body forces, we can use a smooth mean gravitational potential.
 
-
 We now look at the collisionless Boltzmann equation (CBE), with a phase-space distribution function $f(\vec{x}, \vec{v}, t)$.
 As we've seen before, the moments of $f$ are
 \begin{itemize}
@@ -235,36 +234,202 @@ As we've seen before, the moments of $f$ are
 The evolution of the distribution function is given by the CBE,
 \begin{align*}
 	\dv{f}{t}
-	= \pdv{f}{t} + \sum_i \pdv{f}{x_i} \pdv{x_i}{t} + \sum_i \pdv{f}{v_i} \pdv{v_i}{t}
+	= \pdv{f}{t} + \sum_i \pdv{f}{x_i} \dv{x_i}{t} + \sum_i \pdv{f}{v_i} \dv{v_i}{t}
 	= 0,
 \end{align*}
-which can be rewritten with $v_i = \pdv*{x_i}{t}$ and $\pdv*{v_i}{t} = - \pdv*{\Phi}{x_i}$ as
+which can be rewritten with $v_i = \dv*{x_i}{t}$ and $\dv*{v_i}{t} = - \pdv*{\Phi}{x_i}$ as
 \begin{align*}
 	\pdv{f}{t} + \sum_i v_i \pdv{f}{x_i} - \sum_i \pdv{\Phi}{x_i} \pdv{f}{v_i} = 0,
 \end{align*}
 where the gravitational potential can be calculated from the Poisson equation, $\Lap \Phi = 4 \pi G \rho$.
 
+We can take moments of the CBE to get
+\begin{align*}
+	\pdv{}{t} [n \avg{Q}]
+	+ \sum_{i} \pdv{}{x_i}[n \avg{Q v_i}]
+	+ n \sum_{i} \pdv{\Phi}{x_i} \avg{ \pdv{Q}{v_i} }
+	= 0,
+\end{align*}
+where we used partial integration to obtain the last term. If we take $Q = 1$, we get
+\begin{align*}
+	\pdv{n}{t} + \sum_{i} \pdv{}{x_i} [n \avg{v_i}]
+	= 0,
+\end{align*}
+which we recognize as the continuity equation of an ideal fluid, with $n$ instead of $\rho$.
+
+For $Q = v_j$, we obtain
+\begin{align*}
+	\pdv{}{t}[n \avg{v_j}]
+	+ \sum_{i} \pdv{}{x_i} [n \avg{v_i v_j}]
+	+ n \pdv{\Phi}{x_j}
+	= 0.
+\end{align*}
+Again, we define
+\begin{align*}
+	\sigma_{ij}^2 = \avg{v_i v_j} - \avg{v_i} \avg{v_j}
+\end{align*}
+to get
+\begin{align*}
+	0
+	&= \pdv{n}{t} \avg{v_j}
+	+ n \pdv{\avg{v_j}}{t}
+	+ \sum_{i} \pdv{}{x_i} [n \sigma_{ij}^2]
+	+ \sum_{i} \pdv{}{x_i} [n \avg{v_i}\avg{v_j}]
+	+ n \pdv{\Phi}{x_j}\\
+	&= \pdv{n}{t} \avg{v_j}
+	+ n \pdv{\avg{v_j}}{t}
+	+ n \sum_{i} \pdv{}{x_i} [n \sigma_{ij}^2]
+	+ \sum_{i} \pdv{}{x_i}[n \avg{v_i}] \avg{v_j}
+	+ \sum_{i} n \avg{v_i} \pdv{}{x_i} \avg{v_j}
+	+ n \pdv{\Phi}{x_j}\\
+	&= n \pdv{\avg{v_j}}{t}
+	+ n \sum_{i} \pdv{}{x_i} [n \sigma_{ij}^2]
+	+ \sum_{i} n \avg{v_i} \pdv{}{x_i} \avg{v_j}
+	+ n \pdv{\Phi}{x_j}
+	&& \text{continuity equation}
+	\\
+	&= \pdv{\avg{v_j}}{t}
+	+ \sum_{i} \avg{v_i} \pdv{\avg{v_j}}{x_i}
+	+ \frac{1}{n} \sum_{i} \pdv{(n \sigma_{ij}^2)}{x_i}
+	+ \pdv{\Phi}{x_i}
+\end{align*}
+which is the Euler equation, but with $n \sigma_{ij}^2$ instead of $p$ and $n$ instead of $\rho$. We already stated this result in the previous chapter, and now we have proven it. The equation in this form is called the \emph{Jeans equation}.
+
+If we take the Jeans equation, the continuity equation, and the Poisson equation, we have a total of five equations in the 11 unknowns $\rho$, $v_i$, $\sigma_{ij}$ (6, because it is symmetric) and $\rho$. Evidently, we have too many unknowns. We could try to take higher moments of the CBE, but this only adds more unknowns in the end. In order to close the system, we need more assumptions.\sidenote{We didn't have this problem for an ideal fluid, because the equation of state was used.}
 
 
 
 
+\section{Virial theorem}
+Consider a localized self-gravitating collisionless system in a steady state, such as an isolated galaxy. A steady state means that the distribution function does not depend on time, but only on $\vec{x}$ and $\vec{v}$.
+
+The Euler equation for such a system is
+\begin{align*}
+	0
+	&= \pdv{}{t} [n \avg{v_j}]
+	+ \sum_{i} \pdv{}{x_i} [n \avg{v_i v_j}]
+	+ n \pdv{\Phi}{x_j}\\
+	&= \sum_{i} \pdv{}{x_i} [n \avg{v_i v_j}]
+	+ n \pdv{\Phi}{x_j}
+	&&\text{steady state:} \pdv*{f}{t} = 0
+\end{align*}
+We multiply the equation by $- \int \dd{^3x} m x_k$ and recall $\rho = n m$ to get
+\begin{align*}
+	0
+	&= - \sum_{i} \int x_k \pdv{[\rho \avg{v_i v_j}]}{x_i} \dd{^3 x}
+	   - \int \rho x_k \pdv{\Phi}{x_j} \dd{^3 x}
+\end{align*}
+We define $2 K_{jk}$ as the first term, and $W_{jk}$ as the second term, so $2 K_{jk} + W_{jk} = 0$.
+The first term can be written using the product rule as
+\begin{align*}
+	&- \sum_{i} \int \dd{^3 x} \left[
+		\pdv{}{x_i} \left( x_k \rho \avg{v_i v_j} \right) 
+		- \pdv{x_k}{x_i} \rho \avg{v_i v_j}
+	\right]\\
+	&= \sum_{i} \left[
+       \oint \dd{S_i} x_k \rho \avg{v_i v_j}
+	   - \int \dd{^3 x} \delta_{ik} \rho \avg{v_i v_j}
+	   \right]
+	&&\text{divergence theorem}\\
+	&= - \sum_{i} \int \dd{^3 x} \delta_{ik} \rho \avg{v_i v_j}
+	&&\rho = 0 \text{ at border}
+\end{align*}
+By taking the trace of $2 K_{jk} + W_{jk} = 0$, we get
+\begin{align*}
+	2 K + W = 0,
+\end{align*}
+where
+\begin{align*}
+	K
+	&= \tr(K_{ij})
+	= \frac{1}{2} \int \dd{^3x} \rho \avg{v^2},\\
+	W &= \tr(W_{ij})
+	= - \int \dd{^3 x} \rho \vec{x} \cdot \Grad \Phi
+	= \frac{1}{2} \int \dd{^3 x} \rho \Phi,
+\end{align*}
+which can be shown to be the kinetic and the potential energy of the system, respectively.
+Since the total energy of the system is $E = K + W$, we finally obtain
+\begin{align*}
+	2 K + W = 0,
+\end{align*}
+which is Virial theorem. It is also commonly written as $E = - K = W/2$. We call a system virialized if the Virial theorem is valid.
+
+The Virial theorem can be used to estimate the total mass of a system. Note that $K \approx M \bar{v}^2/2$, where $M$ is the total mass of the system, and $\bar{v}$ is the average velocity of the particles. Also, $W \approx -GM^2/R$, where $R$ is the diameter of the system. The Virial theorem yields
+\begin{align*}
+	\bar{v}^2 \approx \frac{GM}{R}.
+\end{align*}
+This can be used to estimate the mass of a system from measurements of $\bar{v}$ and $R$.
 
 
 
 
+This can be applied to the spherical collapse model.
+% TODO figure again
+Let $E = K + W$ be the conserved total energy of the sphere.
 
+At $t_\text{ta}$, the kinetic energy is zero, so $E = W_\text{ta}$, which is the gravitational potential energy of a solid sphere with radius $r_\text{ta}$:
+\begin{align*}
+	E = - \frac{3}{5} \frac{G M^2}{r_\text{ta}}.
+\end{align*}
 
+At $t = t_\text{coll}$, which is also called $t_\text{vir}$, the energy is
+\begin{align*}
+	E
+	&= \frac{W_\text{vir}}{2}
+	&&\text{Virial theorem}\\
+	&\approx \frac{1}{2}\left( - \frac{3}{5} \frac{GM^2}{r_\text{vir}} \right).
+\end{align*}
+Because the energy is conserved, the two results can be combined to yield
+\begin{align*}
+	r_\text{vir} = \frac{r_\text{ta}}{2}.
+\end{align*}
+The mean overdensity within $r_\text{vir}$ at $t_\text{vir}$ is
+\begin{align*}
+	1 + \Delta
+	&= \frac{\rho(t_\text{vir})}{\bar{\rho}}\\
+	&= \frac{ \rho(t_\text{ta}) \left(\frac{r_\text{ta}}{r_\text{vir}}\right)^3  }{\bar{\rho}(t_\text{vir})}\\
+	&= \frac{\rho(t_\text{ta})}{\bar{\rho}(t_\text{ta})}
+	\frac{\bar{\rho}(t_\text{ta})}{\bar{\rho}(t_\text{vir})}
+	\left( \frac{r_\text{ta}}{r_\text{vir}} \right)^3\\
+	&= \frac{9\pi^2}{16}   2^2 2^3
+	&&\text{see section 4.2, } a \propto t^{2/3}, \text{ } \bar{\rho} \propto a^{-3}\\
+	&\approx 178
+\end{align*}
 
+% TODO diagram again
 
+\section{Steady state solutions}
 
+We want to find solutions of the CBE which are steady states, meaning we want $f$ to be time-independent. The CBE for a steady state is
+\begin{align*}
+	0
+	&= \sum_{i} \pdv{f}{x_i} \dv{x_i}{t}
+	+ \sum_{i} \pdv{f}{v_i} \dv{v_i}{t}.
+\end{align*}
+We consider integrals of motion, which are functions $I(\vec{x}, \vec{v})$ that are constant along particle trajectories.
+Examples of such functions are energy and angular momentum.
+For integrals of motion,
+\begin{align*}
+	0 &= \dv{I}{t}\\
+	&= \sum_{i} \pdv{I}{x_i} \dv{x_i}{t}
+	+ \sum_{i} \pdv{I}{v_i} \dv{v_i}{t}.
+\end{align*}
+Thus, integrals of motion are solutions of the CBE.
+Conversely, a distribution function $f$ which is a function of integrals of motion, written as
+\begin{align*}
+	f(\vec{x}, \vec{v}) = f(I_1(\vec{x}, \vec{v}), \dots, I_N(\vec{x}, \vec{v})),
+\end{align*}
+is necessarily a steady-state solution of the CBE.
 
+Thus, all solutions of the steady state CBE depend on $\vec{x}$ and $\vec{v}$ through integrals of motion. This result is called \emph{Jean's theorem}.
 
+There are some special cases.
 
-
-
-
-
-
+One is a spherical solution where $f$ only depends on the specific energy of a particle,
+\begin{align*}
+	E = \frac{1}{2} v^2 + \Phi(\vec{x}).
+\end{align*}
+We can relate $f(E)$ to the density profile $\rho(r)$ of the system.
 
 
 
