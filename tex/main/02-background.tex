@@ -1,21 +1,31 @@
 \chapter{Cosmological Background}
 
 \section{Cosmological Principle}
-The Cosmological principle states that the universe is homogeneous and isotropic on sufficiently large scales. This is a generalization of the Copernican principle, according to which there is no special place and no special direction in the universe.
+The Cosmological principle states that the universe is homogeneous and isotropic on sufficiently large scales (larger than ~ 100 \si{\mega\parsec}). This is a generalization of the Copernican principle, according to which there is no special place and no special direction in the universe.
 
-The Cosmological principle is only valid for distances larger than a few hundred \si{\mega\parsec}. Local perturbations about this uniform background will be described later.
+In the following the evolution of the universe will be described, assuming that it is isotropic and homogeneous. Later local perturbations about this uniform background will be taken into account.
 
 
 \section{Elements of General Relativity}
+The theoretical basis of cosmology is General Relativity (GR). In contrary to Newton's laws, where a body is attracted by another one. In GR gravity is seen as a manifestation of the curvature of space-time and this curvature leads among others to the observation that bodies attract each other. The curvature of space-time is described by a metric $g_{\mu\nu}$ which describes the motion of distance on a curved space. 
 
-Einstein field equations:
+As an illustration we consider a two-dimensional space with a coordinate system $x^\mu$, where $\mu =$ 1, 2. The physical square distance is then $ds^2 = g_{\mu\nu} \mathrm{d}x^{\mu}\mathrm{d}x^{\nu}$ where $\mathrm{d}x^{\mu}$ and $\mathrm{d}x^{\nu}$ are the coordinate distances. Assuming that the space is homogeneous and isotropic the distance can be written as
 \begin{align*}
-	G_{\mu\nu} = \frac{8\pi G}{\rho} T_{\mu\nu}
+	ds^2 = a^2 (\frac{\mathrm{d}r^2}{1-kr^2} + r^2 \mathrm{d}\phi^2)
 \end{align*}
-Ideal fluid:
+where $k$ describes the curvature and $a$ is the length scale known as the scale factor which can also be time-dependent. If the scale factor is time dependent this means that the surface is uniformly expanding or contracting. The curvature $k$ for a homogeneous and isotropic surface is either $k$ = 0 for a plane, $k$ = 1 for a sphere or the curvature is negative $k$ = -1 for a hyperbolic surface. In order to describe the sphere the coordinate transformation $r$ = $sin\chi$ is used and to describe the hyperbolic surface $r$ = $sinh\chi$. 
+
+The discussion of the two-dimensional space can be adapted to our universe, which is in four dimensional space-time described by the Minkowsky metric $g_{\mu\nu} = \diag(1, -1, -1, -1)$. In this space time the physical square distance for a flat universe would be given by $ds^2 = c^2\mathrm{d}t^2- (\mathrm{d}x^2 + \mathrm{d}y^2 + \mathrm{d}z^2)$. In general the dynamics of space-time is described by the Einstein field equations:
 \begin{align*}
-	T_{\mu\nu} = \diag(\rho c^2, p, p, p)
+	G_{\mu\nu} = \frac{8\pi G}{\rho} T_{\mu\nu}.
 \end{align*}
+$G_{\mu\nu}$ is the Einstein tensor, which includes the curvature of the space-time. $T_{\mu\nu}$ is the stress energy tensor and describes the content of the space-time. For an ideal fluid the stress energy tensor is
+\begin{align*}
+	T_{\mu\nu} = \diag(\rho c^2, p, p, p),
+\end{align*}
+where $\rho c^2$ is the energy density and $p$ the pressure. 
+
+In the space-time the trajectories of particles are in geodesics which means they take the straightest paths possible. As an example for photons (massless particles) $ds^2 = 0$.
 
 
 
