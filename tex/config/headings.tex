@@ -1,15 +1,17 @@
 % Chapter title style
-\makeatletter
-\setlength{\fboxsep}{0cm}
-\renewcommand*{\@@makechapterhead}[1]{%
-  \vspace*{3\baselineskip plus \parskip}
-  \makebox{%
-    \makebox[\linewidth]{\parbox[c][2cm]{\linewidth}{\if@mainmatter\raggedleft\fi\size@chapter{#1}}}%
-    \if@mainmatter%
-      \makebox[\marginparsep]{\parbox[c][2cm]{\marginparsep}{\centering\rule{1pt}{2cm}}}%
-      \makebox[4cm]{\parbox[c][2cm]{4cm}{\scalebox{5}{\chapternumberfont\thechapter\autodot}}}%
-    \fi
-  }%
-  \vspace*{1.5\baselineskip plus .1\baselineskip minus .167\baselineskip}
-}
-\makeatother
+
+
+% \makeatletter
+% \setlength{\fboxsep}{0cm}
+% \renewcommand*{\@@makechapterhead}[1]{%
+%   \vspace*{3\baselineskip plus \parskip}
+%   \makebox{%
+%     \makebox[\linewidth]{\parbox[c][2cm]{\linewidth}{\if@mainmatter\raggedleft\fi\size@chapter{#1}}}%
+%     \if@mainmatter%
+%       \makebox[\marginparsep]{\parbox[c][2cm]{\marginparsep}{\centering\rule{1pt}{2cm}}}%
+%       \makebox[4cm]{\parbox[c][2cm]{4cm}{\scalebox{5}{\chapternumberfont\thechapter\autodot}}}%
+%     \fi
+%   }%
+%   \vspace*{1.5\baselineskip plus .1\baselineskip minus .167\baselineskip}
+% }
+% \makeatother
