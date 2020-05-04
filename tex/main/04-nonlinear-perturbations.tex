@@ -828,7 +828,7 @@ We plug in
 	\frac{\delta_c}{\sigma^2}
 	\exp\left( - \frac{\delta_c^2}{2 \sigma^2} \right)
 \end{align*}
-and get\sidenote[]{We use
+and get\sidenote{We use
 \begin{align*}
 	\abs*{\dv{\sigma}{M}} = \frac{\sigma}{M} \abs*{\dv{\ln \sigma}{\ln M}}\\
 \end{align*}}
@@ -865,9 +865,13 @@ where
 is called the Multiplicity function.
 The formula is convenient to express in this way, because the quantities are dimensionless.
 
-% TODO figure
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-04/PS.pdf}
+	\caption{The multiplicity factor.}
+	\label{fig:multiplicity}
+\end{marginfigure}
 
-In TODO, we see that $f(\nu)$ from our model (solid line) corresponds acceptably to simulated data.
+In \cref{fig:multiplicity}, we see that $f(\nu)$ from our model (solid line) corresponds acceptably to simulated data.
 The agreement becomes much better when we allow elliptical collapse, which results in
 \begin{align*}
 	f_\text{EC}
@@ -876,8 +880,13 @@ The agreement becomes much better when we allow elliptical collapse, which resul
 where $\tilde{\nu} \approx 0.84 \nu$, $q = 0.3$, and $A \approx 0.322$.
 There are also other fitting functions that are commonly used.
 
-Let's look at the shape and evolution of the Mass function, shown in TODO.
-% TODO figure
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-04/dndm.pdf}
+	\caption{The halo mass function.}
+	\label{fig:dndm}
+\end{marginfigure}
+
+Let's look at the shape and evolution of the Mass function, shown in \cref{fig:dndm}
 The mass function is shown for different redshifts, where time increases from left to right.
 
 The form of the mass function is $n \propto \nu \exp(-\nu^2/2)$, 
