@@ -909,22 +909,19 @@ and finally galaxy clusters with  $M \approx \num{e13} M_\sol$.
 
 \section{Halo mergers}
 
-Small haloes form first, and merge to form larger haloes.
-
-A convenient description of this process are halo merger trees.
 We consider a halo with mass $M_0$ at time $t_0$.
-We can represent the merging history of this halo using such a merging tree.
-% TODO figure
-The thickness of a branch corresponds to the mass of the halo at that time.
-We see that several smaller progenitor haloes merge into larger ones as time time goes on.
+A convenient description of the history of haloes are merger trees, such as the one in \cref{fig:tree}.
 
-We can generate such merger trees with two approaches:
-\begin{itemize}
-	\item track haloes in numerical simulations
-	\item analytical methods with extended Press-Schechter (EPS) approach
-\end{itemize}
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-04/tree.pdf}
+	\caption{A merger tree represents the merging history of haloes. The thickness of a branch corresponds to its mass at that time. We see that several smaller progenitor haloes merge into more massive ones as time goes on.}
+	\label{fig:tree}
+\end{marginfigure}
 
-Progenitor mass function.
+Merger trees can be generated from numerical simulations, but the method is slow and not easy to understand intuitively.
+Fortunately, an analytical approach, known as the \emph{extended Press-Schechter} (EPS) approach, exists.
+
+\paragraph*{Progenitor mass function.}
 Consider the average number of progenitors at time $t_1$ with masses $M_1 \in [M, M + \dd{M}]$, which by time $t_2$ have merged to form a halo of mass $M_2$.
 \begin{align*}
 	n(M_1, t_1 \, | \, M_2, t_2) \dd{M_1}
@@ -937,34 +934,34 @@ with
 \end{align*}
 This can be derived using the \textsc{eps} formalism.
 
+\paragraph*{Main progenitor.}
+The most massive branch of a merger tree is called the main progenitor.
+In \cref{fig:progenitor-sample}, a sample of main progenitor histories for a given mass is shown, and in \cref{fig:progenitor-average}, averages of such histories for various masses are shown.
 
-Main progenitor.
-This is the main branch of the merger tree.
-The mass of the main progenitor $M_\text{main}(t)$ can be obtained from the merger tree.
-An example is shown in
-% TODO figures
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-04/progenitor-sample.pdf}
+	\caption{A sample of progenitor histories with mass $M_0 = \num{5e11} h^{-1} M_\sol$.
+	Each line shows the evolution of the mass of the main progenitor for a different halo.
+	Note that there is a large scatter in the history of the main progenitors.}
+	\label{fig:progenitor-sample}
+\end{marginfigure}
 
-Left panel:
-Each line shows the evolution of the mass of the main progenitor for a different halo.
-Note that there is a large scatter in the history of the main progenitors.
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-04/progenitor-average.pdf}
+	\caption{The average main progenitor histories of mergers with various masses. Each line is the average of many main progenitors with the same mass. We can see that massive haloes assemble quicker, but later}
+	\label{fig:progenitor-average}
+\end{marginfigure}
 
-Right panel:
-Each line is a different main progenitor mass.
-More massive haloes assemble later, but quicker.
 
-\subsection{Characteristic scales}
 
-We define more quantities to reduce the complexity of the merger trees.
+\paragraph*{Characteristic scales}
 
 The \emph{assembly time} $t_a$ is the characteristic time scale for the formation of the halo.
 It is defined such that the mass of the main progenitor at $t_a$ is half the final mass.
 
-The \emph{halo merger rate} is the rate at which a halo of mass $M$ changes its mass by $\Delta M$, which can be expressed as a probability:
-\begin{align*}
-	\Prob(\Delta M \, | \, M, t) \dd{\ln \Delta M} \dd{\ln t}.
-\end{align*}
+The \emph{halo merger rate} is the rate at which a halo of mass $M$ changes its mass by $\Delta M$, which can be expressed as a probability $\Prob(\Delta M \, | \, M, t) \dd{\ln \Delta M} \dd{\ln t}$.
 
-The \emph{halo survival time} $t_s$ is the time it takes a halo of mass $M$ to merge to form a halo of mass $2 M$.
+The \emph{halo survival time} $t_s$ is the time it takes a halo of mass $M$ to merge to a halo of mass $2 M$.
 
 
 
