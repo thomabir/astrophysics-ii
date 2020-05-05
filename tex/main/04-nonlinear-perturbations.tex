@@ -811,7 +811,7 @@ The factor $bar{\rho}/M$ is the number of \emph{all} objects per unit volume, if
 The next factor is the mass fraction of collapsed objects with mass between $M$ and $M+ \dd{M}$.
 We get
 \begin{align*}
-	n(M, t)
+	n(M, t) \dd{M}
 	&= 2 \frac{\bar{\rho}}{M}
 	\pdv{\Prob(>\delta_c(t))}{\sigma}
 	\abs*{ \dv{\sigma}{M} }
@@ -886,7 +886,7 @@ There are also other fitting functions that are commonly used.
 	\label{fig:dndm}
 \end{marginfigure}
 
-Let's look at the shape and evolution of the Mass function, shown in \cref{fig:dndm}
+Let's look at the shape and evolution of the Mass function, shown in \cref{fig:dndm}.
 The mass function is shown for different redshifts, where time increases from left to right.
 
 The form of the mass function is $n \propto \nu \exp(-\nu^2/2)$, 
@@ -903,5 +903,116 @@ Today, the largest haloes which have formed have masses $M \approx M_* \approx \
 At earlier epochs, the largest haloes were found in dwarf galaxies, with $M \approx \num{e9}$,
 later galaxies with $M \approx \num{e12} M_\sol$,
 and finally galaxy clusters with  $M \approx \num{e13} M_\sol$.
+
+
+
+
+\section{Halo mergers}
+
+Small haloes form first, and merge to form larger haloes.
+
+A convenient description of this process are halo merger trees.
+We consider a halo with mass $M_0$ at time $t_0$.
+We can represent the merging history of this halo using such a merging tree.
+% TODO figure
+The thickness of a branch corresponds to the mass of the halo at that time.
+We see that several smaller progenitor haloes merge into larger ones as time time goes on.
+
+We can generate such merger trees with two approaches:
+\begin{itemize}
+	\item track haloes in numerical simulations
+	\item analytical methods with extended Press-Schechter (EPS) approach
+\end{itemize}
+
+Progenitor mass function.
+Consider the average number of progenitors at time $t_1$ with masses $M_1 \in [M, M + \dd{M}]$, which by time $t_2$ have merged to form a halo of mass $M_2$.
+\begin{align*}
+	n(M_1, t_1 \, | \, M_2, t_2) \dd{M_1}
+	&= \frac{M_2}{M_1} f_\text{PS}(\nu_{12}) \abs*{\dv{\ln \nu_{12}}{\ln M_1}} \dd{M_1},
+\end{align*}
+with
+\begin{align*}
+	\nu_{12}
+	&= \frac{\delta_c(t_1) - \delta_c(t_2)}{\sqrt{\sigma^2(M_1) - \sigma^2(M_2)}}.
+\end{align*}
+This can be derived using the \textsc{eps} formalism.
+
+
+Main progenitor.
+This is the main branch of the merger tree.
+The mass of the main progenitor $M_\text{main}(t)$ can be obtained from the merger tree.
+An example is shown in
+% TODO figures
+
+Left panel:
+Each line shows the evolution of the mass of the main progenitor for a different halo.
+Note that there is a large scatter in the history of the main progenitors.
+
+Right panel:
+Each line is a different main progenitor mass.
+More massive haloes assemble later, but quicker.
+
+\subsection{Characteristic scales}
+
+We define more quantities to reduce the complexity of the merger trees.
+
+The \emph{assembly time} $t_a$ is the characteristic time scale for the formation of the halo.
+It is defined such that the mass of the main progenitor at $t_a$ is half the final mass.
+
+The \emph{halo merger rate} is the rate at which a halo of mass $M$ changes its mass by $\Delta M$, which can be expressed as a probability:
+\begin{align*}
+	\Prob(\Delta M \, | \, M, t) \dd{\ln \Delta M} \dd{\ln t}.
+\end{align*}
+
+The \emph{halo survival time} $t_s$ is the time it takes a halo of mass $M$ to merge to form a halo of mass $2 M$.
+
+
+
+
+
+
+\section{Halo clustering}
+
+We want to study how haloes are clustered in space.
+
+Consider the number overdensity of halos:
+\begin{align*}
+	\delta_h(\vec{x}, t)
+	&= \frac{N_h - \bar{N}_h}{\bar{N}_h},
+\end{align*}
+where $N_h$ is the number of haloes with mass in $[M, M + \dd{M}]$ in a small volume $\dd{V}$ centred on position $\vec{x}$, 
+and $\bar{N}_h$ is the mean number of such haloes in the volume $\dd{V}$.
+
+In the linear regime, one can show (using PSE), that
+\begin{align*}
+	\delta_h(\vec{x}, t)
+	&= b_h(M, t) \delta(\vec{x}, t),
+\end{align*}
+where $b_h$ is a constant, called the \emph{halo bias},
+and $\delta$ is the matter overdensity.
+The halo bias can be derived to be
+\begin{align*}
+	b_h(M, t)
+	= 1 + \frac{1}{D(t)}
+	\left[ \frac{\nu^2 -1}{\delta_c(t)} \right],
+\end{align*}
+where we remember $\nu = \delta_c(t) / \sigma(M)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
