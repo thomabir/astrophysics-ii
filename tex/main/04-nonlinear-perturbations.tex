@@ -345,10 +345,7 @@ We start the derivation with the Euler equation (\ref{eq:euler-collisionless}),
 	0
 	&= \pdv{}{t} [n \avg{v_j}]
 	+ \sum_{i} \pdv{}{x_i} [n \avg{v_i v_j}]
-	+ n \pdv{\Phi}{x_j},\\
-	% &= \sum_{i} \pdv{}{x_i} [n \avg{v_i v_j}]
-	% + n \pdv{\Phi}{x_j}
-	% &&\text{steady state:} \pdv*{f}{t} = 0
+	+ n \pdv{\Phi}{x_j},
 \end{align*}
 which we multiply by $m x_k$ and integrate over space to get
 \begin{align*}
@@ -511,6 +508,7 @@ is necessarily a steady-state solution of the CBE.
 All solutions of the steady state CBE depend on $\vec{x}$ and $\vec{v}$ through integrals of motion.
 
 \subsection{Spherical models}
+\label{ssec:spherical-models}
 We now analyse spherically symmetric solutions, where $\rho$ only depends on a radius $r$, and where $f$ only depends on the specific energy of a particle.
 First, we derive some general properties, and then we consider particular models.
 
@@ -666,21 +664,27 @@ There are several questions:
 	\item What is the nature of this relaxed state?
 \end{itemize}
 
-In a gas, collisions are very efficient, and quickly drive the gas to thermodynamic equilibrium. For a self-gravitating collisionless systems, however, the situation is much more complicated, because collisions are very inefficient, and they do not drive the system to a relaxed state.
-However, many relaxed systems are observed in astrophysics, such as many galaxies, galaxy clusters, and globular clusters.
+\emph{Relaxation} is the process by which a system reaches thermodynamic equilibrium. In a gas, collisions are very efficient, and quickly drive the gas to thermodynamic equilibrium.
+For self-gravitating collisionless systems, the situation is much more complicated, because collisions are very inefficient, and they do not drive the system to a relaxed state.
+Still, many relaxed systems are observed in astrophysics, such as many galaxies, galaxy clusters, and globular clusters.
 If not collisions, then what has driven the system to a relaxed state?
-There must be other processes responsible for collisionless relaxation.
 
 \subsection{Processes}
 
+There are several processes which are responsible for relaxation.
+
 \paragraph{Phase mixing.}
-Particles in nearby phase-space regions with slightly different velocities can gradually get out of phase over time. Their orbits get sheared and eventually fill the whole phase space volume, which leads to a new steady state distribution.
+Even for perfectly regular orbits, the trajectories in phase space diverge slowly in time, because the fundamental frequencies of different orbits are not the same.
+Particles in nearby phase-space regions with slightly different velocities can gradually get out of phase over time.
+Their orbits get sheared and eventually fill the whole phase space volume, which leads to a new steady state distribution.
 
 \paragraph{Chaotic mixing.}
-If particles are in a region of phase space which have chaotic trajectories, which diverge exponentially and fill up phase space.
+For chaotic orbits, the trajectories diverge exponentially in time.
+Chaotic mixing is more efficient at large scales, so this process mostly relaxes the coarse-grained distribution function.
 
 \paragraph{Violent relaxation.}
-As the object collapses, there can be a variation in the gravitational potential which can broaden the velocity distribution of the particles. The time scale for this process is small, which is why it's called violent.
+If the (smoothed) potential of the system changes quickly, such as during a merger or mass loss, the velocity distribution of a system can be broadened.
+The time scale for this process is small, which is why it is called violent.
 
 \paragraph{Landau damping.}
 The interaction between perturbation waves and particles can transfer energy into the random motion of particles. This is similar to free streaming.
@@ -970,17 +974,18 @@ The \emph{halo survival time} $t_s$ is the time it takes a halo of mass $M$ to m
 
 \section{Halo clustering}
 
-We want to study how haloes are clustered in space.
 
-Consider the number overdensity of halos:
+We want to study how haloes are clustered in space.
+Consider the number overdensity of halos,
 \begin{align*}
 	\delta_h(\vec{x}, t)
 	&= \frac{N_h - \bar{N}_h}{\bar{N}_h},
 \end{align*}
 where $N_h$ is the number of haloes with mass in $[M, M + \dd{M}]$ in a small volume $\dd{V}$ centred on position $\vec{x}$, 
-and $\bar{N}_h$ is the mean number of such haloes in the volume $\dd{V}$.
+and $\bar{N}_h$ is the mean number of such haloes.
 
-In the linear regime, one can show (using PSE), that
+\subsection{Linear Halo bias}
+On linear (large) scales, one can show with the EPS-approach that
 \begin{align*}
 	\delta_h(\vec{x}, t)
 	&= b_h(M, t) \delta(\vec{x}, t),
@@ -995,18 +1000,133 @@ The halo bias can be derived to be
 \end{align*}
 where we remember $\nu = \delta_c(t) / \sigma(M)$.
 
+The model is compared with simulations in \cref{fig:halo-bias}.
+% TODO figure  Hu and Krastov
+The dashed line is the spherical-collapse EPS model, and the solid line is a model that also includes non-spherical collapse.
+Once again, we see that spherical collapse gives us the right trend, but introducing elliptical collapse yields a much better agreement with simulations.
+
+% TODO? figure other fitting functions   Seljak & Warren 2004
+Note that for $M > \num{1e12} M_\sol$, the halo bias is larger than $1$, so haloes are more clustered than $\delta$.
+For $M < \num{1e12} M_\sol$, $b_h < 1$, which is called an antibias.
+Generally, the more massive the haloes, the more strongly clustered they are.
+
+\subsection{More general bias models}
+
+\paragraph*{Small scales.}
+On small scales, we have to include non-linear effects in the bias.
+Also, there could be a stochastic component to the bias.
+Consider a more general bias model:
+\begin{align*}
+	\delta_h(\vec{x}, t)
+	&= 
+	b_h(M, t, \delta) \delta(\vec{x})
+	+ \epsilon(\vec{x}) 
+\end{align*}
+where $b_h(\dots, \delta)$ leads to non-linear dependence on the bias, and $\epsilon$ describes the scatter between the halo contrast and the density contrast.
+
+\paragraph*{Assembly bias.}
+The bias may also depend on other halo properties, such as the concentration of the halo or its spin.
+An important dependence is on the halo formation history.
+It is found that haloes with early assembly times are more strongly clustered at a given mass and time. This is called \emph{assembly bias}.
 
 
 
 
 
+\section{Internal structure of Haloes}
+
+\subsection{Density profile}
+From simulations, we know that density profiles of haloes are well fit by an NFW model (\cref{ssec:spherical-models}),
+% TODO reference
+\begin{align*}
+	\rho(r)
+	= \frac{\rho_s}{\left( \frac{r}{r_s} \right) \left( 1 + \frac{r}{r_s} \right)^2},
+\end{align*}
+where $\rho_s$ and $r_s$ are constants.
+Note that the NFW profile is one of the double power law models.
+We see that
+\begin{align*}
+	\rho(r)
+	\propto
+	\begin{cases}
+		r^{-1} & \text{if } r \ll r_s\\
+		r^{-2} & \text{if } r \approx r_s\\
+		r^{-3} & \text{if } r \gg r_s,
+	\end{cases}
+\end{align*}
+which is similar to the singular isothermal sphere model.
+Since the model becomes invalid for $r \to 0$ because of the influence of baryons, the singularity at $r = 0$ is not a huge problem.
+The total mass is
+\begin{align*}
+	M
+	&= \int_0^{r_v} \dd{^3\vec{x}} \rho(\vec{x})\\
+	&= 4\pi \int_0^{r_v} \dd{r} r^2 \rho(r)\\
+	&= 4\pi \rho_s r_s^3 \left[ \ln(1+x) - \frac{c}{1+c} \right],
+\end{align*}
+where $r_v$ is the virial radius, defined such that $\rho(< r_v)/\bar{\rho} = 1 + \Delta_v \approx 178$ in a matter dominated universe.
+% TODO reference
+The parameter $c = r_v/r_s$ is the concentration parameter.
+
+Notes:
+\begin{itemize}
+	\item Sometimes, $\Delta_v = 200$ is approximated as a convention.
+	\item The NFW profile is a good fit to haloes for all masses and redshifts in simulations, which is why it is called a \emph{universal profile}.
+	It is not well-understood why there is such little variety in the large-scale structure of haloes.
+	\item Generally, the concentration parameter $c(M, t)$ depends on mass and time.
+	The dependence can be derived from simulations, but has so far not been predicted from analytical models.
+	\item To a lesser degree, $c$ also depends on the formation history of the haloes, as haloes with early assembly times are more concentrated.
+	\item There is an even better popular fit function, called the Einasto profile.
+	It is flatter as $r \to 0$, but it also has more parameters.
+\end{itemize}
 
 
 
+\subsection{Halo shapes}
+Generally, haloes are not spherical, but elliptical.
+Let $a_1 \geq a_2 \geq a_3$ be the main axis of the ellipsoid, and let $s = a_3/a_1$, which is a measure of flattening of the halo.
+If $s = 1$, we are looking at a sphere, and $s=0$ is a perfectly flat two-dimensional pancake.
+In simulations, the following trends have been found:
+\begin{itemize}
+	\item Less massive haloes are more spherical.
+	\item Haloes that assemble early are more spherical.
+	\item The minor axis $a_1$ tends to be perpendicular to large-scale filaments of the cosmic web.
+\end{itemize}
 
 
+\subsection{Halo substructure}
+
+% TODO figure from Millennium Run
+
+There are subhaloes inside haloes, which are remnants of progenitor haloes that have merged to form larger haloes.
+
+Let $M$ be the total mass of a halo, and $m$ the mass of a subhalo.
+The mass distribution of small haloes inside larger haloes is called the \emph{subhalo mass function},
+% This is a good fit to simulations
+\begin{align*}
+	\dv{n}{h(m/M)}
+	\approx 
+	\frac{f_0}{\beta \Gamma(1-\gamma)}
+	\left( \frac{m}{\beta M} \right)^{-\gamma}
+	\exp\left( - \frac{m}{\beta M} \right),
+\end{align*}
+where $\gamma \approx 0.9$, $\beta \in [0.1, 0.5]$, and
+\begin{align*}
+	f_0
+	= \frac{1}{M}
+	\int m \dv{M}{m} \dd{m}.
+\end{align*}
+The expression in the integral is the total mass of the subhaloes, and it is divided by the total mass of the halo. It is called the \emph{mean subhalo mass fraction}, which is the mass of a halo which is made up of subhaloes.
+
+Subhaloes at a given time can be related to the progenitors and the survival time of progenitors following the merger.
 
 
+\subsection{Angular momentum}
+Haloes generally have a non-zero angular momentum, which can be characterized by the \emph{dimensionless spin parameter},
+\begin{align*}
+	\lambda = \frac{J \abs{E}^{1/2}}{G M^{5/2}},
+\end{align*}
+where $J$ is the angular momentum of the halo, $E$ is its energy, and $M$ is its mass.
+From simulations, we know that $\lambda \approx 0.03$ is quite small, which is related to haloes being supported against gravitational collapse mostly by random motion rather than rotation.
 
 
 
