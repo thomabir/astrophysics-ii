@@ -53,7 +53,7 @@ The solution of the equation of motion for $\epsilon < 0$ is
 	B &= \frac{GM}{(2 \abs{\epsilon})^{2/3}}
 \end{align*}
 The solution $r(t)$ is plotted in \cref{fig:shell-collapse-r}.
-The shell expands, reaches a maximum radius $r_\text{ta} = 2 A$ at $t_\text{ta} = \pi B$, and collapses at $t_\text{coll} = 2 t_\text{ta}$.
+The shell expands, reaches a maximum radius $r_\text{ta} = 2 A$ at $t_\text{ta} = \pi B$, and collapses at $t_\text{coll} = 2 t_\text{ta}$.\sidenote{We will show that $t_\text{coll} = 2 t_\text{ta}$ in \cref{ssec:virial-applications}, but we have to derive the Virial theorem first.}
 However, the model will be invalid shortly before $t_\text{coll}$, since shells start crossing and virialize, which will be discussed later.
 \begin{figure}
 	\centering
@@ -317,6 +317,8 @@ If we take the Jeans equation, the continuity equation, and the Poisson equation
 \section{Virial theorem}
 % Consider a localized self-gravitating collisionless system in a steady state, such as an isolated galaxy. A steady state means that the distribution function does not depend on time, but only on $\vec{x}$ and $\vec{v}$.
 
+\subsection{Derivation}
+
 \paragraph*{Tensor Virial theorem.}
 For a self-gravitating collisionless system,\sidenote{The Virial theorem is also valid for a self-gravitating ideal fluid, since its derivation relies on the equations from \cref{ssec:collisionless-eom}, which are basically the same as the ideal fluid equations.}
 \begin{align*}
@@ -428,13 +430,15 @@ where $E$ is the total energy of the system.
 % \end{align*}
 % which is Virial theorem. It is also commonly written as $E = - K = W/2$. We call a system virialized if the Virial theorem is valid.
 
+\subsection{Applications}
+\label{ssec:virial-applications}
 
-\paragraph*{Application: Mass estimation.}
+\paragraph*{Mass estimation.}
 We consider a system composed of many collisionless particles\sidenote{We have seen in \cref{ssec:time-scales} that this is an excellent approximation for many systems, such as galaxies and clusters.} with total mass $M$, average particle velocity $v$, and diameter $R$.
 The kinetic and potential energy can be estimated as
 \begin{align*}
-	K &\approx \frac{M v^2}{2},&
-	W &\approx - \frac{G M^2}{R},
+	K \approx \frac{M v^2}{2}, \qquad
+	W \approx - \frac{G M^2}{R},
 \end{align*}
 which can be plugged into the Virial theorem to give
 \begin{align*}
@@ -443,16 +447,14 @@ which can be plugged into the Virial theorem to give
 Since the radius can be estimated from images, and the average velocity can be estimated from measurements of the Doppler shift, this method is useful for estimating the mass of a system, which is otherwise hard to access experimentally. 
 
 
-\paragraph*{Application: Spherical collapse model.}
+\paragraph*{Spherical collapse model.}
 The Virial theorem can be applied to the spherical collapse model.
 % TODO figure again
 Let $E = K + W$ be the conserved total energy of the sphere.
-
-At $t_\text{ta}$, the kinetic energy is zero, so $E = W_\text{ta}$, which is the gravitational potential energy of a solid sphere with radius $r_\text{ta}$:
+At $t_\text{ta}$, the shell is stationary, so the kinetic energy is zero, and $E = W_\text{ta}$, which is the gravitational potential energy of a solid sphere with radius $r_\text{ta}$:
 \begin{align*}
 	E = - \frac{3}{5} \frac{G M^2}{r_\text{ta}}.
 \end{align*}
-
 At $t = t_\text{coll}$, which is also called $t_\text{vir}$, the energy is
 \begin{align*}
 	E
@@ -464,11 +466,12 @@ Because the energy is conserved, the two results can be combined to yield
 \begin{align*}
 	r_\text{vir} = \frac{r_\text{ta}}{2}.
 \end{align*}
-The mean overdensity within $r_\text{vir}$ at $t_\text{vir}$ is
+We can also calculate the mean overdensity $1 + \delta(t_\text{vir})$ within the radius $r_\text{vir}$, which is commonly written as $1 + \Delta$:
 \begin{align*}
 	1 + \Delta
-	&= \frac{\rho(t_\text{vir})}{\bar{\rho}}\\
-	&= \frac{ \rho(t_\text{ta}) \left(\frac{r_\text{ta}}{r_\text{vir}}\right)^3  }{\bar{\rho}(t_\text{vir})}\\
+	&= \frac{\rho(t_\text{vir})}{\bar{\rho}(t_\text{vir})}\\
+	&= \frac{ \rho(t_\text{ta})}{\bar{\rho}(t_\text{vir})}
+	\left(\frac{r_\text{ta}}{r_\text{vir}}\right)^3\\
 	&= \frac{\rho(t_\text{ta})}{\bar{\rho}(t_\text{ta})}
 	\frac{\bar{\rho}(t_\text{ta})}{\bar{\rho}(t_\text{vir})}
 	\left( \frac{r_\text{ta}}{r_\text{vir}} \right)^3\\
@@ -485,8 +488,9 @@ We want to find solutions of the CBE which are steady states, meaning we want $f
 \begin{align*}
 	0
 	&= \sum_{i} \pdv{f}{x_i} \dv{x_i}{t}
-	+ \sum_{i} \pdv{f}{v_i} \dv{v_i}{t}.
+	+ \sum_{i} \pdv{f}{v_i} \dv{v_i}{t},
 \end{align*}
+because the term $\pdv{f}{t} = 0$ for a steady state.
 
 \subsection{Integrals of motion}
 Integrals of motion are functions $I(\vec{x}, \vec{v})$ that are constant along particle trajectories.
@@ -497,22 +501,21 @@ For integrals of motion,
 	&= \sum_{i} \pdv{I}{x_i} \dv{x_i}{t}
 	+ \sum_{i} \pdv{I}{v_i} \dv{v_i}{t}.
 \end{align*}
-Thus, integrals of motion are solutions of the CBE.
+Thus, integrals of motion are solutions of the steady-state CBE.
 Conversely, a distribution function $f$ which is a function of integrals of motion, written as
 \begin{align*}
 	f(\vec{x}, \vec{v}) = f[I_1(\vec{x}, \vec{v}), \dots, I_N(\vec{x}, \vec{v})],
 \end{align*}
 is necessarily a steady-state solution of the CBE.
 
-\paragraph*{Jean's theorem}
-All solutions of the steady state CBE depend on $\vec{x}$ and $\vec{v}$ through integrals of motion.
+It follows that all solutions of the steady state CBE depend on $\vec{x}$ and $\vec{v}$ through integrals of motion. This result is called \emph{Jean's theorem}.
 
 \subsection{Spherical models}
 \label{ssec:spherical-models}
 We now analyse spherically symmetric solutions, where $\rho$ only depends on a radius $r$, and where $f$ only depends on the specific energy of a particle.
 First, we derive some general properties, and then we consider particular models.
 
-\paragraph*{General spherical model}
+\paragraph*{General spherical model.}
 The specific energy of a particle is
 \begin{align*}
 	E = \frac{1}{2} v^2 + \Phi(\vec{x}).
@@ -541,7 +544,7 @@ Conversely,
 	\int_0^\epsilon \dv{\rho}{\Psi} \frac{\dd{\Psi}}{\sqrt{\epsilon-\Psi}}
 \end{align*}
 
-\paragraph*{Isothermal sphere}
+\paragraph*{Isothermal sphere.}
 \begin{align*}
 	f(\epsilon)
 	= \frac{\rho_0/m}{(2\pi\sigma^2)^{3/2}} \exp(\epsilon/\sigma^2),
@@ -588,7 +591,7 @@ Notes:
 \end{itemize}
 
 
-\paragraph*{King Model}
+\paragraph*{King Model.}
 \begin{align*}
 	f(\epsilon)
 	&=
@@ -605,7 +608,7 @@ The mass in this model is finite.
 The model is a good fit for bright elliptical galaxies.
 
 
-\paragraph*{Double power law models}
+\paragraph*{Double power law models.}
 \begin{margintable}
 	\footnotesize
 	\begin{tabular}{ll}
@@ -705,8 +708,8 @@ and it is not clear whether the relaxed states we introduced previously are the 
 As a result, the end state of relaxation cannot be described as thermal equilibrium.
 In practice, we have to use numerical simulations to characterize the relaxed state.
 
-Furthermore, many astrophysical systems cannot be treated as being isolated, since they interact with other systems, such as interactions between galaxies and galaxy mergers.
-This would complicate any attempt at thermostatic analysis even further.
+Furthermore, many astrophysical systems cannot be treated as being isolated, since interactions between galaxies or even galaxy mergers can occur.
+This would complicate any attempt at thermodynamic equilibrium analysis even further.
 
 We can, however, describe the properties of these systems statistically using simplified models, and compare them to simulations.
 
@@ -715,7 +718,7 @@ We can, however, describe the properties of these systems statistically using si
 
 The goal of this section is to predict the number density of dark matter haloes which have formed through gravitational collapse as a function of time.
 
-We consider the linear overdensity field $\delta(\vec{x}, t)$, where we have dropped the subscript \enquote{$\text{lin}$} from previous sections.
+We consider the linear overdensity field $\delta(\vec{x}, t)$, where we have dropped the subscript \enquote{$\text{lin}$} from previous sections for easier notation.
 In the linear regime, 
 \begin{align*}
 	\delta(\vec{x},t) = \delta_0(\vec{x}) D(t),
@@ -725,44 +728,46 @@ We adopt a slightly different notation for $D(t)$, normalizing it such that $D(t
 We define a smoothed field by convolving with a kernel,
 \begin{align*}
 	\delta_s(\vec{x}, t)
-	&= \int \dd{^3 x'} W(\vec{x}+\vec{x'}; R) \delta(\vec{x'}, t),
+	&= \int \dd{^3 \vec{y}} W(\vec{x}+\vec{y}; R) \delta(\vec{x'}, t),
 \end{align*}
 where $W(\vec{x}; R)$ is a window function with a characteristic radius $R$, such as a top hat.
-For a top hat window function, then we can associate a characteristic mass
+To a top hat window function, we can associate a characteristic mass,
 \begin{align*}
 	M = \frac{4\pi}{3} R^3 \bar{\rho}.
 \end{align*}
 
-For the spherical collapse model, we found that for regions with a smooth density field
+\subsection{Probability of collapse}
+
+For the spherical collapse model, we found that for regions with a smooth density field satisfying
 \begin{align*}
-	\delta_s(\vec{x}, R, r) > \delta_c \approx 1.69,
-	&&\text{number for matter dominated universe}
+	\delta_s(\vec{x}, R, t) > \delta_c \approx 1.69,
+	&&\text{(number for matter dominated universe)}
 \end{align*}
 the region will have collapsed to form a virialized object.
 This is what we call a dark matter halo.
 We rewrite this using the linear growth factor.
-Because $\delta_s(\vec{x}, R, t) = \delta_S(\vec{x}, R, t_0) D(t)$, we have
+Because $\delta_s(\vec{x}, R, t) = \delta_S(\vec{x}, R, t_0) D(t)$, we have equivalently
 \begin{align*}
 	\delta_s(\vec{x}, R, t_0)
 	> \delta_c(t),
 \end{align*}
 where we defined $\delta_c(t) = \delta_c / D(t)$.
 
-We try to calculate the probability of collapse.
+We now to calculate the probability of collapse.
 Since $\delta$ is a Gaussian field
 ($\delta$ is linear with Gaussian initial conditions in our standard model of cosmology),
 the smoothed field is also Gaussian, since the smoothing is a linear process.
 The probability that $\delta_s > \delta_c(t)$ can be written as
 \begin{align*}
-	\Prob(>\delta_c(t))
+	\Prob(\delta_s > \delta_c(t))
 	= \int_{\delta_c(t)}^{\infty}
 	\dd{\delta_s}
-	p(\delta_s),
+	\Prob(\delta_s),
 \end{align*}
 where $\delta_s = \delta_s(t_0)$.
 Since the field is Gaussian,
 \begin{align*}
-	p(\delta_s)
+	\Prob(\delta_s)
 	\propto
 	\frac{
 		\exp \left[
@@ -781,22 +786,24 @@ where $\sigma(M)$ is the variance of the smoothed field,
 which is a result that we have seen before.\sidenote{As a reminder, $\tilde{W}$ is the Fourier transform of the window function, and $P(k)=P(k, t_0)$ is the linear matter-power spectrum today}
 The integral then evaluates to
 \begin{align*}
-	\Prob(>\delta_c(t))
+	\Prob(\delta_s > \delta_c(t))
 	= \frac{1}{2} \erf
 	\left[ \frac{\delta_c(t)}{\sqrt{2} \sigma(M)} \right].
 \end{align*}
+
+\subsection{Mass fraction}
 
 We use the PS-ansatz by \textsc{Press} and \textsc{Schechter} (1974).
 The mass fraction of collapsed objects with mass greater than $M$ is
 \begin{align*}
 	F(>M)
-	&= 2 \Prob(>\delta_c(t)).
+	&= 2 \Prob(\delta_s > \delta_c(t)).
 \end{align*}
 The factor $2$ was found with the following argument.
 In the limit where $M \to 0$, we see that $\sigma(M) \to \infty$ for CDM models.
 As a result,
 \begin{align*}
-	\Prob(>\delta_c(t)) \to \tfrac{1}{2}.
+	\Prob(\delta_s > \delta_c(t)) \to \frac{1}{2}.
 \end{align*}
 With our ansatz, the mass fraction then goes to 1.
 That means that all the mass in the universe is in a collapsed object of some mass.
@@ -804,26 +811,25 @@ Without the factor of $2$, only half the mass in the universe would be inside th
 
 The factor in the PS-ansatz can be justified in a more solid way by using a formalism called \emph{excursion sets}, which is also called the Extended Press-Schechter (EPS) formalism.
 
-We want to find the number density of collapsed objects with a mass between $M$ and $M + \dd{M}$.
-We try
+We want to find the number density of collapsed objects with a mass between $M$ and $M + \dd{M}$,
 \begin{align*}
 	n(M, t)
 	= \frac{\bar{\rho}}{M}
 	\pdv{F(>M)}{M} \dd{M}
 \end{align*}
-The factor $bar{\rho}/M$ is the number of \emph{all} objects per unit volume, if all objects had the mass $M$.
+The factor $\bar{\rho}/M$ is the number of \emph{all} objects per unit volume, if all objects had the mass $M$.
 The next factor is the mass fraction of collapsed objects with mass between $M$ and $M+ \dd{M}$.
 We get
 \begin{align*}
 	n(M, t) \dd{M}
 	&= 2 \frac{\bar{\rho}}{M}
-	\pdv{\Prob(>\delta_c(t))}{\sigma}
+	\pdv{\Prob(\delta_s > \delta_c(t))}{\sigma}
 	\abs*{ \dv{\sigma}{M} }
 	\dd{M}.
 \end{align*}
 We plug in
 \begin{align*}
-	\pdv{\Prob(>\delta_c(t))}{\sigma}
+	\pdv{\Prob(\delta_s > \delta_c(t))}{\sigma}
 	&=
 	\pdv{}{\sigma} \left[ 
 		\frac{1}{2} \erfc \left( \frac{\delta_c}{2\sigma} \right)
@@ -851,7 +857,7 @@ and get\sidenote{We use
 	\dd{M},
 \end{align*}
 which is called the PS Halo mass function.
-Define
+We define
 \begin{align*}
 	\nu = \frac{\delta_c(t)}{\sigma(M)}
 \end{align*}
@@ -874,6 +880,12 @@ The formula is convenient to express in this way, because the quantities are dim
 	\caption{The multiplicity factor.}
 	\label{fig:multiplicity}
 \end{marginfigure}
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-04/dndm.pdf}
+	\caption{The halo mass function.}
+	\label{fig:dndm}
+\end{marginfigure}
+
 
 In \cref{fig:multiplicity}, we see that $f(\nu)$ from our model (solid line) corresponds acceptably to simulated data.
 The agreement becomes much better when we allow elliptical collapse, which results in
@@ -884,11 +896,6 @@ The agreement becomes much better when we allow elliptical collapse, which resul
 where $\tilde{\nu} \approx 0.84 \nu$, $q = 0.3$, and $A \approx 0.322$.
 There are also other fitting functions that are commonly used.
 
-\begin{marginfigure}
-	\includegraphics[width=\textwidth]{img/ch-04/dndm.pdf}
-	\caption{The halo mass function.}
-	\label{fig:dndm}
-\end{marginfigure}
 
 Let's look at the shape and evolution of the Mass function, shown in \cref{fig:dndm}.
 The mass function is shown for different redshifts, where time increases from left to right.
