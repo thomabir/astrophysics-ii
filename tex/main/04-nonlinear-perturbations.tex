@@ -566,7 +566,7 @@ where
 	r_0 = \frac{3\sigma}{\sqrt{4\pi G \rho_0}},
 \end{align*}
 which is called the King radius.
-The density profile is shown in % TODO figure
+% The density profile is shown in % TODO figure
 
 Notes:
 \begin{itemize}
@@ -1007,15 +1007,20 @@ The halo bias can be derived to be
 \end{align*}
 where we remember $\nu = \delta_c(t) / \sigma(M)$.
 
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-04/halo-bias.pdf}
+	\caption{The average bias for halos of mass $> M_{180}$ predicted by analytical models of spherical and elliptical collapse.}
+	\label{fig:halo-bias}
+\end{marginfigure}
+
 The model is compared with simulations in \cref{fig:halo-bias}.
-% TODO figure  Hu and Krastov
 The dashed line is the spherical-collapse EPS model, and the solid line is a model that also includes non-spherical collapse.
 Once again, we see that spherical collapse gives us the right trend, but introducing elliptical collapse yields a much better agreement with simulations.
 
 % TODO? figure other fitting functions   Seljak & Warren 2004
 Note that for $M > \num{1e12} M_\sol$, the halo bias is larger than $1$, so haloes are more clustered than $\delta$.
-For $M < \num{1e12} M_\sol$, $b_h < 1$, which is called an antibias.
-Generally, the more massive the haloes, the more strongly clustered they are.
+For $M < \num{1e12} M_\sol$ (not shown in the figure), $b_h < 1$, which is called an antibias.
+In summary, the more massive the haloes, the more strongly clustered they are.
 
 \subsection{More general bias models}
 
@@ -1043,8 +1048,7 @@ It is found that haloes with early assembly times are more strongly clustered at
 \section{Internal structure of Haloes}
 
 \subsection{Density profile}
-From simulations, we know that density profiles of haloes are well fit by an NFW model (\cref{ssec:spherical-models}),
-% TODO reference
+From simulations, we know that density profiles of haloes are well fit by an NFW model (see \cref{ssec:spherical-models}),
 \begin{align*}
 	\rho(r)
 	= \frac{\rho_s}{\left( \frac{r}{r_s} \right) \left( 1 + \frac{r}{r_s} \right)^2},
@@ -1071,7 +1075,6 @@ The total mass is
 	&= 4\pi \rho_s r_s^3 \left[ \ln(1+x) - \frac{c}{1+c} \right],
 \end{align*}
 where $r_v$ is the virial radius, defined such that $\rho(< r_v)/\bar{\rho} = 1 + \Delta_v \approx 178$ in a matter dominated universe.
-% TODO reference
 The parameter $c = r_v/r_s$ is the concentration parameter.
 
 Notes:
@@ -1102,15 +1105,21 @@ In simulations, the following trends have been found:
 
 \subsection{Halo substructure}
 
-% TODO figure from Millennium Run
+\begin{figure}
+	\includegraphics[width=\textwidth]{img/ch-04/millenium-run.png}
+	\caption{The distribution of dark matter in the universe, based on the \enquote{Millenium Run} simulation. The halo in the enlarged view consists both of a smooth dark matter distribution and several smaller subhaloes. These subhaloes are remnants of progenitor haloes that have merged to form the main halo.}
+	\label{fig:millenium-run}
+\end{figure}
 
-There are subhaloes inside haloes, which are remnants of progenitor haloes that have merged to form larger haloes.
+In \cref{fig:millenium-run}, we see the result of a large scale simulation of the universe.
+In the dark matter distribution, there are subhaloes visible inside some haloes.
+The subhaloes are remnants of progenitor haloes that have merged to form larger haloes.
 
-Let $M$ be the total mass of a halo, and $m$ the mass of a subhalo.
-The mass distribution of small haloes inside larger haloes is called the \emph{subhalo mass function},
-% This is a good fit to simulations
+An interesting quantity is the \emph{subhalo mass function}, which describes the number of subhaloes $n$ with mass $m$ in a main halo with total mass $M$.
+To make the result independent of the mass of the main halo, we instead use the mass fraction $m/M$.
+A good fit to simulations of the subhalo mass fraction is
 \begin{align*}
-	\dv{n}{h(m/M)}
+	\dv{n}{\ln(m/M)}
 	\approx 
 	\frac{f_0}{\beta \Gamma(1-\gamma)}
 	\left( \frac{m}{\beta M} \right)^{-\gamma}
@@ -1122,7 +1131,7 @@ where $\gamma \approx 0.9$, $\beta \in [0.1, 0.5]$, and
 	= \frac{1}{M}
 	\int m \dv{M}{m} \dd{m}.
 \end{align*}
-The expression in the integral is the total mass of the subhaloes, and it is divided by the total mass of the halo. It is called the \emph{mean subhalo mass fraction}, which is the mass of a halo which is made up of subhaloes.
+The quantity $f_0$ is called the \emph{mean subhalo mass fraction}, and it is the fraction of the main halo mass that is made up of subhaoles.
 
 Subhaloes at a given time can be related to the progenitors and the survival time of progenitors following the merger.
 
