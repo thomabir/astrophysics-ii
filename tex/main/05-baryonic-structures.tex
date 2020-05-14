@@ -71,9 +71,6 @@ Stars are formed by the collapse of cold gas in molecular clouds in the ISM.
 They are supported against gravity by nuclear fusion reactions at their centre.
 The energy that is produced is transported outwards by photons to the star's outer shells.
 
-\subsection{Sun}
-We have already seen that $M_\sol \approx \SI{2e30}{\kg}$.
-
 \subsection{Composition}
 \begin{table}
 	\begin{tabular}{lccccccccc}
@@ -83,9 +80,11 @@ We have already seen that $M_\sol \approx \SI{2e30}{\kg}$.
 	$(N/N_H) \cdot 10^5$ & $10^5$ & 9800 & 36.3 & 11.2 & 85.1 & 12.3 & 3.80 & 3.55 & 4.68\\
 	\bottomrule
 	\end{tabular}
+	\caption{The chemical composition of the sun.}
+	\label{tab:solar-comp}
 \end{table}
-The solar composition is shown in TODO.
-% Pridmorial: 25% He, only traces of heavier elements
+The solar composition is shown in \cref{tab:solar-comp}.
+For comparison, the primordial abundance is about \SI{75}{\percent} hydrogen and \SI{25}{\percent} helium, with only traces of heavier elements.
 Apparently, the abundance of helium and heavier elements in the sun is different from the primordial abundance.
 This is because heavier elements are produced by nuclear reactions in stars.
 To characterize these abundances, we define the \emph{metallicity} $z$, which is the mass faction of elements heavier than helium.
@@ -109,10 +108,10 @@ For the sun, $z_\sol \approx \SI{2}{\percent}$.
 	\caption{The spectral type as a function of temperature.}
 	\label{tab:spectral-type}
 \end{margintable}
-The modern classification system for stars is the MK classification.
+The modern classification system for stars is the MK classification, which consists of a spectral classification and a luminosity classification.
 
 The spectral classification is a single letter for rough classification, followed optionally by a single number for finer classification.
-\cref{tab:spectral-type} shows the temperature of stars with different spectral types.
+\Cref{tab:spectral-type} shows the temperature of stars with different spectral types.
 
 \subsection{Hertzsprung-Russel diagram}
 
@@ -323,11 +322,15 @@ and $\phi^*$ is a normalization factor.
 In \cref{fig:lum-func}, the luminosity function has been fitted to experimental data.
 
 \subsection{Colour distribution}
-The color-magnitude diagram for galaxies is shown in \cref{fig:cm-galaxies}.
-% TODO figure
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-05/cm-galaxies.png}
+	\caption{The color-mass diagram for galaxies.}
+	\label{fig:cm-galaxies}
+\end{marginfigure}
+The color-mass diagram for galaxies is shown in \cref{fig:cm-galaxies}.
 There are two maxima in the distribution.
-In the upper mid, there is the red sequence, which consists of bright red galaxies.
-The blue sequence in the lower left consists of faint blue galaxies.
+The red sequence consists of bright red galaxies,
+and the blue sequence consists of faint blue galaxies.
 
 \subsection{Mass-Metalicity}
 Spiral galaxies with large total stellar masses $M_*$ tend to have higher metalicities.

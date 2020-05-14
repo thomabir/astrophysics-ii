@@ -281,3 +281,4 @@ TSWLatexianTemp*
 *.lpz
 .python-version
 test.html
+.DS_Store
