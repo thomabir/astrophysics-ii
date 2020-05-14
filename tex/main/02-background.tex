@@ -35,9 +35,8 @@ The Friedmann-Robertson-Walker (FRW) metric is the metric of a homogeneous and i
   \dd{s}^2 = c^2 \dd{t}^2 - a(t)^2( \dd{\chi}^2 + r(\chi)^2 \dd{\Omega}^2 )
 \end{align*}
 \begin{itemize}
-	\item $\chi$: comoving radius
 	\item $\dd{\Omega}^2 = \dd{\theta}^2 + \sin^2\theta \dd{\phi}^2$: solid angle element
-	\item $a(t)$: scale factor
+	\item $\chi$: comoving radius/ distance
 	\item $\displaystyle
 		r(\chi) = f_K(\chi) = 
 		\begin{cases}
@@ -46,11 +45,22 @@ The Friedmann-Robertson-Walker (FRW) metric is the metric of a homogeneous and i
 			\sinh \chi & \text{open case, negative curvature}
 		\end{cases}
 		$
+	\item $a(t)$: scale factor, which describes the expansion (or contraction) of space
 \end{itemize}
+
+\paragraph*{Redshift}
+Almost all observations about astronomical objects are made through light signals, therefore it is important to know what happens to the light until it reaches us.\\
+Consider a photon emitted from e.g. a galaxy, which travels to the observer. From the previous subchapter we know that photons travel along null geodesics: $\dd s =0$. By assuming that the photon wavelength $\lambda \approx a$ we find
+\begin{align*}
+	1+z = \frac{\lambda_{obs}}{\lambda_{emit}} = \frac{a_{obs}}{a_{emit}} = \frac{a_{0}}{a_{emit}},
+\end{align*}
+where z is the redshift, $\lambda_{obs}$ and $a_{obs} = a_0$ are the wavelength and scale factor at the observer and $\lambda_{emit}$ and $a_{emit}$ at emission.\\
+For an expanding universe we have that $\frac{a_{emit}}{a_{0}} \leq 1$ and therefore $z \geq 0$. The object appears redder. 
 
 \paragraph*{Hubble parameter}
 \begin{itemize}
 	\item Hubble parameter: $H \defeq \dot{a}/a$
+	\item The Hubble parameter describes how fast the proper distance between two fundamental observers changes at time t. 
 	\item today's value gets a subscript zero: $H_0$
 	\item Because it is hard to measure $H$ accurately, we write it as
 	\begin{align*}
