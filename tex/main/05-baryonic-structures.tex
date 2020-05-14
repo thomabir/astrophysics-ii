@@ -104,6 +104,192 @@ Because the massive blue stars burn their fuel first, new galaxies are blue, and
 
 
 
+%
+% TODO
+%
+
+
+
+\paragraph{Terminology}
+Elliptical galaxies are called \enquote{early types}, and spirals are called \enquote{late types}.
+The nomenclature is historical and is not related to the formation history.
+
+
+
+% 5.4
+\section{Elliptical galaxies}
+Elliptical galaxies tend to be regular, with a smooth elliptical light distribution.
+
+\paragraph*{Surface brightness}
+The surface brightness of elliptical galaxies is well fit by a \emph{Sersic profile},
+\begin{align*}
+	I(R)
+	&= I_0 \exp\Bigg[ - \beta_n \left( \frac{R}{R_e}  \right)^{1/n} \Bigg],
+\end{align*}
+where $m$ is the Sersic index,
+$R$ is the semi-major axis length,
+$R_e$ is the half-light radius,
+and it follows that $\beta_n \approx 2 n - 0.324$ to fulfill this criterion.
+The brighter galaxies have a larger value of $n$.
+For normal ellipticals, $n \approx 4$, for which the profile is also called a \emph{de Vaucouleurs profile}.
+
+\paragraph*{Shape}
+Let $b/a$ be the ratio of minor to major axis of the light distribution.
+For normal ellipticals, $b/a \in [0.3, 1]$.
+In the Hubble sequence, this corresponds to types E0 to E7.
+
+\paragraph*{Colour}
+Ellipticals tend to be redder than spirals, which indicates an older, metal-rich star population.
+Some ellipticals have colour gradients, such that the central regions tend to be redder.
+
+\paragraph*{Kinematics}
+The support against gravitational collapse is mostly provided by random motion.
+The rotational velocities are comparatively small.
+
+
+\paragraph{Scaling relations}
+There is a correlation between some of the main characteristics of ellipticals.
+Let $\sigma$ be the line of sight velocity dispersion of stars inside the half-light radius $R_e$,
+and let $\avg{I}_l$ be the main surface brightness within $R_e$.
+\Cref{fig:correlation} shows the \emph{fundamental plane}, which which quantifies the correlation between these parameters.
+% TODO
+The correlation between $\avg{I_l}$ and $\sigma$ is called \emph{Faber-Jackson relation}.
+The correlation between $R_e$ and $\sigma$ is called the \emph{$D_n$-$\sigma$ relation}, whose name comes from an other measure for radius, $D_n$.
+
+
+\paragraph*{Gas content}
+Very little cold gas, with temperatures less than \SI{100}{\kelvin}, is contained in ellipticals.
+As a result, new stars are not forming, which explains the old stellar population.
+Hot gas with temperatures around \SI{1e7}{\kelvin} is much more abundant, and can be found with x-ray observations.
+There is also a little warm gas, with temperature \SI{1e4}{\kelvin}.
+
+
+
+
+
+
+
+\section{Spiral galaxies}
+% TODO figure
+Spiral galaxies, like the Milky Way in \cref{fig:mw-structure}, show a spiral structure when viewed face-on, and look like a flat disk with a central bulge edge-on.
+Not depicted is the dark matter halo, which surrounds and includes the visible structure.
+
+\paragraph{Surface brightness}
+The disks of spiral galaxies are well fitted by an exponential profile,
+\begin{align*}
+	I(R)
+	&= I_0 \exp\left( -\frac{R}{R_d} \right),
+\end{align*}
+which is a Sersic profile with Sersic index $n=1$,
+and $R_e \approx 1.67 R_d$.
+More luminous spirals usually have larger radii.
+Bulges are also well fitted by a Sersic profile, with $n = 4$ for large bulges, down to $n=1$ for smaller ones.
+
+\paragraph*{Colour}
+Spirals tend to be blue, which indicates a younger and still forming stellar population in the disk.
+More luminous disks tend to be redder.
+The star formation rate $\dot{M}_* = \dv{M_*}{t}$, where $M_*$ is the total mass of stars in a galaxy, varies considerably between galaxies.
+Galaxies with very high star formation rates are called \emph{Starburst galaxies}.
+
+The stellar haloes are mostly made up of old metal-poor stars.
+More than half of all spiral galaxies have a bar.
+The spiral arms are typically bluer and contain regions of star formation.
+
+\paragraph{Gas content}
+Spirals have mostly cold gas in the disk, which gives them a reservoir for star formation.
+
+\paragraph*{Kinematics}
+The disks in spirals are rotationally supported, with approximately circular orbits for stars and gas.
+According to Newtonian gravity, the rotational velocity $v_\text{rot}$ of a star at radius $r$ can be found as follows:
+\begin{align*}
+	F &= ma\\
+	\implies \frac{G m M(r)}{r^2} &= m \frac{v_\text{rot}^2}{r}\\
+	\implies v_\text{rot} &= \sqrt{\frac{G M(r)}{r}}.
+\end{align*}
+% TODO rotation curve of NGC 3198
+The rotational velocity rises quickly and then remains flat, which cannot be explained from the visible matter alone, since we would expect a fall-off of the rotational velocity along with the brightness profile.
+Apparently, there must be another invisible contribution to the mass, which comes from the dark matter halo.
+For $v_\text{rot}$, we need $M(r) \propto r$, which implies $\rho(r) \propto r^{-2}$.
+The NFW profile at intermediate radii is a good model for this.
+
+\paragraph*{Scaling relations}
+The correlation between the maximal rotational velocity $v_\text{max}$ and the luminosity $L$ is well fitted by
+\begin{align*}
+	L = A v_\text{max}^\alpha, 
+	\qquad \text{with } \alpha \in [2.5, 4],
+\end{align*}
+which is called the \emph{Tully-Fisher relation}.
+
+
+
+
+\section{Dwarf galaxies}
+Dwarf galaxies are galaxies with low luminosities, such that $M_B \geq - 18$.
+\Cref{fig:dwarfs} shows that they can have diverse structures, and they can be separated into different subtypes.
+\begin{itemize}
+	\item Dwarf galaxies that are gas rich, show strong star formation, and have irregular shapes are called \emph{Dwarf irregulars}, dIrr.
+	\item Dwarf galaxies that are gas poor, without young stars, and with regular structures, are subdivided into \emph{Dwarf ellipticals}, dE, and the fainter Dwarf spheroidals, dSph.
+\end{itemize}
+
+
+\section{Active galactic nuclei}
+Active galactic nuclei (AGN) are very luminous centres that can be found in some galaxies.
+They have a spectrum that is very different from what you would expect from stellar sources, since they emit strongly from the radio to the gamma ray part of the spectrum.
+AGN also contain strong emission lines in their spectra.
+There are a variety of subclasses, such as Seyfert galaxies, quasars, blazars, radio AGN, and liners.
+
+% TODO rewrite causally
+The emission comes from a very compact region, and is variable on time scales of days.
+The emission region must be smaller than $c \delta t$, which is a few light days.
+
+The AGN are powered accretion onto a supermassive black hole (SMBH) with masses around \SIrange{e6}{e9}{\solarmass}.
+These can be very efficient in converting gravitational energy into radiation.
+The wide range of types of AGNs can be squeezed reasonably well into a unification model, which states that they are all similar kinds of objects, but viewed from different angles.
+
+Most galaxies have an SMBH at their centre, but they are not necessarily active.
+The SMBH grows as gas accretes, and reinjects energy into the IGM.
+
+\section{Statistical properties of the galaxy population}
+
+\subsection{Luminosity function}
+The luminosity function $\phi(L) \dd{L}$ is defined as the number density of galaxies with luminosities between $L$ and $L + \dd{L}$.
+For a wide range of galaxies, a \emph{Schechter function} is a good fit:
+\begin{align*}
+	\phi(L) \dd{L}
+	&= \phi^* \left( \frac{L}{L^*} \right)^\alpha
+	\exp\left( - \frac{L}{L^*} \right)
+	\frac{\dd{L}}{L^*},
+\end{align*}
+where
+$L^*$ is a characteristic luminosity,
+$\alpha$ is the faint end slope,
+and $\phi^*$ is a normalization factor.
+% TODO figure
+In \cref{fig:lum-func}, the luminosity function has been fitted to experimental data.
+
+\subsection{Colour distribution}
+The color-magnitude diagram for galaxies is shown in \cref{fig:cm-galaxies}.
+% TODO figure
+There are two maxima in the distribution.
+In the upper mid, there is the red sequence, which consists of bright red galaxies.
+The blue sequence in the lower left consists of faint blue galaxies.
+
+\subsection{Mass-Metalicity}
+Spiral galaxies with large total stellar masses $M_*$ tend to have higher metalicities.
+
+\subsection{Clustering}
+Galaxies in denser regions are redder.
+Equivalently, elliptical galaxies are more clustered than spiral galaxies.
+% TODO figure
+The fraction of different kinds of galaxies is shown as a function of density.
+
+
+
+
+
+
+
+
 
 
 
