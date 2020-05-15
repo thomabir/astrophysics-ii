@@ -6,7 +6,7 @@
 
 We want to include baryons in the study of non-linear structure formation.
 
-\paragraph{Evolution}
+\subsection{Evolution}
 Before recombination and decoupling, the baryons were an ionized plasma.
 
 After recombination, they are mostly neutral and in atomic form. At that point, there is little emission, which is why this period is called the Dark Ages.
@@ -16,7 +16,7 @@ At later times ($z \approx 6$ -- $20$), the first stars start to form, which emi
 Following this, the baryons continue to participate in structure formation, driven by dark matter.
 
 
-\paragraph{Phases}
+\subsection{Phases}
 \begin{itemize}
 	\item Gas
 	\begin{itemize}
@@ -28,7 +28,7 @@ Following this, the baryons continue to participate in structure formation, driv
 These different phases interact and convert to each other.
 
 
-\paragraph{Distribution}
+\subsection{Distribution}
 \begin{itemize}
 	\item within galaxies: Interstellar medium (ISM)
 	\item between galaxies: Intergalactic medium (IGM)
@@ -37,19 +37,19 @@ These different phases interact and convert to each other.
 
 
 
-\paragraph{Dynamics}
+\subsection{Dynamics}
 We know that there is five times as much dark matter mass as there is baryonic mass.
 As a result, dark matter mostly drives the dynamics of structure formation and provides the backbone for the dynamics of the baryons.
 Unlike dark matter, baryons are collisional, and their dynamics include various effects:
 \begin{itemize}
 	\item Thermodynamical effects: Heating and cooling
 	\item Radiative transfer: Interaction between baryons and photons
-	\item Hydrodynamical effects: ex. Shocks
-	\item Transitions between different phases: ex. star formation
-	\item Astrophysical effect: ex. supernova explosions, active galactic nuclei
+	\item Hydrodynamical effects: Shocks
+	\item Transitions between different phases: Star formation
+	\item Astrophysical effects: Supernova explosions and active galactic nuclei
 \end{itemize}
 The dynamics of baryons is more complicated than that of dark matter.
-\Cref{fig:illustris-evolution} shows the evolution of dark matter and ordinary matter from a simulation.
+Figure \ref{fig:illustris-evolution} shows the evolution of dark matter and ordinary matter from a simulation.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/ch-05/illustris-evolution.png}
@@ -143,11 +143,12 @@ Because the massive blue stars burn their fuel first, new galaxies are blue, and
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/ch-05/tuning-fork.jpg}
 	\caption{The Hubble tuning fork diagram classifies galaxies according to their shape.}
+	\label{fig:tuning-fork}
 \end{figure}
 
 There is a wide range of types of galaxies.
 A common classification is the Hubble sequence, also known as the tuning fork diagram, which is shown in \cref{fig:tuning-fork}.
-The Hubble sequence distinguishes:
+The Hubble sequence distinguishes the following types:
 \begin{itemize}
 	\item Elliptical galaxies have a smooth elliptical light distribution. They are subdivided into E0 (spherical) to E7 (very flat).
 	\item Spiral galaxies have a disk with spiral arms, and a central halo.
@@ -174,34 +175,34 @@ The nomenclature is historical and is not related to the formation history.
 \section{Elliptical galaxies}
 Elliptical galaxies tend to be regular, with a smooth elliptical light distribution.
 
-\paragraph*{Surface brightness}
-The surface brightness of elliptical galaxies is well fit by a \emph{Sersic profile},
+\subsection{Surface brightness}
+The surface brightness of elliptical galaxies is well fit by a \emph{Sérsic profile},
 \begin{align*}
 	I(R)
 	&= I_0 \exp\Bigg[ - \beta_n \left( \frac{R}{R_e}  \right)^{1/n} \Bigg],
 \end{align*}
-where $m$ is the Sersic index,
+where $m$ is the Sérsic index,
 $R$ is the semi-major axis length,
 $R_e$ is the half-light radius,
 and it follows that $\beta_n \approx 2 n - 0.324$ to fulfill this criterion.
 The brighter galaxies have a larger value of $n$.
 For normal ellipticals, $n \approx 4$, for which the profile is also called a \emph{de Vaucouleurs profile}.
 
-\paragraph*{Shape}
+\subsection{Shape}
 Let $b/a$ be the ratio of minor to major axis of the light distribution.
 For normal ellipticals, $b/a \in [0.3, 1]$.
 In the Hubble sequence, this corresponds to types E0 to E7.
 
-\paragraph*{Colour}
+\subsection{Colour}
 Ellipticals tend to be redder than spirals, which indicates an older, metal-rich star population.
 Some ellipticals have colour gradients, such that the central regions tend to be redder.
 
-\paragraph*{Kinematics}
+\subsection{Kinematics}
 The support against gravitational collapse is mostly provided by random motion.
 The rotational velocities are comparatively small.
 
 
-\paragraph{Scaling relations}
+\subsection{Scaling relations}
 There is a correlation between some of the main characteristics of ellipticals.
 Let $\sigma$ be the line of sight velocity dispersion of stars inside the half-light radius $R_e$,
 and let $\avg{I}_l$ be the main surface brightness within $R_e$.
@@ -211,7 +212,7 @@ The correlation between $\avg{I_l}$ and $\sigma$ is called \emph{Faber-Jackson r
 The correlation between $R_e$ and $\sigma$ is called the \emph{$D_n$-$\sigma$ relation}, whose name comes from an other measure for radius, $D_n$.
 
 
-\paragraph*{Gas content}
+\subsection{Gas content}
 Very little cold gas, with temperatures less than \SI{100}{\kelvin}, is contained in ellipticals.
 As a result, new stars are not forming, which explains the old stellar population.
 Hot gas with temperatures around \SI{e7}{\kelvin} is much more abundant, and can be found with x-ray observations.
@@ -224,22 +225,26 @@ There is also a little warm gas, with temperature \SI{e4}{\kelvin}.
 
 
 \section{Spiral galaxies}
-% TODO figure
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-05/milky-way.png}
+	\caption{Structure of the Milky Way.}
+	\label{fig:mw-structure}
+\end{marginfigure}
 Spiral galaxies, like the Milky Way in \cref{fig:mw-structure}, show a spiral structure when viewed face-on, and look like a flat disk with a central bulge edge-on.
-Not depicted is the dark matter halo, which surrounds and includes the visible structure.
+They also have a dark matter halo, which surrounds and includes the visible structure.
 
-\paragraph{Surface brightness}
+\subsection{Surface brightness}
 The disks of spiral galaxies are well fitted by an exponential profile,
 \begin{align*}
 	I(R)
 	&= I_0 \exp\left( -\frac{R}{R_d} \right),
 \end{align*}
-which is a Sersic profile with Sersic index $n=1$,
+which is a Sérsic profile with Sérsic index $n=1$,
 and $R_e \approx 1.67 R_d$.
 More luminous spirals usually have larger radii.
-Bulges are also well fitted by a Sersic profile, with $n = 4$ for large bulges, down to $n=1$ for smaller ones.
+Bulges are also well fitted by a Sérsic profile, with $n = 4$ for large bulges, down to $n=1$ for smaller ones.
 
-\paragraph*{Colour}
+\subsection{Colour}
 Spirals tend to be blue, which indicates a younger and still forming stellar population in the disk.
 More luminous disks tend to be redder.
 The star formation rate $\dot{M}_* = \dv{M_*}{t}$, where $M_*$ is the total mass of stars in a galaxy, varies considerably between galaxies.
@@ -249,24 +254,28 @@ The stellar haloes are mostly made up of old metal-poor stars.
 More than half of all spiral galaxies have a bar.
 The spiral arms are typically bluer and contain regions of star formation.
 
-\paragraph{Gas content}
+\subsection{Gas content}
 Spirals have mostly cold gas in the disk, which gives them a reservoir for star formation.
 
-\paragraph*{Kinematics}
+\subsection{Kinematics}
+\begin{marginfigure}
+	\includegraphics[width=\textwidth]{img/ch-05/rotation-curve.png}
+	\caption{The rotation curve of the galaxy NGC 3198. The rotation curve is the result of a contribution from baryonic matter in the disk and a dark matter halo, which extends beyond the disk. The baryonic matter is on average closer to the centre of the galaxy, because unlike dark matter, it can lose energy by dissipation.}
+	\label{fig:rotation-curve}
+\end{marginfigure}
 The disks in spirals are rotationally supported, with approximately circular orbits for stars and gas.
 According to Newtonian gravity, the rotational velocity $v_\text{rot}$ of a star at radius $r$ can be found as follows:
-\begin{align*}
-	F &= ma\\
-	\implies \frac{G m M(r)}{r^2} &= m \frac{v_\text{rot}^2}{r}\\
-	\implies v_\text{rot} &= \sqrt{\frac{G M(r)}{r}}.
-\end{align*}
-% TODO rotation curve of NGC 3198
-The rotational velocity rises quickly and then remains flat, which cannot be explained from the visible matter alone, since we would expect a fall-off of the rotational velocity along with the brightness profile.
+\begin{alignat*}{3}
+	         && F &= ma\\
+	&\implies & \frac{G m M(r)}{r^2} &= m \frac{v_\text{rot}^2}{r}\\
+	&\implies & v_\text{rot} &= \sqrt{\frac{G M(r)}{r}}.
+\end{alignat*}
+\Cref{fig:rotation-curve} is the rotation curve of the galaxy NGC 3198, which shows that the rotational velocity as a function of radius rises quickly and then remains flat, which cannot be explained from the visible matter alone, since we would expect a fall-off of the rotational velocity along with the brightness profile.
 Apparently, there must be another invisible contribution to the mass, which comes from the dark matter halo.
-For $v_\text{rot}$, we need $M(r) \propto r$, which implies $\rho(r) \propto r^{-2}$.
+For $v_\text{rot}$ to be constant, we need $M(r) \propto r$, which implies $\rho(r) \propto r^{-2}$.
 The NFW profile at intermediate radii is a good model for this.
 
-\paragraph*{Scaling relations}
+\subsection{Scaling relations}
 The correlation between the maximal rotational velocity $v_\text{max}$ and the luminosity $L$ is well fitted by
 \begin{align*}
 	L = A v_\text{max}^\alpha, 
@@ -287,21 +296,20 @@ Dwarf galaxies are galaxies with low luminosities, such that $M_B \geq - 18$.
 
 
 \section{Active galactic nuclei}
-Active galactic nuclei (AGN) are very luminous centres that can be found in some galaxies.
-They have a spectrum that is very different from what you would expect from stellar sources, since they emit strongly from the radio to the gamma ray part of the spectrum.
-AGN also contain strong emission lines in their spectra.
-There are a variety of subclasses, such as Seyfert galaxies, quasars, blazars, radio AGN, and liners.
+\emph{Active galactic nuclei} (AGN) are very luminous centres that can be found in some galaxies, which are then called \emph{active galaxies}.
+Observationally, they come in different subclasses, some of them being Seyfert galaxies, quasars, blazars, radio AGN, and liners.
 
-% TODO rewrite causally
-The emission comes from a very compact region, and is variable on time scales of days.
-The emission region must be smaller than $c \delta t$, which is a few light days.
+AGNs have spectra that are very different from what one would expect from stellar sources, since they emit strongly across the entire range of the electromagnetic spectrum, from the radio to the gamma ray range, and they contain strong emission lines.
 
-The AGN are powered accretion onto a supermassive black hole (SMBH) with masses around \SIrange{e6}{e9}{\solarmass}.
-These can be very efficient in converting gravitational energy into radiation.
-The wide range of types of AGNs can be squeezed reasonably well into a unification model, which states that they are all similar kinds of objects, but viewed from different angles.
+The emission is variable on a time scale of a few days, so for the emission region to be causally connected, it must be smaller than a few light days.
+This is a very compact length scale compared to the rest of the galaxy.
 
-Most galaxies have an SMBH at their centre, but they are not necessarily active.
-The SMBH grows as gas accretes, and reinjects energy into the IGM.
+AGNs are powered by accretion onto a supermassive black hole (SMBH), with masses around \SIrange{e6}{e9}{\solarmass}.
+The SMBH grows as it accretes gas, and it can also reinject energy into the IGM in the form of jets.
+Accretion can be a very efficient process to convert gravitational energy into radiation.
+While most galaxies, including the Milky Way, have an SMBH in their centre, they are not necessarily \emph{active} galaxies.
+
+The wide range of types of AGNs can be squeezed reasonably well into unification models, which state that they are all roughly similar kinds of objects, but observed from different viewing angles.
 
 \section{Statistical properties of the galaxy population}
 
@@ -328,9 +336,9 @@ In \cref{fig:lum-func}, the luminosity function has been fitted to experimental 
 	\label{fig:cm-galaxies}
 \end{marginfigure}
 The color-mass diagram for galaxies is shown in \cref{fig:cm-galaxies}.
-There are two maxima in the distribution.
+There are two maxima in the distribution: 
 The red sequence consists of bright red galaxies,
-and the blue sequence consists of faint blue galaxies.
+and the blue cloud consists of faint blue galaxies.
 
 \subsection{Mass-Metalicity}
 Spiral galaxies with large total stellar masses $M_*$ tend to have higher metalicities.

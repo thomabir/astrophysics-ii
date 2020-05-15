@@ -280,5 +280,7 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 .python-version
-test.html
 .DS_Store
+*.md
+*.html
+pandoc.txt
