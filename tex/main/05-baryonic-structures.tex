@@ -203,10 +203,16 @@ The rotational velocities are comparatively small.
 
 
 \subsection{Scaling relations}
+\begin{figure}
+	\includegraphics[width=0.7\textwidth]{img/ch-05/fundamental-plane.png}
+	\caption{The fundamental plane for elliptical galaxies. The view is chosen such that the plane is seen edge-on as a line.}
+	\label{fig:fundamental-plane}
+\end{figure}
 There is a correlation between some of the main characteristics of ellipticals.
 Let $\sigma$ be the line of sight velocity dispersion of stars inside the half-light radius $R_e$,
 and let $\avg{I}_l$ be the main surface brightness within $R_e$.
-\Cref{fig:correlation} shows the \emph{fundamental plane}, which which quantifies the correlation between these parameters.
+\Cref{fig:fundamental-plane} shows the \emph{fundamental plane}, which which quantifies the correlation between these parameters.
+% \sidecite{Magoulas:2012jy}
 % TODO
 The correlation between $\avg{I_l}$ and $\sigma$ is called \emph{Faber-Jackson relation}.
 The correlation between $R_e$ and $\sigma$ is called the \emph{$D_n$-$\sigma$ relation}, whose name comes from an other measure for radius, $D_n$.
@@ -304,10 +310,10 @@ AGNs have spectra that are very different from what one would expect from stella
 The emission is variable on a time scale of a few days, so for the emission region to be causally connected, it must be smaller than a few light days.
 This is a very compact length scale compared to the rest of the galaxy.
 
-AGNs are powered by accretion onto a supermassive black hole (SMBH), with masses around \SIrange{e6}{e9}{\solarmass}.
-The SMBH grows as it accretes gas, and it can also reinject energy into the IGM in the form of jets.
+AGNs are powered by accretion onto a supermassive black hole (\textsc{smbh}), with masses around \SIrange{e6}{e9}{\solarmass}.
+The \textsc{smbh} grows as it accretes gas, and it can also reinject energy into the \textsc{igm} in the form of jets.
 Accretion can be a very efficient process to convert gravitational energy into radiation.
-While most galaxies, including the Milky Way, have an SMBH in their centre, they are not necessarily \emph{active} galaxies.
+While most galaxies, including the Milky Way, have an \textsc{smbh} in their centre, they are not necessarily \emph{active} galaxies.
 
 The wide range of types of AGNs can be squeezed reasonably well into unification models, which state that they are all roughly similar kinds of objects, but observed from different viewing angles.
 
@@ -353,6 +359,108 @@ The fraction of different kinds of galaxies is shown as a function of density.
 
 
 
+
+
+\section{Clusters and groups of galaxies}
+
+\subsection{Clusters of galaxies}
+Galaxy clusters are the largest bound objects in the universe.
+\begin{itemize}
+	\item Number of galaxies: 50 to a few thousand
+	\item Radius: a few \si{\mega\parsec}
+	\item Mass: \SIrange{e14}{e15}{\solarmass}
+	\item Velocity dispersion (line of sight): $\sigma_\text{los} \approx \SI{1000}{\kilo\metre\per\second}$
+\end{itemize}
+
+Criteria for selecting clusters:
+\begin{itemize}
+	\item Richness: The number of galaxy members
+	\item Compactness: Number of galaxies within a given radius
+	\item Regularity: Circularity or smoothness
+\end{itemize}
+
+An example of a survey is the Abell cluster catalogue from 1958.
+
+Nearby clusters are Virgo and Coma.
+
+\paragraph*{Galaxy population}
+Clusters are rich in early type (red, elliptical) galaxies.
+For regular clusters, \SI{80}{\percent} of galaxies are E or S0, which is higher than the average in the field (outside clusters), about \SI{30}{\percent}.
+
+The fraction of red galaxies tends to decrease in clusters with increasing redshift, which is known as the \emph{Butcher-Oemler effect}.
+
+The radial density of galaxies in clusters is similar to the distribution of dark matter, which indicates that the galaxies act as collisionless particles.
+
+Often, the brightest galaxy in a cluster is very extended, diffuse, and near the centre. They are called cD galaxies, and are thought to have grown through the accretion of multiple galaxies.
+The effect is called \emph{galaxy cannibalism}.
+
+\paragraph*{Mass estimation}
+There are several techniques to measure the mass of a cluster:
+\begin{itemize}
+	\item \textbf{Velocity dispersion:}
+	Along the line of sight, a velocity dispersion of $\sigma_\text{los} \approx \SI{1000}{\kilo\metre\per\second}$ can be measured with redshift.
+	The Virial theorem then yields
+	\begin{align*}
+		M \approx A \frac{\sigma_\text{los}^2 R}{G},
+	\end{align*}
+	where the constant $A$ depends on the profile of the cluster and the exact definition of the radius $R$.
+	\item \textbf{X-ray emission:}
+	The hot gas ($T \approx \SI{e7}{\kelvin}$) in the intra-cluster medium emits bremsstrahlung, which is in the X-ray range.
+	If we assume hydrostatic equilibrium, such that the gas is in equilibrium with the gravitational potential, then the X-ray emission profile and the X-ray temperature can be used to derive the total mass of the cluster and the gas.
+	\item \textbf{Gravitational lensing:}
+	A cluster of galaxies can act as a gravitational lens for the background galaxies.
+	The trajectories of photons from distant objects are deflected by the gravitational potential of a cluster.
+	The mass of the cluster can be derived from the strength of distortion of the background galaxies.
+\end{itemize}
+
+One finds that the mass of clusters is in the range \SIrange{e14}{e15}{\solarmass}.
+Also, only \SI{10}{\percent} of the mass is baryonic in nature, which is strong evidence for the existence of dark matter.
+
+
+
+
+
+\subsection{Groups of galaxies}
+\begin{itemize}
+	\item Number of galaxies: 3 to 30
+	\item Radius: \SIrange{0.1}{1}{\mega\parsec}
+	\item Mass: \SIrange{e12.5}{e14}{\solarmass}
+	\item Velocity dispersion: $\sigma_\text{los} \approx \SI{300}{\kilo\metre\per\second}$
+\end{itemize}
+
+An example is the local group, with its largest member, the Milky Way.
+There are many Milky Way satellites, such as the small Magellanic cloud (\textsc{smc}) and the large Magellanic cloud (LMC).
+Another large galaxy in the local groups is the Andromeda galaxy (M31).
+
+
+
+
+
+
+\section{Intergalactic medium}
+
+The intergalactic medium (IGM) is made up of the baryons between galaxies.
+It is usually too diffuse and not hot enough to be studied in emission,
+but it can be seen in absorption.
+
+\paragraph*{Quasar absorption lines}
+% TODO diagram quasar
+Suppose a distant quasar is at redshift $z_q$, and clouds of IGM are in front of it at different redshifts $z_i$, with $i = 1, 2, 3, \dots$.
+The continuum light of the quasar is absorbed by the clouds, particularly by the strong Lyman-alpha transition, with (rest) wavelength $\lambda_\mathrm{α} = \SI{1216}{\angstrom}$.
+We thus see absorption lines at wavelengths $\lambda_\mathrm{α} (1 + z_i)$.
+% TODO spectrum quasar
+
+The central peak is the Ly-α emission of the quasar itself, which is redshifted to around \SI{5400}{\angstrom}, indicating $z_q \approx 3.5$.
+On the left side, there are many absorption lines, corresponding to Ly-α absorption at different redshifts.
+There are also a few absorption lines on the right from metals.
+
+We distinguish different types of absorption systems:
+\begin{itemize}
+	\item The \textbf{Ly-α forest} consists of many thin absorption lines,
+	corresponding to a column density of neutral hydrogen $N_{\mathrm{H}\textsc{i}} \leq \SI{e17}{\centi\meter\tothe{-2}}$.
+	\item \textbf{Damped Ly-α systems} have larger column densities of $N_{\mathrm{H}\textsc{i}} \geq \SI{e20}{\centi\meter\tothe{-2}}$,
+	which absorb the quasar light completely at the Ly-α wavelength.
+\end{itemize}
 
 
 
