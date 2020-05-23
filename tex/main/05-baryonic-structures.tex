@@ -29,10 +29,13 @@ These different phases interact and convert to each other.
 
 
 \subsection{Distribution}
+\newacronym{ism}{ISM}{interstellar medium}
+\newacronym{igm}{IGM}{intergalactic medium}
+\newacronym{icm}{ICM}{intra-cluster medium}
 \begin{itemize}
-	\item within galaxies: Interstellar medium (ISM)
-	\item between galaxies: Intergalactic medium (IGM)
-	\item within galaxies clusters: Intra-cluster medium (ICM)
+	\item within galaxies: \Ac{ism}
+	\item between galaxies: \Ac{igm}
+	\item within galaxies clusters: \Ac{icm}
 \end{itemize}
 
 
@@ -115,7 +118,8 @@ The spectral classification is a single letter for rough classification, followe
 
 \subsection{Hertzsprung-Russel diagram}
 
-The Hertzsprung-Russell (HR) diagram in \cref{fig:hr-gaia} shows the relationship between surface temperature and luminosity of stars in our galaxy.
+\newacronym{hr}{HR}{Hertzsprung-Russel}
+The \ac{hr} diagram in \cref{fig:hr-gaia} shows the relationship between surface temperature and luminosity of stars in our galaxy.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/ch-05/hr-gaia.png}
@@ -123,15 +127,18 @@ The Hertzsprung-Russell (HR) diagram in \cref{fig:hr-gaia} shows the relationshi
 	\label{fig:hr-gaia}
 \end{figure}
 
-The evolution of stars can be tracked on the HR diagram.
-Stars are born on the main sequence (MS).
-The phenomenological \emph{initial mass function} (IMF) is the distribution of newly born stars of the MS.
-Eventually, they have burned all their hydrogen and start moving away from the MS towards the red giant branch (RGB).
+\newacronym{ms}{MS}{main sequence}
+\newacronym{imf}{IMF}{initial mass function}
+\newacronym{rgb}{RGB}{red giant branch}
+The evolution of stars can be tracked on the \ac{hr} diagram.
+Stars are born on the \ac{ms}.
+The phenomenological \ac{imf} is the distribution of newly born stars of the \ac{ms}.
+Eventually, they have burned all their hydrogen and start moving away from the \ac{ms} towards the \ac{rgb}.
 Stars with higher masses exhaust their hydrogen first.
 As a reg giant runs out of nuclear fuel, they collapse into compact objects. Depending on their mass, this compact object can be a white dwarf, a neutron star, or a black hole.
 In the process, supernova explosions can be generated.
-They inject kinetic energy into the ISM and disperse the heavy elements that the star generated.
-This process is called enrichment of the ISM.
+They inject kinetic energy into the \ac{ism} and disperse the heavy elements that the star generated.
+This process is called enrichment of the \ac{ism}.
 
 \subsection{Galaxies}
 Galaxies contain many stars, so they can be used to track the stellar evolution.
@@ -251,7 +258,7 @@ Bulges are also well fitted by a Sérsic profile, with $n = 4$ for large bulges,
 \subsection{Colour}
 Spirals tend to be blue, which indicates a younger and still forming stellar population in the disk.
 More luminous disks tend to be redder.
-The star formation rate $\dot{M}_* = \dv{M_*}{t}$, where $M_*$ is the total mass of stars in a galaxy, varies considerably between galaxies.
+The star formation rate $\dot{M}_* = \dv*{M_*}{t}$, where $M_*$ is the total mass of stars in a galaxy, varies considerably between galaxies.
 Galaxies with very high star formation rates are called \emph{Starburst galaxies}.
 
 The stellar haloes are mostly made up of old metal-poor stars.
@@ -300,20 +307,22 @@ Dwarf galaxies are galaxies with low luminosities, such that $M_B \geq - 18$.
 
 
 \section{Active galactic nuclei}
-\emph{Active galactic nuclei} (AGN) are very luminous centres that can be found in some galaxies, which are then called \emph{active galaxies}.
-Observationally, they come in different subclasses, some of them being Seyfert galaxies, quasars, blazars, radio AGN, and liners.
+\newacronym[longplural={active galactic nuclei}]{agn}{AGN}{active galactic nucleus}
+\Acp{agn} are very luminous centres that can be found in some galaxies, which are then called \emph{active galaxies}.
+Observationally, they come in different subclasses, some of them being Seyfert galaxies, quasars, blazars, radio \ac{agn}, and liners.
 
-AGNs have spectra that are very different from what one would expect from stellar sources, since they emit strongly across the entire range of the electromagnetic spectrum, from the radio to the gamma ray range, and they contain strong emission lines.
+The spectra of \acp{agn} are very different from what one would expect from stellar sources, since they emit strongly across the entire range of the electromagnetic spectrum, from the radio to the gamma ray range, and they contain strong emission lines.
 
 The emission is variable on a time scale of a few days, so for the emission region to be causally connected, it must be smaller than a few light days.
 This is a very compact length scale compared to the rest of the galaxy.
 
-AGNs are powered by accretion onto a supermassive black hole (\textsc{smbh}), with masses around \SIrange{e6}{e9}{\solarmass}.
-The \textsc{smbh} grows as it accretes gas, and it can also reinject energy into the \textsc{igm} in the form of jets.
+\newacronym{smbh}{SMBH}{supermassive black hole}
+\Acp{agn} are powered by accretion onto a \ac{smbh}, with masses around \SIrange{e6}{e9}{\solarmass}.
+The \ac{smbh} grows as it accretes gas, and it can also reinject energy into the \ac{igm} in the form of jets.
 Accretion can be a very efficient process to convert gravitational energy into radiation.
-While most galaxies, including the Milky Way, have an \textsc{smbh} in their centre, they are not necessarily \emph{active} galaxies.
+While most galaxies, including the Milky Way, have an \ac{smbh} in their centre, they are not necessarily \emph{active} galaxies.
 
-The wide range of types of AGNs can be squeezed reasonably well into unification models, which state that they are all roughly similar kinds of objects, but observed from different viewing angles.
+The wide range of types of \acp{agn} can be squeezed reasonably well into unification models, which state that they are all roughly similar kinds of objects, but observed from different viewing angles.
 
 \section{Statistical properties of the galaxy population}
 
@@ -434,8 +443,10 @@ Also, only \SI{10}{\percent} of the mass is baryonic in nature, which is strong 
 	\item Velocity dispersion: $\sigma_\text{los} \approx \SI{300}{\kilo\metre\per\second}$
 \end{itemize}
 
+\newacronym{smc}{SMC}{small Magellanic cloud}
+\newacronym{lmc}{LMC}{large Magellanic cloud}
 An example is the local group, with its largest member, the Milky Way.
-There are many Milky Way satellites, such as the small Magellanic cloud (\textsc{smc}) and the large Magellanic cloud (LMC).
+There are many Milky Way satellites, such as the \ac{smc} and the \ac{lmc}.
 Another large galaxy in the local groups is the Andromeda galaxy (M31).
 
 
@@ -445,7 +456,7 @@ Another large galaxy in the local groups is the Andromeda galaxy (M31).
 
 \section{Intergalactic medium}
 
-The intergalactic medium (IGM) is made up of the baryons between galaxies.
+The \ac{igm} is made up of the baryons between galaxies.
 It is usually too diffuse and not hot enough to be studied in emission,
 but it can be seen in absorption.
 

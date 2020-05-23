@@ -22,6 +22,12 @@
 
 
 
+
+
+
+
+
+
 \usepackage{tabu} % tables
 \usepackage{multirow}
 \usepackage{multicol}
@@ -32,3 +38,25 @@
 \input{tex/config/scrpagestyles}
 
 \input{tex/config/tref}
+
+
+
+% glossary
+\usepackage[%
+    xindy,
+    toc,
+    acronym,
+    smallcaps,
+    shortcuts,
+    nomain
+    ]{glossaries-extra}
+
+\renewcommand*{\glsxtrscfont}[1]{\MakeTextLowercase{\textsc{#1}}}
+\renewcommand*{\glsxtrscsuffix}{\hspace{0.05556em}\glstextup{\glsxtrabbrvpluralsuffix}}
+
+\providecommand{\glsabbvfont}{\glsabbrvfont}% patch for pre 1.15
+
+\makeglossaries
+
+\setabbreviationstyle[acronym]{long-short-sc}
+
