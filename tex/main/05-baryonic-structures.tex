@@ -460,13 +460,18 @@ The \ac{igm} is made up of the baryons between galaxies.
 It is usually too diffuse and not hot enough to be studied in emission,
 but it can be seen in absorption.
 
-\paragraph*{Quasar absorption lines}
-% TODO diagram quasar
-Suppose a distant quasar is at redshift $z_q$, and clouds of IGM are in front of it at different redshifts $z_i$, with $i = 1, 2, 3, \dots$.
+\subsection{Quasar absorption lines}
+Suppose a distant quasar is at redshift $z_q$, and clouds of \ac{igm} are in front of it at different redshifts $z_i$, with $i = 1, 2, 3, \dots$.
 The continuum light of the quasar is absorbed by the clouds, particularly by the strong Lyman-alpha transition, with (rest) wavelength $\lambda_\mathrm{α} = \SI{1216}{\angstrom}$.
 We thus see absorption lines at wavelengths $\lambda_\mathrm{α} (1 + z_i)$.
-% TODO spectrum quasar
 
+\begin{figure}
+	\includegraphics[width=0.7\textwidth]{img/ch-05/quasar-spectrum.pdf}
+	\caption{A spectrum of the quasar ULAS J1319+0950 at $z=6.13$ from \cite{becker2015reionization}, obtained with the X-Shooter spectrograph on the Very Large Telescope (VLT)}
+	\label{fig:quasar-spectrum}
+\end{figure}
+
+The spectrum of a quasar is shown in \cref{fi:quasar-spectrum}.
 The central peak is the Ly-α emission of the quasar itself, which is redshifted to around \SI{5400}{\angstrom}, indicating $z_q \approx 3.5$.
 On the left side, there are many absorption lines, corresponding to Ly-α absorption at different redshifts.
 There are also a few absorption lines on the right from metals.
@@ -479,14 +484,217 @@ We distinguish different types of absorption systems:
 	which absorb the quasar light completely at the Ly-α wavelength.
 \end{itemize}
 
+Lyman $\alpha$ absorption line systems can be counted to derive density of neutral hydrogen in the universe
+
+find : about \SI{50}{\percent} of baryons are in the form of neutral hydrogen at $z=3$
+
+$\rightarrow$ universe was already mostly reionized by then
+
+Recall: reionization: baryons were mostly neutral after recombination $(z=1100)$ but were reionized by first astrophysical objects (Stars, galaxies, etc)
+
+
+If universe was still neutral at $z=z_{q}$, quasar continuum would be fully absorbed at $\lambda < \lambda_{\alpha} \left(1+z_{9}\right) $.
+
+$\rightarrow$ Can set limit on epoch of reionization: Gunn-Peterson Effect
+
+$\rightarrow$ Find that reionization must have been completed by $z \sim 6$
 
 
 
 
 
+\section{Cosmic star formation}
+Consider the global rate of star formation:
+\begin{align*}
+	\dot{\rho}_\star(z)
+	= \frac{\text {total gas mass turned into star at redshift } z}{\text{time } \times \text { volume}}
+\end{align*}
+
+It can be estimated:
+
+Let $\avg{\dot{M}_\star}(L,z)$ be the star formation rate for galaxies with luminosity $L$ at redshift $z$.
+
+Then
+\begin{align*}
+	\dot{\rho}_\star(z)
+	&= \int   \avg{\dot{M}_\star}(L, z) \phi(L, z) \dd{L},
+\end{align*}
+where $\phi(L, z)$ is the galaxy luminosity function, which is the number of galaxies formed per volume and luminosity.
+
+\Cref{fig:star-formation-rate} shows that $\dot{\rho}_\star$ has dropped since $z \approx 2$
+
+\begin{figure}
+	\includegraphics[width=0.7\textwidth]{img/ch-05/star-formation-rate.pdf}
+	\caption{The global star formation rate as a function of redshift, from \cite{galaxy-formation}. Different symbols correspond to different rest-frame wavelength ranges used to infer the star-formation rate, as indicated.}
+	\label{fig:star-formation-rate}
+\end{figure}
+
+
+
+\section{Modelling galaxy formation}
+
+How can we model baryonic structure formation and galaxy formation in particular?
+
+How can one account for the diversity and statistical properties of galaxies?
+
+$\rightarrow$ Describe basic framework for galaxy formation models
+
+Still an unsolved problem.
+There are many interlinked processes.
+
+
+Cosmological model:
+\begin{itemize}
+	\item Background expansion
+	\item Linear structure evolution
+	\item Non-linear structure formation (DM halos)
+\end{itemize}
+$\rightarrow$ Add treatment of baryons
 
 
 
 
+\subsection{Gas cooling}
+Gas can cool through different processes:
+\begin{itemize}
+	\item  Hot gas (hotter than \SI{107}{\kelvin}) in massive haloes is fully ionised and can cool through thermal bremsstrahlung (Cf. X-ray emission of galaxy clusters).
+	At high redshift $(z 
+	\geq 6)$, cooling can also proceed via inverse compton scattering of CMB photons by electrons
+	\item Warm gas (\SIrange{e4}{e6}{\kelvin}) is partially ionised and can cool via atomic excitation and de-excitation mechanisms.
+	The cooling rate depend strongly on chemical composition.
+	\item Cold gas (colder than \SI{e4}{\kelvin}) is almost completely neutral, which suppresses the above cooling processes.
+	Cooling is still possible by collisional (de-)excitation (heavy elements) or rotational/vibrational lines (molecules).
+\end{itemize}
+
+These cooling mechanisms (except inverse Compton scattering) involve two particles and are therefore more effective in higher density regions.
+
+If cooling is effective (short cooling time), the gas accretes directly onto a central proto-galaxy.
+If cooling time is long, the gas settles into hydrostatic equilibrium with halo (inner region can still cool and flow to the centre region)
+
+If the DM halo has angular momentum, the gas can spin up as it flows inward yielding a cold disk at the centre of the halo -> disk galaxy
 
 
+\subsection{Star formation}
+
+As the gas flows to the centre of the DM halo, its self-gravity will eventually dominate the DM gravity.
+This will lead to a runaway collapse of the gas which can then fragment and form stars.
+
+Star formation is not well understood but can be characterised by the star formation rate $\dot{M}_{*}$ and the Initial Mass Function (IMF).
+The stellar population can then be evolved using stellar evolution.
+Star formation can be quiescent (in gas disks) or starburst (with accumulation of gas in small volumes, which can be triggered by interactions or instability.
+
+
+\subsection{Feedback}
+
+Feedback processes inject energy, mass or metals into the gas.
+Feedback processes include
+\begin{itemize}
+	\item Supernovae explosions at the end of stellar evolution
+	\item \Ac{smbh} in \ac{agn}
+\end{itemize}
+
+These processes can reheat cold gas and thus suppress star formation (negative feedback) or compress surrounding gas with shock waves and thus enhance star formation (positive feedback).
+
+\begin{figure}
+	\includegraphics[width=0.8\textwidth]{img/ch-05/feedback.pdf}
+	\caption{A flowchart of the evolution of an individual galaxy, from \cite{galaxy-formation}. The galaxy is represented by the dashed box which contains hot gas, cold gas, stars and a supermassive black hole (SMBH). Gas cooling converts hot gas into cold gas, star formation converts cold gas into stars, and dying stars inject energy, metals and gas into the gas components. In addition, the SMBH can accrete gas (both hot and cold) as well as stars, producing AGN activity which can release vast amounts of energy which affect primarily the gaseous components of the galaxy. Note that in general the box will not be closed: gas can be added to the system through accretion from the intergalactic medium and can escape the galaxy through outflows driven by feedback from the stars and/or the SMBH. Finally, a galaxy may merge or interact with another galaxy, causing a significant boost or suppression of all these processes.}
+	\label{fig:feedback}
+\end{figure}
+
+\Cref{fig:feedback} shows the feedback processes that can occur in a galaxy.
+
+Galaxy formation is very complex and involves many intertwined processes.
+Inflow and outflow of gas from and to the \ac{igm} also take place.
+
+
+\subsection{Mergers}
+
+Baryons are also effected by mergers, represented by merger trees.
+
+\begin{itemize}
+	\item If two halos of similar masses merge, violent relaxation quickly lead to a relaxed state for the new halo. Hot gas from the progenitors is shock-heated and settles into hydrostatic equilibrium with the DM halo potential. Central galaxies (if present) merge to a new central galaxy (likely Elliptical)
+	\item If merging haloes have very different mass, the smaller halo orbits within main halo as a satellite until dynamical friction (kinetic energy is transferred from small to large object, making the small object sink towards the large one) and tidal effects dissolves it.
+	\item In the limit of very small haloes merging into large halo, the accretion can be thought of as smooth accretion
+\end{itemize}
+
+\subsection{Dynamical evolution}
+
+As satellite galaxies orbit within dark matter halos, tidal interactions and pressure from the gas in the halo (ram pressure) can remove dark matter, gas and stars from the satellite.
+These effects drive galaxy evolution in groups and clusters of galaxies and play a role in the environment dependence of galaxy properties.
+
+Internal instabilities can also affect galaxy morphologies. 
+In particular, a bar instability may develop in spiral galaxies which can then buckle to create a pseudo-bulge. 
+Bulges may therefore be remnants of early stages of galaxy formation or results from buckling of a bar.
+
+\subsection{Chemical evolution}
+
+Heavy elements (metals) are produced in stars and expelled by supernovae explosions and stellar winds into the \ac{ism}.
+
+Importance for galaxy evolution:
+\begin{itemize}
+	\item Cooling efficiency depends strongly on metallicity (cooling more efficient for metal-enriched gas).
+	\item Metallicity affects color and luminosity of stellar population in galaxies.
+	\item Small particles of heavy elements called dust can absorb starlight and reradiate it in the IR (extinction).
+\end{itemize}
+
+
+\subsection{Stellar population synthesis}
+The spectrum of galaxies is mostly a combination of the spectra of many stars. Given the star formation rate $\dot{M}_{*}(z)$ and the Initial Mass Function (IMF), the stellar population can be evolved using stellar evolution to derive a stellar synthesis spectrum.
+
+The effect of gas emission and absorption, dust extinction and AGN emission also need to be modelled.
+
+
+\subsection{Intergalactic Medium}
+
+The \ac{igm} also plays an important role in galaxy formation through the inflow and outflow of baryons.
+
+
+
+
+\subsection{Time Scales}
+\begin{itemize}
+	\item Hubble time: current expansion rate time scale ($H^{-1}$)
+	\item Dynamical time: time to orbit across steady state dynamical system
+	\item Cooling time: ratio between thermal energy to energy loss rate of gas
+	\item Star formation time: ratio of cold gas content and star formation rate
+	\item Chemical enrichment time: time scale on which gas is enriched in heavy elements
+	\item Merging time: typical time before major merger
+	\item Dynamical friction time: time scale for a satellite in large halo to lose its orbital energy and merge to centre
+\end{itemize}
+
+
+\subsection{Examples}
+\begin{itemize}
+	\item Processes whose time scale is larger than the Hubble time can be ignored (For example dynamical friction time for satellite galaxies with masses much smaller than the parent halo $>$ Hubble time $\rightarrow$ Clusters of galaxies have numerous member galaxies)
+	\item If cooling time > dynamical time, the hot gas will typically be in Hydrostatic equilibrium. In the opposite case, the gas will cool rapidly and sink to the halo centre without establishing hydrostatic equilibrium
+	\item If star formation time is comparable to dynamical time, gas will turn into stars during the the collapse, likely leading to an elliptical galaxy. If star formation time is larger than cooling and dynamical time then, the gas will settle into rotationally supported disk before forming stars likely leading to a disk galaxy (angular momentum also plays a role)
+	\item If chemical evolution time is larger than the star formation time, little enrichment will occur during star formation and stars will end up with the same initial metallicity. In the opposite case, the gas is continually enriched and stars will have different metallicities depending on formation time.
+\end{itemize}
+
+A flow chart to determine the evolution of a galaxy is shown in \cref{fig:galaxy-decision}.
+
+\begin{figure}
+	\includegraphics[width=0.8\textwidth]{img/ch-05/galaxy-decision.pdf}
+	\caption{A logic flow chart for galaxy formation, from \cite{galaxy-formation}. In the standard scenario, the initial and boundary conditions for galaxy formation are set by the cosmological framework. The paths leading to the formation of various galaxies are shown along with the relevant physical processes. Note, however, that processes do not separate as neatly as this figure suggests. For example, cold gas may not have the time to settle into a gaseous disk before a major merger takes place.}
+	\label{fig:galaxy-decision}
+\end{figure}
+
+
+\section{Modelling schemes}
+
+\subsection{Semi-analytical models}
+\begin{itemize}
+	\item Use N-body simulations (DM only) or Extended Press-Schechter to generate halo merger tree
+	\item For each halo track the hot gas, cold gas and stars
+	\item Use prescriptions to convert these components into one another and their metallicity (model cooling, star formation, feedback and chemical evolution
+	\item Use prescription for the evolution of these components in mergers and for the survival of satellites in parent halos.
+\end{itemize}
+Relatively fast procedure with can then be compared to observations.
+
+\subsection{Hydrodynamical simulations}
+\begin{itemize}
+	\item Use N-body+hydrodynamical simulations to model the DM, the gas and stars.
+	\item As simulations are limited by resolution, prescription are needed for sub-grid physics, such as cooling, star formation and evolution, feedback, chemical evolution
+\end{itemize}
+More computationally intensive but avoids semi-analytical halo modelling.
+Can then also be compared to observations.
