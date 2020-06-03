@@ -7,6 +7,7 @@ In the following the evolution of the universe will be described, assuming that 
 
 
 \section{Elements of General Relativity}
+\label{sec:Elements of General Relativity}
 The theoretical basis of cosmology is General Relativity (GR). In contrary to Newton's laws, where a body is attracted by another one. In GR gravity is seen as a manifestation of the curvature of space-time and this curvature leads among others to the observation that bodies attract each other. The curvature of space-time is described by a metric $g_{\mu\nu}$ which describes the motion of distance on a curved space. 
 
 As an illustration we consider a two-dimensional space with a coordinate system $x^\mu$, where $\mu =$ 1, 2. The physical square distance is then $ds^2 = g_{\mu\nu} \mathrm{d}x^{\mu}\mathrm{d}x^{\nu}$ where $\mathrm{d}x^{\mu}$ and $\mathrm{d}x^{\nu}$ are the coordinate distances. Assuming that the space is homogeneous and isotropic the distance can be written as
@@ -77,11 +78,13 @@ For an expanding universe we have that $\frac{a_{emit}}{a_{0}} \leq 1$ and there
 \section{Friedmann equation}
 \label{sec:Friedmann}
 
-The Friedmann equations are derived by plugging the FRW metric into Einstein's equations:
+The Friedmann equations are derived by plugging the FRW metric into Einstein's equations and assuming a uniform and ideal fluid to find the stress tensor (see chapter \ref{sec:Elements of General Relativity}):
 \begin{align*}
-	H^2 &= \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2}\\
-	\frac{\ddot{a}}{a} &= \frac{4 \pi G}{3} \left( \rho + \frac{3 p}{c^2} \right)
+	H^2 &= \left( \frac{\dot{a}}{a} \right)^2 = \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} && \text{ Friedmann equation }\\
+	\frac{\ddot{a}}{a} &= \frac{4 \pi G}{3} \left( \rho + \frac{3 p}{c^2} \right) && 2^{nd} \text{ Friedmann equation },
 \end{align*}
+where the density $\rho = \rho_m + \rho_r + \rho_{\Lambda}$ and $\rho_m = \rho_{m,0} \left( \frac{a_0}{a} \right)^3 \approx a^{-3}$, $\rho_r = \rho_{r,0} \left( \frac{a_0}{a} \right)^4 \approx a^{-4}$ and $\rho_{\Lambda} = \frac{\Lambda c^2}{8 \pi G}$. \\
+The Friedmann equation is a differential equation for the scale factor $a(t)$ and it is also possible to derive it from Newtonian calculations. 
 
 The critical density is defined as
 \begin{align*}
@@ -91,11 +94,11 @@ Today, the critical density is about five hydrogen atoms per cubic metre, or one
 
 Density parameters:
 \begin{itemize}
-	\item The subscript $i$ describes one component of the universe ($i = $ radiation, dark matter, matter \textellipsis)
+	\item The subscript $i$ describes one component of the universe ($i = $ matter, radiation, dark matter \textellipsis)
 	\item density parameter: $\Omega_i(t) = \rho_i(t)/\rho_\text{crit}(t)$
 	\item total energy density: $\rho(t) = \sum_{i} \rho_i(t)$
 	\item total density parameter: $\Omega(t) = \rho(t)/\rho_\text{crit}(t)$
-	\item curvature density parameter: $\Omega_{K,0} = 1 - \Omega_0 = - Kc^2/H_0^2 a_0^2$
+	\item curvature density parameter: $\Omega_{K,0} = 1 - \Omega_0 = - \frac{Kc^2}{H_0^2 a_0^2}$
 \end{itemize}
 
 With these definitions, the (first) Friedmann equation can be rewritten as
