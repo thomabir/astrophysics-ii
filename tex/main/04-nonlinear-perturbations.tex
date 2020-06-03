@@ -10,10 +10,17 @@ This structure is called the cosmic web, which is a signature of non-linear grav
 Studying the evolution of non-linear perturbations is very difficult, and no exact analytic solutions have yet been found in the fully non-linear regime.
 There are different approaches to tackle the problem:
 \begin{itemize}
+<<<<<<< HEAD
 	\item Numerical simulations
 	\item Higher order perturbation theory is only a valid approach for mildly non-linear perturbations and scales.
 	On small scales, this does not work.
 	\item The Halo model, which is a simplified model, is very successful in describing the formation, evolution, and statistics of collapsed structures.
+=======
+	\item Numerical simulations give accurate results, but they are resource-intensive and give less insight than a (hypothetical) fully analytical approach.
+	\item Higher order perturbation theory is only a valid approach for mildly non-linear perturbations and scales.
+	In particular, it is not a good approach for small-scale structures.
+	\item The Halo model, which is a simplified analytical model, is very successful in describing the formation, evolution, and statistics of collapsed structures.
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 \end{itemize}
 
 We will study mainly the Halo model. We start with a model that only contains dark matter, and later introduce baryons.
@@ -228,11 +235,19 @@ Gravitational collisions are apparently very inefficient and can be neglected fo
 
 \subsection{Basic Dynamics}
 
+<<<<<<< HEAD
 We now look at the collisionless Boltzmann equation (CBE), with a phase-space distribution function $f(\vec{x}, \vec{v}, t)$.
 As we've seen before, the moments of $f$ are
 \begin{itemize}
 	\item $n(\vec{x}, t) = \int f(\vec{x}, \vec{v}, t) \dd{^3v} = \rho(\vec{x}, t)/m$
 	\item $\avg{Q}(\vec{x}, t) = \frac{1}{n} \int \dd{^3v} Q f(\vec{x}, \vec{v}, t)$
+=======
+The dynamics can be found from the collisionless Boltzmann equation (CBE), with a phase-space distribution function $f(\vec{x}, \vec{v}, t)$.
+As we've seen before, the moments of $f$ are
+\begin{itemize}
+	\item the number density $n(\vec{x}, t) = \int f(\vec{x}, \vec{v}, t) \dd{^3v} = \rho(\vec{x}, t)/m$,
+	\item a general moment $\avg{Q}(\vec{x}, t) = \frac{1}{n} \int \dd{^3v} Q f(\vec{x}, \vec{v}, t)$.
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 \end{itemize}
 The evolution of the distribution function is given by the CBE,
 \begin{align*}
@@ -497,8 +512,13 @@ Integrals of motion are functions $I(\vec{x}, \vec{v})$ that are constant along 
 Examples of such functions are energy and angular momentum.
 For integrals of motion,
 \begin{align*}
+<<<<<<< HEAD
 	0 &= \dv{I}{t}\\
 	&= \sum_{i} \pdv{I}{x_i} \dv{x_i}{t}
+=======
+	0 &= \dv{I}{t}
+	= \sum_{i} \pdv{I}{x_i} \dv{x_i}{t}
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 	+ \sum_{i} \pdv{I}{v_i} \dv{v_i}{t}.
 \end{align*}
 Thus, integrals of motion are solutions of the steady-state CBE.
@@ -700,8 +720,12 @@ Can we describe the end state of relaxation with Statistical Mechanics?
 Is it a thermal equilibrium?
 
 In a very broad sense, thermal equilibrium is a state which maximizes the entropy, which is also the most probable state.
+<<<<<<< HEAD
 Is this applicable here?
 No, it turns out there is no satisfactory definition of entropy for our systems,
+=======
+This is not applicable here, as it turns out there is no satisfactory definition of entropy for our systems,
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 % attempt to use Boltzmann-H function in book, but it fails
 % weird that something as simple as Newton's law defies entropy ...
 and it is not clear whether the relaxed states we introduced previously are the most probable states.
@@ -725,7 +749,11 @@ In the linear regime,
 \end{align*}
 where $\delta_0(\vec{x}) = \delta(\vec{x}, t_0)$ is linearly extrapolated to today, and $D(t)$ is the linear growth factor.
 We adopt a slightly different notation for $D(t)$, normalizing it such that $D(t_0) = 1$.
+<<<<<<< HEAD
 We define a smoothed field by convolving with a kernel,
+=======
+We define a smoothed field $\delta_s$ by convolving the original field with a smoothing kernel,
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 \begin{align*}
 	\delta_s(\vec{x}, t)
 	&= \int \dd{^3 \vec{y}} W(\vec{x}+\vec{y}; R) \delta(\vec{x'}, t),
@@ -738,11 +766,15 @@ To a top hat window function, we can associate a characteristic mass,
 
 \subsection{Probability of collapse}
 
+<<<<<<< HEAD
 For the spherical collapse model, we found that for regions with a smooth density field satisfying
 \begin{align*}
 	\delta_s(\vec{x}, R, t) > \delta_c \approx 1.69,
 	&&\text{(number for matter dominated universe)}
 \end{align*}
+=======
+For the spherical collapse model, we found that for regions with a smooth density field satisfying $\delta_s(\vec{x}, R, t) > \delta_c$,
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 the region will have collapsed to form a virialized object.
 This is what we call a dark matter halo.
 We rewrite this using the linear growth factor.
@@ -753,7 +785,11 @@ Because $\delta_s(\vec{x}, R, t) = \delta_S(\vec{x}, R, t_0) D(t)$, we have equi
 \end{align*}
 where we defined $\delta_c(t) = \delta_c / D(t)$.
 
+<<<<<<< HEAD
 We now to calculate the probability of collapse.
+=======
+We now calculate the probability of collapse.
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 Since $\delta$ is a Gaussian field
 ($\delta$ is linear with Gaussian initial conditions in our standard model of cosmology),
 the smoothed field is also Gaussian, since the smoothing is a linear process.
@@ -793,8 +829,12 @@ The integral then evaluates to
 
 \subsection{Mass fraction}
 
+<<<<<<< HEAD
 We use the PS-ansatz by \textsc{Press} and \textsc{Schechter} (1974).
 The mass fraction of collapsed objects with mass greater than $M$ is
+=======
+We use the PS-ansatz by \textsc{Press} and \textsc{Schechter} (1974), which states that the mass fraction of collapsed objects with mass greater than $M$ is
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 \begin{align*}
 	F(>M)
 	&= 2 \Prob(\delta_s > \delta_c(t)).
@@ -910,7 +950,11 @@ This means that the cut-off occurs at higher masses as time goes on.
 Thus, small haloes can form first, and massive haloes form later.
 We have already seen this hierarchical structure formation before.
 
+<<<<<<< HEAD
 Today, the largest haloes which have formed have masses $M \approx M_* \approx \num{e14} M_\sol$.
+=======
+Today, the largest haloes which have formed have masses $M \approx \num{e14} M_\sol$.
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 At earlier epochs, the largest haloes were found in dwarf galaxies, with $M \approx \num{e9}$,
 later galaxies with $M \approx \num{e12} M_\sol$,
 and finally galaxy clusters with  $M \approx \num{e13} M_\sol$.
@@ -1091,9 +1135,15 @@ Notes:
 
 
 
+<<<<<<< HEAD
 \subsection{Halo shapes}
 Generally, haloes are not spherical, but elliptical.
 Let $a_1 \geq a_2 \geq a_3$ be the main axis of the ellipsoid, and let $s = a_3/a_1$, which is a measure of flattening of the halo.
+=======
+\subsection{Shape}
+Generally, haloes are not spherical, but elliptical.
+Let $a_1 \geq a_2 \geq a_3$ be the main axes of the ellipsoid, and let $s = a_3/a_1$, which is a measure of flattening of the halo.
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 If $s = 1$, we are looking at a sphere, and $s=0$ is a perfectly flat two-dimensional pancake.
 In simulations, the following trends have been found:
 \begin{itemize}
@@ -1103,7 +1153,11 @@ In simulations, the following trends have been found:
 \end{itemize}
 
 
+<<<<<<< HEAD
 \subsection{Halo substructure}
+=======
+\subsection{Substructure}
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/ch-04/millenium-run.png}
@@ -1115,8 +1169,13 @@ In \cref{fig:millenium-run}, we see the result of a large scale simulation of th
 In the dark matter distribution, there are subhaloes visible inside some haloes.
 The subhaloes are remnants of progenitor haloes that have merged to form larger haloes.
 
+<<<<<<< HEAD
 An interesting quantity is the \emph{subhalo mass function}, which describes the number of subhaloes $n$ with mass $m$ in a main halo with total mass $M$.
 To make the result independent of the mass of the main halo, we instead use the mass fraction $m/M$.
+=======
+An interesting quantity is the \emph{subhalo mass fraction}, which describes the number of subhaloes $n$ with mass $m$ in a main halo with total mass $M$.
+To make the result independent of the mass of the main halo, we use the mass fraction $m/M$.
+>>>>>>> 606bc2ca57c4ed6f1a9ba40631c6823f0f8a9ba5
 A good fit to simulations of the subhalo mass fraction is
 \begin{align*}
 	\dv{n}{\ln(m/M)}

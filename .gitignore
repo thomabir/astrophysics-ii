@@ -279,3 +279,9 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+.python-version
+.DS_Store
+*.md
+*.html
+pandoc.txt
+astro-2.pdf

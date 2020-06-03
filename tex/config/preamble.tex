@@ -17,6 +17,15 @@
 
 \definecolor{primary_color}{RGB}{214,35,0}
 
+\usepackage{biblatex}
+\addbibresource{tex/back/bibliography.bib}
+
+
+
+
+
+
+
 
 
 \usepackage{tabu} % tables
@@ -29,3 +38,25 @@
 \input{tex/config/scrpagestyles}
 
 \input{tex/config/tref}
+
+
+
+% glossary
+\usepackage[%
+    xindy,
+    toc,
+    acronym,
+    smallcaps,
+    shortcuts,
+    nomain
+    ]{glossaries-extra}
+
+\renewcommand*{\glsxtrscfont}[1]{\MakeTextLowercase{\textsc{#1}}}
+\renewcommand*{\glsxtrscsuffix}{\hspace{0.05556em}\glstextup{\glsxtrabbrvpluralsuffix}}
+
+\providecommand{\glsabbvfont}{\glsabbrvfont}% patch for pre 1.15
+
+\makeglossaries
+
+\setabbreviationstyle[acronym]{long-short-sc}
+
