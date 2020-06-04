@@ -115,17 +115,17 @@ To solve the Friedmann equation, $\rho(t)$ or $\rho(a)$ need to be known. It can
 \begin{align*}
 	\rho = n \epsilon
 \end{align*}
-where $n$ is the particle number per unit volume and $\epsilon$ the energy per particle
+where $n$ is the particle number per unit volume and $\epsilon$ the energy per particle. Since the particle number is proportional to the inverse volume and the volume is $V \propto a^3(t)$, we find that $n \propto a^{-3}$. 
 \begin{itemize}
-	\item Relativistic matter. $\epsilon$ is constant with $a$, while $n \propto a^{-3}$. Thus $\rho \propto a^{-3}$.
-	\item Radiation. $\epsilon = h \nu = h c / \lambda \propto a^{-1}$. Thus $\rho \propto a^{-4}$.
-	\item Vacuum energy is constant in $a$
+	\item Non-Relativistic matter: $\epsilon = mc^2$ is constant with $a$, while $n \propto a^{-3}$. Thus $\rho_m \propto a^{-3}$.
+	\item Radiation: $\epsilon = h \nu = h c / \lambda \propto a^{-1}$. Thus $\rho_r \propto a^{-4}$.
+	\item Vacuum energy: In this case the energy density only depends on the difference between the true and the false vacuum, therefore it is constant in $a$, $\rho_{\Lambda} \propto$ constant. 
 \end{itemize}
 
 There is a generalization for general fluids:
 \begin{itemize}
-	\item equation of state: $p = w p c^2$
-	\item density: $\rho \propto a^{-3(1+w)}$
+	\item equation of state: $p = w \rho c^2$, where $w$ is the eq. of state parameter. 
+	\item If $w$ is time-independent we find for the density: $\rho \propto a^{-3(1+w)}$
 	\item $\displaystyle w = 
 	\begin{cases}
 	0 & \text{matter}\\
@@ -141,6 +141,21 @@ There is a generalization for general fluids:
 	\caption{Domination of different components at different times}
 	\label{fig:domination}
 \end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & $w$ & $\rho$ & $p$ & $T$\\
+\hline
+Matter & $0$ &  $a^{-3}$ & $a^{-5}$ & $a^{-2}$\\
+\hline
+Radiation & $1/3$ & $a^{-4}$ & $a^{-4}$ & $a^{-1}$\\
+\hline
+Radiation & $-1$ & $a^{0}$ & $a^{0}$ & -\\
+\hline
+\end{tabular}
+\end{table}
 
 The results can be plugged into the Friedmann equation:
 \begin{align*}
@@ -165,7 +180,7 @@ The standard cosmological model:
 	\item $h \approx 0.7$
 \end{itemize}
 
-At different times, the universe is dominated by different components. Approximations:
+At different times, the universe is dominated by different components. To get solutions to the Friedmann equations only the dominating component is considered:
 \begin{itemize}
 	\item Matter dominated:
 	\begin{align*}
@@ -191,7 +206,7 @@ At different times, the universe is dominated by different components. Approxima
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/ch-02/evolution.png}
-	\caption{Evolution}
+	\caption{Possible evolution of the universe for different density parameters.}
 	\label{fig:evolution}
 \end{figure}
 
