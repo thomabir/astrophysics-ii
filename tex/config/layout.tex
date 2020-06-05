@@ -12,14 +12,29 @@
             layoutvoffset=2.56cm,
             ]{geometry}
 
-\newgeometry{includemp,
-            top=2.170cm,
-            bottom=3.510cm,
-            inner=1.668cm,
-            outer=1cm,
-            marginparwidth=5.699cm, % Fixed for now
-            marginparsep=0.4cm}
+% old
+% \newgeometry{includemp,
+%             top=2.170cm,
+%             bottom=3.510cm,
+%             inner=1.668cm,
+%             outer=1cm,
+%             marginparwidth=5.699cm, % Fixed for now
+%             marginparsep=0.4cm}
+
+% new
+\newgeometry{
+  a4paper,
+  bottom=27.4mm,
+  inner=24.8mm,
+  textwidth=115mm,
+  marginparsep=8.2mm,
+  marginparwidth=49.4mm,
+  includemp
+  }%
 \savegeometry{with-margin}
+
+
+
 
 \newgeometry{ignoremp,
             top=2.170cm,
