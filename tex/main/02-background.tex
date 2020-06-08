@@ -228,6 +228,18 @@ At different times, the universe is dominated by different components. To get so
 
 
 
+\subsection{Comoving radius}
+We measured the redshift of a photon that has travelled to us on a radial trajectory. How far away (in comoving distance) is the source?
+\begin{align*}
+	0 &= \dd{s}^2 &&\text{photon}\\
+	&= c \dd{t}^2 - a(t)^2 [\dd{\chi}^2 + r(\chi)^2 \dd{\Omega}^2] &&\text{FRW metric}\\
+	\implies c \dd{t} &= a(t) \dd{\chi} &&\dd{\Omega}^2 = 0 \text{ on a radial trajectory}\\
+	\implies \dd{\chi} &= \frac{c \dd{t}}{a(t)}\\
+	&= \frac{c \dd{a}}{a^2 H(a)} && H = \frac{\dot{a}}{a} \text{, so } \dd{t} = \frac{\dd{a}}{a H(a)}\\
+	\implies \chi(a) &= c \int_a^{a_0} \frac{\dd{a'}}{a'^2 H(a')} && \chi(a_0) = 0
+\end{align*}
+$H(a)$ has to be obtained from the Friedmann equations. As a result, we will get $\chi(a,a_0)$. We can use $a/a_0 = 1/(1+z)$ to get $\chi(z,a_0)$. Since $a_0$ can be defined arbitrarily (for example, $a_0=1$), we get $\chi(z)$.
+
 \subsection{Angular distance \& Luminosity distance}
 
 The comoving distance $\chi$ and the proper distance $a \chi$ to a source are not directly observable. However, the angular size $\theta$ and the flux $F$ of an object can be measured directly.
@@ -254,27 +266,16 @@ In Euclidean space, the following relations hold:
 \end{align*}
 where $d$ is the distance to the source. In FRW-space, we define the following:
 \begin{itemize}
-	\item the angular-diameter distance $d_A$ satisfies $\theta = D/d_A$. One can show $d_A = a r(\chi)$
-	\item the luminosity distance $d_L$ satisfies $F = L/4\pi d_L^2$. One can show that $d_L = r(\chi)/a$
+	\item The angular-diameter distance $d_A$ satisfies $\theta = D/d_A$. One can show $d_A = a \cdot r(\chi)$, where $r(\chi) = D/(a \theta) = D_{comoving}/\theta$ is the comoving angular diameter distance.
+	\item The luminosity distance $d_L$ satisfies $F = L/(4\pi d_L^2$). One can show that $d_L = a_0 r(\chi) (1+z) = d_A (1+z)^2$. Taking $a_0 = 1$ yields $d_L = r(\chi)/a = d_A/a^2$. 
 \end{itemize}
-
-\subsection{Comoving radius}
-We measured the redshift of a photon that has travelled to us on a radial trajectory. How far away (in comoving distance) is the source?
-\begin{align*}
-	0 &= \dd{s}^2 &&\text{photon}\\
-	&= c \dd{t}^2 - a(t)^2 [\dd{\chi}^2 + r(\chi)^2 \dd{\Omega}^2] &&\text{FRW metric}\\
-	\implies c \dd{t} &= a(t) \dd{\chi} &&\dd{\Omega}^2 = 0 \text{ on a radial trajectory}\\
-	\implies \dd{\chi} &= \frac{c \dd{t}}{a(t)}\\
-	&= \frac{c \dd{a}}{a^2 H(a)} && H = \frac{\dot{a}}{a} \text{, so } \dd{t} = \frac{\dd{a}}{a H(a)}\\
-	\implies \chi(a) &= c \int_a^{a_0} \frac{\dd{a'}}{a'^2 H(a')} && \chi(a_0) = 0
-\end{align*}
-$H(a)$ has to be obtained from the Friedmann equations. As a result, we will get $\chi(a,a_0)$. We can use $a/a_0 = 1/(1+z)$ to get $\chi(z,a_0)$. Since $a_0$ can be defined arbitrarily (for example, $a_0=1$), we get $\chi(z)$.
+In a static space $d = d_A = d_L$ would hold. 
 
 \subsection{Comoving Horizon}
-Suppose a (hypothetical, non-interacting) photon was emitted at the Big Bang. How far (in comoving distance) could it have travelled until now? This comoving distance is called the comoving horizon. We plug into the previous equation, with $a=0$ at the start:
+Suppose a (hypothetical, non-interacting) photon was emitted at the Big Bang. How far (in comoving distance) could it have travelled until now? This comoving distance is called the comoving horizon. We plug into the equation of the comoving radius/distance, with $a=0$ at the start:
 \begin{align*}
-	\chi(a)
-	&= c \int_0^{a_0} \frac{\dd{a'}}{a'^2 H(a')}
+	\chi_h
+	&= \chi (r_h) = c \int_0^{a_0} \frac{\dd{a'}}{a'^2 H(a')}
 \end{align*}
 
 \subsection{Age of the Universe}
@@ -283,8 +284,7 @@ How old is the universe?
 	t_0 &= \int_0^{t_0} \dd{t}\\
 	&= \int_0^{a_0} \frac{\dd{a}}{a H(a)} && H(a) = \dot{a}/a
 \end{align*}
-$H(a)$ is again found from the Friedmann equation. With the standard cosmology, $t_0 \approx \SI{14}{\giga\year}$.
-
+$H(a)$ is again found from the Friedmann equation. With the standard cosmological model, $t_0 \approx \SI{14}{\giga\year}$.
 
 
 
