@@ -1,22 +1,24 @@
 \chapter{Cosmological Background}
 
 \section{Cosmological Principle}
-The Cosmological principle states that the universe is homogeneous and isotropic on sufficiently large scales (larger than ~ 100 \si{\mega\parsec}). This is a generalization of the Copernican principle, according to which there is no special place and no special direction in the universe.
+The Cosmological principle states that the universe is homogeneous and isotropic on sufficiently large scales, larger than about \SI{100}{\mega\parsec}. This is a generalization of the Copernican principle, according to which there is no special place and no special direction in the universe.
 
-In the following the evolution of the universe will be described, assuming that it is isotropic and homogeneous. Later local perturbations about this uniform background will be taken into account.
+In the following, the evolution of the universe will be described, assuming that it is isotropic and homogeneous. In the next chapter, local perturbations about this uniform background will be taken into account.
 
 
 \section{Elements of General Relativity}
-\label{sec:Elements of General Relativity}
-The theoretical basis of cosmology is General Relativity (GR). In contrary to Newton's laws, where a body is attracted by another one. In GR gravity is seen as a manifestation of the curvature of space-time and this curvature leads among others to the observation that bodies attract each other. The curvature of space-time is described by a metric $g_{\mu\nu}$ which describes the motion of distance on a curved space. 
+\label{sec:general-relativity}
+\newacronym{gr}{GR}{General Relativity}
+The theoretical basis of cosmology is \ac{gr}, which is a description of gravity that describes the attraction between masses as a result of the curvature of spacetime, rather than the gravitational force in Newton's description. The curvature of space-time is described by a metric $g_{\mu\nu}$, which is used to define the notion of distance on curved spaces.
 
-As an illustration we consider a two-dimensional space with a coordinate system $x^\mu$, where $\mu =$ 1, 2. The physical square distance is then $ds^2 = g_{\mu\nu} \mathrm{d}x^{\mu}\mathrm{d}x^{\nu}$ where $\mathrm{d}x^{\mu}$ and $\mathrm{d}x^{\nu}$ are the coordinate distances. Assuming that the space is homogeneous and isotropic the distance can be written as
+
+As an illustration we consider a two-dimensional space with a coordinate system $x^\mu$, where $\mu =$ 1, 2. The physical squared distance is then $\dd{s}^2 = g_{\mu\nu} \dd{x}^{\mu} \dd{x}^{\nu}$, where $\dd{x}^{\mu}$ and $\dd{x}^{\nu}$ are the coordinate distances. Assuming that the space is homogeneous and isotropic, the distance can be written as
 \begin{align*}
-	ds^2 = a^2 \left(\frac{\mathrm{d}r^2}{1-kr^2} + r^2 \mathrm{d}\phi^2\right)
+	\dd{s}^2 = a^2 \left(\frac{\dd{r}^2}{1-kr^2} + r^2 \dd{\phi}^2\right),
 \end{align*}
-where $k$ describes the curvature and $a$ is the length scale known as the scale factor which can also be time-dependent. If the scale factor is time dependent this means that the surface is uniformly expanding or contracting. The curvature $k$ for a homogeneous and isotropic surface is either $k$ = 0 for a plane, $k$ = 1 for a sphere or the curvature is negative $k$ = -1 for a hyperbolic surface. In order to describe the sphere the coordinate transformation $r$ = $sin\chi$ is used and to describe the hyperbolic surface $r$ = $sinh\chi$. 
+where $k$ describes the curvature and $a$ is the scale factor, which can also be time-dependent. If the scale factor is time dependent, the surface is uniformly expanding or contracting. The curvature $k$ for a homogeneous and isotropic surface is either $k = 0$ for a plane, $k = 1$ for a sphere or $k = -1$ for a hyperbolic surface. In order to describe the sphere the coordinate transformation $r = \sin\chi$ is used and to describe the hyperbolic surface $r = \sinh\chi$.
 
-The discussion of the two-dimensional space can be adapted to our universe, which is in four dimensional space-time described by the Minkowsky metric $g_{\mu\nu} = \diag(1, -1, -1, -1)$. In this space time the physical square distance for a flat universe would be given by $ds^2 = c^2\mathrm{d}t^2- (\mathrm{d}x^2 + \mathrm{d}y^2 + \mathrm{d}z^2)$. In general the dynamics of space-time is described by the Einstein field equations:
+The discussion of the two-dimensional space can be adapted to our universe, which is in four dimensional space-time described by the Minkowsky metric $g_{\mu\nu} = \diag(1, -1, -1, -1)$. In this space-time, the physical square distance for a flat universe would be $\dd{s}^2 = c^2\dd{t}^2- (\dd{x}^2 + \dd{y}^2 + \dd{z}^2)$. In general, the dynamics of space-time is described by the Einstein field equations:
 \begin{align*}
 	G_{\mu\nu} = \frac{8\pi G}{\rho} T_{\mu\nu}.
 \end{align*}
@@ -26,18 +28,21 @@ $G_{\mu\nu}$ is the Einstein tensor, which includes the curvature of the space-t
 \end{align*}
 where $\rho c^2$ is the energy density and $p$ the pressure. 
 
-In the space-time the trajectories of particles are in geodesics which means they take the straightest paths possible. As an example for photons (massless particles) $ds^2 = 0$.
+The trajectories of particles are geodesics, which means they take the straightest paths possible. As an example for photons (massless particles) $\dd{s}^2 = 0$.
 
 
 
 \section{FRW metric}
-The Friedmann-Robertson-Walker (FRW) metric is the metric of a homogeneous and isotropic universe:
+\newacronym{frw}{FRW}{Friedmann-Robertson-Walker}
+The \ac{frw} metric is the metric of a homogeneous and isotropic universe.
+It is defined as
 \begin{align*}
-  \dd{s}^2 = c^2 \dd{t}^2 - a(t)^2( \dd{\chi}^2 + r(\chi)^2 \dd{\Omega}^2 )
+  \dd{s}^2 = c^2 \dd{t}^2 - a(t)^2 \left[ \dd{\chi}^2 + r(\chi)^2 \dd{\Omega}^2 \right],
 \end{align*}
-\begin{itemize}
-	\item $\dd{\Omega}^2 = \dd{\theta}^2 + \sin^2\theta \dd{\phi}^2$: solid angle element
-	\item $\chi$: comoving radius/ distance
+where
+\begin{itemize}[nolistsep]
+	\item $\dd{\Omega}^2 = \dd{\theta}^2 + \sin^2\theta \dd{\phi}^2$ is the solid angle element,
+	\item $\chi$ is comoving radius,
 	\item $\displaystyle
 		r(\chi) = f_K(\chi) = 
 		\begin{cases}
@@ -46,19 +51,25 @@ The Friedmann-Robertson-Walker (FRW) metric is the metric of a homogeneous and i
 			\sinh \chi & \text{open case, negative curvature}
 		\end{cases}
 		$
-	\item $a(t)$: scale factor, which describes the expansion (or contraction) of space
+	\item $a(t)$ is the scale factor, which describes the expansion (or contraction) of space.
 \end{itemize}
 
-\paragraph*{Redshift}
-Almost all observations about astronomical objects are made through light signals, therefore it is important to know what happens to the light until it reaches us.\\
-Consider a photon emitted from e.g. a galaxy, which travels to the observer. From the previous subchapter we know that photons travel along null geodesics: $\dd s =0$. By assuming that the photon wavelength $\lambda \approx a$ we find
-\begin{align*}
-	1+z = \frac{\lambda_{obs}}{\lambda_{emit}} = \frac{a_{obs}}{a_{emit}} = \frac{a_{0}}{a_{emit}},
-\end{align*}
-where z is the redshift, $\lambda_{obs}$ and $a_{obs} = a_0$ are the wavelength and scale factor at the observer and $\lambda_{emit}$ and $a_{emit}$ at emission.\\
-For an expanding universe we have that $\frac{a_{emit}}{a_{0}} \leq 1$ and therefore $z \geq 0$. The object appears redder. 
+\subsection{Redshift}
+Almost all observations about astronomical objects are made through light signals, therefore it is important to know what happens to the light until it reaches us.
 
-\paragraph*{Hubble parameter}
+Consider a photon emitted from e.g. a galaxy, which travels to the observer. We know from \cref{sec:general-relativity} that photons travel along null geodesics, which satisfy $\dd{s}^2 =0$. Since the photon wavelength $\lambda$ is a length scale, we can assume it scales with scale factor $a$.
+The redshift is then defined through
+\begin{align*}
+	1+z
+	= \frac{\lambda_\text{obs}}{\lambda_\text{emit}}
+	= \frac{a_\text{obs}}{a_\text{emit}}
+	= \frac{a_{0}}{a_\text{emit}},
+\end{align*}
+where $z$ is the redshift, $\lambda_\text{obs}$ and $a_\text{obs} = a_0$ are the wavelength and scale factor at the observer, and $\lambda_\text{emit}$ and $a_\text{emit}$ are at emission.
+
+For an expanding universe, we find $a_\text{emit}/a_0 \leq 1$, and therefore $z \geq 0$. The object appears redder.
+
+\subsection{Hubble parameter}
 \begin{itemize}
 	\item Hubble parameter: $H \defeq \dot{a}/a$
 	\item The Hubble parameter describes how fast the proper distance between two fundamental observers changes at time t. 
@@ -78,7 +89,7 @@ For an expanding universe we have that $\frac{a_{emit}}{a_{0}} \leq 1$ and there
 \section{Friedmann equation}
 \label{sec:Friedmann}
 
-The Friedmann equations are derived by plugging the FRW metric into Einstein's equations and assuming a uniform and ideal fluid to find the stress tensor (see chapter \ref{sec:Elements of General Relativity}):
+The Friedmann equations are derived by plugging the FRW metric into Einstein's equations and assuming a uniform and ideal fluid to find the stress tensor (see \cref{sec:general-relativity}):
 \begin{align*}
 	H^2 &= \left( \frac{\dot{a}}{a} \right)^2 = \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} && \text{ Friedmann equation }\\
 	\frac{\ddot{a}}{a} &= \frac{4 \pi G}{3} \left( \rho + \frac{3 p}{c^2} \right) && 2^{nd} \text{ Friedmann equation },
@@ -313,6 +324,7 @@ The decoupling or \enquote{freeze out} happens when $\Gamma \approx H$. This tra
 In \cref{tab:thermal-history} and \cref{fig:evolution}, an overview of the thermal history of the universe is given.
 
 \begin{table*}
+	\centering
 	\tabulinesep=2mm
 	\begin{tabu}{m{10cm}llp{2cm}}
 	\toprule
@@ -454,7 +466,7 @@ The last term can be simplified. Because $p = p_0 a^{-1}$, $\dv*{p}{t} = -p_0 a^
 \end{align*}
 In the last line, we used partial integration.\sidenote{In detail:
 \begin{align*}
-	\int \dd{^3p p \pdv{f_i}{p}}
+	\int \dd{^3p} p \pdv{f_i}{p}
 	&= \int \dd{p} p^3 \pdv{f_i}{p}\\
 	&= - \int \dd{p} \pdv{p^3}{p} f_i \\
 	&= -3 n_i
@@ -521,7 +533,7 @@ The $g$'s are degeneracy factors and satisfy $g_{*s}(x_0) \leq g_{*s}(x_f)$, and
 \subsection{WIMPs}
 Next we consider weakly interacting massive particles (WIMPs). Examples are massive neutrinos and stable, light supersymmetric particles. WIMPs can either be hot ($x_f \ll 1$) or cold ($x_f \gg 1$).
 
-\subsubsection{Hot WIMPs}
+\paragraph*{Hot WIMPs}
 The solution of the Boltzmann equation yields
 \begin{align*}
 	\Omega_{i,0} h^2 = \num{7.64e-2} 
@@ -530,7 +542,7 @@ The solution of the Boltzmann equation yields
 \end{align*}
 Since we know that $\Omega_{i,0} < 1$, we can get a constraint $m_i < \SI{100}{\eV}$ on the mass of the hot WIMPs, which is possible for neutrinos. However, hot WIMPs are ruled out as dark matter by structure formation arguments.
 
-\subsubsection{Cold WIMPs}
+\paragraph*{Cold WIMPs}
 Boltzmann says
 \begin{align*}
 	\Omega_{i,0} h^2
@@ -670,7 +682,8 @@ Baryons from the Big Bang nucleosynthesis contribute $\Omega_b \approx 0.05$. Th
 \end{itemize}
 
 \subsection*{Dark Matter}
-Dark Matter contributes $\Omega_\text{dm} \approx 0.25$. We know of its existence through its gravitational effects. There is evidence for dark matter in galaxies, galaxy clusters, large scale structure, and many others.
+\newacronym{dm}{DM}{dark matter}
+\Ac{dm} contributes $\Omega_\text{dm} \approx 0.25$. We know of its existence through its gravitational effects. There is evidence for dark matter in galaxies, galaxy clusters, large scale structure, and many others.
 
 Dark matter is mostly non-baryonic, because baryons are constrained to $\Omega_b \approx 0.05$ by Big Bang nucleosynthesis. Also, the structure formation constraints below rule out baryons as dark matter candidates.
 \begin{itemize}
