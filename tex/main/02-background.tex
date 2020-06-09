@@ -153,7 +153,7 @@ There is a generalization for general fluids:
 	\label{fig:domination}
 \end{figure}
 
-\begin{table}[H]
+\begin{table*}
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -166,7 +166,7 @@ Radiation & $1/3$ & $a^{-4}$ & $a^{-4}$ & $a^{-1}$\\
 Radiation & $-1$ & $a^{0}$ & $a^{0}$ & -\\
 \hline
 \end{tabular}
-\end{table}
+\end{table*}
 
 The results can be plugged into the Friedmann equation:
 \begin{align*}
@@ -290,10 +290,16 @@ $H(a)$ is again found from the Friedmann equation. With the standard cosmologica
 
 
 
-\section{Thermal history}
+\section{Thermal history of the Universe}
 \label{sec:thermal-history}
 
 According to the Big Bang paradigm, the universe was once hot and dense, and now it expands and cools down. Today, it is far from thermal equilibrium, but it must have been in thermal equilibrium at some point in the past if it continuously expands.
+
+The matter content at each epoch depends on:
+\begin{itemize}
+	\item Thermodynamics
+	\item Particle, nuclear and atomic physics
+\end{itemize}
 
 A system is in thermal equilibrium if $\Gamma \gg H$
 \begin{itemize}
@@ -331,17 +337,17 @@ In \cref{tab:thermal-history} and \cref{fig:evolution}, an overview of the therm
 	Event & time & redshift & energy \newline temp.\\
 	\midrule
 	\describe{Inflation}{A phase of extremely rapid exponential expansion, caused by a phase transitions where the inflaton field emerged. Inflation explains properties of the universe which are difficult to account for without.}
-	 & ? & ? & ? \\
+	 & $10^{-34}$ s & ? & ? \\
 	\describe{Baryogenesis}{Baryons (protons, neutrons) are formed from quarks. Weirdly, there are way more baryons formed than antibaryons. This is the matter-antimatter asymmetry.} & ? & ? & ? \\
 	\describe{QCD phase transition}{The universe has cooled sufficiently such that hadrons (baryons and mesons) can form.} & \SI{e-5}{\second} & \num{e12} & \SI{200}{\MeV} \newline \SI{3e12}{\kelvin}\\
 	Pions annihilate and decay, the only hadrons left are nucleons (protons and neutrons). & \SI{e-4}{\second} &  & \SI{50}{\MeV} \newline \SI{e12}{\kelvin}\\
 	\describe{Dark Matter freeze-out}{Dark Matter interacts very weakly with ordinary matter, so it decouples early on.} & ? & ? & ?\\
-	\describe{Electron-positron annihilation}{Electrons and positrons annihilate through $e^+ + e^- \to 2 \gamma$. Since the number of charged particles decreases, neutrinos decouple.} & \SI{4}{\second} & \num{2e9} & \SI{0.3}{\MeV} \newline \SI{5e9}{\kelvin}\\
+	\describe{Electron-positron annihilation}{Electrons and positrons annihilate through $e^+ + e^- \to 2 \gamma$. Since the number of charged particles decreases, neutrinos decouple. The n/p ratio freezes out at $n_n \approx 1/10 n_p$.} & \SI{4}{\second} & \num{2e9} & \SI{0.3}{\MeV} \newline \SI{5e9}{\kelvin}\\
 	\describe{Big Bang nucleosynthesis}{Light nuclei such as D and He get synthesized. They are still ionized.} & \SI{3}{\minute} & \num{4e8} & \SI{0.08}{\MeV} \newline \SI{e9}{\kelvin}\\
 	\describe{Matter-radiation equality}{} & \SI{6e4}{\year} & \num{3400} & \SI{0.75}{\eV} \newline \SI{8700}{\kelvin}\\
 	\describe{Recombination}{Formation of neutral atoms through $e^- + p^+ \to H + \gamma$} & \SI{2e5}{\year} & \num{1200} & \SI{0.34}{\eV} \newline \SI{4000}{\kelvin}\\
 	\describe{Surface of last scattering}{The number density of charged particles has decreased enough for photons to decouple. These photons form the CMB.} &  &  & \\
-	\describe{Reionization}{Stars form and re-ionize hydrogen.} & \SI{2e8}{\year} & \num{20} & \SI{4}{\meV} \newline \SI{50}{\kelvin}\\
+	\describe{Reionization}{Stars form and re-ionize neutral hydrogen.} & \SI{2e8}{\year} & \num{20} & \SI{4}{\meV} \newline \SI{50}{\kelvin}\\
 	\describe{Dark Energy - Matter equality}{} & \SI{9}{\giga\year} & \num{0.4} & \SI{0.33}{\meV} \newline \SI{3.8}{\kelvin}\\
 	\describe{Today}{} & \SI{13.8}{\giga\year} & \num{0} & \SI{0.24}{\eV} \newline \SI{2.7}{\kelvin}\\
 	\bottomrule

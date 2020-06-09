@@ -285,3 +285,4 @@ TSWLatexianTemp*
 *.html
 pandoc.txt
 astro-2.pdf
+*.pdf
