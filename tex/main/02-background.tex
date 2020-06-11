@@ -363,12 +363,12 @@ In \cref{tab:thermal-history} and \cref{fig:evolution}, an overview of the therm
 	\label{fig:big-bang}
 \end{figure}
 
-\section{Thermodynamics}
+\section{Thermodynamics in an expanding Universe}
 
 To describe the evolution of the universe quantitatively, a few definitions are required:
 
 \begin{itemize}
-	\item The probability that a particle is in a volume $\dd{^3 x} \dd{^3 p}$  at time $t$ is given by the \textbf{(phase space) distribution function}:
+	\item The probability that a particle at time $t$ is in a volume $\dd{^3 x} \dd{^3 p}$ around ($ \vec{x}, \vec{p}$) is given by the \textbf{(phase space) distribution function}:
 	\begin{align*}
 		f(\vec{x}, \vec{p}, t) \dd{^3 x} \dd{^3 p}
 	\end{align*}
@@ -381,7 +381,7 @@ To describe the evolution of the universe quantitatively, a few definitions are 
 	\begin{align*}
 		\rho(t) = 4 \pi \int E(p) f(p,t) p^2 \dd{p},
 	\end{align*}
-	with $E(p) = \sqrt{p^2 + m^2}$.
+	with $E(p) = \sqrt{p^2 + m^2}$  (natural units are used, therefore $c= k_B = \hbar = 1$).
 	\item The \textbf{pressure} is given by
 	\begin{align*}
 		P(t) = 4 \pi c^2 \int \frac{p^2}{3 E(p)} f(p,t) p^2 \dd{p}
@@ -392,7 +392,7 @@ To describe the evolution of the universe quantitatively, a few definitions are 
 
 \subsection{At early times ($\Gamma > H$)}
 \label{ssec:early-times}
-The distribution function of particles in thermodynamic equilibrium is the Bose-Einstein or the Fermi-Dirac distribution:
+The distribution function of particles in thermodynamic equilibrium is the Bose-Einstein (bosons) or the Fermi-Dirac (fermions) distribution:
 \begin{align*}
 	f_\text{eq}(p,t)
 	= \frac{g}{(2\pi)^3} \left[ \exp\left( 
@@ -402,23 +402,25 @@ The distribution function of particles in thermodynamic equilibrium is the Bose-
 \begin{itemize}
 	\item $+$ is for fermions and $-$ for bosons
 	\item $g$ is a spin degeneracy factor. Examples: $g_\nu = 1$, $g_\gamma = 2$, $g_\text{quark} = 6$
-	\item $\mu$ is the chemical potential, which is the response of a thermodynamics system to a change of particle number. Usually, $\mu=0$ for our purposes.
-	\item $T$ is the temperature of the universe, which is time dependent.
+	\item $\mu$ is the chemical potential, which is the response of a thermodynamical system to a change of particle number. Usually, $\mu=0$ for our purposes.
+	\item $T$ is the temperature of the universe at time t.
 \end{itemize}
 
 For \emph{non-relativistic particles}, $T \ll m$ and $E \approx m + p^2/2m$. Plugging this in yields
 \begin{align*}
-	n &= g \left( \frac{m T}{2 \pi} \right)^{3/2} \exp\left( \frac{p-m}{T} \right)&
-	\rho &= n m&
-	P &= n T
+	n_{eq} &= g \left( \frac{m T}{2 \pi} \right)^{3/2} \exp\left( \frac{\mu-m}{T} \right)&
+	\rho_{eq} &= n m&
+	P_{eq} &= n T
 \end{align*}
+Note that the pressure equation is identical to the ideal gas equation in natural units. 
 
 For \emph{relativistic particles}, $T \gg m$ and $E \approx p$. For both fermions and bosons, this yields
 \begin{align*}
-	n &= g T^3&
-	\rho &= g T^4&
-	P &= \frac{\rho}{3}
+	n_{eq} &\propto g T^3&
+	\rho_{eq} &\propto g T^4&
+	P_{eq} &= \frac{\rho_{eq}}{3}
 \end{align*}
+Note that the pressure equation is identical to the equation of state as seen in \cref{sec:Friedmann}.
 In the case of a relativistic gas, $T \propto a^{-1}$, so $n \propto a^{-3}$ and $\rho \propto a^{-4}$. This is what we have already seen in \cref{sec:Friedmann}.
 
 
@@ -435,7 +437,7 @@ In the case of a relativistic gas, $T \propto a^{-1}$, so $n \propto a^{-3}$ and
 
 \subsection{At late times ($\Gamma < H$)}
 \label{ssec:late-times}
-The transition between non-equilibrium and equilibrium takes place at the decoupling time of freeze-out time $t_f$. At $t>t_f$, the transition function is
+The transition between non-equilibrium and equilibrium takes place at the decoupling time of freeze-out time $t_f$, where $T \approx T_f = T_{\gamma}(t_f)$. At $t>t_f$, the distribution function is
 \begin{align*}
 	f(p,t) = f\left( p \frac{a(t)}{a(t_f)}, t_f \right)
 \end{align*}
@@ -456,19 +458,19 @@ which is the same as for an equilibrium particle, but with $T_f \defeq T_f a(t_f
 \label{ssec:boltzmann}
 The Boltzmann equation
 \begin{align*}
-	\dv{f_i}{t} = c_i[f_i]
+	\dv{f_i}{t} = C_i[f]
 \end{align*}
-describes the time evolution of the distribution function. $c_i[f_i]$ is the collision term.
+describes the time evolution of the distribution function between early and late times. $C_i[f]$ is the collision term, which describes the change of $f_i$ due to interactions with other species.
 
-$f$ only depends on $p$ and $t$, so we can write
+$f_i$ only depends on $p$ and $t$, so we can write
 \begin{align*}
-	\dv{f_i}{t} &= \pdv{f_i}{t} + \pdv{f_i}{p} \pdv{p}{t}
+	\dv{f_i}{t} &= \pdv{f_i}{t} + \pdv{f_i}{p} \dv{p}{t}
 \end{align*}
-The last term can be simplified. Because $p = p_0 a^{-1}$, $\dv*{p}{t} = -p_0 a^{-1} \dot{a} = - p H$. The Boltzmann equation then becomes
+The last term can be simplified. Because $p = p_0 a^{-1}$, $\dv*{p}{t} = -p_0 a^{-2} \dot{a} = - p H$. The Boltzmann equation for a homogeneous and isotropic case then becomes
 \begin{align*}
-	\pdv{f_i}{t} - p H(t) \pdv{f_i}{p} &= c_i[f_i]\\
-	\implies \pdv{}{t} \int \dd{^3 p} f_i - H(t) \int \dd{^3 p} p \pdv{f_i}{p} &= \int \dd{^3 p} c_i[f_i]\\
-	\implies \dv{n_i}{t} + 3 H(t) n_i &= \int \dd{^3 p} c_i[f_i]
+	\pdv{f_i}{t} - p H(t) \pdv{f_i}{p} &= C_i[f]\\
+	\implies \pdv{}{t} \int \dd{^3 p} f_i - H(t) \int \dd{^3 p} p \pdv{f_i}{p} &= \int \dd{^3 p} C_i[f]\\
+	\implies \dv{n_i}{t} + 3 H(t) n_i &= \int \dd{^3 p} C_i[f]
 \end{align*}
 In the last line, we used partial integration.\sidenote{In detail:
 \begin{align*}
@@ -477,37 +479,46 @@ In the last line, we used partial integration.\sidenote{In detail:
 	&= - \int \dd{p} \pdv{p^3}{p} f_i \\
 	&= -3 n_i
 \end{align*}}
-If the system is collisionless, $c_i[f_i]=0$, and the solution of the Boltzmann equation is $n_i \propto a^{-3}$. The $3H(t) n_i$ is called the Hubble drag term.
+If the system is collisionless, $C_i[f]=0$, and the solution of the Boltzmann equation is $n_i \propto a^{-3}$ as expected. The $3H(t) n_i$ is called the Hubble drag term.
 
 We now look at reactions of the type $i + j \leftrightarrow a + b$. The collision term is then of the form
 \begin{align*}
-	c_i[f_i] = \alpha(T) n_a n_b - \beta(T) n_i n_j
+	C_i[f] = \alpha(T) n_a n_b - \beta(T) n_i n_j
 \end{align*}
 \begin{itemize}
 	\item $\alpha(T)$ is the production rate
 	\item $\beta(T)$ is the destruction rate
 \end{itemize}
-To simplify the equation, we make a few assumptions:
+If we insert this collision term into the equation we get
+\begin{align*}
+	\dv{n_i}{t} + 3 H(t) n_i = \alpha(T) n_a n_b - \beta(T) n_i n_j. 
+\end{align*}
+Writing the same equation for the species j and combine these two equations, one finds that
+\begin{align*}
+	(n_i - n_j)a^3 = \text{constant}. 
+\end{align*}
+To simplify the collision term of the equation, we make a few assumptions:
 \begin{itemize}
-	\item $a$ and $b$ are in equilibrium with a general plasma at temperature $T$
-	\item $n_i = n_j$ (this is the case for antiparticles)
+	\item species $a$ and $b$ are in equilibrium with a general hot plasma at temperature $T = T_a = T_b$
+	\item $n_i = n_j$ (e.g. in the case of antiparticles)
 	\item radiation era: $a \propto t^{1/2} \propto T^{-1}$
 \end{itemize}
-The equation is then
+The equation then becomes
 \begin{align*}
-	\dv{n_i}{t} + 3 H(t) n_i = \beta(T) (n_{i, \text{eq}}^2 - n_i^2)
+	\dv{n_i}{t} + 3 H(t) n_i = \beta(T) (n_{i, \text{eq}}^2 - n_i^2), 
 \end{align*}
+where $n_{i, \text{eq}}$ is the equilibrium density for i. 
 To analyse the equation, we define
 \begin{itemize}
 	\item $x = m_i/T$ is used as a time variable
-	\item $y_i = n_i/S$, where $S$ is the entropy
+	\item $Y_i = n_i/s$, where $s \propto a^{-3}$ is the entropy
 	\item $\Gamma(x) = n_{i, \text{eq}}(x) \beta(x)$
 \end{itemize}
-The equation is then
+One finally gets a differential equation for $Y_i(x)$
 \begin{align*}
-	\frac{x}{y_{i, \text{eq}}} \dv{y_i}{x} = - \frac{\Gamma(x)}{H(x)} \left[ \left( \frac{y_i}{y_{i,\text{eq}}} \right)^2 - 1 \right]
+	\frac{x}{Y_{i, \text{eq}}} \dv{Y_i}{x} = - \frac{\Gamma(x)}{H(x)} \left[ \left( \frac{Y_i}{Y_{i,\text{eq}}} \right)^2 - 1 \right]
 \end{align*}
-Initial conditions: $x \ll 1$ at early times, so $y_i = y_{i, \text{eq}}$.
+with initial condition: $x \ll 1$ at early times, so $Y_i = Y_{i, \text{eq}}$.
 
 No analytical solution is known. A set of numerical solutions is shown in \cref{fig:boltzmann}
 
