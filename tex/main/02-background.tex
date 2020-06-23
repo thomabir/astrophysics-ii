@@ -2,9 +2,11 @@
 \label{ch:cosmological-background}
 
 \section{Cosmological Principle}
-The Cosmological principle states that the universe is homogeneous and isotropic on sufficiently large scales, larger than about \SI{100}{\mega\parsec}. This is a generalization of the Copernican principle, according to which there is no special place and no special direction in the universe.
+The Cosmological principle states that the universe is homogeneous and isotropic on sufficiently large scales, larger than about \SI{100}{\mega\parsec}.
+This is a generalization of the Copernican principle, according to which there is no special place and no special direction in the universe.
 
-In the following, the evolution of the universe will be described, assuming that it is isotropic and homogeneous. In the next chapter, local perturbations about this uniform background will be taken into account.
+In the following, the evolution of the universe will be described, assuming that it is isotropic and homogeneous.
+In the next chapter, local perturbations about this uniform background will be taken into account.
 
 
 \section{Elements of General Relativity}
@@ -13,13 +15,18 @@ In the following, the evolution of the universe will be described, assuming that
 The theoretical basis of cosmology is \ac{gr}, which is a description of gravity that describes the attraction between masses as a result of the curvature of spacetime, rather than the gravitational force in Newton's description. The curvature of space-time is described by a metric $g_{\mu\nu}$, which is used to define the notion of distance on curved spaces.
 
 
-As an illustration we consider a two-dimensional space with a coordinate system $x^\mu$, where $\mu =$ 1, 2. The physical squared distance is then $\dd{s}^2 = g_{\mu\nu} \dd{x}^{\mu} \dd{x}^{\nu}$, where $\dd{x}^{\mu}$ and $\dd{x}^{\nu}$ are the coordinate distances. Assuming that the space is homogeneous and isotropic, the distance can be written as
+As an illustration we consider a two-dimensional space with a coordinate system $x^\mu$, where $\mu =$ 1, 2.
+The physical squared distance is then $\dd{s}^2 = g_{\mu\nu} \dd{x}^{\mu} \dd{x}^{\nu}$, where $\dd{x}^{\mu}$ and $\dd{x}^{\nu}$ are the coordinate distances.
+Assuming that the space is homogeneous and isotropic, the distance can be written as
 \begin{align*}
 	\dd{s}^2 = a^2 \left(\frac{\dd{r}^2}{1-kr^2} + r^2 \dd{\phi}^2\right),
 \end{align*}
-where $k$ describes the curvature and $a$ is the scale factor, which can also be time-dependent. If the scale factor is time dependent, the surface is uniformly expanding or contracting. The curvature $k$ for a homogeneous and isotropic surface is either $k = 0$ for a plane, $k = 1$ for a sphere or $k = -1$ for a hyperbolic surface. In order to describe the sphere the coordinate transformation $r = \sin\chi$ is used and to describe the hyperbolic surface $r = \sinh\chi$.
+where $k$ describes the curvature and $a$ is the scale factor, which can also be time-dependent.
+If the scale factor is time dependent, the surface is expanding or contracting.
+The curvature $k$ for a homogeneous and isotropic surface is either $k = 0$ for a plane, $k = 1$ for a sphere or $k = -1$ for a hyperbolic surface.
+In order to describe the sphere the coordinate transformation $r = \sin\chi$ is used and to describe the hyperbolic surface $r = \sinh\chi$.
 
-The discussion of the two-dimensional space can be adapted to our universe, which is in four dimensional space-time described by the Minkowsky metric $g_{\mu\nu} = \diag(1, -1, -1, -1)$. In this space-time, the physical square distance for a flat universe would be $\dd{s}^2 = c^2\dd{t}^2- (\dd{x}^2 + \dd{y}^2 + \dd{z}^2)$. In general, the dynamics of space-time is described by the Einstein field equations:
+The discussion of the two-dimensional space can be adapted to our universe, which is in four dimensional space-time described by the Minkowski metric $g_{\mu\nu} = \diag(1, -1, -1, -1)$. In this space-time, the physical square distance for a flat universe would be $\dd{s}^2 = c^2\dd{t}^2- (\dd{x}^2 + \dd{y}^2 + \dd{z}^2)$. In general, the dynamics of space-time is described by the Einstein field equations:
 \begin{align*}
 	G_{\mu\nu} = \frac{8\pi G}{\rho} T_{\mu\nu}.
 \end{align*}
@@ -29,12 +36,15 @@ $G_{\mu\nu}$ is the Einstein tensor, which includes the curvature of the space-t
 \end{align*}
 where $\rho c^2$ is the energy density and $p$ the pressure. 
 
-The trajectories of particles are geodesics, which means they take the straightest paths possible. As an example for photons (massless particles) $\dd{s}^2 = 0$.
+The trajectories of particles are geodesics, which means they take the straightest paths possible. As an example, for photons, which are massless particles, $\dd{s}^2 = 0$.
 
 
 
 \section{FRW metric}
 \newacronym{frw}{FRW}{Friedmann-Robertson-Walker}
+\glsxtrnewsymbol[description={comoving radius}]{chi}{$\chi$}
+\glsxtrnewsymbol[description={scale factor}]{a}{$a$}
+
 The \ac{frw} metric is the metric of a homogeneous and isotropic universe.
 It is defined as
 \begin{align*}
@@ -43,7 +53,7 @@ It is defined as
 where
 \begin{itemize}[nolistsep]
 	\item $\dd{\Omega}^2 = \dd{\theta}^2 + \sin^2\theta \dd{\phi}^2$ is the solid angle element,
-	\item $\chi$ is comoving radius,
+	\item \gls{chi} is comoving radius,
 	\item $\displaystyle
 		r(\chi) = f_K(\chi) = 
 		\begin{cases}
@@ -52,14 +62,16 @@ where
 			\sinh \chi & \text{open case, negative curvature}
 		\end{cases}
 		$
-	\item $a(t)$ is the scale factor, which describes the expansion (or contraction) of space.
+	\item $a(t)$ or \gls{a} is the scale factor, which describes the expansion (or contraction) of space.
 \end{itemize}
 
 \subsection{Redshift}
+\glsxtrnewsymbol[description={redshift}]{z}{$z$}
+
 Almost all observations about astronomical objects are made through light signals, therefore it is important to know what happens to the light until it reaches us.
 
 Consider a photon emitted from e.g. a galaxy, which travels to the observer. We know from \cref{sec:general-relativity} that photons travel along null geodesics, which satisfy $\dd{s}^2 =0$. Since the photon wavelength $\lambda$ is a length scale, we can assume it scales with scale factor $a$.
-The redshift is then defined through
+The redshift \gls{z} is then defined through
 \begin{align*}
 	1+z
 	= \frac{\lambda_\text{obs}}{\lambda_\text{emit}}
@@ -71,15 +83,18 @@ where $z$ is the redshift, $\lambda_\text{obs}$ and $a_\text{obs} = a_0$ are the
 For an expanding universe, we find $a_\text{emit}/a_0 \leq 1$, and therefore $z \geq 0$. The object appears redder.
 
 \subsection{Hubble parameter}
+\glsxtrnewsymbol[description={Hubble constant, Hubble parameter}]{H}{$H$}
+\glsxtrnewsymbol[description={dimensionless Hubble parameter}]{h}{$h$}
+
 \begin{itemize}
 	\item Hubble parameter: $H \defeq \dot{a}/a$
-	\item The Hubble parameter describes how fast the proper distance between two fundamental observers changes at time t. 
+	\item The Hubble parameter \gls{H} describes how fast the proper distance between two fundamental observers changes at time $t$. 
 	\item today's value gets a subscript zero: $H_0$
 	\item Because it is hard to measure $H$ accurately, we write it as
 	\begin{align*}
 		H_0 = 100 h \frac{\si{\km}}{\si{\s \mega\parsec}},
 	\end{align*}
-	where $h \approx 0.7$ is the dimensionless Hubble parameter.
+	where \gls{h} $ \approx 0.7$ is the dimensionless Hubble parameter.
 	\item $H_0^{-1} \approx \SI{10}{\giga\year}$ is about the age of the universe
 	\item $c H_0^{-1} \approx \SI{4}{\giga \parsec}$ is about the size of the observable universe
 \end{itemize}
@@ -89,22 +104,35 @@ For an expanding universe, we find $a_\text{emit}/a_0 \leq 1$, and therefore $z 
 
 \section{Friedmann equation}
 \label{sec:Friedmann}
+\glsxtrnewsymbol[description={density}]{rho}{$\rho$}
+\glsxtrnewsymbol[description={matter density}]{rho-matter}{$\rho_m$}
+\glsxtrnewsymbol[description={radiation density}]{rho-radiation}{$\rho_r$}
+\glsxtrnewsymbol[description={cosmological constant}]{Lambda}{$\Lambda$}
+\glsxtrnewsymbol[description={density parameter}]{Omega}{$\Omega$}
 
-The Friedmann equations are derived by plugging the FRW metric into Einstein's equations and assuming a uniform and ideal fluid to find the stress tensor (see \cref{sec:general-relativity}):
+The Friedmann equations\sidenote{Usually, the 1st Friedmann equation is just called \enquote{Friedmann equation}, and when we need the 2nd one, we explicitly call it \enquote{2nd Friedmann equation}.} are derived by plugging the FRW metric into Einstein's equations and assuming a uniform and ideal fluid to find the stress tensor (see \cref{sec:general-relativity}):
 \begin{align*}
-	H^2 &= \left( \frac{\dot{a}}{a} \right)^2 = \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} && \text{ Friedmann equation }\\
-	\frac{\ddot{a}}{a} &= \frac{4 \pi G}{3} \left( \rho + \frac{3 p}{c^2} \right) && 2^{nd} \text{ Friedmann equation },
+	H^2 &= \left( \frac{\dot{a}}{a} \right)^2 = \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} && \text{1st Friedmann equation,}\\
+	\frac{\ddot{a}}{a} &= \frac{4 \pi G}{3} \left( \rho + \frac{3 p}{c^2} \right) && \text{2nd Friedmann equation,}
 \end{align*}
-where the density $\rho = \rho_m + \rho_r + \rho_{\Lambda}$ and $\rho_m = \rho_{m,0} \left( \frac{a_0}{a} \right)^3 \approx a^{-3}$, $\rho_r = \rho_{r,0} \left( \frac{a_0}{a} \right)^4 \approx a^{-4}$ and $\rho_{\Lambda} = \frac{\Lambda c^2}{8 \pi G}$. \\
-The Friedmann equation is a differential equation for the scale factor $a(t)$ and it is also possible to derive it from Newtonian calculations. 
+where the density \gls{rho} is made up of matter density \gls{rho-matter}, radiation density \gls{rho-radiation}, and a cosmological constant \gls{Lambda}:
+\begin{align*}
+	\rho &= \rho_m + \rho_r + \rho_{\Lambda},\\
+	\rho_m &= \rho_{m,0} \left( \frac{a_0}{a} \right)^3 \propto a^{-3},\\
+	\rho_r &= \rho_{r,0} \left( \frac{a_0}{a} \right)^4 \propto a^{-4},\\
+	\rho_{\Lambda} &= \frac{\Lambda c^2}{8 \pi G}.
+\end{align*}
+The proportionalities to $a$ will be derived later.
+The Friedmann equation is a differential equation for the scale factor $a(t)$ and it is also possible to derive it from Newtonian calculations.\sidenote{When deriving the Friedmann equation with Newtonian gravity, we are essentially getting the correct result, but starting from the wrong assumptions. Interestingly, it still works somehow \textellipsis}
 
 The critical density is defined as
 \begin{align*}
 	\rho_\text{crit}(t) = \frac{3 H(t)^2}{8 \pi G}
 \end{align*}
+When the actual density of the universe is equal to the critical density, the universe is flat and Euclidean.\sidenote{In earlier models, where there was no cosmological constant included, the critical density was interpreted as the decisive point between an expanding and a collapsing universe. It was thought that when the actual density of the universe was higher than the critical density, the universe would slowly start collapsing.}
 Today, the critical density is about five hydrogen atoms per cubic metre, or one galaxy per \si{\mega\parsec\cubed}.
 
-Density parameters:
+Density parameters \gls{Omega} give a more convenient description of the universe, and are usually much easier to remember than densities:
 \begin{itemize}
 	\item The subscript $i$ describes one component of the universe ($i = $ matter, radiation, dark matter \textellipsis)
 	\item density parameter: $\Omega_i(t) = \rho_i(t)/\rho_\text{crit}(t)$
@@ -113,19 +141,21 @@ Density parameters:
 	\item curvature density parameter: $\Omega_{K,0} = 1 - \Omega_0 = - \frac{Kc^2}{H_0^2 a_0^2}$
 \end{itemize}
 
-With these definitions, the (first) Friedmann equation can be rewritten as
-\begin{align*}
-	\frac{H}{H_0} = \sqrt{\frac{\rho}{\rho_{\text{crit}, 0}} + \Omega_{K,0} \left( \frac{a_0}{a} \right)^2 }
-\end{align*}
+With these definitions, the Friedmann equation can be rewritten as
+\begin{align}
+	\label{eq:friedmann-nice}
+	\frac{H}{H_0} = \sqrt{\frac{\rho}{\rho_{\text{crit}, 0}} + \Omega_{K,0} \left( \frac{a_0}{a} \right)^2 }.
+\end{align}
 
 
 
 
 \section{Solutions}
+\glsxtrnewsymbol[description={equation of state parameter}]{w}{$w$}
 
 To solve the Friedmann equation, $\rho(t)$ or $\rho(a)$ need to be known. It can be calculated as
 \begin{align*}
-	\rho = n \epsilon
+	\rho = n \epsilon,
 \end{align*}
 where $n$ is the particle number per unit volume and $\epsilon$ the energy per particle. Since the particle number is proportional to the inverse volume and the volume is $V \propto a^3(t)$, we find that $n \propto a^{-3}$. 
 \begin{itemize}
@@ -133,43 +163,36 @@ where $n$ is the particle number per unit volume and $\epsilon$ the energy per p
 	\item Radiation: $\epsilon = h \nu = h c / \lambda \propto a^{-1}$. Thus $\rho_r \propto a^{-4}$.
 	\item Vacuum energy: In this case the energy density only depends on the difference between the true and the false vacuum, therefore it is constant in $a$, $\rho_{\Lambda} \propto$ constant. 
 \end{itemize}
+Since the matter densities evolve as a function of the scale factor, different components of the universe dominate its density as time goes on, which is illustrated in \cref{fig:domination}.
 
-There is a generalization for general fluids:
-\begin{itemize}
-	\item equation of state: $p = w \rho c^2$, where $w$ is the eq. of state parameter. 
-	\item If $w$ is time-independent we find for the density: $\rho \propto a^{-3(1+w)}$
-	\item $\displaystyle w = 
-	\begin{cases}
-	0 & \text{matter}\\
-	1/3 & \text{radiation}\\
-	-1 & \text{vacuum energy}
-	\end{cases}
-	$
-\end{itemize}
-
-\begin{figure}
+\begin{marginfigure}
 	\centering
 	\includegraphics[width=\textwidth]{img/ch-02/domination.png}
-	\caption{Domination of different components at different times}
+	\caption{The dominant components of the universe as a function of scale factor. The universe is first dominated by radiation, then matter, than dark energy.}
 	\label{fig:domination}
-\end{figure}
+\end{marginfigure}
 
-\begin{table*}
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
- & $w$ & $\rho$ & $p$ & $T$\\
-\hline
-Matter & $0$ &  $a^{-3}$ & $a^{-5}$ & $a^{-2}$\\
-\hline
-Radiation & $1/3$ & $a^{-4}$ & $a^{-4}$ & $a^{-1}$\\
-\hline
-Radiation & $-1$ & $a^{0}$ & $a^{0}$ & -\\
-\hline
-\end{tabular}
-\end{table*}
+This result can be generalized for general fluids.
+These have an equation of state of the form $p = w \rho c^2$, where \gls{w} is the equation of state parameter.
+If $w$ is time-independent, then we can derive that its density evolves as $\rho \propto a^{-3(1+w)}$.
+The results of this calculation are shown in \cref{tab:evolution-general-fluid}.
 
-The results can be plugged into the Friedmann equation:
+\begin{margintable}
+	\footnotesize
+	\begin{tabular}{lllll}
+	\toprule
+	 & $w$ & $\rho$ & $p$ & $T$\\
+	\midrule
+	matter & $0$ &  $a^{-3}$ & $a^{-5}$ & $a^{-2}$\\
+	radiation & $1/3$ & $a^{-4}$ & $a^{-4}$ & $a^{-1}$\\
+	$\Lambda$ & $-1$ & $a^{0}$ & $a^{0}$ & \\
+	\bottomrule
+	\end{tabular}
+	\caption{The properties of matter, radiation, and dark energy as a generalized fluid, as a function of scale factor $a$.}
+	\label{tab:evolution-general-fluid}
+\end{margintable}
+
+The results can be plugged into the convenient form of the Friedmann equation (\ref{eq:friedmann-nice}):
 \begin{align*}
 	\frac{H}{H_0} 
 	&= \sqrt{\frac{\rho}{\rho_{\text{crit}, 0}} + \Omega_{K,0} \left( \frac{a_0}{a} \right)^2 }\\
@@ -180,9 +203,10 @@ The results can be plugged into the Friedmann equation:
 		+ \Omega_{K,0} \left( \frac{a_0}{a} \right)^2
 	}
 \end{align*}
-This is a differential equation with $\Omega_{i,0}$ as parameters.
+For us, this is the most convenient form of the Friedmann equation, since we immediately see all the important parameters of the universe: the Hubble constant, the densities of different components of the universe today, and the scale factor today.
+Once we plug in the density parameters, this is a differential equation for $a(t)$ (remember that $H = \dot{a}/a$), so we get the size of the universe as a function of time.
 
-The standard cosmological model:
+The standard cosmological model looks as follow:
 \begin{itemize}
 	\item $\Omega_{m,0} \approx 0.3$
 	\item $\Omega_{r,0} \approx 10^{-5}$
@@ -192,7 +216,8 @@ The standard cosmological model:
 	\item $h \approx 0.7$
 \end{itemize}
 
-At different times, the universe is dominated by different components. To get solutions to the Friedmann equations only the dominating component is considered:
+At different times, the universe is dominated by different components.
+To get solutions to the Friedmann equations, only the dominating component is considered at each time:
 \begin{itemize}
 	\item Matter dominated:
 	\begin{align*}
@@ -215,6 +240,8 @@ At different times, the universe is dominated by different components. To get so
 	\end{align*}
 \end{itemize}
 
+The evolution of the universe with different density parameters is shown in \cref{fig:evolution}.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/ch-02/evolution.png}
@@ -226,8 +253,6 @@ At different times, the universe is dominated by different components. To get so
 
 
 \section{Distances and times}
-
-
 
 \subsection{Comoving radius}
 We measured the redshift of a photon that has travelled to us on a radial trajectory. How far away (in comoving distance) is the source?
