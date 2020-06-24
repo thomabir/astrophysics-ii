@@ -605,11 +605,21 @@ This is the epoch where protons and neutrons first combined to nuclei (not atoms
 
 \subsection*{Initial conditions}
 
-Initially, the temperature is $T < \SI{e13}{\kelvin}$ and the associated energy scale is $k_B T \approx \SI{0.8}{\MeV}$. Protons and neutrons are in thermal equilibrium and interact weakly via the processes $p + e \leftrightarrow n + \nu_e$ and $n + \bar{e} \leftrightarrow p + \bar{\nu}_e$. Since the mass of the nucleons is around \SI{940}{\MeV}, they are already non-relativistic. The masses of neutrons and protons are slightly different, so their abundances after freeze out are different.
+Initially, the temperature is $T < \SI{e13}{\kelvin}$ and the associated energy scale is $k_B T > \SI{0.8}{\MeV}$. At this temperatures protons and neutrons are in thermal equilibrium and interact weakly via the processes $p + e \leftrightarrow n + \nu_e$ and $n + \bar{e} \leftrightarrow p + \bar{\nu}_e$. Since the mass of the nucleons is around \SI{940}{\MeV}, they are already non-relativistic. The masses of neutrons and protons are slightly different, so their abundances after freeze out are different. We find
+\begin{align*}
+	\frac{n_n}{n_p} \propto e^{-\frac{\Delta m}{T}} \propto 0.2,
+\end{align*}
+where $\Delta m = m_n - m_p \propto \SI{1.3}{\MeV}$ is the mass difference.\\
+But the neutrons are unstable to beta decay $n \leftrightarrow p + e + \bar{\nu}_e$ and thus the neutron-to-proton ratio continues to decrease. The neutron abundance is therefore given by
+\begin{align*}
+	X_n = \frac{n_n}{n_n + n_p} \approx e^{-t/\tau_n},
+\end{align*}
+where $\tau_n \propto 887$ s is the mean lifetime of the neutrons.\\
+Nonetheless we still have a large abundance of neutrons in the Universe today. Since shortly before the Universe reaches $t = \tau_n$ most neutrons have already ended up in a helium nuclei, which stabilizes them against the beta decay (due to the Pauli's exclusion principle).  
 
 \subsection*{Nuclear reactions}
 
-Once the temperature drops below \SI{1}{\MeV}, which is the binding energy of a typical nucleus, the nuclei start forming. A host of nuclear reactions can occur then:
+Once the temperature drops below \SI{1}{\MeV}, which is the binding energy of a typical nucleus, the nuclei start forming. A chain of nuclear reactions can occur then:
 \begin{align*}
 	\ce{p + n &<=> \gamma{} + D} &
 	\ce{D + n &<=> \gamma{} + ^3H} \\
@@ -628,7 +638,7 @@ Once the temperature drops below \SI{1}{\MeV}, which is the binding energy of a 
 	\ce{^4He + ^3He &<=> \gamma{} + ^7Be} &
 	\ce{^7Be + e &<=> \nu_e + ^7Li}
 \end{align*}
-For each of these reactions, there is a Boltzmann equation which describes the evolution of the number densities. This coupled system of equations can be solved numerically to find the abundances of nuclei. The solution for a few nuclei is shown in \cref{fig:nucleosynthesis}.
+For each of these reactions, there is a Boltzmann equation which describes the evolution of the number densities. This coupled system of equations can be solved numerically to find the abundances of nuclei. The solution for a few nuclei is shown in \cref{fig:nucleosynthesis}. The different mass fractions are $H \propto 0.75$, $ ^4He \propto 0.25$, $D/H \propto 3\cdot 10^{-5}$, $ ^3He/H \propto 10^{-5}$ and $ ^7Li/H \propto 10^{-10}$.
 
 
 \begin{marginfigure}
