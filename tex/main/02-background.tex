@@ -40,7 +40,7 @@ The trajectories of particles are geodesics, which means they take the straighte
 
 
 
-\section{FRW metric}
+\section{\textsc{Frw} metric}
 \newacronym{frw}{FRW}{Friedmann-Robertson-Walker}
 \glsxtrnewsymbol[description={comoving radius}]{chi}{$\chi$}
 \glsxtrnewsymbol[description={scale factor}]{a}{$a$}
@@ -110,7 +110,7 @@ For an expanding universe, we find $a_\text{emit}/a_0 \leq 1$, and therefore $z 
 \glsxtrnewsymbol[description={cosmological constant}]{Lambda}{$\Lambda$}
 \glsxtrnewsymbol[description={density parameter}]{Omega}{$\Omega$}
 
-The Friedmann equations\sidenote{Usually, the 1st Friedmann equation is just called \enquote{Friedmann equation}, and when we need the 2nd one, we explicitly call it \enquote{2nd Friedmann equation}.} are derived by plugging the FRW metric into Einstein's equations and assuming a uniform and ideal fluid to find the stress tensor (see \cref{sec:general-relativity}):
+The Friedmann equations\sidenote{Usually, the 1st Friedmann equation is just called \enquote{Friedmann equation}, and when we need the 2nd one, we explicitly call it \enquote{2nd Friedmann equation}.} are derived by plugging the \ac{frw} metric into Einstein's equations and assuming a uniform and ideal fluid to find the stress tensor (see \cref{sec:general-relativity}):
 \begin{align*}
 	H^2 &= \left( \frac{\dot{a}}{a} \right)^2 = \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} && \text{1st Friedmann equation,}\\
 	\frac{\ddot{a}}{a} &= \frac{4 \pi G}{3} \left( \rho + \frac{3 p}{c^2} \right) && \text{2nd Friedmann equation,}
@@ -258,7 +258,7 @@ The evolution of the universe with different density parameters is shown in \cre
 We measured the redshift of a photon that has travelled to us on a radial trajectory. How far away (in comoving distance) is the source?
 \begin{align*}
 	0 &= \dd{s}^2 &&\text{photon}\\
-	&= c \dd{t}^2 - a(t)^2 [\dd{\chi}^2 + r(\chi)^2 \dd{\Omega}^2] &&\text{FRW metric}\\
+	&= c \dd{t}^2 - a(t)^2 [\dd{\chi}^2 + r(\chi)^2 \dd{\Omega}^2] &&\text{\ac{frw} metric}\\
 	\implies c \dd{t} &= a(t) \dd{\chi} &&\dd{\Omega}^2 = 0 \text{ on a radial trajectory}\\
 	\implies \dd{\chi} &= \frac{c \dd{t}}{a(t)}\\
 	&= \frac{c \dd{a}}{a^2 H(a)} && H = \frac{\dot{a}}{a} \text{, so } \dd{t} = \frac{\dd{a}}{a H(a)}\\
@@ -267,6 +267,8 @@ We measured the redshift of a photon that has travelled to us on a radial trajec
 $H(a)$ has to be obtained from the Friedmann equations. As a result, we will get $\chi(a,a_0)$. We can use $a/a_0 = 1/(1+z)$ to get $\chi(z,a_0)$. Since $a_0$ can be defined arbitrarily (for example, $a_0=1$), we get $\chi(z)$.
 
 \subsection{Angular distance \& Luminosity distance}
+\glsxtrnewsymbol[description={angular-diameter distance}]{d-A}{$d_A$}
+\glsxtrnewsymbol[description={luminosity distance}]{d-L}{$d_L$}
 
 The comoving distance $\chi$ and the proper distance $a \chi$ to a source are not directly observable. However, the angular size $\theta$ and the flux $F$ of an object can be measured directly.
 
@@ -290,18 +292,21 @@ In Euclidean space, the following relations hold:
 	\theta &= \frac{D}{d}
 	& F &= \frac{L}{4 \pi d^2}
 \end{align*}
-where $d$ is the distance to the source. In FRW-space, we define the following:
+where $d$ is the distance to the source.
+
+In analogy to Euclidean space, we define we define the following distances in \ac{frw}-space:
 \begin{itemize}
-	\item The angular-diameter distance $d_A$ satisfies $\theta = D/d_A$. One can show $d_A = a \cdot r(\chi)$, where $r(\chi) = D/(a \theta) = D_{comoving}/\theta$ is the comoving angular diameter distance.
-	\item The luminosity distance $d_L$ satisfies $F = L/(4\pi d_L^2$). One can show that $d_L = a_0 r(\chi) (1+z) = d_A (1+z)^2$. Taking $a_0 = 1$ yields $d_L = r(\chi)/a = d_A/a^2$. 
+	\item The angular-diameter distance \gls{d-A} satisfies $\theta = D/d_A$. One can show $d_A = a \cdot r(\chi)$, where $r(\chi) = D/(a \theta) = D_\text{comoving}/\theta$ is the comoving angular diameter distance.
+	\item The luminosity distance \gls{d-L} satisfies $F = L/(4\pi d_L^2$). One can show that $d_L = a_0 r(\chi) (1+z) = d_A (1+z)^2$. Taking $a_0 = 1$ yields $d_L = r(\chi)/a = d_A/a^2$. 
 \end{itemize}
 In a static space $d = d_A = d_L$ would hold. 
 
 \subsection{Comoving Horizon}
-Suppose a (hypothetical, non-interacting) photon was emitted at the Big Bang. How far (in comoving distance) could it have travelled until now? This comoving distance is called the comoving horizon. We plug into the equation of the comoving radius/distance, with $a=0$ at the start:
+\glsxtrnewsymbol[description={comoving horizon}]{chi-h}{$\chi_h$}
+Suppose a (hypothetical, non-interacting) photon was emitted at the Big Bang. How far (in comoving distance) could it have travelled until now? This comoving distance is called the comoving horizon \gls{chi-h}. We plug into the equation of the comoving radius/distance, with $a=0$ at the start, to find
 \begin{align*}
 	\chi_h
-	&= \chi (r_h) = c \int_0^{a_0} \frac{\dd{a'}}{a'^2 H(a')}
+	&= \chi (r_h) = c \int_0^{a_0} \frac{\dd{a'}}{a'^2 H(a')}.
 \end{align*}
 
 \subsection{Age of the Universe}
@@ -319,6 +324,8 @@ $H(a)$ is again found from the Friedmann equation. With the standard cosmologica
 \section{Thermal history of the Universe}
 \label{sec:thermal-history}
 
+\glsxtrnewsymbol[description={interaction rate}]{Gamma}{$\Gamma$}
+
 According to the Big Bang paradigm, the universe was once hot and dense, and now it expands and cools down. Today, it is far from thermal equilibrium, but it must have been in thermal equilibrium at some point in the past if it continuously expands.
 
 The matter content at each epoch depends on:
@@ -329,7 +336,7 @@ The matter content at each epoch depends on:
 
 A system is in thermal equilibrium if $\Gamma \gg H$
 \begin{itemize}
-	\item $\Gamma = \text{interactions}/\text{time}$ is the interaction rate
+	\item \gls{Gamma} $ = \text{interactions}/\text{time}$ is the interaction rate
 	\item $H = \dot{a}/a$ is the Hubble constant
 \end{itemize}
 Similarly, a system is in thermal equilibrium if $\tau_\Gamma \ll \tau_H$
@@ -339,13 +346,9 @@ Similarly, a system is in thermal equilibrium if $\tau_\Gamma \ll \tau_H$
 \end{itemize}
 We already know about $H$. $\Gamma$ is defined as
 \begin{align*}
-	\Gamma = n v \sigma
+	\Gamma = n v \sigma,
 \end{align*}
-\begin{itemize}
-	\item $n \quad$ number density, $\text{particles}/\text{volume}$
-	\item $v \quad$ velocity of particles
-	\item $\sigma \quad$ scattering cross-section, has units of area.
-\end{itemize}
+where $n$ is the number density ($\text{particles}/\text{volume}$), $v$ is the velocity of the particles, and $\sigma$ is the scattering cross-section, which has units of area.
 
 At early times, $\Gamma \gg H$. Particles are in thermal equilibrium with the plasma and coupled to photons. This scenario will be treated in \cref{ssec:early-times}.
 
@@ -353,7 +356,7 @@ At later times $\Gamma \ll H$. Particles are not in thermal equilibrium and are 
 
 The decoupling or \enquote{freeze out} happens when $\Gamma \approx H$. This transition is described by the Boltzmann equation in \cref{ssec:boltzmann}.
 
-In \cref{tab:thermal-history} and \cref{fig:evolution}, an overview of the thermal history of the universe is given.
+In \cref{tab:thermal-history} and \cref{fig:big-bang}, an overview of the thermal history of the universe is given.
 
 \begin{table*}
 	\centering
@@ -365,7 +368,7 @@ In \cref{tab:thermal-history} and \cref{fig:evolution}, an overview of the therm
 	\describe{Inflation}{A phase of extremely rapid exponential expansion, caused by a phase transitions where the inflaton field emerged. Inflation explains properties of the universe which are difficult to account for without.}
 	 & $10^{-34}$ s & ? & ? \\
 	\describe{Baryogenesis}{Baryons (protons, neutrons) are formed from quarks. Weirdly, there are way more baryons formed than antibaryons. This is the matter-antimatter asymmetry.} & ? & ? & ? \\
-	\describe{QCD phase transition}{The universe has cooled sufficiently such that hadrons (baryons and mesons) can form.} & \SI{e-5}{\second} & \num{e12} & \SI{200}{\MeV} \newline \SI{3e12}{\kelvin}\\
+	\describe{\textsc{Qcd} phase transition}{The universe has cooled sufficiently such that hadrons (baryons and mesons) can form.} & \SI{e-5}{\second} & \num{e12} & \SI{200}{\MeV} \newline \SI{3e12}{\kelvin}\\
 	Pions annihilate and decay, the only hadrons left are nucleons (protons and neutrons). & \SI{e-4}{\second} &  & \SI{50}{\MeV} \newline \SI{e12}{\kelvin}\\
 	\describe{Dark Matter freeze-out}{Dark Matter interacts very weakly with ordinary matter, so it decouples early on.} & ? & ? & ?\\
 	\describe{Electron-positron annihilation}{Electrons and positrons annihilate through $e^+ + e^- \to 2 \gamma$. Since the number of charged particles decreases, neutrinos decouple. The n/p ratio freezes out at $n_n \approx 1/10 n_p$.} & \SI{4}{\second} & \num{2e9} & \SI{0.3}{\MeV} \newline \SI{5e9}{\kelvin}\\
@@ -378,7 +381,7 @@ In \cref{tab:thermal-history} and \cref{fig:evolution}, an overview of the therm
 	\describe{Today}{} & \SI{13.8}{\giga\year} & \num{0} & \SI{0.24}{\eV} \newline \SI{2.7}{\kelvin}\\
 	\bottomrule
 	\end{tabu}
-	\caption{Thermal history of the universe}
+	\caption{Thermal history of the universe.}
 	\label{tab:thermal-history}
 \end{table*}
 
@@ -390,14 +393,16 @@ In \cref{tab:thermal-history} and \cref{fig:evolution}, an overview of the therm
 \end{figure}
 
 \section{Thermodynamics in an expanding Universe}
+\glsxtrnewsymbol[description={phase space distribution function}]{f}{$f(\vec{x}, \vec{p}, t)$}
 
 To describe the evolution of the universe quantitatively, a few definitions are required:
 
 \begin{itemize}
-	\item The probability that a particle at time $t$ is in a volume $\dd{^3 x} \dd{^3 p}$ around ($ \vec{x}, \vec{p}$) is given by the \textbf{(phase space) distribution function}:
+	\item The probability that a particle at time $t$ is in a volume $\dd{^3 x} \dd{^3 p}$ around $(\vec{x}, \vec{p})$ is
 	\begin{align*}
-		f(\vec{x}, \vec{p}, t) \dd{^3 x} \dd{^3 p}
+		f(\vec{x}, \vec{p}, t) \dd{^3 x} \dd{^3 p},
 	\end{align*}
+	where \gls{f} is the \textbf{(phase space) distribution function}.
 	In a homogeneous and isotropic universe, we have $f(\vec{x}, \vec{p}, t) = f(p, t)$.
 	\item The number of particles per unit volume is given by the \textbf{number density}:
 	\begin{align*}
@@ -407,12 +412,12 @@ To describe the evolution of the universe quantitatively, a few definitions are 
 	\begin{align*}
 		\rho(t) = 4 \pi \int E(p) f(p,t) p^2 \dd{p},
 	\end{align*}
-	with $E(p) = \sqrt{p^2 + m^2}$  (natural units are used, therefore $c= k_B = \hbar = 1$).
+	with $E(p) = \sqrt{p^2 + m^2}$, where natural units are used: $c= k_B = \hbar = 1$.
 	\item The \textbf{pressure} is given by
 	\begin{align*}
-		P(t) = 4 \pi c^2 \int \frac{p^2}{3 E(p)} f(p,t) p^2 \dd{p}
+		P(t) = 4 \pi c^2 \int \frac{p^2}{3 E(p)} f(p,t) p^2 \dd{p},
 	\end{align*}
-	Since we work in natural units, we drop the $c$.
+	where again usually the $c$ is dropped in natural units.
 \end{itemize}
 
 
@@ -434,17 +439,17 @@ The distribution function of particles in thermodynamic equilibrium is the Bose-
 
 For \emph{non-relativistic particles}, $T \ll m$ and $E \approx m + p^2/2m$. Plugging this in yields
 \begin{align*}
-	n_{eq} &= g \left( \frac{m T}{2 \pi} \right)^{3/2} \exp\left( \frac{\mu-m}{T} \right)&
-	\rho_{eq} &= n m&
-	P_{eq} &= n T
+	n_\text{eq} &= g \left( \frac{m T}{2 \pi} \right)^{3/2} \exp\left( \frac{\mu-m}{T} \right),&
+	\rho_\text{eq} &= n m,&
+	P_\text{eq} &= n T.
 \end{align*}
 Note that the pressure equation is identical to the ideal gas equation in natural units. 
 
 For \emph{relativistic particles}, $T \gg m$ and $E \approx p$. For both fermions and bosons, this yields
 \begin{align*}
-	n_{eq} &\propto g T^3&
-	\rho_{eq} &\propto g T^4&
-	P_{eq} &= \frac{\rho_{eq}}{3}
+	n_\text{eq} &\propto g T^3,&
+	\rho_\text{eq} &\propto g T^4,&
+	P_\text{eq} &= \frac{\rho_\text{eq}}{3}.
 \end{align*}
 Note that the pressure equation is identical to the equation of state as seen in \cref{sec:Friedmann}.
 In the case of a relativistic gas, $T \propto a^{-1}$, so $n \propto a^{-3}$ and $\rho \propto a^{-4}$. This is what we have already seen in \cref{sec:Friedmann}.
@@ -463,9 +468,9 @@ In the case of a relativistic gas, $T \propto a^{-1}$, so $n \propto a^{-3}$ and
 
 \subsection{At late times ($\Gamma < H$)}
 \label{ssec:late-times}
-The transition between non-equilibrium and equilibrium takes place at the decoupling time of freeze-out time $t_f$, where $T \approx T_f = T_{\gamma}(t_f)$. At $t>t_f$, the distribution function is
+The transition between non-equilibrium and equilibrium takes place at the \emph{decoupling time} or \emph{freeze-out time} $t_f$, where $T \approx T_f = T_{\gamma}(t_f)$. At $t>t_f$, the distribution function is
 \begin{align*}
-	f(p,t) = f\left( p \frac{a(t)}{a(t_f)}, t_f \right)
+	f(p,t) = f\left( p \frac{a(t)}{a(t_f)}, t_f \right).
 \end{align*}
 The shape of the function is \enquote{frozen in} at the freeze-out time $t_f$.
 
@@ -476,7 +481,7 @@ For a relativistic particle,
 		\frac{p a(t)}{T_f a(t_f)} \pm 1
 	 	\right) \right]^{-1},
 \end{align*}
-which is the same as for an equilibrium particle, but with $T_f \defeq T_f a(t_f)/a(t)$.
+which is the same as for an equilibrium particle, but where $T_f$ is replaced with $T_f a(t_f)/a(t)$.
 
 
 
@@ -490,13 +495,13 @@ describes the time evolution of the distribution function between early and late
 
 $f_i$ only depends on $p$ and $t$, so we can write
 \begin{align*}
-	\dv{f_i}{t} &= \pdv{f_i}{t} + \pdv{f_i}{p} \dv{p}{t}
+	\dv{f_i}{t} &= \pdv{f_i}{t} + \pdv{f_i}{p} \dv{p}{t}.
 \end{align*}
 The last term can be simplified. Because $p = p_0 a^{-1}$, $\dv*{p}{t} = -p_0 a^{-2} \dot{a} = - p H$. The Boltzmann equation for a homogeneous and isotropic case then becomes
 \begin{align*}
 	\pdv{f_i}{t} - p H(t) \pdv{f_i}{p} &= C_i[f]\\
 	\implies \pdv{}{t} \int \dd{^3 p} f_i - H(t) \int \dd{^3 p} p \pdv{f_i}{p} &= \int \dd{^3 p} C_i[f]\\
-	\implies \dv{n_i}{t} + 3 H(t) n_i &= \int \dd{^3 p} C_i[f]
+	\implies \dv{n_i}{t} + 3 H(t) n_i &= \int \dd{^3 p} C_i[f].
 \end{align*}
 In the last line, we used partial integration.\sidenote{In detail:
 \begin{align*}
@@ -519,7 +524,7 @@ If we insert this collision term into the equation we get
 \begin{align*}
 	\dv{n_i}{t} + 3 H(t) n_i = \alpha(T) n_a n_b - \beta(T) n_i n_j. 
 \end{align*}
-Writing the same equation for the species j and combine these two equations, one finds that
+Writing the same equation for the species $j$ and then combining these two equations, one finds that
 \begin{align*}
 	(n_i - n_j)a^3 = \text{constant}. 
 \end{align*}
@@ -573,19 +578,22 @@ The solution of the Boltzmann equation is
 	\end{align*}
 The $g$'s are degeneracy factors and satisfy $g_{*s}(x_0) \leq g_{*s}(x_f)$, and the photon density is $\Omega_{\gamma,0} h^2 = \num{2.5e-5}$. It follows that $\Omega_{i,0}$ is very small, which means that hot relic particles contribute very little to today's energy density.
 
-\subsection{WIMPs}
-Next we consider weakly interacting massive particles (WIMPs). Examples are massive neutrinos and stable, light supersymmetric particles. WIMPs can either be hot ($x_f \ll 1$) or cold ($x_f \gg 1$).
+\newacronym{wimp}{WIMP}{weakly interacting massive particle}
+\subsection{\Acp{wimp}}
 
-\paragraph*{Hot WIMPs}
+
+Next we consider \acp{wimp}. Examples are massive neutrinos and stable, light supersymmetric particles. \acp{wimp} can either be hot ($x_f \ll 1$) or cold ($x_f \gg 1$).
+
+\paragraph*{Hot \acp{wimp}}
 The solution of the Boltzmann equation yields
 \begin{align*}
 	\Omega_{i,0} h^2 = \num{7.64e-2} 
 	\left( \frac{g_{i,\text{eff}}}{g_{*s}(x_f)} \right)
 	\frac{m_i}{\si{\eV}}
 \end{align*}
-Since we know that $\Omega_{i,0} < 1$, we can get a constraint $m_i < \SI{94}{\eV}$ on the mass of the hot WIMPs, which is possible for neutrinos. However, hot WIMPs are ruled out as dark matter by structure formation arguments.
+Since we know that $\Omega_{i,0} < 1$, we can get a constraint $m_i < \SI{94}{\eV}$ on the mass of the hot \acp{wimp}, which is possible for neutrinos. However, hot \acp{wimp} are ruled out as dark matter by structure formation arguments.
 
-\paragraph*{Cold WIMPs}
+\paragraph*{Cold \acp{wimp}}
 Boltzmann says
 \begin{align*}
 	\Omega_{i,0} h^2
@@ -597,13 +605,13 @@ Boltzmann says
 	& \text{if } m_i > \SI{100}{\GeV}
 	\end{cases}
 \end{align*}
-To get $\Omega_{i,0} < 1$, we need $m_i$ to be between $\SI{1.4}{\GeV}$ and $\SI{3}{\TeV}$. Cold Wimps are good candidates for dark matter.
+To get $\Omega_{i,0} < 1$, we need $m_i$ to be between $\SI{1.4}{\GeV}$ and $\SI{3}{\TeV}$. Cold \acp{wimp} are good candidates for dark matter.
 
 \section{Primordial nucleosynthesis}
 
 This is the epoch where protons and neutrons first combined to nuclei (not atoms) heavier than hydrogen. Heavier atoms can also be synthesized in stars through nuclear reactions, which has to be differentiated in observations.
 
-\subsection*{Initial conditions}
+\subsection{Initial conditions}
 
 Initially, the temperature is $T < \SI{e13}{\kelvin}$ and the associated energy scale is $k_B T > \SI{0.8}{\MeV}$. At this temperatures protons and neutrons are in thermal equilibrium and interact weakly via the processes $p + e \leftrightarrow n + \nu_e$ and $n + \bar{e} \leftrightarrow p + \bar{\nu}_e$. Since the mass of the nucleons is around \SI{940}{\MeV}, they are already non-relativistic. The masses of neutrons and protons are slightly different, so their abundances after freeze out are different. We find
 \begin{align*}
