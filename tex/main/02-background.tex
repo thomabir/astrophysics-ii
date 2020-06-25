@@ -651,12 +651,12 @@ For each of these reactions, there is a Boltzmann equation which describes the e
 
 \section{Recombination}
 
-As the universe cools down to a temperature that is lower than the binding energy of hydrogen ($\SI{13.6}{\eV}$), some hydrogen atoms start to form via the reaction $p + e \to H + \gamma$. This epoch is called recombination, even though electrons and protons combine for the first time. Other atoms also start forming, but we only care about hydrogen for now.s
+As the universe cools down to a temperature that is lower than the binding energy of hydrogen ($\SI{13.6}{\eV}$), some hydrogen atoms start to form via the reaction $p + e \to H + \gamma$. This epoch is called recombination, even though electrons and protons combine for the first time. Other atoms also start forming, but we only care about hydrogen for now.
 
 
-The ionization fraction $x_e$ is the ratio between the number density of electrons and the number density of baryons (protons, hydrogen):
+The ionization fraction $X_e$ is the ratio between the number density of free electrons $n_e$ and the number density of baryons ($n_b = n_p + n_H$):
 \begin{align*}
-	x_e \defeq \frac{n_e}{n_b}
+	X_e \defeq \frac{n_e}{n_b}
 \end{align*}
 For given initial conditions, the ionization fraction can be calculated as a function of $z$ by solving the Boltzmann equation, see \cref{fig:ionization}
 
@@ -669,7 +669,7 @@ For given initial conditions, the ionization fraction can be calculated as a fun
 
 \subsection{Recombination}
 
-The time of recombination is defined as the time when there are ten times more baryons than electrons: $x_e(z_\text{rec}) = 0.1$. This happens at a temperature of $T_\text{rec} \approx \SI{0.3}{\eV}$ and a redshift of $z \approx 1300$. Note that $T_\text{rec}$ is smaller than the binding energy of hydrogen. This is because recombination is delayed by the high abundance of photons.
+The time of recombination is defined as the time when there are ten times more baryons than electrons: $X_e(z_\text{rec}) = 0.1$. This happens at a temperature of $T_\text{rec} \approx \SI{0.3}{\eV}$ and a redshift of $z_\text{rec} \approx 1300$. Note that $T_\text{rec}$ is smaller than the binding energy of hydrogen. This is because recombination is delayed by the high abundance of photons.
 
 \subsection{Decoupling}
 
@@ -681,7 +681,7 @@ where $n_e$ is the number density of electrons, and $c$ the speed of photons. We
 \begin{align*}
 	\Gamma_T(z_\text{dec}) = H(z_\text{dec})
 \end{align*}
-This happens at $z \approx 1100$, $E \approx \SI{0.26}{\eV}$, and $T \approx \SI{3000}{\kelvin}$, after the universe is \SI{380000}{\year} old. Note that $z_\text{dec} < z_\text{rec}$, so decoupling occurs soon after recombination.
+This happens at $z_\text{dec} \approx 1100$, $E_\text{dec} \approx \SI{0.26}{\eV}$, and $T_\text{dec} \approx \SI{3000}{\kelvin}$, when the universe is about \SI{380000}{\year} old. Note that $z_\text{dec} < z_\text{rec}$, so decoupling occurs soon after recombination.
 
 After decoupling, the universe is transparent to photons. When an observer today stares into empty space, the photons he measures come from the surface of last scattering, where the photons interacted for the last time during decoupling. This is the cosmic microwave background (CMB), which has a temperature of
 \begin{align*}
