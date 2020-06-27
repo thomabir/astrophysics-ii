@@ -794,7 +794,7 @@ which is the maximal comoving distance that a photon could have travelled from t
 The corresponding CMB angular scale is
 \begin{align*}
 	\theta_h
-	&= \frac{\chi_h(t_\text{dec})}{r(\chi_\text{dec})} 
+	&= \frac{\chi_h(t_\text{dec})}{r(\chi_\text{dec})} = \frac{180 h^{-1} \, \si{\mega\parsec}}{5820 h^{-1} \, \si{\mega\parsec}}
 	\approx \SI{1.8}{\deg},
 \end{align*}
 where $r$ is the comoving angular diameter distance.
@@ -812,11 +812,12 @@ We look at the deviation of $\Omega$ from $1$:
 	&= -\frac{3Kc^2}{8\pi G \rho(a)a^2}\\
 	&\propto
 	\begin{cases}
-		a^2 &\text{in the radiation era } \rho \propto a^{-4}\\
-		a & \text{in the matter era } \rho \propto a^{-3}
+		a^2 &\text{in the radiation era } \rho \propto a^{-4} \text{, which is for } z > z_{eq}\\
+		a & \text{in the matter era } \rho \propto a^{-3} \text{, which is for } z < z_{eq}
 	\end{cases}
 \end{align*}
-Consider time $t_i$ in the radiation era. Then
+Consider an initial time $t_i$ in the radiation era ($t_i < t_eq$).
+Then
 \begin{align*}
 	\frac{\Omega_i^{-1} - 1}{\Omega_0^{-1} - 1}
 	&= \frac{\Omega_i^{-1} - 1}{\Omega_\text{eq}^{-1} -1}
@@ -830,9 +831,9 @@ Consider time $t_i$ in the radiation era. Then
 \end{align*}
 We choose the Planck time as our starting point:
 \begin{align*}
-	t_\text{init} &= t_\text{Planck}
+	t_i &= t_\text{Planck}
 	\defeq 
-	\left( \frac{\hbar G}{c^5} \right)^{1/2}\\
+	\left( \frac{\hbar G}{c^5} \right)^{1/2} = \SI{e-34}{\sec}\\
 	T_\text{Planck} &= \SI{e32}{\kelvin}\\
 	T_0 &= \SI{3}{\kelvin}\\
 	T_\text{eq} &= \SI{e4}{\kelvin} 
@@ -841,7 +842,7 @@ Then
 \begin{align*}
 	\frac{\Omega_\text{Planck}^{-1} - 1}{\Omega_0^{-1}-1} \approx \num{e-60}
 \end{align*}
-This means that any deviation of $\Omega$ from $1$ at the Planck time has been amplified by $60$ orders of magnitude until today. This is also called the fine tuning problem, which requires $\Omega=1$ with extreme accuracy at early times. What is the physical explanation of this?
+This means that any deviation of $\Omega$ from $1$ at the Planck time has been amplified by $60$ orders of magnitude until today. This is also called the fine tuning problem, which requires $\Omega=1$ with extreme accuracy at early times. We could just postulate $\Omega \defeq 1$, but then what is the physical explanation of this?
 
 
 \subsection{Monopole problem}
