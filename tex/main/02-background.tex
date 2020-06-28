@@ -127,7 +127,7 @@ The Friedmann equation is a differential equation for the scale factor $a(t)$ an
 
 The critical density is defined as
 \begin{align*}
-	\rho_\text{crit}(t) = \frac{3 H(t)^2}{8 \pi G}
+	\rho_\text{crit}(t) = \frac{3 H(t)^2}{8 \pi G}.
 \end{align*}
 When the actual density of the universe is equal to the critical density, the universe is flat and Euclidean.\sidenote{In earlier models, where there was no cosmological constant included, the critical density was interpreted as the decisive point between an expanding and a collapsing universe. It was thought that when the actual density of the universe was higher than the critical density, the universe would slowly start collapsing.}
 Today, the critical density is about five hydrogen atoms per cubic metre, or one galaxy per \si{\mega\parsec\cubed}.
@@ -218,26 +218,30 @@ The standard cosmological model looks as follow:
 
 At different times, the universe is dominated by different components.
 To get solutions to the Friedmann equations, only the dominating component is considered at each time:
-\begin{itemize}
+\begin{itemize}[nolistsep, noitemsep]
 	\item Matter dominated:
-	\begin{align*}
+	$
+		\displaystyle
 		\frac{H}{H_0} = \sqrt{\Omega_{m,0} \left( \frac{a_0}{a}\right)^3}
 		\implies a \propto t^{2/3}
-	\end{align*}
+	$
 	\item Radiation dominated:
-	\begin{align*}
+	$
+		\displaystyle
 		\frac{H}{H_0} = \sqrt{\Omega_{r,0} \left( \frac{a_0}{a} \right)^4}
 		\implies a \propto t^{1/2}
-	\end{align*}
+	$
 	\item $\Lambda$ dominated:
-	\begin{align*}
+	$
+		\displaystyle
 		\frac{H}{H_0} \propto \text{constant}
 		\implies a \propto e^{H t}
-	\end{align*}
+	$
 	\item General fluid $(w \neq -1)$:
-	\begin{align*}
+	$
+		\displaystyle
 		\rho \propto a^{-3(1+w)} \implies a \propto t^{\frac{2}{3(1+w)}}
-	\end{align*}
+	$
 \end{itemize}
 
 The evolution of the universe with different density parameters is shown in \cref{fig:evolution}.
@@ -334,12 +338,12 @@ The matter content at each epoch depends on:
 	\item Particle, nuclear and atomic physics
 \end{itemize}
 
-A system is in thermal equilibrium if $\Gamma \gg H$
+A system is in thermal equilibrium if $\Gamma \gg H$:
 \begin{itemize}
 	\item \gls{Gamma} $ = \text{interactions}/\text{time}$ is the interaction rate
 	\item $H = \dot{a}/a$ is the Hubble constant
 \end{itemize}
-Similarly, a system is in thermal equilibrium if $\tau_\Gamma \ll \tau_H$
+Similarly, a system is in thermal equilibrium if $\tau_\Gamma \ll \tau_H$:
 \begin{itemize}
 	\item $\tau_\Gamma = 1/\Gamma$ is the characteristic timescale of interactions
 	\item $\tau_H = 1/H$ is the characteristic timescale of expansion
@@ -375,7 +379,7 @@ In \cref{tab:thermal-history} and \cref{fig:big-bang}, an overview of the therma
 	\describe{Big Bang nucleosynthesis}{Light nuclei such as D and He get synthesized. They are still ionized.} & \SI{3}{\minute} & \num{4e8} & \SI{0.08}{\MeV} \newline \SI{e9}{\kelvin}\\
 	\describe{Matter-radiation equality}{} & \SI{6e4}{\year} & \num{3400} & \SI{0.75}{\eV} \newline \SI{8700}{\kelvin}\\
 	\describe{Recombination}{Formation of neutral atoms through $e^- + p^+ \to H + \gamma$} & \SI{2e5}{\year} & \num{1200} & \SI{0.34}{\eV} \newline \SI{4000}{\kelvin}\\
-	\describe{Surface of last scattering}{The number density of charged particles has decreased enough for photons to decouple. These photons form the CMB.} &  &  & \\
+	\describe{Surface of last scattering}{The number density of charged particles has decreased enough for photons to decouple. These photons form the \textsc{cmb}.} &  &  & \\
 	\describe{Reionization}{Stars form and re-ionize neutral hydrogen.} & \SI{2e8}{\year} & \num{20} & \SI{4}{\meV} \newline \SI{50}{\kelvin}\\
 	\describe{Dark Energy - Matter equality}{} & \SI{9}{\giga\year} & \num{0.4} & \SI{0.33}{\meV} \newline \SI{3.8}{\kelvin}\\
 	\describe{Today}{} & \SI{13.8}{\giga\year} & \num{0} & \SI{0.24}{\eV} \newline \SI{2.7}{\kelvin}\\
@@ -514,12 +518,9 @@ If the system is collisionless, $C_i[f]=0$, and the solution of the Boltzmann eq
 
 We now look at reactions of the type $i + j \leftrightarrow a + b$. The collision term is then of the form
 \begin{align*}
-	C_i[f] = \alpha(T) n_a n_b - \beta(T) n_i n_j
+	C_i[f] = \alpha(T) n_a n_b - \beta(T) n_i n_j,
 \end{align*}
-\begin{itemize}
-	\item $\alpha(T)$ is the production rate
-	\item $\beta(T)$ is the destruction rate
-\end{itemize}
+where $\alpha(T)$ is the production rate, and $\beta(T)$ is the destruction rate.
 If we insert this collision term into the equation we get
 \begin{align*}
 	\dv{n_i}{t} + 3 H(t) n_i = \alpha(T) n_a n_b - \beta(T) n_i n_j. 
@@ -582,7 +583,7 @@ The $g$'s are degeneracy factors and satisfy $g_{*s}(x_0) \leq g_{*s}(x_f)$, and
 \subsection{\textsc{Wimp}s}
 
 
-Next, we consider \acp{wimp}. Examples are massive neutrinos and stable, light supersymmetric particles. \acp{Wimp} can either be hot ($x_f \ll 1$) or cold ($x_f \gg 1$).
+Next, we consider \acp{wimp}. Examples are massive neutrinos and stable, light supersymmetric particles. \Acp{wimp} can either be hot ($x_f \ll 1$) or cold ($x_f \gg 1$).
 
 \paragraph*{Hot \acp{wimp}}
 The solution of the Boltzmann equation yields
@@ -613,21 +614,27 @@ This is the epoch where protons and neutrons first combined to nuclei (not atoms
 
 \subsection{Initial conditions}
 
-Initially, the temperature is $T < \SI{e13}{\kelvin}$ and the associated energy scale is $k_B T > \SI{0.8}{\MeV}$. At this temperatures protons and neutrons are in thermal equilibrium and interact weakly via the processes $p + e \leftrightarrow n + \nu_e$ and $n + \bar{e} \leftrightarrow p + \bar{\nu}_e$. Since the mass of the nucleons is around \SI{940}{\MeV}, they are already non-relativistic. The masses of neutrons and protons are slightly different, so their abundances after freeze out are different. We find
+Initially, the temperature is $T < \SI{e13}{\kelvin}$ and the associated energy scale is $k_B T > \SI{0.8}{\MeV}$.
+At these temperatures, protons and neutrons are in thermal equilibrium and interact weakly via the processes $p + e \leftrightarrow n + \nu_e$ and $n + \bar{e} \leftrightarrow p + \bar{\nu}_e$.
+Since the mass of the nucleons is around \SI{940}{\MeV}, they are already non-relativistic.
+The masses of neutrons and protons are slightly different, so their abundances after freeze out are different. We find
 \begin{align*}
-	\frac{n_n}{n_p} \propto e^{-\frac{\Delta m}{T}} \propto 0.2,
+	\frac{n_n}{n_p} \approx e^{-\frac{\Delta m}{T}} \approx 0.2,
 \end{align*}
-where $\Delta m = m_n - m_p \propto \SI{1.3}{\MeV}$ is the mass difference.\\
-But the neutrons are unstable to beta decay $n \leftrightarrow p + e + \bar{\nu}_e$ and thus the neutron-to-proton ratio continues to decrease. The neutron abundance is therefore given by
+where $\Delta m = m_n - m_p \propto \SI{1.3}{\MeV}$ is the mass difference.
+T
+he neutrons are unstable to beta decay $n \leftrightarrow p + e + \bar{\nu}_e$, and thus the neutron-to-proton ratio continues to decrease.
+The neutron abundance is then
 \begin{align*}
-	X_n = \frac{n_n}{n_n + n_p} \approx e^{-t/\tau_n},
+	X_n = \frac{n_n}{n_n + n_p} \propto e^{-t/\tau_n},
 \end{align*}
-where $\tau_n \propto 887$ s is the mean lifetime of the neutrons.\\
-Nonetheless we still have a large abundance of neutrons in the Universe today. Since shortly before the Universe reaches $t = \tau_n$ most neutrons have already ended up in a helium nuclei, which stabilizes them against the beta decay (due to the Pauli's exclusion principle).  
+where $\tau_n \approx \SI{887}{\second}$ is the mean lifetime of a neutron.
+We still have a large abundance of neutrons today, because most of them were already bound in helium nuclei before $\tau_n$, which stabilized them from decay because of Pauli's exclusion principle.
+
 
 \subsection{Nuclear reactions}
-
-Once the temperature drops below \SI{1}{\MeV}, which is the binding energy of a typical nucleus, the nuclei start forming. A chain of nuclear reactions can occur then:
+Once the temperature drops below \SI{1}{\MeV}, which is the binding energy of a typical nucleus, the nuclei start forming.
+A host of nuclear reactions can then occur, only a few of which are shown here:
 \begin{align*}
 	\ce{p + n &<=> \gamma{} + D} &
 	\ce{D + n &<=> \gamma{} + ^3H} \\
@@ -646,9 +653,13 @@ Once the temperature drops below \SI{1}{\MeV}, which is the binding energy of a 
 	\ce{^4He + ^3He &<=> \gamma{} + ^7Be} &
 	\ce{^7Be + e &<=> \nu_e + ^7Li}
 \end{align*}
-For each of these reactions, there is a Boltzmann equation which describes the evolution of the number densities. This coupled system of equations can be solved numerically to find the abundances of nuclei. The solution for a few nuclei is shown in \cref{fig:nucleosynthesis}.
-The different mass fractions are $\ce{H} \approx 0.75$, $ \ce{^4He} \approx 0.25$, $\ce{D}/\ce{H} \approx \num{3e-5}$, $ \ce{^3He}/\ce{H} \approx \num{e-5}$, and $\ce{^7Li}/\ce{H} \approx \num{e-10}$.
-
+For each of these reactions, there is a Boltzmann equation which describes the evolution of the number densities.
+This coupled system of equations can be solved numerically to find the abundances of nuclei.
+The solution for a few nuclei is shown in \cref{fig:nucleosynthesis}, which yields the following mass fractions:
+\begin{align*}
+	\ce{H} &\approx 0.75,	& \ce{^4He} &\approx 0.25, 	&\ce{D}/\ce{H} \approx \num{3e-5},\\
+	\ce{^3He}/\ce{H} &\approx \num{e-5},	&\ce{^7Li}/\ce{H} &\approx \num{e-10}.
+\end{align*}
 
 \begin{marginfigure}
 	\centering
@@ -665,7 +676,7 @@ As the universe cools down to a temperature that is lower than the binding energ
 
 The ionization fraction $X_e$ is the ratio between the number density of free electrons $n_e$ and the number density of baryons ($n_b = n_p + n_H$):
 \begin{align*}
-	X_e \defeq \frac{n_e}{n_b}
+	X_e \defeq \frac{n_e}{n_b}.
 \end{align*}
 For given initial conditions, the ionization fraction can be calculated as a function of $z$ by solving the Boltzmann equation, see \cref{fig:ionization}
 
@@ -681,8 +692,9 @@ For given initial conditions, the ionization fraction can be calculated as a fun
 The time of recombination is defined as the time when there are ten times more baryons than electrons: $X_e(z_\text{rec}) = 0.1$. This happens at a temperature of $T_\text{rec} \approx \SI{0.3}{\eV}$ and a redshift of $z_\text{rec} \approx 1300$. Note that $T_\text{rec}$ is smaller than the binding energy of hydrogen. This is because recombination is delayed by the high abundance of photons.
 
 \subsection{Decoupling}
+\newacronym{cmb}{CMB}{cosmic microwave background}
 
-The interaction of electrons and photons (in the relevant energy regime) is described by Thomson scattering, with a scattering cross-section of $\sigma_T = \SI{6.65e-25}{\cm\squared}$. The reaction rate is then (see \cref{sec:thermal-history})
+The interaction of electrons and photons in the relevant energy regime is described by Thomson scattering, with a scattering cross-section of $\sigma_T = \SI{6.65e-25}{\cm\squared}$. The reaction rate is then (see \cref{sec:thermal-history})
 \begin{align*}
 	\Gamma_T = n_e \sigma_T c,
 \end{align*}
@@ -692,12 +704,13 @@ where $n_e$ is the number density of electrons, and $c$ the speed of photons. We
 \end{align*}
 This happens at $z_\text{dec} \approx 1100$, $E_\text{dec} \approx \SI{0.26}{\eV}$, and $T_\text{dec} \approx \SI{3000}{\kelvin}$, when the universe is about \SI{380000}{\year} old. Note that $z_\text{dec} < z_\text{rec}$, so decoupling occurs soon after recombination.
 
-After decoupling, the universe is transparent to photons. When an observer today stares into empty space, the photons he measures come from the surface of last scattering, where the photons interacted for the last time during decoupling. This is the cosmic microwave background (CMB), which has a temperature of
+After decoupling, the universe is transparent to photons. When an observer today stares into empty space, the photons he measures come from the surface of last scattering, where the photons interacted for the last time during decoupling.
+This is the \ac{cmb}, which has a temperature of
 \begin{align*}
-	T_\text{CMB} = T_\text{dec}\frac{a_0}{a_\text{dec}}
-	\approx \SI{3}{\kelvin}
+	T_\textsc{cmb} = T_\text{dec}\frac{a_0}{a_\text{dec}}
+	\approx \SI{3}{\kelvin}.
 \end{align*}
-Measurements of the CMB show a blackbody spectrum with remarkably deviations of $\Delta T / T \approx \num{e-5}$, as can be seen in \cref{fig:cmb}.
+Measurements of the \ac{cmb} show a blackbody spectrum with remarkably small deviations of $\Delta T / T \approx \num{e-5}$, as can be seen in \cref{fig:cmb}.
 
 \begin{marginfigure}
 	\centering
@@ -709,22 +722,22 @@ Measurements of the CMB show a blackbody spectrum with remarkably deviations of 
 
 
 
-\section{ΛCDM model}
+\section{\textsc{Λcdm} model}
 
-
-The ΛCDM model is a refinement of the Big Bang model, and it is the standard model of cosmology. Three observational pillars justify this model:
-\begin{itemize}
+The \textsc{Λcdm} model is a refinement of the Big Bang model, and it is the standard model of cosmology. Three observational pillars justify this model:
+\begin{itemize}[noitemsep, nolistsep]
 	\item the expansion of the universe,
 	\item the big bang nucleosynthesis, and
-	\item the cosmic microwave background (CMB).
+	\item the cosmic microwave background.
 \end{itemize}
 
-According to ΛCDM, the energy content of the universe today is made up of radiation, matter (consists of baryons and dark matter), and dark energy. Their contributions today are:
-\begin{itemize}
-	\item Radiation: Photons and neutrinos: $\Omega_{\gamma,0} \approx \Omega_{\nu,0}/0.68 \approx \num{2.5e-5} h^{-2}$
-	\item Baryons:  $\Omega_{b,0} \approx 0.05$
-	\item Dark Matter: $\Omega_{dm,0} \approx 0.25$
-	\item Dark Energy: $\Omega_{DE} \approx 0.7$
+According to \textsc{Λcdm}, the energy content of the universe today is made up of radiation, matter (consists of baryons and dark matter), and dark energy.
+Their contributions today are:
+\begin{itemize}[noitemsep, nolistsep]
+	\item Radiation (photons and neutrinos): $\Omega_{\gamma,0} \approx \Omega_{\nu,0}/0.68 \approx \num{2.5e-5} h^{-2}$
+	\item Baryons: $\Omega_{\text{b},0} \approx 0.05$
+	\item Dark Matter: $\Omega_{\textsc{dm},0} \approx 0.25$
+	\item Dark Energy: $\Omega_\textsc{de} \approx 0.7$
 \end{itemize}
 We now look at the constituents in more detail.
 
@@ -732,12 +745,12 @@ We now look at the constituents in more detail.
 
 As radiation, we classify those particles that are still relativistic today. Accordingly, they need to have very low mass.
 \begin{itemize}
-	\item Most photons are part of the CMB and have a temperature $T_{CMB} \approx \SI{2.73}{\kelvin}$. They contribute only very little to the energy density: $\Omega_{\gamma,0} = \num{2.5e-5} h^{-2}$.
+	\item Most photons are part of the \ac{cmb} and have a temperature $T_\textsc{cmb} \approx \SI{2.73}{\kelvin}$. They contribute only very little to the energy density: $\Omega_{\gamma,0} = \num{2.5e-5} h^{-2}$.
 	\item Massless\sidenote{Because of neutrino oscillations, we strongly suspect that neutrinos actually have mass, but it is very low.} neutrinos contribute about the same as photons: $\Omega_{\nu,0} = 0.68 \Omega_{\gamma,0} \approx \num{1.7e-5} h^{-2}$.
 \end{itemize}
 
 \subsection*{Baryons}
-Baryons from the Big Bang nucleosynthesis contribute $\Omega_b \approx 0.05$. They mostly occur in two forms:
+Baryons from the Big Bang nucleosynthesis contribute $\Omega_text{b} \approx 0.05$. They mostly occur in two forms:
 \begin{itemize}
 	\item Even though only ten percent of baryons are found in stars, they are the largest fraction of visible matter.
 	\item The rest of the baryons is in the form of various phases, such as cold gas, warm gas, and hot gas, both in the intergalactic and the interstellar medium.
@@ -745,43 +758,45 @@ Baryons from the Big Bang nucleosynthesis contribute $\Omega_b \approx 0.05$. Th
 
 \subsection*{Dark Matter}
 \newacronym{dm}{DM}{dark matter}
-\Ac{dm} contributes $\Omega_\text{dm} \approx 0.25$. We know of its existence through its gravitational effects. There is evidence for dark matter in galaxies, galaxy clusters, large scale structure, and many others.
+\newacronym{cdm}{CDM}{cold dark matter}
+\newacronym{macho}{MACHO}{massive compact halo object}
+\Ac{dm} contributes $\Omega_\textsc{dm} \approx 0.25$. We know of its existence through its gravitational effects. There is evidence for dark matter in galaxies, galaxy clusters, large scale structure, and many others.
 
-Dark matter is mostly non-baryonic, because baryons are constrained to $\Omega_b \approx 0.05$ by Big Bang nucleosynthesis. Also, the structure formation constraints below rule out baryons as dark matter candidates.
+Dark matter is mostly non-baryonic, because baryons are constrained to $\Omega_\text{b} \approx 0.05$ by Big Bang nucleosynthesis. Also, the structure formation constraints below rule out baryons as dark matter candidates.
 \begin{itemize}
-	\item Dark matter is cold (non-relativistic). It is thus called Cold Dark Matter (CDM)
+	\item Dark matter is cold (non-relativistic), and is thus called \ac{cdm}.
 	\item It interacts very weakly, so we can approximate it as non-collisional.
 \end{itemize}
+A good candidate for dark matter are particles beyond the standard model, such as \acp{wimp}.
 
-A good candidate for dark matter are particles beyond the standard model, such as WIMPs.
-
-Massive Compact Halo Objects (MACHOs), such as black holes, are not good candidates, since objects with masses from $\num{e-6}$ to $15\, M_\sol$ are ruled out.
+\Acp{macho}, such as black holes, are not good candidates, since objects with masses from $\num{e-6}$ to $15\, M_\sol$ are ruled out.
 
 \subsection*{Dark Energy}
-Dark Energy contributes $\Omega_\text{DE} \approx 0.7$. It is needed to get a flat geometry for the universe, and to explain the recent acceleration of the expansion of the universe.
+\newacronym{de}{DE}{dark energy}
+\Ac{de} contributes $\Omega_\textsc{DE} \approx 0.7$. It is needed to get a flat geometry for the universe, and to explain the recent acceleration of the expansion of the universe.
 
-From the first Friedmann equation, we know that a constant energy density results in a scale factor $a \propto e^{Ht}$ that is exponentially growing. Consider an effective fluid with equation of state $p_\text{DE} = w \rho_\text{DE} c^2$. We demand $\ddot{a} > 0$, and the second Friedmann equation then yields $w < -1/3$.
+From the first Friedmann equation, we know that a constant energy density results in a scale factor $a \propto e^{Ht}$ that is exponentially growing. Consider an effective fluid with equation of state $p_\textsc{de} = w \rho_\textsc{de} c^2$. We demand $\ddot{a} > 0$, and the second Friedmann equation then yields $w < -1/3$.
 
 There are a few possible candidates:
 \begin{itemize}
 	\item The cosmological constant $\Lambda$ which is independent of time corresponds to $w=-1$.
-	\item A model called \emph{quintessence}, which is a dynamical scalar field, would give rise to another form of energy. Since it is dynamical, you can map it to an effective fluid, with a $w$ (-1 < $w$ < -1/3) that varies in time.
+	\item A model called \emph{quintessence}, which is a dynamical scalar field, would give rise to another form of energy. Since it is dynamical, you can map it to an effective fluid, with a $w \in (-1, -1/3)$ that varies in time.
 	\item There could be a theory of gravity that can improve upon or replace general relativity.
 \end{itemize}
-Current constraints demand $w = -1$ with an uncertainty of about \SI{5}{\percent}. The cosmological constant is thus a model that is consistent with observations, and it is part of the ΛCDM model.
+Current constraints demand $w = -1$ with an uncertainty of about \SI{5}{\percent}. The cosmological constant is thus a model that is consistent with observations, and it is part of the \textsc{Λcdm} model.
 
 \subsection*{Summary}
 In total, $\Omega_0 \approx 1$, so the universe has a flat geometry. The exact nature of dark energy and dark matter are some of the most pressing questions in fundamental physics.
 
-There are other ingredients to ΛCDM, such as the model of gravity and the choice of initial conditions. A process called inflation is also added, as we will see later.
+There are other ingredients to \textsc{Λcdm}, such as the model of gravity and the choice of initial conditions. A process called inflation is also added, as we will see later.
 
-The ΛCMD model is very successful to fit current observations, but there are some tensions that are starting to emerge with more detailed measurements from cosmological probes.
+The \textsc{Λcdm} model is very successful to fit current observations, but there are some tensions that are starting to emerge with more detailed measurements from cosmological probes.
 
 
 
-\section{Problems with ΛCDM}
+\section{Problems with \textsc{Λcdm}}
 
-The ΛCDM model without inflation has a few intrinsic fundamental problems.
+The \textsc{Λcdm} model without inflation has a few intrinsic fundamental problems.
 
 \subsection{The horizon problem}
 We have defined the particle horizon
@@ -790,21 +805,21 @@ We have defined the particle horizon
 \end{align*}
 which is the maximal comoving distance that a photon could have travelled from the big bang ($t=0$) until time $t$. Let's look at the size of the horizon at decoupling time, where photons scattered for the last time. This corresponds to a redshift $z_\text{dec} \approx 1100$. The integral evaluates to
 \begin{align*}
-	\chi_h (t_\text{dec}) \approx 180 h^{-1} \, \si{\mega\parsec}
+	\chi_h (t_\text{dec}) \approx 180 h^{-1} \, \si{\mega\parsec}.
 \end{align*}
-The corresponding CMB angular scale is
+The corresponding \ac{cmb} angular scale is
 \begin{align*}
 	\theta_h
 	&= \frac{\chi_h(t_\text{dec})}{r(\chi_\text{dec})} = \frac{180 h^{-1} \, \si{\mega\parsec}}{5820 h^{-1} \, \si{\mega\parsec}}
 	\approx \SI{1.8}{\deg},
 \end{align*}
 where $r$ is the comoving angular diameter distance.
-This is unexpected, because the CMB is extremely homogeneous across the whole sky, even though the photons from different areas of the sky could not have been in causal contact when they scattered! Something must be wrong here.
+This is unexpected, because the \ac{cmb} is extremely homogeneous across the whole sky, even though the photons from different areas of the sky could not have been in causal contact when they scattered! Something must be wrong here.
 
 \subsection{Flatness problem}
 We have observationally determined $\Omega_0 \approx 1$, so we have a flat geometry. Let's look at how $\Omega$ varies with time. For this, we can use the Friemann equation:
 \begin{align*}
-	H(a)^2 = \frac{8\pi G}{3} \rho(a) - \frac{Kc^2}{a^2}
+	H(a)^2 = \frac{8\pi G}{3} \rho(a) - \frac{Kc^2}{a^2}.
 \end{align*}
 We look at the deviation of $\Omega$ from $1$:
 \begin{align*}
@@ -813,11 +828,11 @@ We look at the deviation of $\Omega$ from $1$:
 	&= -\frac{3Kc^2}{8\pi G \rho(a)a^2}\\
 	&\propto
 	\begin{cases}
-		a^2 &\text{in the radiation era } \rho \propto a^{-4} \text{, which is for } z > z_{eq}\\
-		a & \text{in the matter era } \rho \propto a^{-3} \text{, which is for } z < z_{eq}
+		a^2 &\text{in the radiation era } \rho \propto a^{-4} \text{, which is for } z > z_\text{eq},\\
+		a & \text{in the matter era } \rho \propto a^{-3} \text{, which is for } z < z_\text{eq}.
 	\end{cases}
 \end{align*}
-Consider an initial time $t_i$ in the radiation era ($t_i < t_eq$).
+Consider an initial time $t_i$ in the radiation era ($t_i < t_\text{eq}$).
 Then
 \begin{align*}
 	\frac{\Omega_i^{-1} - 1}{\Omega_0^{-1} - 1}
@@ -827,27 +842,28 @@ Then
 	\left( \frac{a_i}{a_\text{eq}} \right)^2 
 	\left( \frac{a_\text{eq}}{a_0} \right)\\
 	&= \left( \frac{T_\text{eq}}{T_i} \right)^2
-	\frac{T_0}{T_\text{eq}}
+	\frac{T_0}{T_\text{eq}}.
 	&& T \propto a^{-1} \text{ for a relativistic gas}
 \end{align*}
 We choose the Planck time as our starting point:
 \begin{align*}
 	t_i &= t_\text{Planck}
 	\defeq 
-	\left( \frac{\hbar G}{c^5} \right)^{1/2} = \SI{e-34}{\sec}\\
-	T_\text{Planck} &= \SI{e32}{\kelvin}\\
-	T_0 &= \SI{3}{\kelvin}\\
-	T_\text{eq} &= \SI{e4}{\kelvin} 
+	\left( \frac{\hbar G}{c^5} \right)^{1/2} = \SI{e-34}{\sec},\\
+	T_\text{Planck} &= \SI{e32}{\kelvin},\\
+	T_0 &= \SI{3}{\kelvin},\\
+	T_\text{eq} &= \SI{e4}{\kelvin}.
 \end{align*}
 Then
 \begin{align*}
-	\frac{\Omega_\text{Planck}^{-1} - 1}{\Omega_0^{-1}-1} \approx \num{e-60}
+	\frac{\Omega_\text{Planck}^{-1} - 1}{\Omega_0^{-1}-1} \approx \num{e-60}.
 \end{align*}
 This means that any deviation of $\Omega$ from $1$ at the Planck time has been amplified by $60$ orders of magnitude until today. This is also called the fine tuning problem, which requires $\Omega=1$ with extreme accuracy at early times. We could just postulate $\Omega \defeq 1$, but then what is the physical explanation of this?
 
 
 \subsection{Monopole problem}
-Consider $T \approx \SI{e14}{\GeV}$, which was the case during the grand unification (GUT) epoch, where the fundamental forces were unified. At these temperatures, there is a phase transition. Before the transition, the forces are unified, and during the transition, there is a spontaneous symmetry breaking. A prediction for topological defects that happen during this transition requires that there should be magnetic monopoles with an enormous density $\Omega_{\text{monopole},0} \approx \num{e11}$. If you still exist, this scenario is obviously ruled out by observations.
+\newacronym{gut}{gut}{grand unified theory}
+Consider $T \approx \SI{e14}{\GeV}$, which was the case during the \ac{gut} epoch, where the fundamental forces were unified. At these temperatures, there is a phase transition. Before the transition, the forces are unified, and during the transition, there is a spontaneous symmetry breaking. A prediction for topological defects that happen during this transition requires that there should be magnetic monopoles with an enormous density $\Omega_{\text{monopole},0} \approx \num{e11}$. If you still exist, this scenario is obviously ruled out by observations.
 
 \subsection{Structure formation problem}
 Today, even though the cosmological principle holds for large distance scales (a few \SI{100}{\mega\parsec}), we still see many structures on various smaller scales in the universe. What were the \enquote{seeds}, the initial perturbations that are responsible for the creation of these structures?
@@ -867,11 +883,11 @@ We define two things two reformulate the horizon problem:
 \begin{itemize}
 	\item The size of the forward light cone:
 	\begin{align*}
-		\chi_f = \int_0 ^{t_\text{ls}} \frac{c \dd{t'}}{a(t')}
+		\chi_f = \int_0 ^{t_\text{ls}} \frac{c \dd{t'}}{a(t')}.
 	\end{align*}
 	\item The size of the past light cone:
 	\begin{align*}
-		\chi_p = \int_{t_\text{ls}}^{t_0} \frac{c \dd{t'}}{a(t')}
+		\chi_p = \int_{t_\text{ls}}^{t_0} \frac{c \dd{t'}}{a(t')}.
 	\end{align*}
 	This is the maximum comoving distance that photons could have travelled since last scattering.
 \end{itemize}
@@ -889,7 +905,7 @@ The horizon problem can be stated mathematically as $\chi_f' < \chi_p$: Regions 
 Let $t_i$ and $t_e$ be the start and end time of inflation, with $\Delta t = t_e - t_i$. We know
 \begin{align*}
 	\chi_f = \chi_h(t_\text{ls})
-	= \int_0^{t_\text{ls}} \frac{c \dd{t'}}{a(t')}
+	= \int_0^{t_\text{ls}} \frac{c \dd{t'}}{a(t')}.
 \end{align*}
 For vacuum energy, we know that $\rho_\text{vac}(a)$ is constant. We assume that, at early times, there was some kind of vacuum energy which gives us
 \begin{align*}
@@ -901,9 +917,9 @@ The contribution to $\chi_f$ during inflation is then
 \begin{align*}
 	\chi_f(t_i,t_e)
 	&= \int_{t_i}^{t_e} \frac{c \dd{t'}}{a(t')}\\
-	&\propto \frac{1}{H a(t_e)} (e^{H \Delta t} - 1)
+	&\propto \frac{1}{H a(t_e)} (e^{H \Delta t} - 1).
 \end{align*}
-We see that $\chi_f$ grows exponentially during inflation. For how long does inflation have to last to solve our problems? We need $\Delta t > 60 H^{-1}$, or $e^{H \Delta t} < \num{e25}$, if we assume $t_e \approx t_\text{GUT}$. We thus require $a_e/a_i > e^{60}$, or in other words, we need $60$ \enquote{$e$-foldings}.
+We see that $\chi_f$ grows exponentially during inflation. For how long does inflation have to last to solve our problems? We need $\Delta t > 60 H^{-1}$, or $e^{H \Delta t} < \num{e25}$, if we assume $t_e \approx t_\textsc{gut}$. We thus require $a_e/a_i > e^{60}$, or in other words, we need $60$ \enquote{$e$-foldings}.
 
 
 \subsection{Flatness problem}
@@ -911,12 +927,12 @@ One can show that
 \begin{align*}
 	\frac{\Omega^{-1}(t_e)-1}{\Omega^{-1}(t_i)-1}
 	= \frac{a(t_i)}{a(t_e)}
-	< \num{e-52}
+	< \num{e-52},
 \end{align*}
 assuming $60$ $e$-foldings. As a result, any curvature that was originally there gets flattened by inflation.
 
 \subsection{Monopole problem}
-The monopoles are diluted by the expansion during inflation by a factor
+During inflation, the monopoles are diluted by a factor
 \begin{align*}
 	\left( \frac{a_e}{a_i} \right)^3 \approx \num{e78},
 \end{align*}
@@ -943,7 +959,7 @@ During inflation, $\phi$ is in a false vacuum state at a local minimum  or a fla
 
 We impose a \emph{slow roll condition}, which impedes the field from changing too quickly:
 \begin{align*}
-	\dot{\phi}^2 \ll V(\phi)
+	\dot{\phi}^2 \ll V(\phi).
 \end{align*}
 There are several models, some of which are old inflation, new inflation, and chaotic inflation. There are many other models proposed, indicating that inflation is still an ongoing field of research.
 
