@@ -628,7 +628,7 @@ The neutron abundance is then
 \begin{align*}
 	X_n = \frac{n_n}{n_n + n_p} \propto e^{-t/\tau_n},
 \end{align*}
-where $\tau_n \approx \SI{887}{\second}$ is the mean lifetime of a neutron.
+where $\tau_n \approx \SI{887}{\second}$ is the mean lifetime of a neutron.
 We still have a large abundance of neutrons today, because most of them were already bound in helium nuclei before $\tau_n$, which stabilized them from decay because of Pauli's exclusion principle.
 
 
@@ -883,9 +883,10 @@ We define two things two reformulate the horizon problem:
 \begin{itemize}
 	\item The size of the forward light cone:
 	\begin{align*}
-		\chi_f = \int_0 ^{t_\text{ls}} \frac{c \dd{t'}}{a(t')}.
+		\chi_f = \chi_h(t_{ls}) = \int_0 ^{t_\text{ls}} \frac{c \dd{t'}}{a(t')}.
 	\end{align*}
-	\item The size of the past light cone:
+	This is the particle Horizon at $t= t_{ls}$.
+	\item The comoving size of the past light cone:
 	\begin{align*}
 		\chi_p = \int_{t_\text{ls}}^{t_0} \frac{c \dd{t'}}{a(t')}.
 	\end{align*}
@@ -900,7 +901,7 @@ We define two things two reformulate the horizon problem:
 \end{figure}
 
 
-The horizon problem can be stated mathematically as $\chi_f' < \chi_p$: Regions which are observable today to have similar temperatures were apparently not in causal contact at last scattering. A solution is to increase $\chi_f'$ through a period of accelerated expansion called inflation. A sketch of this is shown in \cref{fig:inflation}.
+The horizon problem can be stated mathematically as $\chi_f' < \chi_p$: Regions which are observable today to have similar temperatures were apparently not in causal contact at last scattering. A solution to this problem is to increase $\chi_f'$ through a period of accelerated expansion called inflation. A sketch of this is shown in \cref{fig:inflation}.
 
 Let $t_i$ and $t_e$ be the start and end time of inflation, with $\Delta t = t_e - t_i$. We know
 \begin{align*}
@@ -919,14 +920,14 @@ The contribution to $\chi_f$ during inflation is then
 	&= \int_{t_i}^{t_e} \frac{c \dd{t'}}{a(t')}\\
 	&\propto \frac{1}{H a(t_e)} (e^{H \Delta t} - 1).
 \end{align*}
-We see that $\chi_f$ grows exponentially during inflation. For how long does inflation have to last to solve our problems? We need $\Delta t > 60 H^{-1}$, or $e^{H \Delta t} < \num{e25}$, if we assume $t_e \approx t_\textsc{gut}$. We thus require $a_e/a_i > e^{60}$, or in other words, we need $60$ \enquote{$e$-foldings}.
+We see that $\chi_f$ grows exponentially during inflation. For how long does inflation have to last to solve our problems? We need $\Delta t > 60 H^{-1}$, or $e^{H \Delta t} > \num{e25}$, if we assume $t_e \approx t_\textsc{gut}$. We thus require $a_e/a_i = e^{H \Delta t} > e^{60}$, or in other words, we need at least $60$ \enquote{$e$-foldings}.
 
 
 \subsection{Flatness problem}
 One can show that
 \begin{align*}
 	\frac{\Omega^{-1}(t_e)-1}{\Omega^{-1}(t_i)-1}
-	= \frac{a(t_i)}{a(t_e)}
+	= \left( \frac{a(t_i)}{a(t_e)} \right)^2
 	< \num{e-52},
 \end{align*}
 assuming $60$ $e$-foldings. As a result, any curvature that was originally there gets flattened by inflation.
