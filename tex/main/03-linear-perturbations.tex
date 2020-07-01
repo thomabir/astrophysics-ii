@@ -3,7 +3,7 @@
 We now drop the assumption that the universe is homogeneous and isotropic. In this chapter, we analyse small perturbations about the background, which can be handled with linear perturbation theory. These perturbations will lead to the structures that we observe today.
 
 We are going to make a few approximations:
-\begin{itemize}
+\begin{itemize}[nolistsep,noitemsep]
 	\item The perturbations are sufficiently small to be treated by linear perturbation theory.
 	\item We ignore relativistic effects and use a Newtonian approximation.
 \end{itemize}
@@ -12,7 +12,7 @@ There are several ways to model this structure.
 
 \section{Ideal Fluid}
 First, we model the content of the universe as an expanding, self-gravitating, ideal fluid in the Newtonian approximation. We consider the following parameters:
-\begin{itemize}
+\begin{itemize}[noitemsep]
 	\item density $\rho(\vec{x},t)$
 	\item pressure $p(\vec{x},t)$
 	\item velocity $\vec{u}(\vec{x},t) = \dot{\vec{r}}$
@@ -20,11 +20,11 @@ First, we model the content of the universe as an expanding, self-gravitating, i
 \end{itemize}
 The time evolution of these parameters is described by the \emph{fluid equations}:
 \begin{align*}
-	\Dv{\rho}{t} &= - \rho \Grad_r \cdot \vec{u}
+	\Dv{\rho}{t} &= - \rho \Grad_r \cdot \vec{u},
 	&& \text{continuity equation, conservation of mass}\\
-	\Dv{\vec{u}}{t} &= - \frac{\Grad_r p}{\rho} - \Grad_r \phi
+	\Dv{\vec{u}}{t} &= - \frac{\Grad_r p}{\rho} - \Grad_r \phi,
 	&&\text{acceleration} = \text{pressure force} + \text{gravitational force}\\
-	\Lap_r \phi &= 4 \pi G \rho
+	\Lap_r \phi &= 4 \pi G \rho.
 	&&\text{Poisson equation}
 \end{align*}
 We define the \emph{convective derivative}
@@ -33,7 +33,7 @@ We define the \emph{convective derivative}
 \end{align*}
 which is the time derivative as one moves along fluid elements.
 
-\subsection*{Assumptions}
+\subsection{Assumptions}
 
 Let's consider the case where the fluid is expanding. In order to describe this, we can write the position vector as $\vec{r} = a(t) \vec{x}$, where $\vec{x}$ is a comoving coordinate. In the Newtonian treatment, we assume that the scale factor is a known input for the calculation. Then the (total) velocity is
 \begin{align*}
@@ -50,11 +50,11 @@ where $\bar{\rho}(t) \propto a^{-3}$ is the mean background density, and $\delta
 We can plug these assumptions and definitions into the fluid equations to get
 \begin{align*}
 	\pdv{\delta}{t} + \frac{1}{a} \Div[(1+\delta)\vec{v}]
-	&= 0\\
+	&= 0,\\
 	\pdv{\vec{v}}{t} + \frac{\dot{a}}{a} \vec{v} + \frac{1}{a} [\vec{v} \cdot \Grad] \vec{v}
-	&= - \frac{\Grad \Phi}{a} - \frac{\Grad p}{a \bar{\rho}(1+\delta)}\\
+	&= - \frac{\Grad \Phi}{a} - \frac{\Grad p}{a \bar{\rho}(1+\delta)},\\
 	\Lap \Phi
-	&= 4 \pi G \bar{\rho} a^2 \delta
+	&= 4 \pi G \bar{\rho} a^2 \delta,
 \end{align*}
 where
 \begin{align*}
@@ -62,25 +62,25 @@ where
 \end{align*}
 and $\Grad = \Grad_{\vec{x}}$.
 
-\subsection*{Thermodynamics}
+\subsection{Thermodynamics}
 
 We have three equations in four unknowns, so we still need the equation of state, which relates pressure to other variables, such as density and entropy. 
 
 The first law of thermodynamics states that internal energy can either be added by the means of heat or work:
 \begin{align*}
-	\dd{U} = \dd{Q} + \dd{W}
+	\dd{U} = \dd{Q} + \dd{W}.
 \end{align*}
 We can use $\dd{W} = - p \dd{V}$ and $\dd{Q} = T \dd{S}$. From now on, we assume we are dealing with an ideal gas. The equation of state for an ideal gas is
 \begin{align*}
 	p
 	&= n k_B T\\
-	&= \frac{\rho}{\mu m_p} k_B T
+	&= \frac{\rho}{\mu m_p} k_B T,
 \end{align*}
 where $\mu$ is the mean molecular weight and $n = N/V$ is the number density. The internal energy is
 \begin{align*}
 	U
 	&= \frac{3}{2} N k_B T\\
-	&= \frac{3}{2} \frac{\rho}{\mu m_p} V k_B T
+	&= \frac{3}{2} \frac{\rho}{\mu m_p} V k_B T.
 \end{align*}
 Then
 \begin{align*}
@@ -90,47 +90,47 @@ Then
 		\left( \pdv{p}{\rho} \right)_S \Grad \rho
 		+ 
 		\left( \pdv{p}{S} \right)_\rho \Grad S
-	\right]
+	\right].
 \end{align*}
 Let $c_s^2 = (\pdv*{p}{\rho})_S$ be the adiabatic sound speed squared. Then we get
 \begin{align*}
-	\left( \pdv{p}{S} \right)_\rho = \frac{2}{3} \rho T
+	\left( \pdv{p}{S} \right)_\rho = \frac{2}{3} \rho T,
 \end{align*}
 and thus
 \begin{align*}
 	\frac{\Grad p}{\bar{\rho}}
-	&= c_s^2 \Grad \delta + \frac{2}{3} (1+\delta) T \Grad S
+	&= c_s^2 \Grad \delta + \frac{2}{3} (1+\delta) T \Grad S.
 \end{align*}
 The Euler equation can then be rewritten as
 \begin{align*}
 	\pdv{\vec{v}}{t} + \frac{\dot{a}}{a} \vec{v} + \frac{1}{a} (\vec{v} \cdot \Grad) \vec{v}
-	&= - \frac{\Grad \Phi}{a} - \frac{c_s^2}{a} \frac{\Grad \delta}{1 + \delta} - \frac{2T}{3a} \Grad S
+	&= - \frac{\Grad \Phi}{a} - \frac{c_s^2}{a} \frac{\Grad \delta}{1 + \delta} - \frac{2T}{3a} \Grad S.
 \end{align*}
 
-\subsection*{Solving the fluid equation}
+\subsection{Solving the fluid equation}
 
 For small density perturbations $\delta$ and small peculiar velocities $\vec{v}$, we can drop terms that are quadratic in these variables, such as $(\vec{v} \cdot \Grad) \vec{v}$. We get the linearized fluid equations:
 \begin{align*}
-	\pdv{\delta}{t} + \frac{1}{a} \Div \vec{v} &= 0\\
-	\pdv{\vec{v}}{t} + \frac{\dot{a}}{a} \vec{v} &= - \frac{\Grad \Phi}{a} - \frac{c_s^2}{a} \Grad \delta - \frac{2 \bar{T}}{3a} \Grad S
+	\pdv{\delta}{t} + \frac{1}{a} \Div \vec{v} &= 0,\\
+	\pdv{\vec{v}}{t} + \frac{\dot{a}}{a} \vec{v} &= - \frac{\Grad \Phi}{a} - \frac{c_s^2}{a} \Grad \delta - \frac{2 \bar{T}}{3a} \Grad S.
 \end{align*}
 We can combine them to get a single equation. First, take the derivative of the continuity equation. Then, use the Euler equation and the Poisson equation to get the following:
 \begin{align*}
-	\pdv[2]{\delta}{t} + 2 \frac{\dot{a}}{a} \pdv{\delta}{t} &= 4 \pi G \bar{\rho} \delta + \frac{c_s^2}{a^2} \Lap \delta + \frac{2}{3} \frac{\bar{T}}{a^2} \Lap S
+	\pdv[2]{\delta}{t} + 2 \frac{\dot{a}}{a} \pdv{\delta}{t} &= 4 \pi G \bar{\rho} \delta + \frac{c_s^2}{a^2} \Lap \delta + \frac{2}{3} \frac{\bar{T}}{a^2} \Lap S.
 \end{align*}
 This is a second order differential equation. We take the Fourier transform:
 \begin{align*}
-	\delta(\vec{x},t) &= \sum_{\vec{k}} \delta_{\vec{k}} \exp(i \vec{k} \cdot \vec{x})\\
+	\delta(\vec{x},t) &= \sum_{\vec{k}} \delta_{\vec{k}} \exp(i \vec{k} \cdot \vec{x}),\\
 	\delta_{\vec{k}}(t) &= \frac{1}{V} \int \delta(\vec{x},t) \exp(-i \vec{k} \cdot \vec{x}) \dd{^3x},
 \end{align*}
 where $V$ is the volume of a sufficiently large box. The fluid equation then becomes\sidenote{$\Grad \to i\vec{k}$ and $\Lap \to -k^2$}
 \begin{align*}
 	\dv[2]{\delta_{\vec{k}}}{t} + 2 \frac{\dot{a}}{a} \dv{\delta_{\vec{k}}}{t}
-	&= \left[4 \pi G \bar{\rho} - \frac{k^2 c_s^2}{a^2}\right] \delta_{\vec{k}} - \frac{2}{3} k^2 \frac{\bar{T}}{a^2} S_{\vec{k}}
+	&= \left[4 \pi G \bar{\rho} - \frac{k^2 c_s^2}{a^2}\right] \delta_{\vec{k}} - \frac{2}{3} k^2 \frac{\bar{T}}{a^2} S_{\vec{k}}.
 \end{align*}
 The Poisson equation in Fourier space is
 \begin{align*}
-	- k^2 \Phi_{\vec{k}} &= 4 \pi G \bar{\rho} a^2 \delta_{\vec{k}}
+	- k^2 \Phi_{\vec{k}} &= 4 \pi G \bar{\rho} a^2 \delta_{\vec{k}}.
 \end{align*}
 The fluid equation can now be solved for every $\vec{k}$-mode independently.
 
@@ -145,18 +145,18 @@ Adiabatic perturbations are naturally generated by inflation, so we only conside
 The fluid equation can now be simplified further:
 \begin{align*}
 	\dv[2]{\delta_{\vec{k}}}{t} + 2 \frac{\dot{a}}{a} \dv{\delta_{\vec{k}}}{t}
-	&= \left[4 \pi G \bar{\rho} - \frac{k^2 c_s^2}{a^2}\right] \delta_{\vec{k}}
+	&= \left[4 \pi G \bar{\rho} - \frac{k^2 c_s^2}{a^2}\right] \delta_{\vec{k}}.
 \end{align*}
 Consider the case where the expansion of the fluid can be ignored, so $a$ is a constant. Then $\dot{a} = 0$, so a further term drops out:
 \begin{align*}
 	\dv[2]{\delta_{\vec{k}}}{t}
 	&= \left[4 \pi G \bar{\rho} - \frac{k^2 c_s^2}{a^2}\right] \delta_{\vec{k}}\\
-	&= - \omega^2 \delta_{\vec{k}}
+	&= - \omega^2 \delta_{\vec{k}}.
 \end{align*}
 This is simply the equation of motion of a harmonic oscillator. We can rewrite
 \begin{align*}
 	\omega^2
-	&= \left( \frac{c_s}{a} \right)^2 [k^2 - k_J^2]
+	&= \left( \frac{c_s}{a} \right)^2 [k^2 - k_J^2],
 \end{align*}
 where $k_J$ is the \textsc{Jeans} wavenumber
 \begin{align*}
@@ -172,33 +172,33 @@ and the Jeans mass
 \end{align*}
 which is the mass of a sphere with a radius of $\lambda_J/2$ and density $\bar{\rho}$.
 
-\subsection*{Solutions}
+\subsection{Solutions}
 
 We first consider the case where $k > k_J$, or equivalently $\lambda < \lambda_J$, or $M < M_J$. Then $\omega^2 > 0$, and the equation of motion gives us an oscillatory solution:
 \begin{align*}
-	\delta_{\vec{k}} \propto \exp(\pm i \omega t)
-	\qquad \omega \in \R
+	\delta_{\vec{k}} \propto \exp(\pm i \omega t),
+	\qquad \omega \in \R.
 \end{align*}
 This means that density perturbations don't grow, but just oscillate.
 
 When $k < k_J$, the solution is
 \begin{align*}
-	\delta_{\vec{k}} \propto \exp(\pm \alpha t) \qquad \alpha \in \R,
+	\delta_{\vec{k}} \propto \exp(\pm \alpha t), \qquad \alpha \in \R,
 \end{align*}
 which indicates exponentially decaying or growing modes. The growing modes lead to the growth of structure, which is called gravitational or Jeans instability. Once the perturbations become large, our assumptions are not valid any more, and we have to switch to non-linear perturbation theory.
 
 %In other words, either attractive gravity or repulsive pressure win in the above scenarios.
 
-\subsection*{Jeans mass}
+\subsection{Jeans mass}
 The Jeans mass is
 \begin{align*}
 	M_J
 	&= \frac{\pi}{6} \bar{\rho} \lambda_J^3\\
-	&= \frac{\pi^{5/2}}{6} \frac{c_s^3}{G^{3/2} \bar{\rho}^{1/2}}
+	&= \frac{\pi^{5/2}}{6} \frac{c_s^3}{G^{3/2} \bar{\rho}^{1/2}}.
 \end{align*}
-Before recombination, photons and baryons are tightly coupled, and they act as a single fluid. We get $M_J \approx \num{e16} (\Omega_{b,0}h^2)^{-2} M_\sol$, which means that no baryonic perturbations smaller than a supercluster can grow before recombination.
+Before recombination, photons and baryons are tightly coupled, and they act as a single fluid. We get $M_J \approx \num{e16} (\Omega_{b,0}h^2)^{-2} \si{\solarmass}$, which means that no baryonic perturbations smaller than a supercluster can grow before recombination.
 
-After recombination, the baryons and the photons are decoupled. They have much smaller pressure, and $M_J \approx \num{e5} (\Omega_{b,0}h^2)^{-1/2} M_\sol$. Perturbations with masses larger than a globular cluster can grow.
+After recombination, the baryons and the photons are decoupled. They have much smaller pressure, and $M_J \approx \num{e5} (\Omega_{b,0}h^2)^{-1/2} \si{\solarmass}$. Perturbations with masses larger than a globular cluster can grow.
 
 We also have to take into account the expansion of the universe, which we neglected up to now. Furthermore, these results do not consider dark matter, but only baryons.
 
@@ -212,25 +212,26 @@ We now consider a collisionless gas, such as dark matter. In this case, there is
 	&= \pdv{f}{t} + \pdv{f}{p^i} \pdv{p^i}{t} + \pdv{f}{x^i} \pdv{x^i}{t}\\
 	&= 0.
 \end{align*}
-As before, we can take the moments of the distribution functions:
+As we have already seen before, we can take moments $\langle Q \rangle$ of the distribution functions, which are defined as
 \begin{align*}
-	\langle Q \rangle = \frac{1}{n} \int \dd{^3p} Q f(\vec{x}, \vec{p}, t)
+	\langle Q \rangle = \frac{1}{n} \int \dd{^3p} Q f(\vec{x}, \vec{p}, t),
 \end{align*}
-with the comoving number density $n(\vec{x}, t) = \int \dd{^3p} f(\vec{x}, \vec{p}, t)$. Some moments are:
+with the comoving number density $n(\vec{x}, t) = \int \dd{^3p} f(\vec{x}, \vec{p}, t)$.
+Some moments are
 \begin{itemize}
-	\item The density $\rho(\vec{x}, t)$ can be obtained with $Q = m$, where $m$ is the mass of a particle.
-	\item The bulk velocity $\langle v_i \rangle$ can be obtained with $Q = v_i = p_i/(m n)$
+	\item the density $\rho(\vec{x}, t)$, which is obtained with $Q = m$, where $m$ is the mass of a particle, and
+	\item the bulk velocity $\langle v_i \rangle$, which is obtained with $Q = v_i = p_i/(m n)$.
 \end{itemize}
 
 We take moments of the Boltzmann equation. One can show\sidenote{For more details, have a look at \cref{ssec:collisionless-eom}.} that one gets the same equations as the fluid equations: the continuity equation and the Euler equation, with the pressure gradient term replaced as follows:
 \begin{align*}
 	\frac{\Grad_i p}{\rho}
 	\to \sum_{j=1}^3 \pdv{}{x_j}
-	\left[ (1+\delta) \sigma_{ij}^2 \right]
+	\left[ (1+\delta) \sigma_{ij}^2 \right],
 \end{align*}
 where
 \begin{align*}
-	\sigma_{ij} = \avg{v_i v_j} - \avg{v_i} \avg{v_j}
+	\sigma_{ij} = \avg{v_i v_j} - \avg{v_i} \avg{v_j}.
 \end{align*}
 The stress tensor is defined as $\rho \sigma_{ij}^2$.
 
@@ -257,7 +258,7 @@ We consider solutions for an expanding universe and find the following solutions
 	\begin{align*}
 		\delta_+ \propto H(t) \int_0^t \frac{\dd{t'}}{a(t)^2 H(t')},
 	\end{align*}
-	which is a result of gravitational instability. This is similar to what we found before, but this time we did not neglect expansion. We define $D(z) \propto \delta_+$ the linear growth factor.
+	which is a result of gravitational instability. This is similar to what we found before, but this time we did not neglect expansion. We define the linear growth factor $D(z) \propto \delta_+$.
 \end{itemize}
 
 \begin{figure}
@@ -271,9 +272,9 @@ Examples are shown in \cref{fig:collisionless-gas}.
 \begin{itemize}
 	\item Matter dominated case ($\Omega_0 = \Omega_{m,0} = 1$): $a \propto t^{2/3}$ and $H \propto t^{-1}$. This yields
 	\begin{align*}
-		D \propto t^{2/3} \propto a
+		D \propto t^{2/3} \propto a.
 	\end{align*}
-	\item OCDM ($\Omega_{m,0} < 1$, $\Omega_{\Lambda,0} = 0$) and ΛCDM ($\Omega_{m,0} + \Omega_{\Lambda,0} = 1$): We get an analytical solution where $D$ grows slower than $a$. The faster expansion from ΛCDM slows down the growth of structure.
+	\item \textsc{Ocdm} ($\Omega_{m,0} < 1$, $\Omega_{\Lambda,0} = 0$) and \textsc{Λcdm} ($\Omega_{m,0} + \Omega_{\Lambda,0} = 1$): We get an analytical solution where $D$ grows slower than $a$. The faster expansion from \textsc{Λcdm} slows down the growth of structure.
 	\item In the general case, there is no analytical solution. The growth factor usually grows slower than the exponential growth we found in the non-expanding gravitational instability case. In other words, the universe expansion slows down with the growth of structure.
 \end{itemize}
 
@@ -288,9 +289,9 @@ which can be rearranged to
 	\Phi_{\vec{k}}
 	&\propto a^2 \bar{\rho}_m \delta_{\vec{k}}\\
 	&\propto a^2 a^{-3} D(a) \\
-	&\propto \frac{D(a)}{a}
+	&\propto \frac{D(a)}{a}.
 \end{align*}
-This means that $\Phi_{\vec{k}}$ is constant in the matter dominated case, and $\Phi_{\vec{k}}$ decays in the OCDM and ΛCDM cases at late times.
+This means that $\Phi_{\vec{k}}$ is constant in the matter dominated case, and $\Phi_{\vec{k}}$ decays in the \textsc{ocdm} and \textsc{Λcdm} cases at late times.
 
 
 \subsection{Two non-relativistic components}
@@ -300,24 +301,24 @@ There are now two differential equations:
 \begin{align*}
 	\dv[2]{\delta_{\text{dm}, \vec{k}}}{t}
 	+ 2 \frac{\dot{a}}{a} \dv{\delta_{\text{dm}, \vec{k}}}{t}
-	&= 4 \pi G \bar{\rho}_m \delta_{\text{dm}, \vec{k}}\\
+	&= 4 \pi G \bar{\rho}_m \delta_{\text{dm}, \vec{k}},\\
 	\dv[2]{\delta_{\text{b}, \vec{k}}}{t}
 	+ 2 \frac{\dot{a}}{a} \dv{\delta_{\text{b}, \vec{k}}}{t}
 	+ \frac{k^2 c_s^2}{a^2} \delta_{\text{b},\vec{k}}
-	&= 4 \pi G \bar{\rho}_m \delta_{\text{dm}, \vec{k}}
+	&= 4 \pi G \bar{\rho}_m \delta_{\text{dm}, \vec{k}}.
 \end{align*}
 The first equation is the same as in the previous section, because the low-density baryons don't influence the dark matter much. To get analytical solutions, we assume that we are in the matter dominated case, and that $c_s^2 a$ is constant.\sidenote{The latter is equivalent to the condition that the baryons are a specific kind of polytropic fluid, which obeys $p \propto \rho^{4/3}$. For different polytropic indices $\gamma \neq 4/3$, the behaviour is similar, but the equations have to be solved numerically.}
 
 Since the dark matter equation is the same, it has the same solution, with a growing mode $D(t) \propto a$ in a matter dominated universe.
 
-For the baryons
+For the baryons,
 \begin{align*}
 	\delta_{\text{b},\vec{k}}(t)
 	&= \frac{\delta_{\text{dm},\vec{k}}(t)}{1 + (k/k_J)^2},
 \end{align*}
 where $k_J = a/c_s \sqrt{4 \pi G \bar{\rho}}$ is the Jeans wavenumber. From this equation, we see that the baryon perturbations are equal to the dark matter perturbations for small $k$. For large $k$, pressure becomes more important, and the baryon perturbations will be smaller.\sidenote{Keep in mind that large $k$ means small length scales, and vice versa. When particles are close together, pressure becomes important.}
 
-\paragraph*{Acoustic oscillations}
+\paragraph*{Acoustic oscillations.}
 We have just seen that baryon behaviour becomes a lot more interesting at smaller length scales, where pressure is higher. This leads to oscillations and damping of the amplitude of the perturbations. One can show that the baryon density of a given mode $\vec{k}$ oscillates like
 \begin{align*}
 	\delta_{\text{b},\vec{k}} \propto \exp(\frac{i k c_s t}{a}) + \text{constant},
@@ -325,7 +326,7 @@ We have just seen that baryon behaviour becomes a lot more interesting at smalle
 which corresponds to sound waves, which is why they are called \emph{acoustic oscillations}.
 
 
-\paragraph*{Collisional damping}
+\paragraph*{Collisional damping.}
 Before recombination on small scales, the perturbations are damped by imperfect coupling between baryons and photons. This leads to diffusion of the photons, which suppresses perturbations on small scales. The effect is called \emph{collisional damping} or \emph{Silk}\sidenote{After Joseph Silk, who first discussed photon diffusion in a paper in 1968.} \emph{damping}.
 
 
@@ -343,10 +344,10 @@ In order to calculate $G$, we need a metric, which we assume to be of the form
 \begin{align*}
 	g_{\mu \nu} = \bar{g}_{\mu\nu} + h_{\mu\nu},
 \end{align*}
-where $\bar{g}$ is the FRW metric, and $h$ is a again a small perturbation.
+where $\bar{g}$ is the \ac{frw} metric, and $h$ is a again a small perturbation.
 The perturbation $h$ can again be decomposed, according to the behaviour of their components under coordinate changes.
 \begin{itemize}
-	\item Tensor perturbations correspond to gravitational waves, which are important for the polarization of the CMB. However, they are too small to have been detected directly from the CMB.
+	\item Tensor perturbations correspond to gravitational waves, which are important for the polarization of the \ac{cmb}. However, they are too small to have been detected directly from the \ac{cmb}.
 	\item Vector perturbations are vorticity modes, which decay. They are thus not very important in cosmology.
 	\item Scalar perturbations can be thought of perturbations in the gravitational potential. They play a central role in structure formation, so we will focus solely on them.
 \end{itemize}
@@ -398,13 +399,14 @@ In summary, small modes are suppressed, while large modes stay mostly constant.
 \section{Transfer function}
 We can describe the transition from early times to the matter dominated era by a \emph{transfer function}. We write the potential at late times ($a \gg a_\text{eq}$) as
 \begin{align*}
-	\Phi_k(a) = \frac{9}{10} \Phi_{p, k} T(k) \frac{D(a)}{a}
+	\Phi_k(a) = \frac{9}{10} \Phi_{p, k} T(k) \frac{D(a)}{a},
 \end{align*}
+where
 \begin{itemize}
-	\item $\Phi_{p, k}$ is the primordial potential, which is the potential at initial conditions.
-	\item $T(k)$ is the transfer functions, which obeys $T \to 1$ as $k \to 0$
-	\item $D(a)$ is the growth factor, normalized such that $D(a) = a$ in the matter era.\sidenote{We have derived $D(a) \propto a$ before, so we can do this.}
-	\item The $9/10$ factor is the large scale suppression which we have seen in the previous diagram.
+	\item $\Phi_{p, k}$ is the primordial potential, which is the potential at initial conditions,
+	\item $T(k)$ is the transfer functions, which obeys $T \to 1$ as $k \to 0$,
+	\item $D(a)$ is the growth factor, normalized such that $D(a) = a$ in the matter era,\sidenote{We have derived $D(a) \propto a$ before, so we can do this.} and
+	\item the $9/10$ factor is the large scale suppression which we have seen in the previous diagram.
 \end{itemize}
 The transfer function describes how much of the primordial potential is still left at a time corresponding to scale factor $a$.
 The solution for different cases is shown in \cref{fig:transfer-function}.
@@ -414,19 +416,20 @@ The solution for different cases is shown in \cref{fig:transfer-function}.
 	\caption{The transfer function for adiabatic perturbations. Results are shown for a purely baryonic model, for a cold dark matter model, a hot dark matter model, and a mixed dark matter model. The dotted parts indicate negative values.}
 	\label{fig:transfer-function}
 \end{figure}
+\newacronym{hdm}{HDM}{hot dark matter}
 
 At small $k$, $T = 1$ as required.
 \begin{itemize}
-	\item In the CDM model, $T(k)$ is suppressed at $k \gg k_\text{eq}$, as we have seen before. We find $T(k) \propto (k/k_\text{eq})^2 \ln(k/k_\text{eq})$.
-	\item In the HDM model\sidenote{For example, dark matter which is made up of neutrinos}, the perturbations are damped strongly due to free streaming when $k > k_\nu$.
+	\item In the \ac{cdm} model, $T(k)$ is suppressed at $k \gg k_\text{eq}$, as we have seen before. We find $T(k) \propto (k/k_\text{eq})^2 \ln(k/k_\text{eq})$.
+	\item In the \ac{hdm} model\sidenote{For example, dark matter which is made up of neutrinos}, the perturbations are damped strongly due to free streaming when $k > k_\nu$.
 	\item In the baryon model, dark matter is made up of baryons, which is ruled out for different reasons, but we can still look at the solution. Here, two processes act in addition to $k_\text{eq}^{-1}$ suppression:
 	\begin{itemize}
 		\item Jeans instability for $k > k_J$ inhabits growth, and instead leads to oscillations. We have seen these as oscillations in time at constant $k$ before, while here they are shown as oscillations in $k$ at constant time.
 		\item Silk damping.
 	\end{itemize}
 	As a result, $T(k)$ is suppressed and oscillates on small scales.
-	\item In a mixed model\sidenote{\SI{70}{\percent} CDM and \SI{30}{\percent} HDM}, nothing very interesting happens.
-	\item In CDM + baryons (blue line), small oscillations occur around the CDM curve.
+	\item In a mixed model\sidenote{\SI{70}{\percent} \ac{cdm} and \SI{30}{\percent} \ac{hdm}}, nothing very interesting happens.
+	\item In \ac{cdm} + baryons (blue line), small oscillations occur around the \ac{cdm} curve.
 \end{itemize}
 
 
@@ -588,7 +591,7 @@ The primordial power spectrum obeys $P(k) \propto k^{n-4}$, and it is commonly w
 \end{align*}
 where $\delta_H$ is a normalization parameter.\sidenote{The normalization can be done in two ways:
 \begin{itemize}
-	\item With $\delta_H$, convenient to relate to the CMB anisotropy power spectrum
+	\item With $\delta_H$, convenient to relate to the \ac{cmb} anisotropy power spectrum
 	\item With $\sigma_8$, equal to $\sigma_R$ with $R = 8 h^{-1} \si{\mega\parsec}$ at $z=0$. This is convenient for large scale structure measurements at low redshifts.
 \end{itemize}}
 Combining all these, we get
@@ -603,9 +606,9 @@ Combining all these, we get
 
 The matter power spectrum is plotted as a function of $k$ for different cosmological models in \cref{fig:k-power}.
 \begin{itemize}
-	\item In the ΛCDM model, the turnover is at $k_\text{eq} \propto \Omega_m h^2$.
-	\item In the SCDM model (no cosmological constant, compensated with larger $\Omega_m$), the turnover is at a higher $k$.
-	\item In the HDM model, free streaming suppresses perturbations on small scales, so the power at large $k$ falls off quickly.
+	\item In the \textsc{Λcdm} model, the turnover is at $k_\text{eq} \propto \Omega_m h^2$.
+	\item In the \textsc{scdm} model (no cosmological constant, compensated with larger $\Omega_m$), the turnover is at a higher $k$.
+	\item In the \ac{hdm} model, free streaming suppresses perturbations on small scales, so the power at large $k$ falls off quickly.
 \end{itemize}
 As we can see, by measuring the power spectrum on small scales, we can distinguish the models fairly well.
 
@@ -623,11 +626,13 @@ As we can see, by measuring the power spectrum on small scales, we can distingui
 	\label{fig:power-lcdm}
 \end{figure}
 
-We look at the matter power spectrum for ΛCDM in more detail in \cref{fig:power-lcdm}. 
+\newacronym{bao}{BAO}{baryon acoustic oscillation}
+
+We look at the matter power spectrum for \textsc{Λcdm} in more detail in \cref{fig:power-lcdm}. 
 \begin{itemize}
 	\item At large scales, $P(k) \propto k^n$, which is essentially the same as the primordial power spectrum.
 	\item The peak is at $k_\text{eq} \approx \SI{0.0073}{\per\mega\parsec} \Omega_m h^2$.
-	\item At intermediate scales, there are baryon acoustic oscillations (BAO). These are at a scale of \SI{0.04}{\per\mega\parsec}, corresponding to a size of the horizon of \SI{150}{\mega\parsec}, which is called the sound horizon.
+	\item At intermediate scales, there are \acp{bao}. These are at a scale of \SI{0.04}{\per\mega\parsec}, corresponding to a size of the horizon of \SI{150}{\mega\parsec}, which is called the sound horizon.
 	\item At small scales,
 	\begin{align*}
 		P(k)
@@ -648,16 +653,16 @@ Superclusters are not collapsing yet, but should do so later.
 
 
 \section{Cosmic Microwave Background anisotropies}
-The CMB gives us a picture of the universe at last scattering, which happened at $z_* \approx \num{1100}$. While the spectrum is very close to a blackbody spectrum, with a temperature of $T = \SI{2.728(2)}{\kelvin}$ today, there are small anisotropies with an amplitude of $\Delta T / T \approx \num{e-4}$, as shown in \cref{fig:cmb-anisotropy}.
+The \ac{cmb} gives us a picture of the universe at last scattering, which happened at $z_* \approx \num{1100}$. While the spectrum is very close to a blackbody spectrum, with a temperature of $T = \SI{2.728(2)}{\kelvin}$ today, there are small anisotropies with an amplitude of $\Delta T / T \approx \num{e-4}$, as shown in \cref{fig:cmb-anisotropy}.
 
 \begin{marginfigure}
 	\centering
 	\includegraphics[width=\textwidth]{img/ch-03/cmb-anisotropy.jpeg}
-	\caption{The anisotropy of the CMB in galactic coordinates, as measured by the Planck mission. The galactic foreground, which are microwave emission of the Milky Way, have been removed.}
+	\caption{The anisotropy of the \ac{cmb} in galactic coordinates, as measured by the Planck mission. The galactic foreground, which are microwave emission of the Milky Way, have been removed.}
 	\label{fig:cmb-anisotropy}
 \end{marginfigure}
 
-During recombination, protons and electrons combined to hydrogen. We have defined the fraction of free electrons $X_e$, which decreases during recombination, see \cref{fig:recombination}.The interaction strength between photons and electrons can be characterized by the optical depth,
+During recombination, protons and electrons combined to hydrogen. We have defined the fraction of free electrons $X_e$, which decreases during recombination, see \cref{fig:recombination}. The interaction strength between photons and electrons can be characterized by the optical depth,
 \begin{align*}
 	\tau_T(t) = \int_0^t n_e \sigma_T \dd{t},
 \end{align*}
@@ -721,7 +726,9 @@ The first term is the \emph{Sachs-Wolfe term}, $\Theta_0 + \Psi$. $\Theta_0$ is 
 
 The second term is a function of the dipole $\Theta_1$, which is related to the bulk velocity of photons at last scattering. This is called the \emph{Doppler term} along the line of sight.
 
-The third term involves $\dot{\Phi}$ and $\dot{\Psi}$, which are time derivatives of gravitational potentials. We saw that, in the matter era, both derivatives are zero. However, they can be non-zero if dark matter and curvature are present. This term is called the \emph{integrated Sachs-Wolf term} (ISW).
+\newacronym{isw}{ISW}{integrated Sachs-Wolf term}
+
+The third term involves $\dot{\Phi}$ and $\dot{\Psi}$, which are time derivatives of gravitational potentials. We saw that, in the matter era, both derivatives are zero. However, they can be non-zero if dark matter and curvature are present. This term is called the \ac{isw}.
 
 The theoretical model of the angular power spectrum and several measurements are shown in \cref{fig:power-spectrum}. We can see that the most powerful mode has a scale of around \SI{1}{\degree}, which can also be seen in \cref{fig:cmb-anisotropy}.
 
@@ -732,7 +739,7 @@ The theoretical model of the angular power spectrum and several measurements are
 	\label{fig:power-spectrum}
 \end{figure}
 
-\subsubsection{Asymptotic limits}
+\subsection{Asymptotic limits}
 We now analyse the different areas in the angular power spectrum.
 
 At large scales, where $k \ll \chi_h^{-1}(z_*)$, we get for the Sachs-Wolfe term
@@ -749,7 +756,7 @@ where $\delta_H$ is a normalization factor, and $n$ is the spectral index in the
 \begin{align*}
 	C_\ell^{\text{SW}} \propto \delta_H^2 \frac{1}{\ell(\ell+1)},
 \end{align*}
-so $\ell(\ell+1) C_\ell$ is constant, which is why the vertical axis in the plot was chosen in such a way.\sidenote{It is not exactly flat for $n=1$, because the Doppler term and the ISW term have been neglected here.}
+so $\ell(\ell+1) C_\ell$ is constant, which is why the vertical axis in the plot was chosen in such a way.\sidenote{It is not exactly flat for $n=1$, because the Doppler term and the \ac{isw} term have been neglected here.}
 
 At intermediate scales, we see acoustic oscillations. We have already seen this in the ideal fluid equations, where we found baryon-photon oscillations proportional to
 \begin{align*}
@@ -767,11 +774,13 @@ Remember that $\Theta = L_\text{comoving} / r(\chi)$, where $r$ is the comoving 
 	&\approx k_m r(\chi_*)\\
 	&= m \pi \frac{r(\chi_*)}{L_s(\chi_*)}.
 \end{align*}
-We find the first peak at $\ell \approx 200$ for the ΛCDM model.
+We find the first peak at $\ell \approx 200$ for the \textsc{Λcdm} model.
 
 On small scales, we see Silk damping, where oscillations are damped because of imperfect coupling between photons and baryons. This occurs at $\ell > 2000$.
 
-In summary, we see that measurements of the CMB power spectrum can be used to put constraints on cosmological models. The results are shown in \cref{tab:constraints}. Similarly, we can also measure the statistics of the polarization of the CMB.
+In summary, we see that measurements of the \ac{cmb} power spectrum can be used to put constraints on cosmological models.
+%The results are shown in \cref{tab:constraints}.
+Similarly, we can also measure the statistics of the polarization of the \ac{cmb}.
 
 % TODO table constraints
 
@@ -797,35 +806,35 @@ The bias depends on the galaxy sample, the scale $k$, and redshift $z$. Fortunat
 
 There are two kinds of galaxy surveys:
 \begin{itemize}
-	\item Imaging surveys, such as POSS/APM, DES, and SDSS, measure the position and shape of galaxies.
-	\item Spectroscopy surveys, such as SDSS, 2DF, and Wiggle-z, measure the position and redshift of galaxies. A slice of the galaxy map measured by SDSS is shown in \cref{fig:spectroscopic-survey}.
+	\item Imaging surveys, such as \textsc{poss}/\textsc{apm}, \textsc{des}, and \textsc{sdss}, measure the position and shape of galaxies.
+	\item Spectroscopy surveys, such as \textsc{sdss}, \textsc{2df}, and Wiggle-z, measure the position and redshift of galaxies. A slice of the galaxy map measured by \textsc{sdss} is shown in \cref{fig:spectroscopic-survey}.
 \end{itemize}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/ch-03/sdss.jpeg}
-	\caption{A slice of the sky from the SDSS. Some galaxy clusters seem to be stretched in the radial direction, which is caused by the different peculiar velocities of the galaxies. This phenomenon is known as redshift space distortions.}
+	\caption{A slice of the sky from the \textsc{sdss}. Some galaxy clusters seem to be stretched in the radial direction, which is caused by the different peculiar velocities of the galaxies. This phenomenon is known as redshift space distortions.}
 	\label{fig:spectroscopic-survey}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/ch-03/sdss-power-spectrum.pdf}
-	\caption{The SDSS power spectrum.}
+	\caption{The \textsc{sdss} power spectrum.}
 	\label{fig:sdss-power-spectrum}
 \end{figure}
 
-In \cref{fig:sdss-power-spectrum}, the power spectrum found by the SDSS is shown.
+In \cref{fig:sdss-power-spectrum}, the power spectrum found by the \textsc{sdss} is shown.
 From the residual plot, we see that even the baryon acoustic oscillations are well resolved.
 These are fixed in comoving coordinates, so they can function as a standard ruler.
 
-We can measure the two-dimensional clustering with an imaging survey such as APM, as shown in \cref{fig:apm}.
-This can be used to rule out HDM or bayron-only models.
-The current measurements confirm the ΛCDM model, even though there are still small deviations, which come from the scale dependence of the bias factor.
+We can measure the two-dimensional clustering with an imaging survey such as \textsc{apm}, as shown in \cref{fig:apm}.
+This can be used to rule out \ac{hdm} or bayron-only models.
+The current measurements confirm the \textsc{Λcdm} model, even though there are still small deviations, which come from the scale dependence of the bias factor.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/ch-03/apm.pdf}
-	\caption{Results of the APM survey.}
+	\caption{Results of the \textsc{apm} survey.}
 	\label{fig:apm}
 \end{figure}
 
