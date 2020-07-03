@@ -250,7 +250,7 @@ On small scales, the stress tensor can be important. The large random velocities
 \section{Solutions}
 
 \subsection{Collisionless gas}
-We assume adiabatic perturbations, neglect free streaming, and only consider cold dark matter. In the ideal fluid equations, we can set $p=0$ and $c_s^2 = 0$. We get
+We assume adiabatic perturbations, neglect free streaming, and only consider cold dark matter. In the ideal fluid equations, we can set $p=0$ and $c_s^2 = 0$ (pressureless fluid). We get
 \begin{align*}
 	\dv[2]{\delta_{\vec{k}}}{t}
 	+ 2 \frac{\dot{a}}{a} \dv{\delta_{\vec{k}}}{t}
@@ -258,10 +258,10 @@ We assume adiabatic perturbations, neglect free streaming, and only consider col
 \end{align*}
 We consider solutions for an expanding universe and find the following solutions (homework):
 \begin{itemize}
-	\item The solution $\delta_- \propto H(t)$ is decaying, since $H$ becomes smaller over time.
+	\item The solution $\delta_- \propto H(t)$ is decaying, since $H$ becomes smaller with time.
 	\item The growing solution is
 	\begin{align*}
-		\delta_+ \propto H(t) \int_0^t \frac{\dd{t'}}{a(t)^2 H(t')},
+		\delta_+ \propto H(t) \int_0^t \frac{\dd{t'}}{a(t')^2 H(t')},
 	\end{align*}
 	which is a result of gravitational instability. This is similar to what we found before, but this time we did not neglect expansion. We define the linear growth factor $D(z) \propto \delta_+$.
 \end{itemize}
@@ -296,11 +296,11 @@ which can be rearranged to
 	&\propto a^2 a^{-3} D(a) \\
 	&\propto \frac{D(a)}{a}.
 \end{align*}
-This means that $\Phi_{\vec{k}}$ is constant in the matter dominated case, and $\Phi_{\vec{k}}$ decays in the \textsc{ocdm} and \textsc{Λcdm} cases at late times.
+This means that $\Phi_{\vec{k}}$ is constant in the matter dominated case and $\Phi_{\vec{k}}$ decays in the \textsc{ocdm} and \textsc{Λcdm} cases at late times.
 
 
 \subsection{Two non-relativistic components}
-We consider collisionless dark matter and collisionfull baryons. We assume that the pressureless dark matter dominates the matter density, so $\rho_\text{tot} \approx \rho_\text{dm}$.
+We consider collisionless dark matter and collisionfull baryons. We assume that the pressureless dark matter dominates the matter density, so $\rho_\text{tot} = \rho_\text{b} + \rho_\text{dm} \approx \rho_\text{dm}$.
 
 There are now two differential equations:
 \begin{align*}
@@ -321,10 +321,10 @@ For the baryons,
 	\delta_{\text{b},\vec{k}}(t)
 	&= \frac{\delta_{\text{dm},\vec{k}}(t)}{1 + (k/k_J)^2},
 \end{align*}
-where $k_J = a/c_s \sqrt{4 \pi G \bar{\rho}}$ is the Jeans wavenumber. From this equation, we see that the baryon perturbations are equal to the dark matter perturbations for small $k$. For large $k$, pressure becomes more important, and the baryon perturbations will be smaller.\sidenote{Keep in mind that large $k$ means small length scales, and vice versa. When particles are close together, pressure becomes important.}
+where $k_J = a/c_s \sqrt{4 \pi G \bar{\rho}}$ is the Jeans wavenumber. From this equation, we see that the baryon perturbations are equal to the dark matter perturbations for small $k$. For large $k$, pressure becomes more important, and the baryon perturbations will be smaller and oscillate.\sidenote{Keep in mind that large $k$ means small length scales, and vice versa. When particles are close together, pressure becomes important.}
 
 \paragraph*{Acoustic oscillations.}
-We have just seen that baryon behaviour becomes a lot more interesting at smaller length scales, where pressure is higher. This leads to oscillations and damping of the amplitude of the perturbations. One can show that the baryon density of a given mode $\vec{k}$ oscillates like
+We have just seen that baryon behaviour becomes a lot more interesting at smaller length scales, where baryon pressure is higher. This leads to oscillations and damping of the amplitude of the perturbations. One can show that the baryon density of a given mode $\vec{k}$ oscillates like
 \begin{align*}
 	\delta_{\text{b},\vec{k}} \propto \exp(\frac{i k c_s t}{a}) + \text{constant},
 \end{align*}
