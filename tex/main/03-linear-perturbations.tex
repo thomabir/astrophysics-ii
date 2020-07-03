@@ -345,12 +345,12 @@ The Einstein equations give the time evolution of space-time. The perturbed vers
 \end{align*}
 where the variables with a bar are the background solutions from the FRW metric, and the $\delta$-terms are sufficiently small perturbations, so that we can treat them with linear perturbation theory.
 
-In order to calculate $G$, we need a metric, which we assume to be of the form
+In order to calculate $G_{\mu\nu}$, we need a metric, which we assume to be of the form
 \begin{align*}
 	g_{\mu \nu} = \bar{g}_{\mu\nu} + h_{\mu\nu},
 \end{align*}
-where $\bar{g}$ is the \ac{frw} metric, and $h$ is a again a small perturbation.
-The perturbation $h$ can again be decomposed, according to the behaviour of their components under coordinate changes.
+where $\bar{g}_{\mu\nu}$ is the \ac{frw} metric, and $h_{\mu\nu}$ is a again a small perturbation.
+The perturbation $h_{\mu\nu}$ can be decomposed, according to the behaviour of their components under coordinate changes.
 \begin{itemize}
 	\item Tensor perturbations correspond to gravitational waves, which are important for the polarization of the \ac{cmb}. However, they are too small to have been detected directly from the \ac{cmb}.
 	\item Vector perturbations are vorticity modes, which decay. They are thus not very important in cosmology.
@@ -379,10 +379,10 @@ The resulting set of linear differential equations are called the \emph{linearis
 \subsection*{Solutions in asymptotic limits}
 For each $\vec{k}$ mode, the equations can be solved separately. There are several important scales:
 \begin{itemize}
-	\item $k^{-1}$ is the comoving wavelength scale of the $\vec{k}$-mode
+	\item $k^{-1}~R$ is the comoving wavelength scale of the $\vec{k}$-mode
 	\item $\chi_h$ is the comoving horizon
-	\item $a_\text{eq}$ is the scale factor at matter-radiation equality, or $a_{\text{eq2}}$ at matter-dark energy equality
-	\item $\chi_h(a_\text{eq})$ is the size of the horizon at matter-radiation equality
+	\item $a_\text{eq}$ is the scale factor at matter-radiation equality and $a_{\text{eq2}}$ at matter-dark energy equality
+	\item $\chi_h(a_\text{eq})=k_\text{eq}^{-1}$ is the size of the horizon at matter-radiation equality
 \end{itemize}
 
 \begin{figure}
@@ -395,7 +395,7 @@ For each $\vec{k}$ mode, the equations can be solved separately. There are sever
 The solution of the Einstein-Boltzmann equations is the potential $\Phi$, shown in \cref{fig:asymptotic-behaviour}. We consider the evolution of a very large and a very small mode:
 \begin{itemize}
 	\item Large modes ($k \ll k_\text{eq}$) are constant in the radiation era. When entering the matter era, they lose about \SI{10}{\percent} of their amplitude, but then remain constant.
-	\item Small modes ($k\gg k_\text{eq}$) decay in the radiation era, but remain constant in the matter era. In the dark energy era, they evolve as $D(a)/a$, which we have already seen in the Newtonian treatment.
+	\item Small modes ($k\gg k_\text{eq}$) enter the horizon first. They decay in the radiation era, but remain constant in the matter era. In the dark energy era, they evolve as $D(a)/a$, which we have already seen in the Newtonian treatment.
 \end{itemize}
 In summary, small modes are suppressed, while large modes stay mostly constant.
 
