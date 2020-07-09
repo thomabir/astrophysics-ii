@@ -584,7 +584,7 @@ The Poisson equation is
 which can be rearranged and combined with the definition of the transfer function to
 \begin{align*}
 	\delta_{\vec{k}}(a)
-	&= \frac{2}{5} \frac{k^2}{\Omega_m H_0^2} \Phi_{p, \vec{k}} T(k) D(a),
+	&= \frac{3}{5} \frac{k^2}{\Omega_m H_0^2} \Phi_{p, \vec{k}} T(k) D(a),
 \end{align*}
 where $a \gg a_\text{eq}$, as we required when we introduced the transfer function.
 The primordial power spectrum obeys $P(k) \propto k^{n-4}$, and it is commonly written as
@@ -612,7 +612,7 @@ Combining all these, we get
 The matter power spectrum is plotted as a function of $k$ for different cosmological models in \cref{fig:k-power}.
 \begin{itemize}
 	\item In the \textsc{Λcdm} model, the turnover is at $k_\text{eq} \propto \Omega_m h^2$.
-	\item In the \textsc{scdm} model (no cosmological constant, compensated with larger $\Omega_m$), the turnover is at a higher $k$.
+	\item In the \textsc{scdm} model (no cosmological constant, compensated with larger $\Omega_m \approx 1$), the turnover is also at $k_eq$, which is larger, due to the larger $\Omega_m$.
 	\item In the \ac{hdm} model, free streaming suppresses perturbations on small scales, so the power at large $k$ falls off quickly.
 \end{itemize}
 As we can see, by measuring the power spectrum on small scales, we can distinguish the models fairly well.
@@ -635,10 +635,10 @@ As we can see, by measuring the power spectrum on small scales, we can distingui
 
 We look at the matter power spectrum for \textsc{Λcdm} in more detail in \cref{fig:power-lcdm}. 
 \begin{itemize}
-	\item At large scales, $P(k) \propto k^n$, which is essentially the same as the primordial power spectrum.
-	\item The peak is at $k_\text{eq} \approx \SI{0.0073}{\per\mega\parsec} \Omega_m h^2$.
+	\item At large scales (low $k$), $P(k) \propto k^n$, which is essentially the same as the primordial power spectrum.
+	\item The peak is at $k_\text{eq} \approx \SI{0.073}{\per\mega\parsec} \Omega_m h^2$.
 	\item At intermediate scales, there are \acp{bao}. These are at a scale of \SI{0.04}{\per\mega\parsec}, corresponding to a size of the horizon of \SI{150}{\mega\parsec}, which is called the sound horizon.
-	\item At small scales,
+	\item At small scales (large $k$),
 	\begin{align*}
 		P(k)
 		&\propto k^n T(k)^2\\
