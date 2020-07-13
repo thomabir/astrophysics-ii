@@ -658,7 +658,7 @@ Superclusters are not collapsing yet, but should do so later.
 
 
 \section{Cosmic Microwave Background anisotropies}
-The \ac{cmb} gives us a picture of the universe at last scattering, which happened at $z_* \approx \num{1100}$. While the spectrum is very close to a blackbody spectrum, with a temperature of $T = \SI{2.728(2)}{\kelvin}$ today, there are small anisotropies with an amplitude of $\Delta T / T \approx \num{e-4}$, as shown in \cref{fig:cmb-anisotropy}.
+The \ac{cmb} gives us a picture of the universe at last scattering, which happened at $z_* \approx \num{1100}$ ($t \approx \num{300000}$ years). While the spectrum is very close to a blackbody spectrum, with a temperature of $T = \SI{2.728(2)}{\kelvin}$ today, there are small anisotropies with an amplitude of $\Delta T / T \approx \num{e-4}$, as shown in \cref{fig:cmb-anisotropy}.
 
 \begin{marginfigure}
 	\centering
@@ -679,7 +679,7 @@ For convenience, we define the conformal time $\tau$,
 	\implies \tau(t) = \int_0^t \frac{c \dd{t'}}{a(t')}.
 \end{align*}
 
-We write the temperature as a $T(\vec{x}, \uvec{q}, \tau)$, where $\vec{x}$ is our position in space, $\uvec{q}$ is the direction in which the photons are travelling, and $\tau$ is the conformal time. We define the small temperature deviation $\theta$ from the uniform background temperature $\bar{T}$ as
+We write the temperature as a $T(\vec{x}, \uvec{q}, \tau)$, where $\vec{x}$ is our position in space, $\uvec{q}$ is the direction in which the photons are travelling, and $\tau$ is the conformal time. We define the small temperature deviation $\Theta$ from the uniform background temperature $\bar{T}$ as
 \begin{align*}
 	T(\vec{x}, \uvec{q}, \tau) = \bar{T}(\tau) [1 + \Theta(\vec{x}, \uvec{q}, \tau)].
 \end{align*}
@@ -696,22 +696,22 @@ where
 \end{align*}
 are the basis coefficients, and $Y_{\ell m}$ are the spherical harmonics.
 
-Since $\theta$ is just one possible outcome of a random quantum process, we again have to fall back to statistical quantities in order to compare measurements with models.
-We thus define the angular power spectrum $c_\ell = \moment{\abs{a_{\ell m}}^2}$ as a moment of the spherical basis coefficients, where we set $\tau = \tau_0$.
+Since $\Theta$ is just one possible outcome of a random quantum process, we again have to fall back to statistical quantities in order to compare measurements with models.
+We thus define the angular power spectrum $C_\ell = \moment{\abs{a_{\ell m}}^2}$ as a moment of the spherical basis coefficients, where we set $\tau = \tau_0$.
 
-With a Fourier transform, we get $\Theta(\vec{x}, \uvec{q}, \tau) \to \Theta(\vec{k}, \uvec{q}, \tau)$.
-We define $\mu = \uvec{q} \cdot \vec{k}$, and
+With a Fourier transform, we get $\Theta(\vec{x}, \uvec{q}, \tau) \to \Theta(\vec{k}, \uvec{q}, \tau)$, where $\vec{k}$ is the wave number.
+We define $\mu = \uvec{q} \cdot \vec{k}$, and the moments
 \begin{align*}
-	\Theta_\ell(k, z)
+	\Theta_\ell(k, \tau)
 	&= \frac{1}{(-i)^\ell}
 	\int_{-1}^1 \frac{\dd{\mu}}{\tau} \Leg_\ell(\mu) \Theta(\vec{k}, \uvec{q}, \tau),
 \end{align*}
 where $\Leg_\ell$ are Legendre polynomials. Then
 \begin{align*}
-	c_\ell
+	C_\ell
 	&= \frac{2 V}{\pi} \int \dd{k} k^2 \avg{\abs{\Theta_\ell(\vec{k}, \tau_0)}^2}.
 \end{align*}
-We would like to relate this quantity, which we defined at $z_0$, to its value at an earlier time $z_*$. Using the solution to the Einstein-Boltzmann equation, and assuming instantaneous decoupling, we get
+We would like to relate this quantity, which we defined at $\tau_0$, to its value at an earlier time $\tau_*$. Using the solution to the Einstein-Boltzmann equation, and assuming instantaneous decoupling, we get
 \begin{align*}
 	\Theta_\ell(k, \tau_0)
 	&= [\Theta_0(k, \tau_*) + \Psi(k, \tau_*)]
@@ -740,14 +740,14 @@ The theoretical model of the angular power spectrum and several measurements are
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/ch-03/power-spectrum.pdf}
-	\caption{The power spectrum of the cosmic microwave background radiation temperature anisotropy in terms of the angular scale (or multipole moment). The measurements and the theoretical model are shown.}
+	\caption{The power spectrum of the cosmic microwave background radiation (temperature anisotropy) in terms of the angular scale (or multipole moment). The measurements and the theoretical model are shown.}
 	\label{fig:power-spectrum}
 \end{figure}
 
 \subsection{Asymptotic limits}
 We now analyse the different areas in the angular power spectrum.
 
-At large scales, where $k \ll \chi_h^{-1}(z_*)$, we get for the Sachs-Wolfe term
+At large scales, where $k \ll \chi_h^{-1}(\tau_*)$, we get for the Sachs-Wolfe term
 \begin{align*}
 	C_\ell^\text{SW} \propto \delta_H^2 \frac{
 	\Gamma\left(\ell+\frac{n-1}{2}\right)
@@ -763,12 +763,12 @@ where $\delta_H$ is a normalization factor, and $n$ is the spectral index in the
 \end{align*}
 so $\ell(\ell+1) C_\ell$ is constant, which is why the vertical axis in the plot was chosen in such a way.\sidenote{It is not exactly flat for $n=1$, because the Doppler term and the \ac{isw} term have been neglected here.}
 
-At intermediate scales, we see acoustic oscillations. We have already seen this in the ideal fluid equations, where we found baryon-photon oscillations proportional to
+At intermediate scales, we see acoustic oscillations. We have already seen this in the ideal fluid equations, where we found that the baryon-photon oscillations are proportional to
 \begin{align*}
 	\exp(\frac{i k c_s t}{a})
-	= \exp(i k c_s \tau)
+	= \exp(i k c_s \tau).
 \end{align*}
-at decoupling $z_*$. The peaks are found at
+At decoupling $\tau_*$ the oscillations in $k$ have peaks at
 \begin{align*}
 	k_m = \frac{m \pi}{L_s(\tau_\star)},
 \end{align*}
@@ -779,7 +779,7 @@ Remember that $\Theta = L_\text{comoving} / r(\chi)$, where $r$ is the comoving 
 	&\approx k_m r(\chi_*)\\
 	&= m \pi \frac{r(\chi_*)}{L_s(\chi_*)}.
 \end{align*}
-We find the first peak at $\ell \approx 200$ for the \textsc{Λcdm} model.
+We find the first peak at $\ell_1 \approx 200$ for the \textsc{Λcdm} model.
 
 On small scales, we see Silk damping, where oscillations are damped because of imperfect coupling between photons and baryons. This occurs at $\ell > 2000$.
 
