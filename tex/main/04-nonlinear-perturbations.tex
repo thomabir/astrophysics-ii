@@ -179,7 +179,7 @@ Depending on the cosmological models, the overdensity $\delta_c$ required for co
 
 In the previous chapter, we assumed a collisionless medium. To find out when this approximation is valid, we look at the collision time-scales in thermodynamic equilibrium.
 
-We consider a system with $N$ self-gravitating particles and diameter $r$.
+We consider a system with $N$ self-gravitating particles and size $r$.
 Each particle $i$ has a velocity $\vec{v}_i$ and a mass $m$. The average velocity is $v = \avg{v_i}$.
 There are several relevant time scales.
 \begin{itemize}
@@ -188,6 +188,12 @@ There are several relevant time scales.
 		t_\text{cross} = \frac{r}{v}
 	\end{align*}
 
+	\item The \emph{time scale for direct encounters} $t_\text{direct}$ is the average time a direct encounter of two particles. We find that 
+	\begin{align*}
+		t_\text{direct}
+		=  \left( \frac{r}{r_p} \right) ^2\frac{t_\text{cross}}{N},
+	\end{align*}
+	where $r_p$ is the particle radius. 
 	\item The \emph{time scale for close encounters} $t_\text{close}$ is the average time between close encounters.
 	To calculate it, we look at a gravitational two-body interaction of two close particles.
 	We define an encounter as a close encounter if the change of the speed of the particle due to the interaction is similar to the initial speed,
@@ -207,19 +213,20 @@ There are several relevant time scales.
 	We define $t_\text{relax}$ as the time scale for which $\Delta v^2$ is comparable to $v^2$. One can show that
 	\begin{align*}
 		t_\text{relax}
-		\defeq \frac{N}{10 \ln N} t_\text{cross}.
+		= \frac{N}{10 \ln N} t_\text{cross}.
 	\end{align*}
 \end{itemize}
 
 In typical astrophysical systems with $N \gg 100$, such as galaxies and galaxy clusters, we usually find
 \begin{align*}
-	t_\text{close} \gg t_\text{relax} \gg t_H \gg t_\text{cross},
+	t_\text{direct} \gg t_\text{close} \gg t_\text{relax} \gg t_H \gg t_\text{cross},
 \end{align*}
 where $t_H = H^{-1} \approx \SI{e10}{\year}$ is the Hubble time.
 Collisions are thus so rare that we can treat many systems as effectively collisionless.
 
 For example, in a galaxy we have $r \approx \SI{10}{\kilo\parsec}$, $v \approx \SI{200}{\kilo\meter\per\second}$, and $N \approx 10^{10}$, which yields
 \begin{align*}
+	t_\text{direct} &= \SI{e21}{\year},\\
 	t_\text{close} &= \SI{5e17}{\year},\\
 	t_\text{relax} &= \SI{2e15}{\year},\\
 	t_H &= \SI{e10}{\year},\\
@@ -229,7 +236,7 @@ Gravitational collisions are apparently very inefficient and can be neglected fo
 
 \subsection{Basic Dynamics}
 
-The dynamics can be found from the collisionless Boltzmann equation (CBE), with a phase-space distribution function $f(\vec{x}, \vec{v}, t)$.
+The dynamics of the system can be found from the collisionless Boltzmann equation (CBE), with a phase-space distribution function $f(\vec{x}, \vec{v}, t)$.
 As we've seen before, the moments of $f$ are
 \begin{itemize}
 	\item the number density $n(\vec{x}, t) = \int f(\vec{x}, \vec{v}, t) \dd{^3v} = \rho(\vec{x}, t)/m$,
@@ -310,7 +317,7 @@ to get
 This is the Euler equation, but with $n \sigma_{ij}^2$ instead of $p$, and $n$ instead of $\rho$. We already stated this result in the previous chapter, and now we have proven it. The equation in this form is called the \emph{Jeans equation}.
 
 \paragraph*{Discussion}
-If we take the Jeans equation, the continuity equation, and the Poisson equation, we have a total of five equations in the 11 unknowns $\rho$, $v_i$, $\sigma_{ij}$ (6, because it is symmetric) and $\rho$. Evidently, we have too many unknowns. We could try to take higher moments of the CBE, but this only adds more unknowns in the end. In order to close the system, we need more assumptions.\sidenote{We didn't have this problem for an ideal fluid, because the equation of state was used.}
+If we take the Jeans equation, the continuity equation, and the Poisson equation, we have a total of five equations in the 11 unknowns $\rho$, $v_i$, $\sigma_{ij}$ (6, because it is symmetric) and $\Phi$. Evidently, we have too many unknowns. We could try to take higher moments of the CBE, but this only adds more unknowns in the end. In order to close the system, we need more assumptions.\sidenote{We didn't have this problem for an ideal fluid, because the equation of state was used.}
 
 
 
