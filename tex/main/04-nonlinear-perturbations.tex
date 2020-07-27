@@ -21,7 +21,7 @@ We will study mainly the Halo model. We start with a model that only contains da
 
 \section{Spherical Collapse}
 
-We consider a spherical overdensity with in an otherwise homogeneous expanding universe. Outside the sphere, the density is $\bar{\rho}$, while inside it is $\rho = \bar{\rho}(1+\delta)$.
+We consider a spherical overdensity within an otherwise homogeneous expanding universe. Outside the sphere, the density is $\bar{\rho}$, while inside it is $\rho = \bar{\rho}(1+\delta)$.
 
 We make a few simplifying assumptions:
 \begin{itemize}
@@ -37,21 +37,21 @@ where $M$ is the mass inside the radius $r$,
 \begin{align*}
 	M = M(r) = \frac{4\pi r^3}{3} \bar{\rho}(1+\delta).
 \end{align*}
-Note that $M(r)$ is constant as long as the different shells don't cross each other, which we assume for now.
-The energy per unit mass of the shell, also called its specific energy $\epsilon$, is the sum of a kinetic and a potential term:
+Note that $M(r)$ is constant as long as the different shells don't cross each other, which we assume for now. 
+If we integrate Newton's second law, we get the energy per unit mass of the shell, also called its specific energy $\epsilon$, which is the sum of a kinetic and a potential term:
 \begin{align*}
 	\epsilon = \frac{1}{2} \left( \dv{r}{t} \right)^2
 	- \frac{G M}{r},
 \end{align*}
-which is constant because of conservation of energy.
-If $\epsilon \geq 0$, the shell expands forever, and if $\epsilon < 0$, the shell might expand for a while, but will eventually contract and collapse. We will focus on the latter case.
+The specific energy is constant because of conservation of energy.
+If $\epsilon \geq 0$, the shell expands forever, and if $\epsilon < 0$, the shell first expands, but then it eventually contracts and collapses. We will focus on the latter case.
 
 The solution of the equation of motion for $\epsilon < 0$ is
 \begin{align*}
 	r &= A(1- \cos \theta) &
 	t &= B(\theta - \sin\theta) &
 	A &= \frac{GM}{2 \abs{\epsilon}} &
-	B &= \frac{GM}{(2 \abs{\epsilon})^{2/3}}
+	B &= \frac{GM}{(2 \abs{\epsilon})^{3/2}}
 \end{align*}
 The solution $r(t)$ is plotted in \cref{fig:shell-collapse-r}.
 The shell expands, reaches a maximum radius $r_\text{ta} = 2 A$ at $t_\text{ta} = \pi B$, and collapses at $t_\text{coll} = 2 t_\text{ta}$.\sidenote{We will show that $t_\text{coll} = 2 t_\text{ta}$ in \cref{ssec:virial-applications}, but we have to derive the Virial theorem first.}
@@ -67,7 +67,7 @@ However, the model will be invalid shortly before $t_\text{coll}$, since shells 
 
 We would also like to derive an expression for $\rho(t)$ inside the sphere, and find the critical density which is required for collapse. To do this, we use a few more of our assumptions and perform some approximations.
 
-At an early time $t_i$, we define $r=r_i$ and $v = v_i$. We assume that at $t_i$, the shell follows the Hubble flow:
+At an early time $t_i$, we define $r=r_i$ and $v = v_i$ as the initial condition. We assume that at $t_i$, the shell follows the Hubble flow:
 \begin{align*}
 	v_i
 	&= \dv{(a x_i)}{t} 
@@ -75,7 +75,7 @@ At an early time $t_i$, we define $r=r_i$ and $v = v_i$. We assume that at $t_i$
 	&= H r_i.
 	&& H = \dot{a}/a 
 \end{align*}
-Plugging in at $t=t_i$, we find
+Plugging in $t=t_i$, we find
 \begin{align*}
 	M
 	= \frac{4\pi r_i^3}{3}  \bar{\rho}(t_i)(1+\delta_i),
@@ -83,7 +83,7 @@ Plugging in at $t=t_i$, we find
 	\epsilon
 	= \frac{v_i^2}{2}  - \frac{GM}{r_i}.
 \end{align*}
-Since we assumed a matter-dominated universe, $a \propto t^{2/3}$, and $H = 2/(3t)$. We also assumed a flat universe, so
+Since we assumed a matter-dominated universe, $a \propto t^{2/3}$ and $H = 2/(3t)$, as well as a flat universe
 \begin{align*}
 	\bar{\rho}
 	= \rho_\text{crit}
