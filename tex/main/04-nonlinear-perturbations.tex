@@ -368,7 +368,7 @@ The first term on the right-hand side can be rewritten with the divergence theor
 	- \sum_i \int x_k \pdv{[\rho \avg{v_i v_j}]}{x_i} \dd{^3 x}
 	&= 2 K_{kj} + \Sigma_{kj}.
 \end{align*}
-The last term on the right-hand side is the Chandrasekhar potential energy tensor. With the continuity equation, one can show that the left-hand side is equal to the moment of inertia tensor. Putting everything together, we get
+The last term on the right-hand side is the Chandrasekhar potential energy tensor. With the continuity equation, one can show that the left-hand side is equal to the moment of inertia tensor. Putting everything together, we get the tensor Virial theorem
 \begin{align*}
 	\frac{1}{2}
 	\dv[2]{I_{jk}}{t}
@@ -377,7 +377,7 @@ The last term on the right-hand side is the Chandrasekhar potential energy tenso
 
 
 \paragraph*{Scalar Virial theorem.}
-From the tensor Virial theorem, we can derive the scalar Virial theorem,
+From the tensor Virial theorem, we can derive the scalar Virial theorem by taking the trace on both sides,
 \begin{align*}
 	\frac{1}{2} \dv[2]{I}{t}
 	&= 2 K + W + \Sigma,
@@ -442,7 +442,7 @@ where $E$ is the total energy of the system.
 \label{ssec:virial-applications}
 
 \paragraph*{Mass estimation.}
-We consider a system composed of many collisionless particles\sidenote{We have seen in \cref{ssec:time-scales} that this is an excellent approximation for many systems, such as galaxies and clusters.} with total mass $M$, average particle velocity $v$, and diameter $R$.
+We consider a system composed of many collisionless particles\sidenote{We have seen in \cref{ssec:time-scales} that this is an excellent approximation for many systems, such as galaxies and clusters.} with total mass $M$, average particle velocity $v$, and size $R$.
 The kinetic and potential energy can be estimated as
 \begin{align*}
 	K \approx \frac{M v^2}{2}, \qquad
@@ -452,7 +452,7 @@ which can be plugged into the Virial theorem to give
 \begin{align*}
 	v^2 \approx \frac{G M}{R}.
 \end{align*}
-Since the radius can be estimated from images, and the average velocity can be estimated from measurements of the Doppler shift, this method is useful for estimating the mass of a system, which is otherwise hard to access experimentally. 
+Since the size can be estimated from images, and the average velocity can be estimated from measurements of the Doppler shift, this method is useful for estimating the mass of a system, which is otherwise hard to access experimentally. 
 
 
 \paragraph*{Spherical collapse model.}
@@ -474,9 +474,9 @@ Because the energy is conserved, the two results can be combined to yield
 \begin{align*}
 	r_\text{vir} = \frac{r_\text{ta}}{2}.
 \end{align*}
-We can also calculate the mean overdensity $1 + \delta(t_\text{vir})$ within the radius $r_\text{vir}$, which is commonly written as $1 + \Delta$:
+We can also calculate the mean overdensity $1 + \delta(t_\text{vir})$ within the radius $r_\text{vir}$, which is commonly written as $1 + \Delta_\text{vir}$:
 \begin{align*}
-	1 + \Delta
+	1 + \Delta_\text{vir}
 	&= \frac{\rho(t_\text{vir})}{\bar{\rho}(t_\text{vir})}\\
 	&= \frac{ \rho(t_\text{ta})}{\bar{\rho}(t_\text{vir})}
 	\left(\frac{r_\text{ta}}{r_\text{vir}}\right)^3\\
@@ -488,6 +488,7 @@ We can also calculate the mean overdensity $1 + \delta(t_\text{vir})$ within the
 	&\approx 178
 \end{align*}
 
+This is valid for $\Omega_m = 1$. Note that for cases with $\Omega_m \neq 1$ and $\Lambda = 0$ or $\Lambda \neq 0$ corrections are needed.  
 % TODO diagram again
 
 \section{Steady state solutions}
