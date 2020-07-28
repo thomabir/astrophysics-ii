@@ -493,7 +493,7 @@ This is valid for $\Omega_m = 1$. Note that for cases with $\Omega_m \neq 1$ and
 
 \section{Steady state solutions}
 
-We want to find solutions of the CBE which are steady states, meaning we want $f$ to be time-independent. The CBE for a steady state is
+We want to find solutions of the CBE which are at steady states, meaning we want $f$ to be time-independent $f(\vec{x}, \vec{v}, t) = f(\vec{x}, \vec{v}) $. The CBE for a steady state is
 \begin{align*}
 	0
 	&= \sum_{i} \pdv{f}{x_i} \dv{x_i}{t}
@@ -507,16 +507,20 @@ Examples of such functions are energy and angular momentum.
 For integrals of motion,
 \begin{align*}
 	0 &= \dv{I}{t}
-	= \sum_{i} \pdv{I}{x_i} \dv{x_i}{t}
+	= \sum_{i} \pdv{I}{x_i} \dv{x_i}{t} + \sum_{i} \pdv{I}{v_i} \dv{v_i}{t}
 \end{align*}
 Thus, integrals of motion are solutions of the steady-state CBE.
 Conversely, a distribution function $f$ which is a function of integrals of motion, written as
 \begin{align*}
 	f(\vec{x}, \vec{v}) = f[I_1(\vec{x}, \vec{v}), \dots, I_N(\vec{x}, \vec{v})],
 \end{align*}
-is necessarily a steady-state solution of the CBE.
+is automatically a steady-state solution of the CBE, since
+\begin{align*}
+	\dv{f}{t}
+	= \sum_{k} \pdv{f}{I_k} \dv{I_k}{t} = 0.
+\end{align*}
 
-It follows that all solutions of the steady state CBE depend on $\vec{x}$ and $\vec{v}$ through integrals of motion. This result is called \emph{Jean's theorem}.
+It follows that all solutions of the steady state CBE depend on $\vec{x}$ and $\vec{v}$ through integrals of motion. This result is called \emph{Jean's theorem} and gives us a method to construct steady state solutions. 
 
 \subsection{Spherical models}
 \label{ssec:spherical-models}
@@ -561,7 +565,7 @@ where $\rho_0$ and $\sigma$ are constants. Then
 \begin{align*}
 	\rho(r) 
 	&= \rho_0 \exp\left( \frac{\Psi}{\sigma^2} \right)\\
-	&=
+	&\approx
 	\begin{cases}
 		\rho_0   \Big[ 1 + \Big( \frac{r}{r_0} \Big)^2 \Big]^{-3/2}
 		& \text{if } r \leq 2 r_0,\\
@@ -595,7 +599,7 @@ Notes:
 		&= 4 \pi \int_0^r \dd{r'} {r'}^2 \rho(r')\\
 		&\propto r^3 \frac{1}{r^2} \propto r,
 	\end{align*}
-	which goes to $\infty$ as $r \to \infty$. In practice, the model has to be cut of at some radius.
+	which goes to $\infty$ as $r \to \infty$. In practice, the model has to be cut off at some radius.
 \end{itemize}
 
 
@@ -611,7 +615,7 @@ Notes:
 	\end{cases}
 \end{align*}
 $\Psi(r)$ and $\rho(r)$ can be computed numerically.
-We can find $\rho(r) = 0$ for $r > r_t$, where $r_t$ is called the tidal radius.
+We find $\rho(r) = 0$ for $r > r_t$, where $r_t$ is called the tidal radius.
 The mass in this model is finite.
 The model is a good fit for bright elliptical galaxies.
 
@@ -647,8 +651,8 @@ One can show that
 	\rho(r)
 	&=
 	\begin{cases}
-		r - \gamma & \text{for } r \ll r_0,\\
-		r - \beta & \text{for } r \gg r_0.
+		r^{ - \gamma} & \text{for } r \ll r_0,\\
+		r^{ - \beta} & \text{for } r \gg r_0.
 	\end{cases}
 \end{align*}
 Several models are shown in \cref{tab:power-models}.
