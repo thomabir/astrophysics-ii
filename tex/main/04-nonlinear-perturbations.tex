@@ -946,14 +946,14 @@ Fortunately, an analytical approach, known as the \emph{extended Press-Schechter
 Consider the average number of progenitors at time $t_1$ with masses $M_1 \in [M, M + \dd{M}]$, which by time $t_2$ have merged to form a halo of mass $M_2$.
 \begin{align*}
 	n(M_1, t_1 \, | \, M_2, t_2) \dd{M_1}
-	&= \frac{M_2}{M_1} f_\text{PS}(\nu_{12}) \abs*{\dv{\ln \nu_{12}}{\ln M_1}} \dd{M_1},
+	&= \frac{M_2}{M_1^2} f_\text{PS}(\nu_{12}) \abs*{\dv{\ln \nu_{12}}{\ln M_1}} \dd{M_1},
 \end{align*}
 with
 \begin{align*}
 	\nu_{12}
 	&= \frac{\delta_c(t_1) - \delta_c(t_2)}{\sqrt{\sigma^2(M_1) - \sigma^2(M_2)}}.
 \end{align*}
-This can be derived using the \textsc{eps} formalism.
+This can be derived using the \textsc{EPS} formalism.
 
 \paragraph*{Main progenitor.}
 The most massive branch of a merger tree is called the main progenitor.
@@ -962,7 +962,7 @@ In \cref{fig:progenitor-sample}, a sample of main progenitor histories for a giv
 \begin{marginfigure}
 	\includegraphics[width=\textwidth]{img/ch-04/progenitor-sample.pdf}
 	\caption{A sample of progenitor histories with mass $M_0 = \num{5e11} h^{-1} M_\sol$.
-	Each line shows the evolution of the mass of the main progenitor for a different halo.
+	Each line shows a possible evolution of the mass of the main progenitor.
 	Note that there is a large scatter in the history of the main progenitors.}
 	\label{fig:progenitor-sample}
 \end{marginfigure}
@@ -978,7 +978,7 @@ In \cref{fig:progenitor-sample}, a sample of main progenitor histories for a giv
 \paragraph*{Characteristic scales}
 
 The \emph{assembly time} $t_a$ is the characteristic time scale for the formation of the halo.
-It is defined such that the mass of the main progenitor at $t_a$ is half the final mass.
+It is defined such that the mass of the main progenitor at $t_a$ is half the final mass $M_\text{main}(t_a) = \frac{1}{2}M_0$.
 
 The \emph{halo merger rate} is the rate at which a halo of mass $M$ changes its mass by $\Delta M$, which can be expressed as a probability $\Prob(\Delta M \, | \, M, t) \dd{\ln \Delta M} \dd{\ln t}$.
 
