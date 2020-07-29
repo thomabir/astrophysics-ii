@@ -735,13 +735,13 @@ In the linear regime,
 \begin{align*}
 	\delta(\vec{x},t) = \delta_0(\vec{x}) D(t),
 \end{align*}
-where $\delta_0(\vec{x}) = \delta(\vec{x}, t_0)$ is linearly extrapolated to today, and $D(t)$ is the linear growth factor.
+where $\delta_0(\vec{x}) = \delta(\vec{x}, t_0)$ is the density field linearly extrapolated to today, and $D(t)$ is the linear growth factor.
 We adopt a slightly different notation for $D(t)$, normalizing it such that $D(t_0) = 1$.
 
-We define a smoothed field $\delta_s$ by convolving the original field with a smoothing kernel,
+In order to assign masses to collapsed regions. We define a smoothed density field $\delta_s$ by convolving the original field with a smoothing kernel,
 \begin{align*}
 	\delta_s(\vec{x}, t)
-	&= \int \dd{^3 \vec{y}} W(\vec{x}+\vec{y}; R) \delta(\vec{x'}, t),
+	&= \int \dd{^3 \vec{y}} W(\vec{x}+\vec{y}; R) \delta(\vec{y}, t),
 \end{align*}
 where $W(\vec{x}; R)$ is a window function with a characteristic radius $R$, such as a top hat.
 To a top hat window function, we can associate a characteristic mass,
@@ -752,8 +752,8 @@ To a top hat window function, we can associate a characteristic mass,
 \subsection{Probability of collapse}
 
 
-For the spherical collapse model, we found that for regions with a smooth density field satisfying $\delta_s(\vec{x}, R, t) > \delta_c$,
-the region will have collapsed to form a virialized object.
+For the spherical collapse model, we found that regions with a smooth density field, which satisfy $\delta_s(\vec{x}, R, t) > \delta_c \approx 1.69$,
+will have collapsed to form a virialized object.
 This is what we call a dark matter halo.
 We rewrite this using the linear growth factor.
 Because $\delta_s(\vec{x}, R, t) = \delta_S(\vec{x}, R, t_0) D(t)$, we have equivalently
@@ -772,9 +772,8 @@ The probability that $\delta_s > \delta_c(t)$ can be written as
 	\Prob(\delta_s > \delta_c(t))
 	= \int_{\delta_c(t)}^{\infty}
 	\dd{\delta_s}
-	\Prob(\delta_s),
+	\Prob(\delta_s).
 \end{align*}
-where $\delta_s = \delta_s(t_0)$.
 Since the field is Gaussian,
 \begin{align*}
 	\Prob(\delta_s)
@@ -797,7 +796,7 @@ which is a result that we have seen before.\sidenote{As a reminder, $\tilde{W}$ 
 The integral then evaluates to
 \begin{align*}
 	\Prob(\delta_s > \delta_c(t))
-	= \frac{1}{2} \erf
+	= \frac{1}{2} \erfc
 	\left[ \frac{\delta_c(t)}{\sqrt{2} \sigma(M)} \right].
 \end{align*}
 
@@ -823,7 +822,7 @@ The factor in the PS-ansatz can be justified in a more solid way by using a form
 
 We want to find the number density of collapsed objects with a mass between $M$ and $M + \dd{M}$,
 \begin{align*}
-	n(M, t)
+	n(M, t) \dd{M}
 	= \frac{\bar{\rho}}{M}
 	\pdv{F(>M)}{M} \dd{M}
 \end{align*}
@@ -842,7 +841,7 @@ We plug in
 	\pdv{\Prob(\delta_s > \delta_c(t))}{\sigma}
 	&=
 	\pdv{}{\sigma} \left[ 
-		\frac{1}{2} \erfc \left( \frac{\delta_c}{2\sigma} \right)
+		\frac{1}{2} \erfc \left( \frac{\delta_c}{\sqrt{2} \sigma} \right)
 	 \right]\\
 	&= \frac{1}{\sqrt{2\pi}}
 	\frac{\delta_c}{\sigma^2}
@@ -859,7 +858,7 @@ and get\sidenote{We use
 	\frac{\delta_c}{\sigma^2}
 	\exp\left( -\frac{\delta_c}{2\sigma^2} \right)
 	\abs*{\dv{\sigma}{M}} \dd{M}\\
-	&= \frac{1}{\sqrt{2\pi}}
+	&= \sqrt{\frac{2}{\pi}}
 	\frac{\bar{\rho}}{M^2}
 	\frac{\delta_c}{\sigma}
 	\exp\left( -\frac{\delta_c}{2\sigma^2} \right)
@@ -921,10 +920,10 @@ Thus, small haloes can form first, and massive haloes form later.
 We have already seen this hierarchical structure formation before.
 
 
-Today, the largest haloes which have formed have masses $M \approx \num{e14} M_\sol$.
+Today, the largest haloes which have formed have masses $M \approx \num{e14} M_\sol$, corresponding to clusters of galaxies.
 At earlier epochs, the largest haloes were found in dwarf galaxies, with $M \approx \num{e9}$,
-later galaxies with $M \approx \num{e12} M_\sol$,
-and finally galaxy clusters with  $M \approx \num{e13} M_\sol$.
+later galaxies with $M \approx \num{e12} M_\sol$
+and then galaxy groups with  $M \approx \num{e13} M_\sol$.
 
 
 
